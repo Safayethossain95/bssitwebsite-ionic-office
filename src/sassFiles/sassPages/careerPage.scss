@@ -1,0 +1,94 @@
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/global';
+
+
+.careerpagemain{
+    .footer{
+        margin-top: 97px;
+    }
+    .smallheadingmsg{
+        h5{
+            @include myfont(25px,500,$main_font);
+            text-align: center;
+            margin-bottom: 33px;
+        }
+    }
+
+    .myheadline{
+        h1{
+            margin-bottom: 0;
+        }
+    }
+    .smallparagraph{
+        @include myfont(16px,400,$main_font);
+        margin-bottom: 88px;
+    }
+
+    .searchpartcareer{
+        .searchbar{
+            position:relative;
+            svg{
+                position: absolute;
+                top:50%;
+                transform: translateY(-50%);
+                left:18px;
+            }
+            input{
+                // border:1px solid rgba(0,0,0,0.2);
+                border:none;
+                border:1px solid silver;
+                height: 50px;
+                border-radius: 10px;
+                width:100%;
+                padding-left:45px;
+                background: #fff;
+                &::placeholder{
+                    @include myfont(16px,400,$main_font);
+                    opacity: 1;
+                }
+                &:focus-visible{
+                    // border:1px solid #000;
+                    border-color: #000;
+                    outline:none;
+                }
+            }
+        }
+        .fixedheightcareerboxes{
+            min-height: 650px;
+        }
+        .careerBox{
+            border:1px solid rgba(0,0,0,0.2);
+            height:200px;
+            width: 100%;
+            border-radius: 20px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            &:first-child{
+                margin-top: 41px;
+            }
+            
+            .careerBoxInnerWrapper{
+                .careerboxtext{
+                    padding-left: 55px;
+                    padding-right: 214px;
+                    h4{
+                        @include myfont(25px,500,$main_font);
+                    }
+                    p{
+                      display: inline; 
+                      @include myfont(16px,400,$main_font); 
+                    }
+                    a{
+                        text-decoration: underline;
+                        color:#ED1C24;
+
+                    }
+                }
+            }
+        }
+    }
+}

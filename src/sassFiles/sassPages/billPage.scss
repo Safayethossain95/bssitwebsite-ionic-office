@@ -1,0 +1,478 @@
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/global';
+
+.desktopforbillpage{
+    display: flex;
+}
+body{
+    overflow-y: auto;
+}
+.billright{
+    width: calc(100% - 180px);
+    
+}
+.billpagemain{
+    background-color: #F2F2F2;
+    .sidebarleftbill{
+        height: 100vh;
+        position:relative;
+        width:180px;
+        .sidebarleftbillbox{
+            background-color: #fff;
+            position:absolute;
+            top:15px;
+            left:15px;
+            
+            width:150px;
+            height: calc(100vh - 30px);
+            
+            border-radius: 20px;
+            .logo{
+                text-align: center;
+                img{
+                    margin-top: 31px;
+                    margin-bottom: 40px;                    
+                }
+            }
+            .menupart{
+                ul{
+                    padding-left: 0;
+                    text-align: center;
+                    li{
+                        margin:20px 0;
+                        a{
+                            @include myfont(16px,400,$main_font);
+                            color:rgba(0,0,0,0.7);
+                            
+                        }
+                    }
+                }
+            }
+            .logout{
+                button{
+                    background-color: #fff;
+                    color:#000;
+                    border:none;
+                    position: absolute;
+                    bottom:26px;
+                    left:50%;                    
+                    transform:translateX(-50%);
+                    @include myfont(16px,400,$main_font);
+                }
+            }
+        }
+    }
+
+   
+    .headerpartbill{
+        height: 75px;
+        width:100%;
+        display: flex;
+        position:sticky;
+        background: linear-gradient(180deg, #F2F2F2 0%, rgba(242, 242, 242, 0.52) 100%);
+        backdrop-filter: blur(5px);
+        top:0;
+        z-index: 999;
+        .leftsidesearch{
+            position: relative;
+            margin-top: 15px;
+            width:295px;
+            span{
+                cursor:pointer;
+                svg{
+                    position: absolute;
+                    top:50%;
+                    transform:translateY(-50%);
+                    right:22px;
+                    font-size: 20px;
+                }
+            }
+           
+            input{
+                padding: 17px 13px;
+                width:295px;
+                height:50px;
+                background-color: #fff;
+                border:none;
+                border-radius: 10px;
+                &::placeholder{
+                    @include myfont(16px,400,$main_font);
+                }
+            }
+        }
+        .rightsidestuff{
+            width:265px;
+            height:100%;        
+            margin-left: auto;
+            margin-right: 19px;
+            display: flex;
+            .bellicon{
+                position:relative;
+                width:32px;
+                margin-right: 19px;
+                height: 100%;
+                
+                svg{
+                    
+                    font-size: 32px;
+                    position:absolute;
+                    top:28px;
+                    left:0;
+                    
+                }
+                &::after{
+                    position: absolute;
+                    content: "";
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: #ED1C24;
+                    right: 6px;
+                    top: 33px;
+                    border:1px solid #f2f2f2;
+
+                }
+                
+            }
+            .profilesmallinfo{
+                display: flex;
+                .profilepic{
+                    width:50px;
+                    img{
+                        width:50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        margin-top: 17px;
+                    }
+                }
+                .roleandid{
+                    display: flex;
+                    align-items: center;
+                    .roleidwrapper{
+                        margin-left: 13px;
+                        line-height: 0;
+                        h5{
+                            @include myfont(16px,400,$main_font);
+
+                        }
+                        p{
+                            @include myfont(14px,400,$main_font);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .basicinfobox{
+        width:calc(100% - 19px);
+        background-color: #fff;
+        height: 210px;
+        border-radius: 20px;
+        overflow: auto;
+        margin-top: 3px;
+        h5{
+            text-align: center;
+            @include myfont(16px,400,$main_font);
+            color:#000;
+            margin-top: 20px;
+        }
+        .basicinfopopulate{
+            padding: 0;
+            p{
+                @include myfont(12px,400,$main_font);
+            }
+            input{
+                width:100%;
+                height: 40px;
+                border-radius: 10px;
+                border:1px solid rgba(0,0,0,0.2);
+                padding-left: 20px;
+                &:focus-visible{
+                    // border: 1px solid #000;
+                    outline:1px solid #000;
+                }
+            }
+        }
+    }
+    .lowerpart{
+        .previoushistorylist{
+            width:100%;
+            height:calc(100vh - 384px);
+            background-color: #fff;
+            margin-top: 10px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            overflow: auto;
+            padding: 0 20px;
+           position:relative;
+           overflow-y: scroll;
+           @include media(xlgDevice){
+            height: 554px;
+           }
+           table{
+            position:relative;
+            // th {
+            //     background: white;
+            //     position: sticky;
+            //     top: 65px; /* Don't forget this, required for the stickiness */
+            //     box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+            //   }
+              tr{
+                &:first-child{
+                    background: white;
+                position: sticky;
+                top: 65px; 
+                }
+                &:nth-child(2){
+                    margin-top: 5px!important;
+                }
+              }
+           }
+            h5{
+                text-align: center;
+                @include myfont(16px,400,$main_font);
+                color:#000;
+                top: 20px;
+                position:relative;
+                display: inline-block;
+                left:50%;
+                transform:translateX(-50%);
+                span{
+                    margin-right: 20px;
+                    svg{
+                        font-size: 24px;
+                    }
+                    position:absolute;
+                    top:-2px;
+                    left:-35px;
+                }
+            }
+            table{
+                width:100%;
+                
+                
+                tr{
+                    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+                    height:40px;
+                    th{
+                        @include myfont(16px,400,$main_font);
+                        color:#000;
+                    }
+                    td{
+                        color: rgba(0,0,0,0.7);
+                        @include myfont(16px,400,$main_font);
+                    }
+                }
+            }
+           
+        }
+        .prelistbottom{
+            // position:absolute;
+            // bottom:0;
+            // left:0;
+            background-color: #fff;
+           width:100%;
+           height: 73px;
+           border-bottom-left-radius: 20px;
+           border-bottom-right-radius: 20px;
+           padding:8px 18px;
+            .prelistbtminner{
+                width:100%;
+                height:50px;
+                background-color: #F3F1FF;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor:pointer;
+                h6{
+                    text-align: center;
+                    @include myfont(16px,400,$main_font);
+                    color:#312783;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .lowerrightwrap{
+            height: 638px;
+            .dueboard{
+                width:calc(100% - 19px);
+                height:268px;
+                background-color: #fff;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                margin-top: 10px;
+                margin-right: 18px;
+                padding:0 15px;
+                overflow-y: scroll;
+                .headingwithiconfixed{
+                    height: 80px;
+                }
+                h5{
+                    text-align: center;
+                    @include myfont(16px,400,$main_font);
+                    color:#000;
+                    top: 20px;
+                    position:relative;
+                    display: inline-block;
+                    left:50%;
+                    transform:translateX(-50%);
+                    span{
+                        margin-right: 20px;
+                        svg{
+                            font-size: 24px;
+                        }
+                        position:absolute;
+                        top:-2px;
+                        left:-35px;
+                    }
+                }
+                p{
+                    font-size: 12px;
+                    font-weight: 400;
+                    font-family: "Poppins", sans-serif;
+                    margin-top: 25px;
+                    margin-bottom: 18px;
+                }
+                ul{
+                    padding-left: 0;
+                    li{
+                        display: flex;
+                        justify-content: space-between;
+                        height:50px;
+                        padding:13px 20px;
+                        background-color: #f9f9f9;
+                        border-radius: 10px;
+                        margin-bottom: 5px;
+                        .left{
+                            h5{
+                                @include myfont(16px,400,$main_font);
+                                top:0;
+                            }
+                        }
+                        .right{
+                            display: flex;
+                            .redpill{
+                                display: flex;
+                                align-items: center;
+                                margin-right: 13px;
+                                padding:4px 25px 3px 11px;
+                                background-color: rgba(237, 28, 36, 0.05);
+                                border-radius: 38px;
+                                p{
+                                    color:rgba(237, 28, 36, 0.5);
+                                    position:relative;
+                                    &::after{
+                                        position:absolute;
+                                        width:6px;
+                                        height:6px;
+                                        background-color: rgba(237, 28, 36, 0.5);;
+                                        content:'';
+                                        top:50%;
+                                        transform: translateY(-50%);
+                                        right:-12px;
+                                        border-radius: 50%;
+                                    }
+                                }
+                            }
+                            .amount{
+                                display: flex;
+                                align-items: center;
+                            }
+                            p{
+                                margin-top: 0;
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                   }
+            }
+            .dueboardbottom{
+                height: 67px;
+                width:calc(100% - 19px);
+                background-color: #fff;
+                border-bottom-left-radius: 20px;
+               border-bottom-right-radius: 20px;
+               position:relative;
+               padding:0 15px;
+               .dueboardbottominner{
+                height:50px;
+                width:calc(100% - 30px);
+                background-color: #F3F1FF;
+                border-radius: 10px;
+                position:absolute;
+                bottom:15px;
+                left:50%;
+                transform: translateX(-50%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor:pointer;
+                h6{
+                    text-align: center;
+                    @include myfont(16px,400,$main_font);
+                    color:#312783;
+                    margin-bottom: 0;
+                }
+               }
+               
+            }
+    
+            .notepart{
+                margin-top: 10px;
+                border-radius: 20px;
+                width: calc(100% - 19px);
+                height: 290px;
+                background-color: #fff;
+                // @include media(xlgDevice){
+                //     margin-bottom: 15px;
+                // }
+                h5{
+                    text-align: center;
+                    @include myfont(16px,400,$main_font);
+                    color:#000;
+                    top: 20px;
+                    position:relative;
+                    display: inline-block;
+                    left:50%;
+                    transform:translateX(-50%);
+                    span{
+                        margin-right: 20px;
+                        svg{
+                            font-size: 24px;
+                        }
+                        position:absolute;
+                        top:-2px;
+                        left:-35px;
+                    }
+                }
+                .noteboard{
+                    width: calc(100% - 38px);
+                    height: calc(100% - 87px);
+                    background-color: #f9f9f9;
+                    margin:0 auto;
+                    margin-top: 25px;
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    p{
+    
+                    }
+                }
+            }
+            
+        }
+        .headingwithiconfixed{
+            position:sticky;
+            top:0;
+            left:0;
+            background:#fff;
+            z-index:888;
+            height:65px;
+        }
+    }
+    
+}

@@ -1,0 +1,17 @@
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/global';
+
+.authentication{
+    .loginbox{
+        .loginboxinner{
+            .fieldboxforlogin{
+                .onlytextlink{
+                    color:#000;
+                    @include myfont(16px,400,$main_font);
+                }
+            }
+        }
+    }
+}

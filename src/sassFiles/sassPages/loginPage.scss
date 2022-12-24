@@ -1,0 +1,75 @@
+.authentication{
+    height:100vh;
+    display: flex;
+    align-items: center;
+    .loginbox{
+        .loginboxinner{
+            width:100%;
+            h4{
+                @include myfont(25px,500,$main_font);
+                
+                text-align: center;
+            }
+            .fieldboxforlogin{
+                input{
+                    width:100%;
+                    height: 60px;
+                    border-radius: 15px;
+                    border: 1px solid rgba(0,0,0,0.20);
+                    margin-bottom: 20px;
+                    padding-left:20px;
+                }
+                p{
+                    margin-bottom: 0;
+                    @include myfont(14px,400,$main_font);
+                    color:rgba(0,0,0,0.70);
+                    margin-bottom: 3px;
+                }
+                #remember{
+                    width:unset;
+                    height:unset;
+                }
+                .checkboxfull{
+                    span{
+                        @include myfont(16px,400,$main_font);
+                        margin-left: 10px;
+                    }
+                }
+                .buttonpartlogin2{
+                    a{
+
+                        text-decoration: none;
+                    }
+                }
+                .buttonpartlogin{
+                    margin-top: 90px;
+                    text-align: center;
+    
+                    a{
+                        @include myfont(16px,400,$main_font);
+                        color:#fff;
+                        margin-top: 5px;
+                        text-decoration: none;
+                        &.onlytextlink{
+                            color:#000;
+                        }
+                    }
+                }
+                
+            }
+        }
+        width:518px;
+        height:90vh;
+        max-height: 700px;
+        -webkit-box-shadow: 0px 4px 25px 0px rgba(0,0,0,0.10);
+        -moz-box-shadow: 0px 4px 25px 0px rgba(0,0,0,0.10);
+        box-shadow: 0px 4px 25px 0px rgba(0,0,0,0.10);
+        overflow: auto;
+        padding: 0 48px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+}

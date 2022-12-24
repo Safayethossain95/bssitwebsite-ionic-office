@@ -1,0 +1,393 @@
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/global';
+
+
+.desktopforbillEntry{
+    display: flex;
+}
+body{
+    overflow-y: auto;
+}
+.billright{
+    width: calc(100% - 180px);
+    overflow-y: scroll;
+    height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.billentrymain{
+    background-color: #F2F2F2;
+    .sidebarleftbill{
+        height: 100vh;
+        position:relative;
+        width:180px;
+        .sidebarleftbillbox{
+            background-color: #fff;
+            position:absolute;
+            top:15px;
+            left:15px;            
+            width:150px;
+            height: calc(100vh - 30px);
+            
+            border-radius: 20px;
+            .logo{
+                text-align: center;
+                img{
+                    margin-top: 31px;
+                    margin-bottom: 40px;                    
+                }
+            }
+            .menupart{
+                ul{
+                    padding-left: 0;
+                    text-align: center;
+                    li{
+                        margin:20px 0;
+                        a{
+                            @include myfont(16px,400,$main_font);
+                            color:rgba(0,0,0,0.7);
+                            
+                        }
+                    }
+                }
+            }
+            .logout{
+                button{
+                    background-color: #fff;
+                    color:#000;
+                    border:none;
+                    position: absolute;
+                    bottom:26px;
+                    left:50%;                    
+                    transform:translateX(-50%);
+                    @include myfont(16px,400,$main_font);
+                }
+            }
+        }
+    }
+    .headerpartbill{
+        height: 75px;
+        width:100%;
+        display: flex;
+        position:sticky;
+        top:0;
+        left:0;
+        // background-color: #f2f2f2;
+        background: linear-gradient(180deg, #F2F2F2 0%, rgba(242, 242, 242, 0.52) 100%);
+        backdrop-filter: blur(5px);
+        z-index: 999;
+        .leftsidesearch{
+            position: relative;
+            margin-top: 15px;
+            width:295px;
+            span{
+                cursor:pointer;
+                svg{
+                    position: absolute;
+                    top:50%;
+                    transform:translateY(-50%);
+                    right:22px;
+                    font-size: 20px;
+                }
+            }
+           
+            input{
+                padding: 17px 13px;
+                width:295px;
+                height:50px;
+                background-color: #fff;
+                border:none;
+                border-radius: 10px;
+                &::placeholder{
+                    @include myfont(16px,400,$main_font);
+                }
+            }
+        }
+        .rightsidestuff{
+            width:265px;
+            height:100%;        
+            margin-left: auto;
+            margin-right: 19px;
+            display: flex;
+            .bellicon{
+                position:relative;
+                width:32px;
+                margin-right: 19px;
+                height: 100%;
+                
+                svg{
+                    
+                    font-size: 32px;
+                    position:absolute;
+                    top:28px;
+                    left:0;
+                    
+                }
+                &::after{
+                    position: absolute;
+                    content: "";
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: #ED1C24;
+                    right: 6px;
+                    top: 33px;
+                    border:1px solid #f2f2f2;
+    
+                }
+                
+            }
+            .profilesmallinfo{
+                display: flex;
+                .profilepic{
+                    width:50px;
+                    img{
+                        width:50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        margin-top: 17px;
+                    }
+                }
+                .roleandid{
+                    display: flex;
+                    align-items: center;
+                    .roleidwrapper{
+                        margin-left: 13px;
+                        line-height: 0;
+                        h5{
+                            @include myfont(16px,400,$main_font);
+    
+                        }
+                        p{
+                            @include myfont(14px,400,$main_font);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .billentrytop{
+        // height: 410px;
+        height: calc(100vh - 393px);
+        width:calc(100% - 15px);
+        background:#fff;
+        border-radius: 20px;
+        overflow-y: scroll;
+        position:relative;
+        top:3px;
+        @include media(xlgDevice){
+            height: calc(100vh - 316px);
+        }
+        .billentrytopmenu{
+            position: sticky;
+            top: 0px;
+            height: 80px;
+            width: 100%;
+            background-color: #fff;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            z-index: 999;
+            button{
+                text-align: center;
+                @include myfont(16px,400,$main_font);
+                color:#312783;
+                margin-bottom: 0;
+                background-color: #F3F1FF;
+                border:none;
+                height:50px;
+                width:100%;
+                
+            }
+            .dropdownwrapper{
+                width:100%;
+                .Dropdown-control{
+                    height:50px;
+                }
+                .Dropdown-placeholder{
+                    color:rgba(0,0,0,0.7);
+                }
+            }
+           
+        }
+        .billentrytoptable{
+            padding: 0 34px;
+            
+            table{
+                width: 100%;
+                top:0px;
+                position:relative;
+                
+                tr{
+                    // &:first-child{
+                    //     position:absolute;
+                    //     top:0;
+                    //     width: 100%;
+                    // }
+                    
+                    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+                    height:40px;
+                    th{
+                        @include myfont(16px,400,$main_font);
+                        color:#000;
+                        position:sticky;
+                        top:80px;
+                        background-color: #fff;
+                        z-index: 888;
+                        
+                    }
+                    td{
+                        color: rgba(0,0,0,0.7);
+                        @include myfont(16px,400,$main_font);
+                    }
+                }
+            }
+        }
+    }
+    .billentrybottom{
+        .billentrybottombox{
+            width:calc(100% - 15px);
+            height: 286px;
+            background-color: #fff;
+            border-radius: 20px;
+            margin-top: 15px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            @include media(xlgDevice){
+                height: 210px;
+            }
+            .billentrybottomboxflexwrapper{
+                width:100%;
+                .paymentmethodinputgap{
+                    margin-top: 30px;
+                    @include media(xlgDevice){
+                        margin-top: 10px;
+                    }
+                }
+                .bottomboxbuttonwrap{
+                    text-align: center;
+                    margin-top: 50px;
+                    @include media(xlgDevice){
+                        margin-top: 10px;
+                    }
+                    button{
+                        text-align: center;
+                        @include myfont(16px,400,$main_font);
+                        color:#312783;
+                        margin-bottom: 0;
+                        background-color: #F3F1FF;
+                        border:none;
+                        height:50px;
+                        width:153px;
+                        margin:0 15px;
+                        border-radius: 10px;
+                        &:last-child{
+                            width:230px;
+                        }
+                        span{
+                            svg{
+                                font-size: 24px;
+                                margin-right:11px;
+                            }
+                        }
+                    }
+                }
+                .basicinfopopulatebillentry{
+                    .dropdownwrapper{
+                        width:100%;
+                        .Dropdown-control{
+                            height:40px;
+                        }
+                        .Dropdown-placeholder{
+                            color:#000;
+                            opacity:0.2;                        
+                            top:6px;
+                        }
+                        .filterdropone{
+                            top:102%;
+                        }
+                    }
+                    &.basicinfopopulatebillentryincdec{
+                        position: relative;
+                        .plus{
+                            position: absolute;
+                            cursor: pointer;
+                            background: transparent;
+                            right: 0;
+                            top: 17px;
+                            width: 50px;
+                            height: 38px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            user-select: none;
+                            &::after{
+                                position: absolute;
+                                content: "";
+                                width: 1px;
+                                top: 2px;
+                                height: 38px;
+                                background-color: rgba(0, 0, 0, 0.2);
+                                right: 50px;
+                            }
+                            
+                        }
+                        .minus{
+                            position: absolute;
+                            cursor: pointer;
+                            background: transparent;
+                            left: 0;
+                            top: 17px;
+                            width: 50px;
+                            height: 38px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            user-select: none;
+                            &::after{
+                                position: absolute;
+                                content: "";
+                                width: 1px;
+                                top: 2px;
+                                height: 38px;
+                                background-color: rgba(0, 0, 0, 0.2);
+                                left: 50px;
+                            }
+                        }
+                    }
+                    p{
+                        @include myfont(12px,400,$main_font);
+                    }
+                    input{
+                        width:100%;
+                        height: 40px;
+                        border-radius: 10px;
+                        border:1px solid rgba(0,0,0,0.2);
+                        // padding-left: 20px;
+                        text-align: center;
+                        &:focus-visible{
+                            // border: 1px solid #000;
+                            outline:1px solid #000;
+                        }
+                        &::placeholder{
+                            text-align: center;
+                            @include myfont(16px,400,$main_font);
+                            color:rgba(0,0,0,0.7);
+                            
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+

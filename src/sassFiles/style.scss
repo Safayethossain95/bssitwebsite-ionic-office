@@ -1,0 +1,1190 @@
+@import '../sassStyles/mixins';
+@import '../sassStyles/variables';
+@import '../sassStyles/typography';
+@import '../sassStyles/global';
+@import '../sassFiles/sassPages/aboutUs.scss';
+@import '../sassFiles/sassPages/noticePage.scss';
+@import '../sassFiles/sassPages/loginPage.scss';
+
+a,
+a:hover,
+a:focus { text-decoration: none;
+     -webkit-transition: 0.3s linear;
+      -moz-transition: 0.3s linear;
+       -ms-transition: 0.3s linear;
+        -o-transition: 0.3s linear;
+         transition: 0.3s linear; 
+    }
+
+
+.read-more > button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #ED1C24;
+    display: inline-block;
+    @include myfont(16px,400,$button_font);
+    border-radius: 10px;
+    border:none;
+    padding: 16px 43px;
+    
+    
+  }
+
+  .read-more > button:hover {
+    background: #000;
+    color:#fff;
+  }
+  
+
+//
+  .noticebox {
+    text-decoration: none;
+    color: #000;
+    
+    display: inline-block;
+    @include myfont(16px,500,$button_font);
+    border-radius: 10px;
+    overflow: hidden;
+    
+    position: relative;
+    -webkit-transition: 0.5s linear;
+    -moz-transition: 0.5s linear;
+    -ms-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+  }
+  .noticebox> span {
+    background-color: #ED1C24;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    color: #fff;
+    display: block;
+    height: 0;
+    position: absolute;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    -webkit-transition: height 0.5s, width 0.5s;
+    -moz-transition: height 0.5s, width 0.5s;
+    -ms-transition: height 0.5s, width 0.5s;
+    -o-transition: height 0.5s, width 0.5s;
+    transition: height 0.5s, width 0.5s;
+    width: 0;
+    z-index: -1;
+  }
+  .noticebox:hover {
+    color: #ffffff;
+  }
+  .noticebox:hover > span {
+    height: 1000px;
+    width: 1000px;
+  }
+
+.eventbt{
+    text-align: center;
+    padding-top: 50px;
+}
+.bannerbutton {
+    padding-top: 10px;
+    padding-bottom: 60px;
+        &>a{
+            padding:16px 64px !important;
+        }
+   }
+
+.itest{
+    button{
+        position: absolute;
+        display: inline-block;    
+        color:#000;
+        text-decoration: none;
+        font-size: 20px;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px 50px;
+        margin: 10px;
+        letter-spacing: 2px;
+        border-radius:40px;
+        // overflow: hidden;
+        span{
+            position: absolute;
+            transform:translate(-50%,-50%);
+            background: #ffff;
+            pointer-events:none;
+            border-radius:50%;
+            animation: animate 1s linear infinite;
+                }
+                @keyframes animate {
+                0%{
+                    width: 0;
+                    height: 0;
+                    opacity: 0.2;
+                }
+                100%{
+                    width: 500px;
+                    height: 500px;
+                    opacity: 0;
+                }
+                }
+    }
+}
+
+
+.common_button{
+   
+    button{
+       
+        position: relative;
+        display: inline-block;            
+        text-decoration: none;
+        font-size: 20px;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px 50px;
+        margin: 10px;
+        letter-spacing: 2px;
+        border-radius:40px;
+        color:#fff;
+        background:#ED1C24;        
+           
+        padding: 16px 32px;
+        border-radius: 10px;
+        @include myfont(16px,500,$button_font);        
+        
+        position: relative;
+        display: inline-block;          
+        transition: .6s; 
+            
+        span {
+            position: absolute;
+            background: #fff;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            border-radius: 50%;
+            animation: animate 1s linear infinite;
+        }
+        
+        @keyframes animate {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 0.2;
+            }
+            100% {
+                width: 500px;
+                height: 500px;
+                opacity: 0.1;
+            }
+        }    
+          
+        &:hover{
+            
+            background:#000;
+            
+        }
+        }
+        
+        
+    }
+
+    
+
+.myheader{
+    transition: 0.4s;
+    border-bottom: 1px solid rgba(0,0,0,0.10);
+    .headerwrapper{
+        height: 38px; 
+        align-items: center;
+        
+    }   
+}
+.headerwrapper{
+    
+    align-items: center;
+    flex-wrap: inherit;
+    justify-content: space-between;
+    width:90%;
+    margin:0 auto;
+    display: flex;
+        @include media(xsmDevice){
+            width:100%;
+            padding:15px;
+        }
+    @include media(smDevice){
+        width:100%;
+        padding:15px;
+    }
+    @include media(mdDevice){
+        width:100%;
+        padding:15px;
+    }
+    @include media(lgDevice){
+        width:90%;
+        padding:0;
+    }
+    
+        .navabrbutton{
+            button{
+
+                @include media(xsmDevice){
+                    margin:0 auto;
+                    margin-top: 20px;
+                }
+                @include media(smDevice){
+                    margin:0 auto;
+                    margin-top: 20px;
+                }
+                @include media(mdDevice){
+                    margin:0 auto;
+                    margin-top: 20px;
+                }
+            }
+        }
+    
+}
+.headerinfoleft{
+    @include media(xsmDevice){
+        display: flex;
+        flex-direction: column;
+    }
+    @include media(smDevice){
+        display: flex;
+        flex-direction: column;
+    }
+    @include media(mdDevice){
+        display: flex;
+        flex-direction: row;
+    }
+    span{
+        @include myfont(16px,400,$main_font);
+    }
+    .hinfo{
+        display: inline-block;
+        margin-right: 16px;
+        span{
+            font-size: 12px;
+            @include media(xsmDevice){
+                font-size: 12px;
+            }
+        }
+    }
+   
+}
+.headerinforight{
+    text-align: right;
+    a{
+        @include myfont(12px,400,$main_font);
+        text-decoration: none;
+        color:#000;
+        @include media(xsmDevice){
+            font-size: 14px;
+        }
+    }
+    @include media(xsmDevice){
+        display: flex;
+        flex-direction: column;
+    }
+}
+.mynavbar{
+    // position: relative;
+    // top:62;
+    // left:0;
+    // z-index: 999;
+    padding:0!important;
+    .headerwrapper{
+        height: 62px;
+        .read-more{
+            &>a{
+                padding: 9px 23px;
+            }
+        }
+        .navbar-brand{
+            a{
+                img{
+                    width: 60px;
+                }
+            }
+        }
+
+    }
+    .navbar-nav{
+        margin-left: 16px;
+       
+              
+                a{
+                    @include myfont(16px,400,$main_font);
+                    color:$main_font_color;
+                    margin:0 25px;
+                    padding:0; 
+                    transition:0.4s;
+                    
+                    display: inline-block;
+                    text-decoration: none;
+                    &:hover{
+                        color:#ED1C24;
+                        
+                    }  
+                  
+                    @include media(xsmDevice){
+                        margin:5px 0;
+                        
+                    }
+                    @include media(smDevice){
+                        margin:5px 0;
+                        
+                    }
+                    @include media(mdDevice){
+                        margin:5px 0;
+                        
+                    }
+                    @include media(lgDevice){
+                        @include myfont(14px,400,$main_font);
+                    }
+                
+            }
+        
+        
+        @include media(xsmDevice){
+            margin-left: 0;
+            text-align: center;
+        }
+        @include media(smDevice){
+            margin-left: 0;
+            text-align: center;
+        }
+        @include media(mdDevice){
+            margin-left: 0;
+            text-align: center;
+        }
+    }
+   
+}
+
+.mybanner{
+    
+    .bannersmallboxcenter{
+        @include media(xsmDevice){
+            text-align: center;
+        }
+        @include media(smDevice){
+            text-align: unset;
+        }
+        .bannersmallbox{
+            
+            border-radius: 20px;
+            display: inline-block;
+            width:216px;
+            height:150px;    
+            padding:35px 20px;
+            box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.10);
+            -webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.10);
+            -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.10);
+        
+            @include media(xsmDevice){
+                width:auto;
+                margin: 0 auto;
+            }
+            @include media(lgDevice){
+                width:unset;
+                height:unset;
+            }
+            p{
+                width:181px!important;
+                @include myfont(16px,400,$main_font);
+                margin-top: 3px;
+                span{
+                    @include myfont(16px,600,$main_font);
+                }
+                @include media(lgDevice){
+                    width:unset!important;
+                }
+            }
+            &.gap{
+                
+                margin-top: 50px;
+                @include media(xsmDevice){
+                    margin-top: 30px;
+                    
+                }
+            }
+            &.gap2{
+                margin-top:100px;
+                margin-bottom: 30px;
+                @include media(xsmDevice){
+                    margin-top: 30px;
+                }
+            }
+                   
+        }
+    
+    } 
+    padding:20px 0;
+    .main_image{
+        position: relative;
+        img{            
+            position: absolute;
+            top: -68px;
+            right: -57px;
+            height: 676px; 
+            z-index: 888; 
+            @include media(xsmDevice){
+                top: -36px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            @include media(smDevice){
+                top: -672px;
+                right: 29%;
+                transform: translateX(50%);
+            }
+            @include media(mdDevice){
+                top: -672px;
+                right: 29%;
+                transform: translateX(50%);
+            }
+        }
+        
+    }
+    
+    .bannerbgimg{
+        img{
+            position:absolute;
+            top:104px;            
+            right:-344px;
+            height:735px;
+            z-index: -1;
+        }
+    }
+    .bannertext{
+        .bntxinner{
+            position:relative;
+        }
+        h3{
+            @include myfont(60px,600,$main_font);
+            @include media(xsmDevice){
+                
+                @include myfont(30px,600,$main_font);
+            }
+            @include media(smDevice){
+                @include myfont(45px,600,$main_font);
+            }
+            @include media(lgDevice){
+                @include myfont(50px,600,$main_font);
+            }
+            p{
+                
+                @include myfont(60px,700,$main_font);
+                @include media(xsmDevice){
+                    
+                    @include myfont(32px,600,$main_font);
+                }
+                @include media(smDevice){
+                    @include myfont(50px,600,$main_font);
+                }
+                @include media(lgDevice){
+                    @include myfont(53px,600,$main_font);
+                }
+                @include media(xlgDevice){
+                    @include myfont(51px,700,$main_font);
+
+                }
+    
+            }
+        }
+        p{
+            @include myfont(16px,400,$main_font);
+            
+            @include media(xsmDevice){
+                width:100%;
+            }
+            &.bannerdetailsp{
+                width:80%;
+                @include media(xlgDevice){
+                    width: 85%;
+                }
+            }
+            
+            
+        }
+        
+        .common_button{
+            
+            button{
+                padding:16px 64px;
+                margin-top: 15px;
+                margin-bottom: 60px;
+                @include media(xsmDevice){
+                    padding: 12px 34px;
+                }
+
+                   
+                
+                &:hover{
+                    
+                    background:#000;
+                    
+                }
+            }
+        }
+    }
+    
+}
+
+.aboutus{
+    @include media(xsmDevice){
+        margin-top: 590px;
+        padding:70px 0 0 0;
+    }
+    @include media(smDevice){
+        margin-top: 0px;
+        padding:70px 0 0 0;
+    }
+    h3{
+        text-align: center;
+        @include myfont(40px,600,$main_font);
+    }
+    .aboutustext2{
+        p{
+            @include media(xsmDevice){
+                width:100%;
+            }
+            @include media(smDevice){
+                width:100%;
+            }
+            @include media(mdDevice){
+                line-height: 30px;
+                text-align: left;
+            }
+        }
+        
+            @include media(mdDevice){
+                text-align: center;
+            }
+        
+    }
+    .aboutuscontent,.ourmissionaboutuscontent{   
+        img{
+            @include media(xsmDevice){
+                margin-bottom: 40px;
+                width:100%;
+            }
+            @include media(smDevice){
+                margin-bottom: 40px;
+                width:100%;
+            }
+            @include media(mdDevice){
+                margin-bottom: 40px;
+                width:100%;
+                
+            }
+            @include media(mdDevice){
+                
+                width:85%;
+                
+            }
+            @include media(lgDevice){
+                width:90%;
+            }
+        }
+        padding:50px 0;  
+        @include media(xsmDevice){
+            padding: 20px 0;
+        }
+        @include media(mdDevice){
+            padding: 50px 0 0 0;
+        }
+        .aboutustext{
+            p{
+                @include myfont(16px,400,$main_font);
+                line-height: 30px;
+                width:107%;
+                @include media(xsmDevice){
+                    width:100%;
+                }
+                @include media(smDevice){
+                    width:100%;
+                }
+                @include media(mdDevice){
+                    line-height: 30px;
+                }
+            }
+            button{
+                
+                margin-top:40px;
+                @include media(xsmDevice){
+                    padding:16px 32px!important;
+                    margin:0 auto;
+                }
+                @include media(smDevice){
+                    padding:16px 32px!important;
+                    margin:0 auto;
+                }
+            }
+            .read-more{
+                &>a{
+                    padding:16px 65px
+                }
+            }
+        }
+    }
+    padding:70px 0;
+    
+}
+.noticebt{
+    text-align: center;
+    a{
+        top:50px;
+    }
+}
+.noticecontent{
+    padding:70px 0;
+    @include media(xsmDevice){
+        padding: 35px 0;
+    }
+    @include media(smDevice){
+        padding: 0;
+    }
+    @include media(mdDevice){
+        padding: 35px 0 0 0;
+    }
+    button{
+        margin:65px auto 0px auto;
+        padding:16px 42px;
+        @include media(xsmDevice){
+            margin:0px auto 0px auto;
+            
+        }
+    }
+    .read-more{
+        &>a{
+            margin-top: 60px;
+        }
+    }
+    .noticebox{
+        &.noticeboxmiddle{
+            left:50%;
+            transform:translateX(-50%);
+        }
+        &.noticeboxright{
+            left:calc(100% - 288px);
+            @include media(lgDevice){
+                left:0;
+            }
+            @include media(mdDevice){
+                left:50%;
+                transform:translateX(-50%);
+            }
+        }
+        &.noticeboxleft{
+            @include media(lgDevice){
+                left:calc(100% - 288px);
+
+            }
+            @include media(mdDevice){
+                left:50%;
+                transform:translateX(-50%);
+            }
+        }
+        border:1px solid rgba(0, 0, 0,0.2);
+        width:288px;
+        height:350px;
+        border-radius: 20px;
+        padding:27px 22px;
+        transition: 0.4s;
+
+        @include media(xsmDevice){
+            width:100%;
+            height: auto;
+            margin-bottom: 25px!important;
+        }
+        @include media(lgDevice){
+            width:288px;
+            height: auto;
+            margin-bottom: 25px!important;
+        }
+        &.noticelastbox{
+            @include media(mdDevice){
+                margin-top: 35px !important;
+            }
+        }
+        @include media(smDevice){
+            margin-top: 35px!important;
+        }
+        .noticeheading{
+            h4{
+                @include myfont(20px,500,$main_font);
+                span{
+                    @include myfont(40px,600,$main_font);
+                    
+                }
+            }
+        }
+        p{
+            width:230px;
+            @include myfont(16px,400,$main_font);
+            @include media(xsmDevice){
+                width:100%;
+            }
+            @include media(lgDevice){
+                width:96%;
+            }
+        }
+    }
+}
+.noticepart{
+    padding: 20px 0;
+    h3{
+        text-align: center;
+        @include myfont(40px,600,$main_font);
+    }
+}
+
+
+.whychooseus{
+    padding:50px 0;
+    @include media(xsmDevice){
+        padding:0;
+    }
+    h3{
+        text-align: center;
+        @include myfont(40px,600,$main_font);
+    }
+    .ourmethodcards{
+        padding-top: 45px;
+    }
+    .wcuheadingp{
+        p{
+            padding:0 118px;
+            text-align: center;
+            @include myfont(16px,400,$main_font);
+            color:rgba(0,0,0,0.70);
+            line-height: 35px;
+            @include media(xsmDevice){
+                line-height:30px;
+            }
+            @include media(xsmDevice){
+                padding: 0 27px;
+            }
+            @include media(smDevice){
+                padding: 0 72px;
+            }
+            @include media(mdDevice){
+                padding: 0 72px;
+            }
+            @include media(lgDevice){
+                padding: 0 50px;
+            }
+        }
+    }
+    .wcucontent{
+        &.wcugapup{
+            margin-top: 105px;
+            @include media(xsmDevice){
+                margin-top: 30px;
+            }
+            @include media(smDevice){
+                margin-top: 35px;
+            }
+            @include media(mdDevice){
+                margin-top: 35px;
+            }
+        }
+        .wcugapsmall{
+            margin-top: 33px;
+            @include media(xsmDevice){
+                margin-top: 0;
+            }
+            @include media(smDevice){
+                margin-top: 0;
+            }
+            @include media(mdDevice){
+                margin-top: 0;
+            }
+        }
+        .wcubox{
+            width:100%;
+            height:216px;
+            border:1px solid rgba(0, 0, 0,0.2);
+            border-radius: 20px;
+            padding:62px 26px;
+            p{
+                @include myfont(16px,400,$main_font); 
+                margin-top: 13px;
+                @include media(xsmDevice){
+                    margin-bottom: 0;
+                }
+            }
+            @include media(xsmDevice){
+                width:auto;
+                height: 185px;
+                padding: 30px 26px;
+                margin-bottom: 33px;
+            }            
+            @include media(smDevice){
+                width:auto;
+                height: 185px;
+                padding: 30px 26px;
+                margin-bottom: 33px;
+            }   
+            @include media(mdDevice){
+                width:auto;
+                margin-bottom: 30px;
+            }
+        }
+
+    }
+}
+.learnfaw{
+    margin:60px 0 100px 0;
+    @include media(xlgDevice){
+        position:relative;
+
+    }
+    @include media(xsmDevice){
+        margin: 0;
+    }
+    @include media(smDevice){
+        margin: 0;
+    }
+    @include media(mdDevice){
+        margin: 0;
+    }
+    .learnleftimg{
+        img{
+            width:100%;
+        }
+    }
+    .learnright{
+        @include media(xlgDevice){
+            position: absolute;
+            right: 0;
+            bottom: 40px;
+        }
+            
+        
+        h3{
+            @include myfont(40px,600,$main_font); 
+            margin-top: 115px;
+            @include media(xsmDevice){
+                margin-top: 30px;
+                text-align: center;
+            }
+            @include media(smDevice){
+                margin-top: 30px;
+                text-align: center;
+            }
+            @include media(mdDevice){
+                margin-top: 30px;
+                text-align: center;
+            }
+            @include media(lgDevice){
+                margin-top: 0;
+            }
+        }
+        p{
+            margin-top: 15px;
+            @include myfont(18px,400,$main_font);
+            @include media(xsmDevice){
+                
+                text-align: center;
+            }
+            @include media(smDevice){
+                
+                text-align: center;
+            }
+            @include media(mdDevice){
+                
+                text-align: center;
+            } 
+        }
+        .blackbuttons{
+            // margin-top: 45px;
+            .blackbutton{
+                width:165px;
+                height:55px;
+                background-color: #000;
+                border-radius: 10px;
+                position: relative;
+                padding-left: 52px;
+                padding-top:11px;
+                img{
+                    position:absolute;
+                    top:14px;
+                    left:16px;
+                }
+                p{
+                    margin-top: 0;
+                    color:#fff;
+                    @include myfont(11px,400,$main_font); 
+                    span{
+                        @include myfont(11px,600,$main_font); 
+    
+                    }
+                    text-align: left;
+                }
+                @include media(xsmDevice)                {
+                    margin: 10px auto;
+
+                }
+                @include media(lgDevice){
+                    margin-left: auto;
+                    margin-bottom: 20px;
+                }
+                &.blackbuttonlg2{
+                    @include media(lgDevice){
+                        margin-left: 30px;
+                    }
+                    @include media(xlgDevice){
+                        margin-left: 15px;
+                    }
+
+                }
+            }
+
+        }
+    }
+}
+.eventandnews{
+    padding:65px 0 0 0;
+    h3{
+        @include myfont(40px,600,$main_font); 
+        text-align: center;
+    }
+
+    .eventcardsall{
+        padding:60px 0;
+        .eventcardfirst{
+            @include media(mdDevice){
+                margin-bottom: 30px;
+            }
+           
+        }
+        button{
+            margin:0 auto;
+            margin-top: 60px;
+            padding:16px 42px;
+        }
+        .eventlowercardsmallgap{
+            margin-top: 30px;
+        }
+        .evxsmgap{
+            @include media(xsmDevice){
+                margin-top: 30px;
+            }
+            @include media(smDevice){
+                margin-top: 30px;
+            }
+        }
+        .eventcardwrapper{
+            width:100%;
+            border:1px solid rgba(0, 0, 0,0.2);
+            border-radius: 20px;        
+            .eventcard{
+                @include media(lgDevice){
+                    height: 270px;
+                }
+                @include media(xlgDevice){
+                    height: 270px;
+                }
+                &.firstoneev{
+                    @include media(lgDevice){
+                        height: 572px;
+                    }
+                    @include media(xlgDevice){
+                        height: 572px;
+                    }
+                }
+                .eventcardimg{
+                    position:relative;
+                    img{
+                        width:100%;
+                        border-top-left-radius: 20px;
+                        border-top-right-radius: 20px;
+                    }
+                    .evcardlabel{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position:absolute;
+                        bottom:0;
+                        left:42px;
+                        height: 47px;
+                        width:168px;
+                        transform:translateY(50%);
+                        background: #ED1C24;
+                        border-radius: 48px;
+                        @include media(xsmDevice){
+                            left:25px;
+                        }
+                        @include media(lgDevice){
+                            width:128px;
+                            left:30px;
+                        }
+                        p{
+                            @include myfont(18px,600,$main_font); 
+                            margin-bottom: 0;
+                            color:#fff;
+                            @include media(xsmDevice){
+                                @include myfont(16px,600,$main_font); 
+                            }
+                            @include media(smDevice){
+                                @include myfont(16px,600,$main_font); 
+                            }
+                            @include media(lgDevice){
+                                @include myfont(15px,600,$main_font); 
+                            }
+                        }
+                        &.smallleft{
+                            left:25px;
+                        }
+                    }
+                }
+                .eventcardtext{
+                    h4{
+                        @include myfont(25px,500,$main_font);
+                        @include media(xsmDevice){
+                            
+                            @include myfont(18px,500,$main_font);
+                        }
+                    }
+                    p{
+                        @include myfont(16px,400,$main_font); 
+                        color: rgba(0,0,0,0.70);
+                        @include media(xsmDevice){
+                            
+                            @include myfont(14px,500,$main_font);
+                        }
+                    }
+                    padding:60px 65px 80px 39px;
+                    @include media(xsmDevice){
+                        padding: 60px 30px 14px 30px;
+                    }
+                    @include media(lgDevice){
+                        padding: 60px 30px 30px 30px;
+                    }
+                    &.smallcard{
+                        padding:40px 16px 42px 24px;
+                        p{
+                            @include myfont(16px,500,$main_font); 
+                            margin-bottom: 0;
+                            @include media(xsmDevice){
+                            
+                                @include myfont(14px,500,$main_font);
+                            }
+                        }
+                        @include media(lgDevice){
+                            
+                            
+                            @include myfont(14px,500,$main_font);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+.footer{
+    padding: 57px 0 45px 0;
+    background: $footer_bg;
+    .myContainer{
+        .contactinfo{
+            h4{
+               color:$contactinfo_font_color;
+               @include myfont(25px,600,$main_font); 
+               margin-top: 40px;
+            }
+            p{
+                @include myfont(16px,400,$main_font);
+                color: $contactinfo_font_color; 
+                margin-bottom: 0;
+                @include media(xsmDevice){
+                    @include myfont(14px,400,$main_font);
+                }
+            }
+        }
+        .socialicons{
+            .socialswrapper{
+                display: flex;
+                justify-content: center;
+                a{
+                    font-size: 30px;
+                    color: $social_icons_color;
+                    margin:0 18px;
+                }
+            }
+        }
+        .footersmall{
+            margin-top: 80px;
+            @include media(smDevice){
+                margin-top: 35px;
+            }
+            @include media(xsmDevice){
+                margin-top: 35px;
+            }
+            @include media(mdDevice){
+                margin-top: 35px;
+            }
+            .footersmallleft{
+                display: flex;
+                height: 25px;
+                @include media(xsmDevice){
+                    display: flex;
+                    justify-content: space-between;
+                }
+                @include media(smDevice){
+                    display: flex;
+                    justify-content: space-between;
+                }
+                @include media(mdDevice){
+                    display: flex;
+                    justify-content: space-between;
+                }
+                @include media(lgDevice){
+                    display: flex;
+                }
+                img{
+                    margin-right: 20px;
+                    @include media(lgDevice){
+                        height: 25px;
+                    }
+                }
+            }
+            .footersmallright{
+                text-align: right;
+                @include media(xsmDevice){
+                    text-align: center;
+                    
+                }
+                @include media(smDevice){
+                    text-align: center;
+                    
+                }
+                @include media(mdDevice){
+                    text-align: center;
+                    
+                }
+            }
+            .footersmallmiddle{
+                p{
+                    color:$contactinfo_font_color;
+                    @include myfont(15px,400,$footer_another_font);
+
+                    @include media(xsmDevice){
+                        margin-top: 30px;
+                    }
+                    @include media(smDevice){
+                        margin-top: 30px;
+                    }
+                    @include media(mdDevice){
+                        margin-top: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,218 @@
+@import '../../../sassStyles/mixins';
+@import '../../../sassStyles/variables';
+@import '../../../sassStyles/typography';
+@import '../../../sassStyles/global';
+@import '../../../sassFiles/mobile/sassPages/mobileGlobal.scss';
+
+.aboutusbreadcrumb{
+   
+    .aboutparalaxrel{
+        margin-top: 60px;
+        img{
+            width:100%!important;
+        }
+        .bluroverlay{
+            position: absolute;
+            width: 724px;
+            height: 444px;
+            left: 50%;
+            top: 218px;
+            background: #FFFFFF;
+            filter: blur(50px);
+            transform: translateX(-50%);
+        }
+        position:relative;
+        .content{
+            height: 559px;
+            overflow: hidden;
+            @include media(xsmDevice){
+                overflow: hidden;
+            }
+        }
+        .aboutmobileimgoverlay{
+            position:absolute;
+            top:120px;
+            // left:50%;
+            // transform:translateX(-50%);
+            width:84%;
+            text-align: justify;
+            z-index: 999s;
+            .bannertextmb{
+                h3{
+                    margin-top: 135px;
+                    @include myfont(25px,600,$main_font);
+                }
+                p{
+                    @include myfont(12px,400,$main_font);
+                    color:rgba(0,0,0,0.7);
+                }
+                
+            }
+            h4{
+                @include myfont(40px,600,$main_font);
+                color:#fff;
+                width:320px;
+                text-align: center;
+            }
+        }
+        .shadaoverlay{
+            position:absolute;
+            top:314px;
+            width: 100%;
+            background: #fff;
+        }
+    }
+    
+
+}
+.react-parallax-bgimage{
+    width:324px!important;
+    height:518px!important;
+}
+
+.ourmethodaboutpagemb{
+    .heading{
+        h4{
+            @include myfont(25px,500,$main_font);
+            text-align: center;
+            margin: 24px 0 34px 0 !important;
+        }
+    }
+    .ourmethodmbpara{
+        p{
+            @include myfont(12px,400,$main_font);
+            color:rgba(0,0,0,0.7);
+        }
+    }
+    .ourmethodboxes{
+        .wcumobilebox{
+            .wcumobileboximgwrapper {
+             
+                margin-top: 20px;
+            }
+        }
+    }
+    
+    
+}
+
+.ourvisionpagemb{
+    .heading{
+        h4{
+            @include myfont(25px,500,$main_font);
+            text-align: center;
+            margin: 24px 0 25px 0 !important;
+        }
+        p{
+            @include myfont(12px,400,$main_font);
+            color:rgba(0,0,0,0.7);
+        }
+    } 
+    // .ourvisionmb{
+    //     .writingofwcu{
+    //         p{
+                
+    //         }
+    //     }
+    // }
+    .wcucardsinourvision{
+        .wcumobilebox{
+            .wcumobileboximgwrapper {
+             
+                margin-top: 20px;
+            }
+        }
+    }
+   
+}
+
+.ourobjectivespartmb{
+    .heading{
+        h4{
+            @include myfont(25px,500,$main_font);
+            text-align: center;
+            margin: 50px 0 25px 0 !important;
+        }
+        p{
+            @include myfont(12px,400,$main_font);
+            color:rgba(0,0,0,0.7);
+        }
+    }
+}
+
+.transportservicepartmb{
+    .heading{
+        h4{
+            @include myfont(25px,500,$main_font);
+            text-align: center;
+            margin: 50px 0 25px 0 !important;
+        }
+       
+    }
+    .transportserviceimg{
+        img{
+            width:100%;
+        }
+    }
+    .transportservicetext{
+        h3{
+            @include myfont(16px,500,$main_font);                        
+            margin: 20px 0 10px 0 !important;
+        }
+        .transportlist{
+            ul{
+                padding-left: 0;
+                li{
+                    p{
+                        @include myfont(12px,400,$main_font);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.addresspartslidermb{
+    .addresscard{
+        width:100%;
+        height:216px; 
+        border:1px solid rgba(0,0,0,0.2);
+        padding-top: 70px;
+        border-radius: 20px;
+        margin-bottom: 70px;
+        
+    .addresscardcontent{
+        h3{
+            @include myfont(16px,500,$main_font);
+            text-align: center;
+        }
+        p{
+            @include myfont(12px,400,$main_font);
+            text-align: center;
+            // padding: 0 50px;
+            padding: 0 13%;
+        }
+        
+
+    }
+}
+}
+
+.gallerypartaboutpagemb{
+    .galimgslide{
+        
+        width:100%;
+        img{
+            width:100%;
+            border-radius: 20px;
+        }
+    }
+    .heading{
+        h4{
+            @include myfont(25px,600,$main_font);
+            text-align: center;
+            margin: 0px 0 25px 0 !important;
+        }
+       
+    }
+}

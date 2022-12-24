@@ -1,0 +1,194 @@
+*{
+    padding:0;
+    margin:0;
+}
+html {
+    scroll-behavior: smooth;
+  }
+body{
+    overflow-x: hidden;
+}
+ul,ol{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+
+input{
+    background-color: #fff;;
+    &::placeholder{
+        @include myfont(auto,400,$main_font);
+        
+    }
+    color:rgba(0,0,0,0.7);
+    @include myfont(auto,400,$main_font);
+}
+
+@font-face {
+    font-family: customfont;
+    src: url(../../public//assets//fonts//CloisterBlackLight-axjg.ttf);
+    // /assets/fonts/CloisterBlackLight-axjg.ttf
+  }
+.mynavbarmb{
+    p{
+        font-family:customfont;
+        font-style: normal!important;
+        font-size: 23px;
+        display: inline-block;
+        // top:50%;
+        // left:50%;
+        // transform: translate(-50%,-50%);
+        // position:absolute;
+    }
+    .navbar-brand2{
+        // position:relative;
+        display: flex;
+        justify-content: space-between;
+        
+
+    }
+}
+.myContainer{
+    width:80%;
+    margin:0 auto;
+    @include media(xxlgDevice){
+        width:1152px;
+    }
+}
+.myContainerMini{
+    width:1006px;
+    margin:0 auto;
+}
+p{
+    margin-bottom: 0;
+}
+
+.sticky {
+    position: fixed!important;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+    background:#fff;
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
+}
+
+
+
+
+.myheadline h1{
+    @include myfont(60px,600,$main_font);
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 130px;
+}
+
+.headlinemargin{
+    margin-top: 62px;
+}
+
+
+.scrolltop{
+    position: fixed;
+    width: 50px;
+    right:40px;
+    bottom: 40px;
+    height: 50px;
+    font-size: 3rem;
+    z-index: 1;
+    cursor: pointer;
+    color: #ED1C24;
+    transition:0.4s;
+    opacity: 0;
+    visibility: hidden;
+}
+.visibleclass{
+    opacity: 1;
+    visibility: visible;
+}
+
+.static {
+    position:absolute;
+    background: white;
+  }
+  .aa{
+    opacity:0;
+  }
+  .static:hover {
+    opacity:0;
+  }
+//   .active{
+//     width:100px;
+//   }
+
+.desktop{
+    display: none;
+    @include media(lgDevice){
+        display: block;
+    }
+    @include media(xlgDevice){
+        display: block;
+    }
+    @include media(xxlgDevice){
+        display: block;
+    }
+}
+.mobile{
+    
+    display: block;
+    @include media(lgDevice){
+        display: none;
+    }
+    @include media(xlgDevice){
+        display: none;
+    }
+    @include media(xxlgDevice){
+        display: none;
+    }
+   
+    
+}
+
+.dropdownwrapper{
+    position:relative;
+    svg{
+        position: absolute;
+        right: 20px;
+        top:50%;
+        transform:translateY(-50%);
+    }
+}
+.filterdropone{
+    .Dropdown-menu{
+        border-radius: 10px;
+        top:101%;
+        .Dropdown-option{
+            color:rgba(0,0,0,0.7);
+            @include myfont(16px,400,$main_font);
+        }
+    }
+    &.is-open{
+        .Dropdown-control{
+
+            border: 1px solid #000;
+        }
+   
+}
+    .Dropdown-control{
+        height:50px;
+        border-radius: 10px;
+        .Dropdown-placeholder{
+            position:absolute;
+            top:12px;
+            left:13px;
+            @include myfont(16px,400,$main_font);
+            color:rgba(0,0,0,0.7);
+        }
+        .Dropdown-arrow{
+            border-style: unset;
+        }
+        
+    }
+}

@@ -1,0 +1,49 @@
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/global';
+
+
+.margintop62{
+    margin-top: 62px;
+}
+.latestNoticepart{
+    .noticebox{
+        &.noticeboxwide{
+            width:100%;
+            height: unset;
+        }
+        p{
+            width:70%!important;            
+        }
+        
+    }
+}
+
+.oldernoticepartnoticepage{
+    .noticecontent{
+        .noticebox{
+            margin-bottom: 60px;
+            .noticeheading{
+                h4{
+                    color:rgba(0,0,0,0.2);
+                    transition:0.4s;
+                }
+            }
+            p{
+                color:rgba(0,0,0,0.2);
+                transition:0.4s;
+            }
+            &:hover {
+                p{
+                    color:#fff;
+                }
+                .noticeheading{
+                    h4{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

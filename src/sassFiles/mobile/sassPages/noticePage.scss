@@ -1,0 +1,81 @@
+@import '../../../sassStyles/mixins';
+@import '../../../sassStyles/variables';
+@import '../../../sassStyles/typography';
+@import '../../../sassStyles/global';
+@import './mobileGlobal.scss';
+
+.noticeheadingnoticepage{
+  
+}
+
+.latestpartNoticePagemb{
+    
+        h5{
+            @include myfont(16px,600,$main_font);
+            padding-top: 30px;
+        }
+
+    
+    .noticemobile{
+
+        .heading{
+            h4{
+                @include myfont(25px,600,$main_font);
+                text-align: center;
+                margin: 92px 0 25px 0 !important;
+            }
+           
+        }
+    }
+    
+}
+.upcomingpartNoticePagemb{
+    h5{
+        @include myfont(16px,600,$main_font);
+        margin-top: 30px;
+    }
+    // .noticemobile{
+
+    //     .heading{
+    //         h4{
+    //             @include myfont(25px,600,$main_font);
+    //             text-align: center;
+    //             margin: 92px 0 25px 0 !important;
+    //         }
+           
+    //     }
+    // }
+}
+.olderpartNoticePagemb{
+    h5{
+        @include myfont(16px,600,$main_font);
+        margin-top: 30px;
+    }
+    
+        .noticebox{
+            
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            .noticeheading{
+                h4{
+                    color:rgba(0, 0, 0, 0.2);
+                    transition:0.4s;
+                }
+            }
+            p{
+                color:rgba(0, 0, 0, 0.2);
+                transition:0.4s;
+            }
+            &:hover{
+                .noticeheading{
+                    h4{
+                        color:#fff;
+                    }
+                }
+                p{
+                    color:#fff;
+                }
+            }
+        }
+       
+    
+}

@@ -1,0 +1,315 @@
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/global';
+
+
+.checkboxfull{
+    margin-top: 4px;
+    .checkcontainer{
+        position:relative;
+        padding-left: 43px;
+        input{
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+        .checkmark{
+            position: absolute;
+            top: 4px;
+            left: 6px;
+            height: 18px;
+            width: 18px;
+            border-radius: 5px;
+            border: 1px solid rgba(0,0,0,0.2);
+            &:after {
+                content: "";
+                position: absolute;
+                display: none;
+              }
+              &:after {
+                left: 7px;
+                top: 3px;
+                width: 5px;
+                height: 10px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+              }
+        }
+        &:hover inpustudent basit ~ .checkmark {
+            background-color: #ccc;
+          }
+          input:checked ~ .checkmark {
+            background-color: #2196F3;
+            border:none;
+          }
+          input:checked ~ .checkmark:after {
+            display: block;
+          }
+          
+    }
+    span{
+        @include myfont(16px,400,$main_font);
+        margin-left: 10px;
+       
+    }
+    
+}
+#remember{
+    width:unset;
+    height:unset;
+}
+.headerpartbill{
+    display: flex;
+    align-items: center;
+  
+    .leftsidesearch{
+        h3{
+            @include myfont(20px,500,$main_font);
+        }
+    }
+}
+.basicinfopopulate{
+    h4{
+        @include myfont(16px,500,$main_font);
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    padding:20px;
+    p{
+        @include myfont(12px,400,$main_font);
+        position:relative;
+        display: inline-block;
+        span{
+            position: absolute;
+            top: 2px;
+            right: -9px;
+            font-size: 14px;
+            color:#ED1C24;
+        }
+    }
+    input{
+        width:100%;
+        height: 40px;
+        border-radius: 10px;
+        border:1px solid rgba(0,0,0,0.2);
+        padding-left: 20px;
+        &:focus-visible{
+            // border: 1px solid #000;
+            outline:1px solid #000;
+        }
+        // margin-bottom: 10px;
+    }
+    .imguploadbox{
+        width:167px;
+        height:206px;
+        border: 1px dashed rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        margin: 0 auto;
+        text-align: center;
+        .imgupicon{
+            text-align: center;
+            svg{
+                font-size: 37px;
+                color:#312783;
+                margin-top: 38px;
+            }
+        }
+        p{
+            @include myfont(12px,400,$main_font);
+            color:rgba(0, 0, 0, 0.7);
+            &:last-child{
+                @include myfont(8px,400,$main_font);
+                color:rgba(0, 0, 0, 0.5);
+                margin-top: 9px;
+            }
+        }
+        button{
+            text-align: center;
+            @include myfont(12px,400,$main_font);
+            color:#312783;
+            margin-bottom: 0;
+            background-color: #F3F1FF;
+            border:none;
+            height:30px;
+            width:94px;
+            margin:0 auto;
+            border-radius: 10px;
+            margin-top: 5px;
+            
+        }
+        .visually-hidden {
+            position: absolute !important;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+          }
+          input.visually-hidden:is(:focus, :focus-within) + label{
+            text-align: center;
+            @include myfont(12px,400,$main_font);
+            color:#312783;
+            margin-bottom: 0;
+            background-color: #F3F1FF;
+            border:none;
+            height:30px;
+            width:94px;
+            margin:0 auto;
+            border-radius: 10px;
+            margin-top: 5px;
+            padding-top: 5px;
+          }
+          label{
+            text-align: center;
+            @include myfont(12px,400,$main_font);
+            color:#312783;
+            margin-bottom: 0;
+            background-color: #F3F1FF;
+            border:none;
+            height:30px;
+            width:94px;
+            margin:0 auto;
+            border-radius: 10px;
+            padding-top: 5px;
+            margin-top: 5px;
+          }
+    }
+    .inputwithicononright{
+        position: relative;
+        button{
+            background: transparent;
+            position:absolute;
+            top:23px;        
+            right:2px;
+            border:none;
+            svg{
+                color:#000;
+                font-size: 23px;
+            }
+        }
+    }
+}
+.studentbasicinformation{
+    width:calc(100% - 19px);
+    height: 294px;
+    border-radius: 20px;
+    background-color: #fff;
+
+    .Dropdown-control{
+        height: 40px;
+        .Dropdown-placeholder{
+            position:absolute;
+            top:7px;
+            left:13px;
+            @include myfont(16px,400,$main_font);
+            color:rgba(0,0,0,0.7);
+        }
+    }
+
+    
+}
+.admissionandcurrentinfo{
+    margin-top: 15px;
+    .admissioninfobox{
+        border-radius: 20px;
+        width: 100%;
+        height: 335px;
+        background-color: #fff;
+    }
+    .currentinfobox{
+        border-radius: 20px;
+        width: calc(100% - 19px);
+        height: 335px;
+        background-color: #fff;
+    }
+}
+.studentdetailedinfobox{
+    height: 317px;
+    width:calc(100% - 19px);
+    background-color: #fff;
+    border-radius: 20px;
+    margin-top:15px;
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+                color:#000;
+                border-color: transparent;
+                border-bottom:2px solid #000;
+            
+        &:hover{
+            border-bottom:2px solid #000;
+        }
+        
+        
+    }
+    .nav-tabs{
+        
+            .nav-link{
+                @include myfont(16px,400,$main_font);
+                color:rgba(0, 0, 0, 0.5);
+                &:hover{
+                    border-color:transparent;
+                }
+            }
+        
+    }
+}
+.studentaddmissioninfobuttons{
+    height: 100px;
+    width:calc(100% - 19px);
+    background-color: #fff;
+    margin: 15px 0;
+    border-radius: 20px;
+    padding:25px 147px;
+    button{
+        text-align: center;
+        @include myfont(16px,400,$main_font);
+        color:#312783;
+        margin-bottom: 0;
+        background-color: #F3F1FF;
+        border:none;
+        height:50px;
+        width:100%;
+        margin:0 auto;
+        border-radius: 10px;
+        
+        &:hover{
+            background-color: #F3F1FF;
+            color:#312783;
+        }
+        span{
+            
+            svg{
+                margin-top:-3px;
+                font-size: 24px;
+                margin-right:10px;
+            }
+        }
+        
+        &.rotateicon{
+            span{
+                svg{
+                    transform: scaleX(-1)rotate(270deg);
+                }
+            }
+        }
+    }
+    
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.errorborer{
+    border:1px solid red!important;
+}
