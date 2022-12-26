@@ -298,6 +298,7 @@
         }
     }
     
+    
 }
 
 input::-webkit-outer-spin-button,
@@ -312,4 +313,259 @@ input[type=number] {
 }
 .errorborer{
     border:1px solid red!important;
+}
+.managedocumentmodal{
+    &.managesubjectmodal{
+        .managesubjecttable{
+            .checkboxfull{
+               
+                    margin-top: 4px;
+                    .checkcontainer{
+                        position:relative;
+                        padding-left: 43px;
+                        input{
+                            position: absolute;
+                            opacity: 0;
+                            cursor: pointer;
+                            height: 0;
+                            width: 0;
+                        }
+                        .checkmark{
+                            position: absolute;
+                            top: -18px;
+                            left: 8px;
+                            height: 18px;
+                            width: 18px;
+                            border-radius: 5px;
+                            border: 1px solid rgba(0,0,0,0.2);
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                display: none;
+                              }
+                              &:after {
+                                left: 7px;
+                                top: 3px;
+                                width: 5px;
+                                height: 10px;
+                                border: solid white;
+                                border-width: 0 3px 3px 0;
+                                -webkit-transform: rotate(45deg);
+                                -ms-transform: rotate(45deg);
+                                transform: rotate(45deg);
+                              }
+                        }
+                        &:hover inpustudent basit ~ .checkmark {
+                            background-color: #ccc;
+                          }
+                          input:checked ~ .checkmark {
+                            background-color: #2196F3;
+                            border:none;
+                          }
+                          input:checked ~ .checkmark:after {
+                            display: block;
+                          }
+                          
+                    }
+                    span{
+                        @include myfont(16px,400,$main_font);
+                        margin-left: 10px;
+                       
+                    }
+                    
+                
+            }
+            
+                tr{
+                    th{
+                        &:first-child{
+                            padding-left: 16px;
+                        }
+                    }
+                }
+            
+        }
+    }
+    .imguploadboxmanagedocument{
+        width:326px;
+        height:384px;
+        border: 1px dashed rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .imgupicon{
+            text-align: center;
+            svg{
+                font-size: 37px;
+                color:#312783;
+                
+            }
+        }
+        p{
+            @include myfont(12px,400,$main_font);
+            color:rgba(0, 0, 0, 0.7);
+            &:last-child{
+                @include myfont(12px,400,$main_font);
+                color:rgba(0, 0, 0, 0.5);
+                margin-top: 9px;
+            }
+        }
+        button{
+            text-align: center;
+            @include myfont(12px,400,$main_font);
+            color:#312783;
+            margin-bottom: 0;
+            background-color: #F3F1FF;
+            border:none;
+            height:30px;
+            width:94px;
+            margin:0 auto;
+            border-radius: 10px;
+            margin-top: 5px;
+            
+        }
+        .visually-hidden {
+            position: absolute !important;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+          }
+          input.visually-hidden:is(:focus, :focus-within) + label{
+            text-align: center;
+            @include myfont(12px,400,$main_font);
+            color:#312783;
+            margin-bottom: 0;
+            background-color: #F3F1FF;
+            border:none;
+            height:30px;
+            width:94px;
+            margin:0 auto;
+            border-radius: 10px;
+            margin-top: 5px;
+            padding-top: 5px;
+          }
+          label{
+            text-align: center;
+            @include myfont(12px,400,$main_font);
+            color:#312783;
+            margin-bottom: 0;
+            background-color: #F3F1FF;
+            border:none;
+            height:30px;
+            width:94px;
+            margin:0 auto;
+            border-radius: 10px;
+            padding-top: 5px;
+            margin-top: 5px;
+          }
+    }
+    .basicinfopopulate{
+        padding-top: 0;
+        table{
+            width:100%;
+            margin-top: 23px;
+            .tabledatawrapperflex{
+                display: flex;
+                justify-content: space-between;
+                .left{
+                    h5{
+                        @include myfont(16px,400,$main_font);
+                        color:rgba(0,0,0,0.5);
+                    }
+                }
+            }
+            tr{
+                border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+                height:40px;
+                th{
+                    @include myfont(16px,400,$main_font);
+                    color:#000;
+                }
+                td{
+                    color: rgba(0,0,0,0.7);
+                    @include myfont(16px,400,$main_font);
+                    .redpill{
+                        cursor:pointer;
+                        display: flex;
+                        align-items: center;
+                        margin-right: 13px;
+                        padding:4px 11px 3px 11px;
+                        background: rgba(237, 28, 36, 0.5);
+                        border-radius: 38px;
+                        p{
+                            color:#fff;
+                            position:relative;
+                           
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .modal-dialog{
+        max-width: unset;
+
+        .modal-content{
+            width:1186px!important;
+            margin:0 auto;
+            height: 595px;
+            .modal-body{
+                .dropdownwrapper{
+                    margin-top: 23px;
+                    .Dropdown-control{
+                        .Dropdown-placeholder{
+                            top:7px;
+                        }
+                        height:40px;
+                    }
+                }
+            }
+                .modal-header{
+                    border:0px;
+                    
+                    h4{
+                        @include myfont(20px,500,$main_font);
+                        margin:0 auto;
+                        color:#000;
+                        margin-top: 10px;
+
+                    }
+                }
+                .modal-footer{
+                    border-top: 0px ;
+                    padding-bottom:32px;
+                    .managedocumentbuttons{
+                        display: flex;
+                        margin:0 auto;
+                        button{
+                            
+                            text-align: center;
+                            @include myfont(16px,400,$main_font);
+                            color:#312783;
+                            margin-bottom: 0;
+                            background-color: #F3F1FF;
+                            border:none;
+                            height:50px;
+                            width:156px;
+                            margin-left: 10px;
+                            margin-right: 10px;
+                            
+                            border-radius: 10px;
+                            
+                            &:hover{
+                                background-color: #F3F1FF;
+                                color:#312783;
+                            }
+                            
+                        }
+
+                    }
+                }
+
+        }
+    }
 }

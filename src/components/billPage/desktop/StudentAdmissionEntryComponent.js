@@ -1,11 +1,11 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import {HiOutlineBell} from 'react-icons/hi'
 import {FiSearch} from 'react-icons/fi'
 import '../../../sassFiles/sassPages/studentaddmissionbilll.scss'
 import {Row,Col, Button} from 'react-bootstrap'
 import {FiUpload} from 'react-icons/fi'
 import {RxReload} from 'react-icons/rx'
-import {Tab,Tabs} from 'react-bootstrap';
+import {Tab,Tabs,Modal} from 'react-bootstrap';
 import {BiSave} from 'react-icons/bi';
 import Dropdown from 'react-dropdown';
 import {BsChevronDown} from 'react-icons/bs'
@@ -14,7 +14,23 @@ const StudentAdmissionEntryComponent = () => {
     const [alertpopup2,setalertpopup2] = useState(false)
     const [genderselect,setGenderselect] = useState("")
     const [isSubscribed, setIsSubscribed] = useState(false);
+    const [isCheckedmath, setisCheckedmath] = useState(false);
+    const [isCheckedartandcraft, setisCheckedartandcraft] = useState(false);
+    const [isCheckedenglit, setisCheckedenglit] = useState(false);
+    const [isCheckedartenglang, setisCheckedartenglang] = useState(false);
+    const [isCheckedbengali, setisCheckedbengali] = useState(false);
+    const [isCheckedsci, setisCheckedsci] = useState(false);
+    const [isCheckedict, setisCheckedict] = useState(false);
     const [postcodeerrorborder,setPostcodeerrorboreder] = useState(false)
+    const [showmanageDocument, setshowmanageDocument] = useState(false);
+    const [showmanageSubject, setshowmanageSubject] = useState(false);
+    const [selectDocumentcategoryinmodal, setSelectDocumentcategoryinmodal]=useState("")
+    var managedocumentsfilesarray = useState([])
+    const handleCloseManageDocumentClose = () => setshowmanageDocument(false);
+    const handleCloseManageSubjectClose = () => setshowmanageSubject(false);
+    const handleManageDocumentShow = () => setshowmanageDocument(true);
+    const handleManageSubjectShow = () => setshowmanageSubject(true);
+    const [managedocumentsfilesarraystate,setmanagedocumentsfilesarraystate] = useState([])
     const [studentadmissiondata,setStudentadmissiondata] = useState({
         firstname_student:"",
         gender_student:genderselect,
@@ -91,12 +107,33 @@ const StudentAdmissionEntryComponent = () => {
         religion_local_guardian:""
 
     })
-    const optionsgener = [
+
+    const [managesubject,setmanagesubject] = useState({
+        isCheckedmathvalue:'',
+        isCheckedartandcraftvalue:'',
+        isCheckedenglitvalue:'',
+        isCheckedartenglangvalue:'',
+        isCheckedbengalivalue:'',
+        isCheckedscivalue:'',
+        isCheckedictvalue:''
+
+    })
+
+    
+
+    const optionsgender = [
         'Male','Female','Other'
+      ];
+    const optionsdropdownmodaldocumentcategory = [
+        'Certificate','National ID','Other'
       ];
       const defaultOptionGender = " ";
       const dropdowngendervalue=(e)=>{
         setGenderselect(e.value)
+      }
+      const defaultoptiondropdownmodaldocumentcategory = " ";
+      const dropdownmodaldocumentcategory = (e) =>{
+        setSelectDocumentcategoryinmodal(e.value)
       }
     function allnumeric(inputtxt)
         {
@@ -110,72 +147,31 @@ const StudentAdmissionEntryComponent = () => {
             return false;
             }
         } 
-
+       
        const handleuploadimg=(imginfo)=>{
         console.log(imginfo)
        }
+       const handlemanagedocupload=(file)=>{
+            managedocumentsfilesarray.push({...managedocumentsfilesarray,file})   
+            var myvalarr = managedocumentsfilesarray.slice(2)      
+            setmanagedocumentsfilesarraystate(arr => [...arr,myvalarr])
+        }
+       
     
     const onlynumberinput=(event)=>{
        
-            const result = event.target.value;
-        
-            if(allnumeric(result)){
-                console.log("number")
-                setStudentadmissiondata({...studentadmissiondata,[event.target.name]:result});
-            }else{
-                console.log("not number")
-                setStudentadmissiondata({...studentadmissiondata,[event.target.name]:''});
-            }
+        const result = event.target.value;
+    
+        if(allnumeric(result)){
+            console.log("number")
+            setStudentadmissiondata({...studentadmissiondata,[event.target.name]:result});
+        }else{
+            console.log("not number")
+            setStudentadmissiondata({...studentadmissiondata,[event.target.name]:''});
+        }
             
-            // if(!isNaN(Number(result))){
-            //     setStudentadmissiondata({...studentadmissiondata,[event.target.name]:result});
-            //     setalertpopup(false)
-
-            // }
-            // else{
-            //     setStudentadmissiondata({...studentadmissiondata,[event.target.name]:result});
-            //     setalertpopup(true)
-            //     setPostcodeerrorboreder(true)
-
-            // }
-            // if(isNaN(Number(result))){
-            //     document.getElementById("postcodeid").style.disabled=true;
-                
-                
-            // }
-            // else{
-
-            //     document.getElementById("postcodeid").style.disabled=false;
-                
-            // }
         
     }
-    // const onlynumberinputpermanent=(event)=>{
-       
-    //         const result = event.target.value;
-        
-            
-    //         if(!isNaN(Number(result))){
-    //             setStudentadmissiondata({...studentadmissiondata,[event.target.name]:result});
-    //             setalertpopup2(false)
-
-    //         }
-    //         else{
-    //             setStudentadmissiondata({...studentadmissiondata,[event.target.name]:result});
-    //             setalertpopup2(true)
-    //             setPostcodeerrorboreder(true)
-
-    //         }
-    //         if(isNaN(Number(result))){
-    //             document.getElementById("postcodeid2").style.borderColor="red";;
-                
-    //         }
-    //         else{
-
-    //             document.getElementById("postcodeid2").style.borderColor="rgba(0,0,0,0.2)";
-    //         }
-        
-    // }
     const handleInput=(e)=>{    
         setStudentadmissiondata({...studentadmissiondata,[e.target.name]: e.target.value} )
       }
@@ -186,6 +182,64 @@ const StudentAdmissionEntryComponent = () => {
           console.log('⛔️ Checkbox is NOT checked');
         }
         setIsSubscribed(current => !current);
+      };
+    const handleChangeMathematics = event => {
+        if (event.target.checked) {
+          console.log('✅ Checkbox is checked math');
+          setmanagesubject({...managesubject,[managesubject.isCheckedmathvalue]:"mathematics"})
+          console.log(managesubject.isCheckedmathvalue)
+        } else {
+          console.log('⛔️ Checkbox is NOT checked math');
+        }
+        setisCheckedmath(!isCheckedmath);
+      };
+    const handleChangeartandcraft = event => {
+        if (event.target.checked) {
+          console.log('✅ Checkbox is checked art');
+        } else {
+          console.log('⛔️ Checkbox is NOT checked art');
+        }
+        setisCheckedartandcraft(current => !current);
+      };
+    const handleChangeenglit = event => {
+        if (event.target.checked) {
+          console.log('✅ Checkbox is checked eng lit');
+        } else {
+          console.log('⛔️ Checkbox is NOT checked eng lit');
+        }
+        setisCheckedenglit(current => !current);
+      };
+    const handleChangeenglang = event => {
+        if (event.target.checked) {
+          console.log('✅ Checkbox is checked eng lang');
+        } else {
+          console.log('⛔️ Checkbox is NOT checked eng lang');
+        }
+        setisCheckedartenglang(current => !current);
+      };
+    const handleChangebengali = event => {
+        if (event.target.checked) {
+          console.log('✅ Checkbox is checked bengali');
+        } else {
+          console.log('⛔️ Checkbox is NOT checked bengali');
+        }
+        setisCheckedbengali(current => !current);
+      };
+    const handleChangesci = event => {
+        if (event.target.checked) {
+          console.log('✅ Checkbox is checked sci');
+        } else {
+          console.log('⛔️ Checkbox is NOT checked sci');
+        }
+        setisCheckedsci(current => !current);
+      };
+    const handleChangeict = event => {
+        if (event.target.checked) {
+          console.log('✅ Checkbox is checked ict');
+        } else {
+          console.log('⛔️ Checkbox is NOT checked ict');
+        }
+        setisCheckedict(current => !current);
       };
 
      
@@ -254,7 +308,7 @@ const StudentAdmissionEntryComponent = () => {
                             <p>Gender</p>
                             {/* <input type="text" name="gender_student" placeholder='' value={studentadmissiondata.gender_student} onChange={handleInput}/> */}
                             <div className="dropdownwrapper">
-                                    <Dropdown className='filterdropone' name="genderselect" options={optionsgener} onChange={(e)=>dropdowngendervalue(e)} value={defaultOptionGender} placeholder=""/>
+                                    <Dropdown className='filterdropone' name="genderselect" options={optionsgender} onChange={(e)=>dropdowngendervalue(e)} value={defaultOptionGender} placeholder=""/>
                                     <BsChevronDown/>
                                 </div>
                         </Col>
@@ -765,12 +819,304 @@ const StudentAdmissionEntryComponent = () => {
             <Row>
                
                 <Col style={{flex:"1 1 8%"}}>
-                    <Button onClick={handleManageDocument}>Manage Document</Button>
-                
+                    <Button onClick={handleManageDocumentShow}>Manage Document</Button>
+                    <Modal className='managedocumentmodal' show={showmanageDocument} onHide={handleCloseManageDocumentClose}>
+                        <Modal.Header >
+                        <h4>Manage Document</h4>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <div className="basicinfopopulate">
+                                <Row>
+                                    <Col lg={8}>
+                                        <Row>
+                                            <Col lg={8}>
+                                                <p>ID</p>
+                                                <input type="text" name="passport_local_guardian" placeholder='' value={studentadmissiondata.passport_local_guardian} onChange={handleInput}/>
+                                            </Col>
+                                            <Col lg={4}>
+                                                <div className="dropdownwrapper">
+                                                    <Dropdown className='filterdropone' name="genderselect" options={optionsdropdownmodaldocumentcategory} onChange={(e)=>dropdownmodaldocumentcategory(e)} value={defaultoptiondropdownmodaldocumentcategory} placeholder=""/>
+                                                    <BsChevronDown/>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col lg={12}>
+                                               
+                                                <table>
+                                                        {
+                                                            
+                                                            managedocumentsfilesarraystate.map((item,key)=>{
+                                                                return(
+                                                                    
+                                                                            <tbody key={key}>
+                                                                                <tr>
+                                                                                <td>
+                                                                                <div className="tabledatawrapperflex">
+                                                                                <div className="left">
+                                                                                    <h5>{selectDocumentcategoryinmodal}</h5>
+                                                                                </div>
+                                                                                <div className="right">
+                                                                                <div className="redpill">
+                                                                                    <p>Remove -</p>
+                                                                                </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                )  
+                                                            }
+                                                            )
+                                                        }
+                                                        </table>  
+                                                        
+                                                       
+                                               
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                    <Col lg={4}>
+                                        <div className="imguploadboxmanagedocument">
+                                            <div className="imgupicon">
+                                                <FiUpload/>
+                                            </div>
+                                            <p>Drag Files to Upload <br/>or</p>
+                                        
+                                                <input
+                                                    type="file"
+                                                    id="fileElem2"
+                                                    multiple
+                                                    accept="image/*,.pdf"
+                                                    className="visually-hidden"                                                    
+                                                    onChange={(e)=>{handlemanagedocupload(Array.from(e.target.files)[0])}}
+                                                    />
+                                                    <label htmlFor="fileElem2">Browse</label>
+
+                                            <p>Click file for see preview</p>
+                                            {/* {console.log( managedocumentsfilesarray.slice(2))} */}
+                                        </div>
+                                    </Col>
+                                </Row>
+                               
+                            </div>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <div className="managedocumentbuttons">
+                                <Button>Update</Button>
+                                <Button>Reset</Button>
+                            </div>
+                        
+                        </Modal.Footer>
+                    </Modal>
                 </Col>
                 <Col style={{flex:"1 1 8%"}}>
-                    <Button onClick={handleManageSubject}>Manage Subject</Button>
-                
+                    <Button onClick={handleManageSubjectShow}>Manage Subject</Button>
+                    <Modal className='managedocumentmodal managesubjectmodal' show={showmanageSubject} onHide={handleCloseManageSubjectClose}>
+                        <Modal.Header >
+                        <h4>Manage Subject</h4>
+                        </Modal.Header>
+                        <Modal.Body style={{display:"flex",alignItems:"center"}}>
+                            <div className="basicinfopopulate">
+                                <Row>
+                                    <Col lg={6} className="d-flex align-items-center">
+                                        <Row>
+                                            <Col lg={6} style={{margin:"0 auto"}}>
+                                                <p>Name</p>
+                                                <input type="text" name=""  placeholder={studentadmissiondata.firstname_student+" "+studentadmissiondata.middlename_student+" "+studentadmissiondata.lastname_student} disabled/>
+                                                <p>ID</p>
+                                                <input type="text" name=""  placeholder={studentadmissiondata.id_student} disabled/>
+                                                <p>Class</p>
+                                                <input type="text" name=""  placeholder={studentadmissiondata.class_student} disabled/>
+                                            </Col>
+                                           
+                                        </Row>
+                                    </Col>
+                                    <Col lg={4}>
+                                    <Row>
+                                            <Col lg={12}>
+                                               
+                                                <table className="managesubjecttable">
+                                                       
+                                                                    
+                                                <tbody>
+                                                    <tr>
+                                                        <th>
+                                                            Active
+                                                        </th>
+                                                        <th>
+                                                            Subject Name
+                                                        </th>
+                                                    </tr>
+                                                        <tr>
+                                                            <td>
+                                                            <div className="checkboxfull">                      
+                                                                <label className='checkcontainer'>
+                                                                
+                                                                <input
+                                                                    type="checkbox"
+                                                                    value={isCheckedmath}
+                                                                    onChange={handleChangeMathematics}
+                                                                    id="remember2"
+                                                                    name="isCheckedmath"                        
+                                                                />
+                                                                <span className="checkmark"></span>
+                                                                </label>
+                                                                
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                Mathematics
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                            <div className="checkboxfull">                      
+                                                                <label className='checkcontainer'>
+                                                                
+                                                                <input
+                                                                    type="checkbox"
+                                                                    value={isCheckedartandcraft}
+                                                                    onChange={handleChangeartandcraft}
+                                                                    id="remember2"
+                                                                    name="subscribe3"                        
+                                                                />
+                                                                <span className="checkmark"></span>
+                                                                </label>
+                                                                
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                Art & Craft
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                            <div className="checkboxfull">                      
+                                                                <label className='checkcontainer'>
+                                                                
+                                                                <input
+                                                                    type="checkbox"
+                                                                    value={isCheckedenglit}
+                                                                    onChange={handleChangeenglit}
+                                                                    id="remember2"
+                                                                    name="subscribe3"                        
+                                                                />
+                                                                <span className="checkmark"></span>
+                                                                </label>
+                                                                
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                English Literature
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                            <div className="checkboxfull">                      
+                                                                <label className='checkcontainer'>
+                                                                
+                                                                <input
+                                                                    type="checkbox"
+                                                                    value={isCheckedartenglang}
+                                                                    onChange={handleChangeenglang}
+                                                                    id="remember2"
+                                                                    name="subscribe3"                        
+                                                                />
+                                                                <span className="checkmark"></span>
+                                                                </label>
+                                                                
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                English Language
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                            <div className="checkboxfull">                      
+                                                                <label className='checkcontainer'>
+                                                                
+                                                                <input
+                                                                    type="checkbox"
+                                                                    value={isCheckedbengali}
+                                                                    onChange={handleChangebengali}
+                                                                    id="remember2"
+                                                                    name="subscribe3"                        
+                                                                />
+                                                                <span className="checkmark"></span>
+                                                                </label>
+                                                                
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                Bengali
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                            <div className="checkboxfull">                      
+                                                                <label className='checkcontainer'>
+                                                                
+                                                                <input
+                                                                    type="checkbox"
+                                                                    value={isCheckedsci}
+                                                                    onChange={handleChangesci}
+                                                                    id="remember2"
+                                                                    name="subscribe3"                        
+                                                                />
+                                                                <span className="checkmark"></span>
+                                                                </label>
+                                                                
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                Science
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                            <div className="checkboxfull">                      
+                                                                <label className='checkcontainer'>
+                                                                
+                                                                <input
+                                                                    type="checkbox"
+                                                                    value={isCheckedict}
+                                                                    onChange={handleChangeict}
+                                                                    id="remember2"
+                                                                    name="subscribe3"                        
+                                                                />
+                                                                <span className="checkmark"></span>
+                                                                </label>
+                                                                
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                ICT
+                                                            </td>
+                                                        </tr>
+                                                </tbody>
+                                                               
+                                                </table>  
+                                                        
+                                                       
+                                               
+                                            </Col>
+                                        </Row>
+                                    
+                                    </Col>
+                                </Row>
+                               
+                            </div>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <div className="managedocumentbuttons">
+                                <Button>Save</Button>
+                                
+                            </div>
+                        
+                        </Modal.Footer>
+                    </Modal>
                 </Col>
                 <Col>
                 
