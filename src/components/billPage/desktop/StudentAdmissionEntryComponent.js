@@ -9,6 +9,9 @@ import {Tab,Tabs,Modal} from 'react-bootstrap';
 import {BiSave} from 'react-icons/bi';
 import Dropdown from 'react-dropdown';
 import {BsChevronDown} from 'react-icons/bs'
+import Datepicker2 from '../../subComponents/Datepicker2'
+
+
 const StudentAdmissionEntryComponent = () => {
     const [alertpopup,setalertpopup] = useState(false)
     const [alertpopup2,setalertpopup2] = useState(false)
@@ -23,7 +26,7 @@ const StudentAdmissionEntryComponent = () => {
     const [isCheckedict, setisCheckedict] = useState(false);
     const [postcodeerrorborder,setPostcodeerrorboreder] = useState(false)
     const [showmanageDocument, setshowmanageDocument] = useState(false);
-    const [showmanageSubject, setshowmanageSubject] = useState(false);
+    const [showmanageSubject, setshowmanageSubject] = useState(false);    
     const [selectDocumentcategoryinmodal, setSelectDocumentcategoryinmodal]=useState("")
     var managedocumentsfilesarray = useState([])
     const handleCloseManageDocumentClose = () => setshowmanageDocument(false);
@@ -107,7 +110,7 @@ const StudentAdmissionEntryComponent = () => {
         religion_local_guardian:""
 
     })
-
+    const [mathmy,setmathmy]=useState("")
     const [managesubject,setmanagesubject] = useState({
         isCheckedmathvalue:'',
         isCheckedartandcraftvalue:'',
@@ -118,8 +121,11 @@ const StudentAdmissionEntryComponent = () => {
         isCheckedictvalue:''
 
     })
-
-    
+    // const [data,setdata] = 
+    const removeItemfrommanagesubject =(index)=>{
+        setincremental(incremental.filter((o, i) => index !== i))
+        setmanagedocumentsfilesarraystate(managedocumentsfilesarraystate.filter((o, i) => index !== i))
+    }
 
     const optionsgender = [
         'Male','Female','Other'
@@ -151,11 +157,25 @@ const StudentAdmissionEntryComponent = () => {
        const handleuploadimg=(imginfo)=>{
         console.log(imginfo)
        }
-       const handlemanagedocupload=(file)=>{
-            managedocumentsfilesarray.push({...managedocumentsfilesarray,file})   
-            var myvalarr = managedocumentsfilesarray.slice(2)      
-            setmanagedocumentsfilesarraystate(arr => [...arr,myvalarr])
-        }
+       
+       const [incremental,setincremental] = useState([])
+       const handlemanagedocupload=(file,modalselect)=>{
+        managedocumentsfilesarray.push({...managedocumentsfilesarray,file})   
+        var myvalarr = managedocumentsfilesarray.slice(2)      
+        setmanagedocumentsfilesarraystate(arr => [...arr,myvalarr])
+        
+        
+        setincremental(arr => [...arr,modalselect])
+            // setcertificatetypeselectvar(modalselect)
+           
+        
+        
+    }
+    const handlemanagedocupdate=()=>{
+      
+        console.log(managedocumentsfilesarraystate.map((item)=>{return item[0].file}))
+        
+    }
        
     
     const onlynumberinput=(event)=>{
@@ -186,58 +206,77 @@ const StudentAdmissionEntryComponent = () => {
     const handleChangeMathematics = event => {
         if (event.target.checked) {
           console.log('✅ Checkbox is checked math');
-          setmanagesubject({...managesubject,[managesubject.isCheckedmathvalue]:"mathematics"})
-          console.log(managesubject.isCheckedmathvalue)
+          setmanagesubject({...managesubject,[event.target.name]:"mathematics"})
+          
+          
         } else {
-          console.log('⛔️ Checkbox is NOT checked math');
+            
+            setmanagesubject({...managesubject,[event.target.name]:""})
+            
+            console.log('⛔️ Checkbox is NOT checked math');
         }
+        
+        
         setisCheckedmath(!isCheckedmath);
       };
     const handleChangeartandcraft = event => {
         if (event.target.checked) {
           console.log('✅ Checkbox is checked art');
+          setmanagesubject({...managesubject,[event.target.name]:"artsancraft"})
+          
         } else {
-          console.log('⛔️ Checkbox is NOT checked art');
+            console.log('⛔️ Checkbox is NOT checked art');
+            setmanagesubject({...managesubject,[event.target.name]:""})
         }
         setisCheckedartandcraft(current => !current);
       };
     const handleChangeenglit = event => {
         if (event.target.checked) {
           console.log('✅ Checkbox is checked eng lit');
+          setmanagesubject({...managesubject,[event.target.name]:"englit"})
         } else {
           console.log('⛔️ Checkbox is NOT checked eng lit');
+          setmanagesubject({...managesubject,[event.target.name]:""})
         }
         setisCheckedenglit(current => !current);
       };
     const handleChangeenglang = event => {
         if (event.target.checked) {
           console.log('✅ Checkbox is checked eng lang');
+          setmanagesubject({...managesubject,[event.target.name]:"englang"})
         } else {
           console.log('⛔️ Checkbox is NOT checked eng lang');
+          setmanagesubject({...managesubject,[event.target.name]:""})
         }
         setisCheckedartenglang(current => !current);
       };
     const handleChangebengali = event => {
         if (event.target.checked) {
           console.log('✅ Checkbox is checked bengali');
+          setmanagesubject({...managesubject,[event.target.name]:"bengali"})
         } else {
           console.log('⛔️ Checkbox is NOT checked bengali');
+          setmanagesubject({...managesubject,[event.target.name]:""})
         }
         setisCheckedbengali(current => !current);
       };
     const handleChangesci = event => {
         if (event.target.checked) {
           console.log('✅ Checkbox is checked sci');
+          setmanagesubject({...managesubject,[event.target.name]:"science"})
         } else {
           console.log('⛔️ Checkbox is NOT checked sci');
+          setmanagesubject({...managesubject,[event.target.name]:""})
         }
         setisCheckedsci(current => !current);
       };
     const handleChangeict = event => {
         if (event.target.checked) {
           console.log('✅ Checkbox is checked ict');
+          setmanagesubject({...managesubject,[event.target.name]:"ict"})
         } else {
           console.log('⛔️ Checkbox is NOT checked ict');
+          setmanagesubject({...managesubject,[event.target.name]:""})
         }
         setisCheckedict(current => !current);
       };
@@ -256,10 +295,13 @@ const StudentAdmissionEntryComponent = () => {
             if(alertpopup2){
                 alert("postcode in permanent should be number only")
             }
-            console.log(studentadmissiondata.gender_student)
+            
             
         
         
+      }
+      const handlemanasubjectsave=()=>{
+        console.log(managesubject)
       }
       const handleSearch=()=>{
 
@@ -333,6 +375,7 @@ const StudentAdmissionEntryComponent = () => {
                             <p>Date of Birth</p>
                             <input type="text" name="dateofbirth_student" placeholder='' value={studentadmissiondata.dateofbirth_student} onChange={handleInput}/>
                         </Col>
+                            <Datepicker2/>
                     </Row>
                     <Row>
                         <Col lg={12}>
@@ -357,7 +400,7 @@ const StudentAdmissionEntryComponent = () => {
                     <Row>
                         <Col lg={12}>
                             <div className="inputwithicononright">
-                                <p>Id</p>
+                                <p>ID</p>
                                 <input type="text" name="id_student" placeholder='' value={studentadmissiondata.id_student} onChange={handleInput}/>
                                 <Button><RxReload/></Button>
                             </div>
@@ -829,11 +872,12 @@ const StudentAdmissionEntryComponent = () => {
                                 <Row>
                                     <Col lg={8}>
                                         <Row>
-                                            <Col lg={8}>
-                                                <p>ID</p>
-                                                <input type="text" name="passport_local_guardian" placeholder='' value={studentadmissiondata.passport_local_guardian} onChange={handleInput}/>
-                                            </Col>
                                             <Col lg={4}>
+                                                <p>ID</p>
+                                                <input type="text" name="passport_local_guardian" placeholder={studentadmissiondata.id_student} disabled/>
+                                            </Col>
+                                            <Col lg={8}>
+                                            <p>Document Category</p>
                                                 <div className="dropdownwrapper">
                                                     <Dropdown className='filterdropone' name="genderselect" options={optionsdropdownmodaldocumentcategory} onChange={(e)=>dropdownmodaldocumentcategory(e)} value={defaultoptiondropdownmodaldocumentcategory} placeholder=""/>
                                                     <BsChevronDown/>
@@ -846,29 +890,50 @@ const StudentAdmissionEntryComponent = () => {
                                                 <table>
                                                         {
                                                             
-                                                            managedocumentsfilesarraystate.map((item,key)=>{
-                                                                return(
-                                                                    
-                                                                            <tbody key={key}>
-                                                                                <tr>
-                                                                                <td>
-                                                                                <div className="tabledatawrapperflex">
-                                                                                <div className="left">
-                                                                                    <h5>{selectDocumentcategoryinmodal}</h5>
-                                                                                </div>
-                                                                                <div className="right">
-                                                                                <div className="redpill">
-                                                                                    <p>Remove -</p>
-                                                                                </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                )  
-                                                            }
-                                                            )
+                                                            incremental?
+                                                                
+                                                                    incremental.map((item2,id)=>{
+                                                                        return(
+                                                                            // managedocumentsfilesarraystate.map((item,id)=>{
+                                                                                // return(
+                                                                                    
+                                                                                            <tbody key={id}>
+                                                                                                <tr>
+                                                                                                <td>
+                                                                                                <div className="tabledatawrapperflex">
+                                                                                                <div className="left">
+                                                                                                  
+                                                                                                                <h5>
+                                                                                                                {item2}
+                                                                                                                
+                                                                                                                    
+                                                                                                                    
+                                                                                                                </h5>
+                                                                                                         
+                                                                                                    
+                                                                                                </div>
+                                                                                                <div className="right">
+                                                                                                <div className="redpill" key={id} onClick={() => removeItemfrommanagesubject(id)}>
+                                                                                                    <p>Remove -</p>
+                                                                                                </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                // )  
+                                                                                
+                                                                            // }
+                                                                            // )
+                                                                            
+                                                                        )
+                                                                        
+                                                                    })
+                                                                
+                                                                :""
+                                                               
                                                         }
+                                                      
                                                         </table>  
                                                         
                                                        
@@ -889,7 +954,7 @@ const StudentAdmissionEntryComponent = () => {
                                                     multiple
                                                     accept="image/*,.pdf"
                                                     className="visually-hidden"                                                    
-                                                    onChange={(e)=>{handlemanagedocupload(Array.from(e.target.files)[0])}}
+                                                    onChange={(e)=>{handlemanagedocupload(Array.from(e.target.files)[0],selectDocumentcategoryinmodal)}}
                                                     />
                                                     <label htmlFor="fileElem2">Browse</label>
 
@@ -903,7 +968,7 @@ const StudentAdmissionEntryComponent = () => {
                         </Modal.Body>
                         <Modal.Footer>
                             <div className="managedocumentbuttons">
-                                <Button>Update</Button>
+                                <Button onClick={handlemanagedocupdate}>Update</Button>
                                 <Button>Reset</Button>
                             </div>
                         
@@ -954,11 +1019,12 @@ const StudentAdmissionEntryComponent = () => {
                                                                 <label className='checkcontainer'>
                                                                 
                                                                 <input
+                                                                    
                                                                     type="checkbox"
                                                                     value={isCheckedmath}
                                                                     onChange={handleChangeMathematics}
-                                                                    id="remember2"
-                                                                    name="isCheckedmath"                        
+                                                                    id="isCheckedmathvalue"
+                                                                    name="isCheckedmathvalue"                        
                                                                 />
                                                                 <span className="checkmark"></span>
                                                                 </label>
@@ -978,8 +1044,8 @@ const StudentAdmissionEntryComponent = () => {
                                                                     type="checkbox"
                                                                     value={isCheckedartandcraft}
                                                                     onChange={handleChangeartandcraft}
-                                                                    id="remember2"
-                                                                    name="subscribe3"                        
+                                                                    id="isCheckedartandcraftvalue"
+                                                                    name="isCheckedartandcraftvalue"                        
                                                                 />
                                                                 <span className="checkmark"></span>
                                                                 </label>
@@ -1000,7 +1066,7 @@ const StudentAdmissionEntryComponent = () => {
                                                                     value={isCheckedenglit}
                                                                     onChange={handleChangeenglit}
                                                                     id="remember2"
-                                                                    name="subscribe3"                        
+                                                                    name="isCheckedenglitvalue"                        
                                                                 />
                                                                 <span className="checkmark"></span>
                                                                 </label>
@@ -1021,7 +1087,7 @@ const StudentAdmissionEntryComponent = () => {
                                                                     value={isCheckedartenglang}
                                                                     onChange={handleChangeenglang}
                                                                     id="remember2"
-                                                                    name="subscribe3"                        
+                                                                    name="isCheckedartenglangvalue"                        
                                                                 />
                                                                 <span className="checkmark"></span>
                                                                 </label>
@@ -1042,7 +1108,7 @@ const StudentAdmissionEntryComponent = () => {
                                                                     value={isCheckedbengali}
                                                                     onChange={handleChangebengali}
                                                                     id="remember2"
-                                                                    name="subscribe3"                        
+                                                                    name="isCheckedbengalivalue"                        
                                                                 />
                                                                 <span className="checkmark"></span>
                                                                 </label>
@@ -1063,7 +1129,7 @@ const StudentAdmissionEntryComponent = () => {
                                                                     value={isCheckedsci}
                                                                     onChange={handleChangesci}
                                                                     id="remember2"
-                                                                    name="subscribe3"                        
+                                                                    name="isCheckedscivalue"                        
                                                                 />
                                                                 <span className="checkmark"></span>
                                                                 </label>
@@ -1084,7 +1150,7 @@ const StudentAdmissionEntryComponent = () => {
                                                                     value={isCheckedict}
                                                                     onChange={handleChangeict}
                                                                     id="remember2"
-                                                                    name="subscribe3"                        
+                                                                    name="isCheckedictvalue"                        
                                                                 />
                                                                 <span className="checkmark"></span>
                                                                 </label>
@@ -1111,7 +1177,7 @@ const StudentAdmissionEntryComponent = () => {
                         </Modal.Body>
                         <Modal.Footer>
                             <div className="managedocumentbuttons">
-                                <Button>Save</Button>
+                                <Button onClick={handlemanasubjectsave}>Save</Button>
                                 
                             </div>
                         
