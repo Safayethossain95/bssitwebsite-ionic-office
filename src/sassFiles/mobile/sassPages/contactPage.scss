@@ -1,0 +1,93 @@
+@import '../../../sassStyles/mixins';
+@import '../../../sassStyles/variables';
+@import '../../../sassStyles/typography';
+@import '../../../sassStyles/global';
+@import '../../../sassFiles/mobile/sassPages/mobileGlobal.scss';
+
+.contactpagemain{
+    .mobile{
+        .contactpagecomponentdivmb{
+            .read-more{
+                text-align: center;
+                margin-top: 20px;
+                button{
+                    padding:16px 76px;
+                }
+            }
+        }
+        .heading{
+            &.onlineinquiry{
+                h4{
+                    margin: 70px 0 40px 0 !important;
+                }
+                
+            }
+            h4{
+                @include myfont(25px,600,$main_font);
+                text-align: center;
+                margin: 92px 0 25px 0 !important;
+            }
+        
+        }
+        .contactdeskbox{
+            height: 147px;
+            width:100%;
+            border: 1px solid rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            .flexwrapper{
+                text-align: center;
+                h4{
+                    @include myfont(16px,500,$main_font);
+                    color:#000;
+                }
+                p{
+                    @include myfont(12px,400,$main_font);
+                    color:#000;
+                }
+            }
+        }
+        .basicinputfield{
+            
+           
+            input{
+                background-color: #fff;
+                height:50px;
+                width:100%;
+                border:1px solid rgba(0,0,0,0.2);
+                @include myfont(12px,400,$main_font);
+                border-radius: 10px;
+                padding-left: 20px;
+                margin-bottom: 10px;
+                &::placeholder{
+                    @include myfont(12px,400,$main_font);
+                    color:rgba(0,0,0,0.7);
+                }
+            }
+            &.contactpagerightsideform{
+                textarea{
+                    height:150px;
+                    padding-top: 16px;
+                    padding-left: 20px;
+                    @include myfont(12px,400,$main_font);
+                    width:100%;
+                    border: 1px solid rgba(0,0,0,0.2);
+                    border-radius: 10px;
+                    &::placeholder{
+                        @include myfont(12px,400,$main_font);
+                        color:rgba(0,0,0,0.7);
+                    }
+                }
+                input{
+                    margin-top: 10px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .footer{
+            margin-top: 80px;
+        }
+    }
+}

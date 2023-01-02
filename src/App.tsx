@@ -42,6 +42,7 @@ import ForgotPassword from './pages/ForgotPassword';
 import BillPage from './pages/BillPage';
 import BillEntryPage from './pages/BillEntryPage';
 import StudentAdmissionEntryBillPage from './pages/StudentAdmissionEntryBillPage';
+import ContactPage from './pages/ContactPage';
 setupIonicReact();
 
 const App: React.FC = () => {
@@ -59,6 +60,8 @@ const App: React.FC = () => {
         <Route  path="/notice" element={<NoticePage/>}/>
           
         <Route  path="/career" element={<CareerPage/>}/>
+
+        <Route  path="/contact" element={<ContactPage/>}/>
 
         <Route  path="/login" element={<Login/>}/>
 

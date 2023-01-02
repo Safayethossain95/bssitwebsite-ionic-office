@@ -56,6 +56,13 @@ input{
         width:1152px;
     }
 }
+.myContainerseventy{
+    width:80%;
+    margin:0 auto;
+    @include media(xxlgDevice){
+        width:1222px;
+    }
+}
 .myContainerMini{
     width:1006px;
     margin:0 auto;
