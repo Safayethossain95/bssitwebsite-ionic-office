@@ -42,7 +42,12 @@ const NoticePage = () => {
  
   function myFunction() {
     var navbar = document.getElementById("mynavbar");
-    var myheadlineother = document.getElementById("noticepagegapbalance")
+    if(myheadlineother == !null){
+      var myheadlineother = document.getElementById("noticepagegapbalance")
+
+    }else{
+      myheadlineother=document.getElementById("noticepagegapbalance")
+    }
     var sticky = navbar.offsetTop;
     if (window.pageYOffset >= sticky) {
       

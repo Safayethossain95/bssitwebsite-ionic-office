@@ -60,7 +60,7 @@ const ContactPageComp = () => {
             {
                 contactcardsdata.map((item,key)=>{
                     return (
-                        <Col lg={6} key={key} style={{marginBottom:"70px",padding:"0 35px"}}>
+                        <Col lg={6} className="columnpadding" key={key} style={{marginBottom:"70px",padding:"0 35px"}}>
                             <div className="contactdeskbox">
                                 <div className="flexwrapper">
                                     <h4>{item.heading}</h4>
@@ -85,7 +85,7 @@ const ContactPageComp = () => {
         <Form onSubmit={handleSubmit}>
 
         <Row>
-            <Col lg={6} style={{padding:"0 35px"}}>
+            <Col lg={6} style={{padding:"0 35px"}} className="columnpadding">
                 <div className="basicinputfield">
                     <input type="text" placeholder='Name' name="name"  onChange={handleInput}/>
                     <input type="emial" placeholder='Email' name="email"  onChange={handleInput}/>
@@ -94,7 +94,7 @@ const ContactPageComp = () => {
                     <input type="text" placeholder='Subject' name="subject" onChange={handleInput}/>
                 </div>
             </Col>
-            <Col lg={6} style={{padding:"0 35px"}}>
+            <Col lg={6} style={{padding:"0 35px"}} className="columnpadding">
                 <div className="basicinputfield contactpagerightsideform">
                     <textarea name="message" placeholder="Message" onChange={handleInput}></textarea>
                     <input type="text" placeholder='Captcha' name="captcha" onChange={handleInput}/>

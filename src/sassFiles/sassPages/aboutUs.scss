@@ -30,10 +30,13 @@
                 @include media(mdDevice){
                     line-height: 30px;
                 }
+                @include media(lgDevice){
+                    @include myfont(14px,400,$main_font);
+                }
             }
             h3{
                 @include myfont(40px,600,$main_font);
-                margin-top: 70px;
+                
                 
             }
         
@@ -92,6 +95,12 @@
         align-items: center;
         height: 100%;
         padding-right: 30px;
+        @include media(lgDevice){
+            padding-left: 28px;
+        }
+        @include media(xlgDevice){
+            padding-left: 28px;
+        }
         p{
             @include myfont(16px,400,$main_font);
         }
@@ -139,18 +148,35 @@
                 }
                 p{
                     @include myfont(16px,400,$main_font);
+                    margin: 0 auto;
                     text-align: center;
-                    padding: 0 50px;
+                    width:306px;
+                    
                 }
                 &.addresscardcontent2{
                     p{
                         padding:0;
+                        @include media(xxlgDevice){
+                            width: 440px;
+                        }
+                        
+                    }
+                }
+                &.addresscardcontent3{
+                    p{
+                        padding:0;
+                        @include media(xxlgDevice){
+                            width: 460px;
+                        }
+                        
                     }
                 }
                 &.addresscardcontent4{
-                    p{
-                        padding:0 20px;
-                    }
+                    margin: 0 auto;
+                    padding:0;
+                        @include media(xxlgDevice){
+                            width: 460px;
+                        }
                 }
 
             }

@@ -18,6 +18,9 @@
         
         }
         .middlepart{
+            .fixedheightcareerboxesmobile{
+                min-height: 300px;
+            }
             .careeremptybox{
                 display: flex;
                 justify-content: center;

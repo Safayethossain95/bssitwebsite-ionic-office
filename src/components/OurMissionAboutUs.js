@@ -7,9 +7,9 @@ const OurMissionAboutUs = () => {
             <div className="ourmissionaboutus">
                 <Row className="ourmissionaboutuscontent">
                     <Col lg={4} md={6} className="text-center">
-                        <img  src="./assets/images/ourmissionaboutus.png" alt="about us" />
+                        <img src="./assets/images/ourmissionaboutus.png" alt="about us" />
                     </Col>
-                    <Col lg={8} md={6}>
+                    <Col lg={8} md={6} className="d-flex align-items-center">
                         <div className="ourmissionaboutustext">
                             <h3>Our Mission</h3>
                             <p>Let us make every child by giving them material education, and spiritual education.

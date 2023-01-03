@@ -8,19 +8,40 @@
     margin-top: 62px;
 }
 .latestNoticepart{
-    .noticebox{
-        &.noticeboxwide{
-            width:100%;
-            height: unset;
+    .myContainerMini{
+        .noticebox{
+            &.noticeboxwide{
+                width:100%;
+                height: unset;
+            }
+            p{
+                width:70%!important;            
+            }
+            
         }
-        p{
-            width:70%!important;            
+        @include media(lgDevice){
+            width:960px;
+            margin:0 auto;
         }
-        
+
+    }
+}
+.upcomingpartnoticepage{
+    .myContainerMini{
+        @include media(lgDevice){
+            width:960px;
+            margin:0 auto;
+        }
     }
 }
 
 .oldernoticepartnoticepage{
+    .myContainerMini{
+        @include media(lgDevice){
+            width:960px;
+            margin:0 auto;
+        }
+    }
     .noticecontent{
         .noticebox{
             margin-bottom: 60px;
@@ -42,6 +63,12 @@
                     h4{
                         color: #fff;
                     }
+                }
+            }
+            &.noticeboxleft{
+                @include media(lgDevice){
+                    left:0!important;
+
                 }
             }
         }

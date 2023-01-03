@@ -10,7 +10,7 @@ const AboutUs = () => {
 
             <Row className="aboutuscontent">
                 <Col lg={5} md={6} className="text-center">
-                    <img  src="./assets/images/About_Us.png" alt="about us" />
+                    <img src="./assets/images/About_Us.png" alt="about us" />
                 </Col>
                 <Col lg={7} md={6} className="aboutustext">
                     <p>Teaching the students to observe accurately, to think positively and truthfully, to speak correctly, and to write clearly, is the main motto [i.e.To Build a sound and safe path for our future citizen which will help them to achieve their aspirations. To prepare a standard through planning and evaluate analyse the actual with perfection.</p>

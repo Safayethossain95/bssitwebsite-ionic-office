@@ -35,9 +35,11 @@ const LatestNoticeNoticePage = () => {
                     
                 </div>
             <Row className="noticecontent">
+              
+
                     <Col lg={12} md={12}>
                         
-                        <div className="noticebox noticeboxleft noticeboxwide m-auto">
+                        <div className="noticebox noticeboxwide m-auto">
                             <span></span>
                         <div className="noticeheading">
                                 <h4><span>07</span> Nov, 2022 </h4>
@@ -53,6 +55,7 @@ const LatestNoticeNoticePage = () => {
                         </div>
                         
                     </Col>
+              
                     
                 </Row>
             </div>

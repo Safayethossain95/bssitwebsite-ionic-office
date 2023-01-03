@@ -26,7 +26,7 @@ const AddressCards = () => {
                     </Col>
                     <Col lg={6}>
                         <div className="addresscard">
-                            <div className="addresscardcontent addresscardcontent2">
+                            <div className="addresscardcontent addresscardcontent2 addresscardcontent3">
                                 <h3>Route-2</h3>
                                 <p>BSS WARI : Bagicha - Arambag - Basabo - Manda - Uttor Jatrabari - Gopibag</p>
                                 </div>

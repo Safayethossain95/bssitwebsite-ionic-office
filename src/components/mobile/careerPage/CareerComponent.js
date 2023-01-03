@@ -118,48 +118,58 @@ const CareerComponent = () => {
                     </div>
                 </Col>
             </Row>
+            <div className="fixedheightcareerboxesmobile">
             {
                 
                 
                 
-                    drplocation && drpep?
-                    (
-                        searchdata.map((item,key)=>{
-                            if(drplocation==item.location && drpep==item.department){
-                                let lowerit = item.heading.toLowerCase()
-                                if(lowerit.includes(searchword)){
-                                    return(
-                                        <div className="careerboxmb" key={key}>
-                                            <h3>{item.heading}</h3>
-                                            <p>{item.paragraph}<Link to={item.pagelink}>View Details</Link></p>
-                                            
-                                        </div>
-                                    )
-                                }
-                                
-                               
-                            }
-                            else{
+                drplocation && drpep?
+                (
+                    searchdata.map((item,key)=>{
+                        if(drplocation==item.location && drpep==item.department){
+                            let lowerit = item.heading.toLowerCase()
+                            if(lowerit.includes(searchword)){
                                 return(
-                                    <div className="careeremptybox">
-                                        <p>No Job Found</p>
+                                    <div className="careerboxmb" key={key}>
+                                        <h3>{item.heading}</h3>
+                                        <p>{item.paragraph}<Link to={item.pagelink}>View Details</Link></p>
+                                        
                                     </div>
                                 )
                             }
+                            // else{
+                            //     return(
+                            //         <div className="careeremptybox">
+                            //             <p>No Job Found</p>
+                            //         </div>
+                            //     )
+                            // }
+                            
                            
-                            // console.log(drplocation,drpep)
-                            })
-
-                            
-                            
-                    )
-                        
-                    :
-                    drplocation?
+                        }
+                        })     
+                )                        
+                :
+                drplocation?
+            
+                searchdata.map((item,key)=>{
                 
-                    searchdata.map((item,key)=>{
+                if(drplocation==item.location){
+                    return(
+                        <div className="careerboxmb" key={key}>
+                            <h3>{item.heading}</h3>
+                            <p>{item.paragraph}<Link to={item.pagelink}>View Details</Link></p>
+                            
+                        </div>
+                    )
+                }
+                })
+                :
+                drpep?
+                searchdata.map((item,key)=>{
+                
                     
-                    if(drplocation==item.location){
+                    if(drpep==item.department){
                         return(
                             <div className="careerboxmb" key={key}>
                                 <h3>{item.heading}</h3>
@@ -168,35 +178,25 @@ const CareerComponent = () => {
                             </div>
                         )
                     }
-                    // if(drpep==item.department){
-                    //     return(
-                    //         <div className="careerboxmb" key={key}>
-                    //             <h3>{item.heading}</h3>
-                    //             <p>{item.paragraph}<Link to={item.pagelink}>View Details</Link></p>
-                                
-                    //         </div>
-                    //     )
-                    // }
-                    // if(drplocation==item.location && drpep==item.department){
-                    //     return(
-                    //         <div className="careerboxmb" key={key}>
-                    //             <h3>{item.heading}</h3>
-                    //             <p>{item.paragraph}<Link to={item.pagelink}>View Details</Link></p>
-                                
-                    //         </div>
-                    //     )
-                    // }
-                    // console.log(drplocation,drpep)
                     })
-                    
-                    
-                    
                     :
-                    drpep?
-                    searchdata.map((item,key)=>{
-                    
+                    searchword?
+                        searchdata.map((item,key)=>{
+                            let lowerit = item.heading.toLowerCase()
+                            if(lowerit.includes(searchword)){
+                            return(
+                                <div className={`careerboxmb`}>
+                                    <h3>{item.heading}</h3>
+                                    <p>{item.paragraph}<Link to={item.pagelink}>View Details</Link></p>
+                                    
+                                </div>
+                            )
+                            }
+                        })
+                :
+                searchdata.map((item,key)=>{
+                    if(drpep=="" && drplocation==""){
                         
-                        if(drpep==item.department){
                             return(
                                 <div className="careerboxmb" key={key}>
                                     <h3>{item.heading}</h3>
@@ -204,51 +204,13 @@ const CareerComponent = () => {
                                     
                                 </div>
                             )
-                        }
-                        // if(drplocation==item.location && drpep==item.department){
-                        //     return(
-                        //         <div className="careerboxmb" key={key}>
-                        //             <h3>{item.heading}</h3>
-                        //             <p>{item.paragraph}<Link to={item.pagelink}>View Details</Link></p>
-                                    
-                        //         </div>
-                        //     )
-                        // }
-                        // console.log(drplocation,drpep)
-                        })
-                        :
-                        searchword?
-                            searchdata.map((item,key)=>{
-                                let lowerit = item.heading.toLowerCase()
-                                if(lowerit.includes(searchword)){
-                                return(
-                                    <div className={`careerboxmb`}>
-                                        <h3>{item.heading}</h3>
-                                        <p>{item.paragraph}<Link to={item.pagelink}>View Details</Link></p>
-                                        
-                                    </div>
-                                )
-                                }
-                            })
-                    :
-                    searchdata.map((item,key)=>{
-                            if(drpep=="" && drplocation==""){
-                            
-                                return(
-                                    <div className="careerboxmb" key={key}>
-                                        <h3>{item.heading}</h3>
-                                        <p>{item.paragraph}<Link to={item.pagelink}>View Details</Link></p>
-                                        
-                                    </div>
-                                )
-                            
+                        
                             }
-                            
-                            })
-                    
-                    
-                    
-            }
+                        
+                        })   
+                    }
+            </div>
+            
             
         </div>
         </div>

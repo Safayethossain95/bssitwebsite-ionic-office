@@ -41,6 +41,33 @@ const AboutUsPage = () => {
     
 
   // })
+  function myFunction() {
+    var navbar = document.getElementById("mynavbar");
+    if(myheadlineother == !null){
+      var myheadlineother = document.getElementById("noticepagegapbalance")
+
+    }else{
+      myheadlineother=document.getElementById("noticepagegapbalance")
+    }
+    var sticky = navbar.offsetTop;
+    if (window.pageYOffset >= sticky) {
+      
+      navbar.classList.add("sticky");
+      myheadlineother.classList.add("margintop62");
+      
+      
+      
+    }
+    
+    if(window.pageYOffset==0){
+      navbar.classList.remove("sticky");
+      myheadlineother.classList.remove("margintop62");
+      
+    }
+    
+      
+  }
+  window.onscroll = function() {myFunction()};
   return (
     <>
         <div className="mobile">
@@ -57,7 +84,7 @@ const AboutUsPage = () => {
         <div className="aboutpage desktop">
             <Header/>
             <Mynavbar/>
-            <HeadlineOfOtherPage headline="About Us"/>
+            <HeadlineOfOtherPage noticepagegapbalance="noticepagegapbalance" headline="About Us"/>
             <OurMissionAboutUs/>
             <OurMethodAboutPage/>
             <OurVisionAboutUsPage/>

@@ -24,8 +24,8 @@ const TransportServiceAboutUsPage = () => {
                            
                     </div>
                     </Col>
-                    <Col lg={6}>
-                        <img src="./assets/images/transportimg.png" alt="transportimg.png" />
+                    <Col lg={6} className="d-flex align-items-center">
+                        <img className='w-100' src="./assets/images/transportimg.png" alt="transportimg.png" />
                     </Col>
                 </Row>
             </div>

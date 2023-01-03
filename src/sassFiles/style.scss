@@ -1156,6 +1156,7 @@ a:focus { text-decoration: none;
                     margin-right: 20px;
                     @include media(lgDevice){
                         height: 25px;
+                        width:89px;
                     }
                 }
             }
