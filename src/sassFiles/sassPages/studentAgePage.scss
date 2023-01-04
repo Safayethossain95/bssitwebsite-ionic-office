@@ -1,0 +1,153 @@
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/global';
+
+
+.studentagepagemain{
+    .desktop{
+        .myheadline{
+            h1{
+                margin-bottom: 5px;
+            }
+        }
+        .smallheadingmsg{
+            h5{
+                text-align: center;
+                @include myfont(25px,500,$main_font);
+                margin-bottom: 40px;
+            }
+        }
+        .studentagecompdiv{
+            .studentagesometext{
+                text-align: center;
+                h4{
+                    @include myfont(40px,600,$main_font);
+                    margin-top: 50px;
+                    margin-bottom: 40px;
+                }
+                p{
+                    @include myfont(16px,400,$main_font);
+                    width:870px;
+                    margin:0 auto;
+                    margin-bottom: 110px;            
+                }
+            }
+            .basicinfopopulate{
+                padding: 0;
+                p{
+                    @include myfont(12px,400,$main_font);
+                }
+                input{
+                    width:100%;
+                    height: 60px;
+                    border-radius: 20px;
+                    border:1px solid rgba(0,0,0,0.2);
+                    padding-left: 0px;
+                    text-align: center;
+                    color:#000;
+                    &:focus-visible{
+                        // border: 1px solid #000;
+                        outline:1px solid #000;
+                    }
+                }
+            }
+            .nav-pills{
+                display: flex;
+                justify-content: space-between;
+                .nav-item{
+                    text-align: center;
+                    
+                    a{
+                        display: inline-block;
+                        // background-color: #ED1C24;
+                        border:1px solid rgba(0,0,0,0.2);
+                        background-color: #fff;
+                        color:#000;
+                        @include myfont(16px,400,$main_font);
+                        width: 288px;
+                        height:60px;
+                        border-radius: 20px;
+                        line-height: 43px;
+                        transition:0.4s;
+                        &.active{
+                            background-color: #ED1C24;
+                            color:#fff;
+                        }
+                    }
+                }
+            }
+            .tabspillscontainer{
+                width:920px;
+                margin:0 auto;
+                margin-top: 50px;
+            }
+            .juniortable{
+                width: 100%;
+                border-color: #000;
+                border-collapse: separate;
+                border-radius: 20px;
+                overflow: hidden;
+                border-spacing: 0;
+                margin-top: 20px;
+                border-left:1px solid #000;
+                border-right: 1px solid #000;
+                tbody{
+                    tr{
+                        height: 50px;
+                        &:first-child{
+                            background-color: #312783;
+                            color:#fff;
+                            border-collapse: collapse;
+                            border-top-left-radius: 20px;
+                            overflow: hidden;
+                            th{
+                                
+                                width:50%;
+                                &:first-child{
+                                    border-top-left-radius: 20px;
+                                    border-right:1px solid #000;
+                                }
+                                &:last-child{
+                                    border-top-right-radius: 20px;
+                                }
+                                line-height: 35px;
+                            }
+                            
+                        }
+                        &:last-child{
+                            td{
+                                &:first-child{
+                                    border-bottom-left-radius: 20px;
+                                }
+                                &:last-child{
+                                    border-bottom-right-radius: 20px;
+                                }
+                            }
+                        }
+                        th{
+                            @include myfont(16px,500,$main_font);
+                            text-align: center;
+                            &:first-child{
+                                border-top-left-radius: 20px;
+                                border-collapse: collapse;
+                                overflow: hidden;
+                                
+                            }
+                        }
+                        td{
+                            @include myfont(16px,500,$main_font);
+                            text-align: center;
+                            
+                            border-spacing: 0;
+                            line-height: 35px;
+                            &:first-child{
+                                border-right:1px solid #000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

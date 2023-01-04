@@ -44,6 +44,7 @@ import BillEntryPage from './pages/BillEntryPage';
 import StudentAdmissionEntryBillPage from './pages/StudentAdmissionEntryBillPage';
 import ContactPage from './pages/ContactPage';
 import AdmissionPage from './pages/AdmissionPage';
+import StudentAgeCheckPage from './pages/StudentAgeCheckPage';
 setupIonicReact();
 
 const App: React.FC = () => {
@@ -65,6 +66,8 @@ const App: React.FC = () => {
         <Route  path="/contact" element={<ContactPage/>}/>
 
         <Route  path="/admission" element={<AdmissionPage/>}/>
+
+        <Route  path="/studentagecheck" element={<StudentAgeCheckPage/>}/>
 
         <Route  path="/login" element={<Login/>}/>
 
