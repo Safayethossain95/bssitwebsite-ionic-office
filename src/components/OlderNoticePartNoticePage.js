@@ -31,7 +31,7 @@ const OlderNoticePartNoticePage = () => {
                     <h3>Older</h3>                    
                 </div>
 
-                <Row className="noticecontent">
+                <Row className="noticecontent noticecontentolder">
                     <Col lg={4} md={6}>
                         
                         <div className="noticebox noticeboxleft m-auto">

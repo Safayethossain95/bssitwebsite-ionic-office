@@ -87,7 +87,7 @@ a:focus { text-decoration: none;
 
 .eventbt{
     text-align: center;
-    padding-top: 50px;
+    
 }
 .bannerbutton {
     padding-top: 10px;
@@ -259,7 +259,7 @@ a:focus { text-decoration: none;
         flex-direction: row;
     }
     span{
-        @include myfont(16px,400,$main_font);
+        @include myfont(16px,500,$main_font);
     }
     .hinfo{
         display: inline-block;
@@ -276,7 +276,7 @@ a:focus { text-decoration: none;
 .headerinforight{
     text-align: right;
     a{
-        @include myfont(12px,400,$main_font);
+        @include myfont(12px,500,$main_font);
         text-decoration: none;
         color:#000;
         @include media(xsmDevice){
@@ -635,7 +635,7 @@ a:focus { text-decoration: none;
             }
         }
     }
-    padding:70px 0;
+    padding:20px 0;
     
 }
 .noticebt{
@@ -645,7 +645,10 @@ a:focus { text-decoration: none;
     }
 }
 .noticecontent{
-    padding:70px 0;
+    padding:45px 0 105px 0;
+    &.noticecontentolder{
+        padding:45px 0 0px 0;
+    }
     @include media(xsmDevice){
         padding: 35px 0;
     }
@@ -749,7 +752,8 @@ a:focus { text-decoration: none;
 
 
 .whychooseus{
-    padding:50px 0;
+    padding-top:50px;
+    padding-bottom:0;
     @include media(xsmDevice){
         padding:0;
     }
@@ -758,7 +762,7 @@ a:focus { text-decoration: none;
         @include myfont(40px,600,$main_font);
     }
     .ourmethodcards{
-        padding-top: 45px;
+        padding-top: 80px;
     }
     .wcuheadingp{
         p{

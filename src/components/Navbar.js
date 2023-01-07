@@ -43,11 +43,7 @@ const Mynavbar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <NavLink to="/" 
-                    style={({ isActive }) =>
-                      isActive ? activeStyle : undefined
-                    }>Home
-                    </NavLink>
+                    
                     <NavLink to="/aboutus" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }

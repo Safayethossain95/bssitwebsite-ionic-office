@@ -73,11 +73,7 @@ const NavbarMoblie = () => {
                 
                 
                 <Nav className="mynavbarnav" id="mynavbarnav">
-                    <NavLink to="/" 
-                    style={({ isActive }) =>
-                      isActive ? activeStyle : undefined
-                    }>Home
-                    </NavLink>
+                    
                     <NavLink to="/aboutus" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }

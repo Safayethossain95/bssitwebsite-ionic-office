@@ -29,53 +29,56 @@ const StudentAgeComp = () => {
         if(final_val>=2 && final_val<3){
             setEqclass("Starter")
         }
-        if(final_val>=3 && final_val<4){
+        else if(final_val>=3 && final_val<4){
             setEqclass("Play Group")
         }
-        if(final_val>=4 && final_val<5){
+        else if(final_val>=4 && final_val<5){
             setEqclass("Nursery")
         }
-        if(final_val>=5 && final_val<6){
+        else if(final_val>=5 && final_val<6){
             setEqclass("Junior KG")
         }
-        if(final_val>=6 && final_val<7){
+        else if(final_val>=6 && final_val<7){
             setEqclass("Senior KG")
         }
-        if(final_val>=7 && final_val<8){
+        else if(final_val>=7 && final_val<8){
             setEqclass("Class 1")
         }
-        if(final_val>=8 && final_val<9){
+        else if(final_val>=8 && final_val<9){
             setEqclass("Class 2")
         }
-        if(final_val>=9 && final_val<10){
+        else if(final_val>=9 && final_val<10){
             setEqclass("Class 3")
         }
-        if(final_val>=10 && final_val<11){
+        else if(final_val>=10 && final_val<11){
             setEqclass("Class 4")
         }
-        if(final_val>=11 && final_val<12){
+        else  if(final_val>=11 && final_val<12){
             setEqclass("Class 5")
         }
-        if(final_val>=12 && final_val<13){
+        else if(final_val>=12 && final_val<13){
             setEqclass("Class 6")
         }
-        if(final_val>=13 && final_val<14){
+        else if(final_val>=13 && final_val<14){
             setEqclass("Class 7")
         }
-        if(final_val>=14 && final_val<15){
+        else if(final_val>=14 && final_val<15){
             setEqclass("Class 8")
         }
-        if(final_val>=15 && final_val<16){
+        else if(final_val>=15 && final_val<16){
             setEqclass("Class 9")
         }
-        if(final_val>=16 && final_val<17){
+        else if(final_val>=16 && final_val<17){
             setEqclass("O Level")
         }
-        if(final_val>=17 && final_val<18){
+        else if(final_val>=17 && final_val<18){
             setEqclass("A Level")
         }
         
-        
+        else{
+            setEqclass("-")
+        }
+        console.log(final_val)
         
     }
     const handlepresentage=()=>{
@@ -104,7 +107,7 @@ const StudentAgeComp = () => {
             <Col lg={3}>
                 <div className="basicinfopopulate">
                     <p>Present Age</p>
-                    <input type="text" value={presentAge==0?"Years":presentAge} onChange={handlepresentage}/>
+                    <input type="text" value={presentAge=="NaN"?"0":presentAge} onChange={handlepresentage}/>
                 </div>
             </Col>
            
@@ -135,8 +138,6 @@ const StudentAgeComp = () => {
                     <Tab.Content>
                     <Tab.Pane eventKey="first">
                     <Table className='juniortable'>
-                        
-                            
                         
                         <tbody>
                             <tr>

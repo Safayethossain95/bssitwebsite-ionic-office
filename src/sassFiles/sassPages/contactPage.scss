@@ -13,9 +13,7 @@
                 margin-top: 60px;
             }
         }
-        #contactmargintop{
-            margin-top: 80px;
-        }
+      
         .contactpagecomponentdiv{
             .columnpadding{
                 @include media(lgDevice){
@@ -46,7 +44,7 @@
             }
            
             .basicinputfield{
-                padding-left: 15px;
+                // padding-left: 15px;
                
                 input{
                     background-color: #fff;
@@ -83,7 +81,7 @@
         }
         
         .footer{
-            margin-top: 170px;
+            margin-top: 70px;
         }
     }
 }
