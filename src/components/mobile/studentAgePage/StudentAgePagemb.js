@@ -84,9 +84,9 @@ const StudentAgePagemb = () => {
     }
 
     const options = [
-        'Junior Section', 'Middle Section', 'Senior Section'
+        'All Sections','Junior Section', 'Middle Section', 'Senior Section'
       ];
-      const defaultOption = "Junior Section";
+      const defaultOption = "All Sections";
 
       const dropdownvalue=(e)=>{
         console.log(e.value)
@@ -151,6 +151,85 @@ const StudentAgePagemb = () => {
             </div>
             {
                 drpsection?
+                    drpsection=='All Sections'?
+                    <Table className='juniortable'>
+                        
+                    <tbody>
+                        <tr>
+                        <th>Class</th>
+                        <th>Age Limit</th>                          
+                        </tr>
+                        <tr>
+                        <td>Starter</td>
+                        <td>2 to 3 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Play Group</td>
+                        <td>3 to 4 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Nursery</td>
+                        <td>4 to 5 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Junior KG</td>
+                        <td>5 to 6 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Senior KG</td>
+                        <td>6 to 7 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 1</td>
+                        <td>7 to 8 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 2</td>
+                        <td>8 to 9 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 3</td>
+                        <td>9 to 10 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 4</td>
+                        <td>10 to 11 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 5</td>
+                        <td>11 to 12 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 6</td>
+                        <td>12 to 13 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 7</td>
+                        <td>13 to 14 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 8</td>
+                        <td>14 to 15 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 9</td>
+                        <td>15 to 16 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>O Lavel</td>
+                        <td>16 to 17 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>A Lavel</td>
+                        <td>17 to 18 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Pre - O Lavel</td>
+                        <td>17 to 18 years</td>                            
+                        </tr>
+                    </tbody>
+                    </Table>
+                    :
                     drpsection=='Junior Section'?
                     <Table className='juniortable'>
                         
@@ -264,34 +343,81 @@ const StudentAgePagemb = () => {
                 
                 <Table className='juniortable'>
                         
-                <tbody>
-                    <tr>
-                    <th>Class</th>
-                    <th>Age Limit</th>                          
-                    </tr>
-                    <tr>
-                    <td>Starter</td>
-                    <td>2 to 3 years</td>                            
-                    </tr>
-                    <tr>
-                    <td>Play Group</td>
-                    <td>3 to 4 years</td>                            
-                    </tr>
-                    <tr>
-                    <td>Nursery</td>
-                    <td>4 to 5 years</td>                            
-                    </tr>
-                    <tr>
-                    <td>Junior KG</td>
-                    <td>5 to 6 years</td>                            
-                    </tr>
-                    <tr>
-                    <td>Senior KG</td>
-                    <td>6 to 7 years</td>                            
-                    </tr>
-                    
-                </tbody>
-                </Table>
+                    <tbody>
+                        <tr>
+                        <th>Class</th>
+                        <th>Age Limit</th>                          
+                        </tr>
+                        <tr>
+                        <td>Starter</td>
+                        <td>2 to 3 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Play Group</td>
+                        <td>3 to 4 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Nursery</td>
+                        <td>4 to 5 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Junior KG</td>
+                        <td>5 to 6 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Senior KG</td>
+                        <td>6 to 7 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 1</td>
+                        <td>7 to 8 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 2</td>
+                        <td>8 to 9 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 3</td>
+                        <td>9 to 10 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 4</td>
+                        <td>10 to 11 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 5</td>
+                        <td>11 to 12 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 6</td>
+                        <td>12 to 13 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 7</td>
+                        <td>13 to 14 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 8</td>
+                        <td>14 to 15 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Class 9</td>
+                        <td>15 to 16 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>O Lavel</td>
+                        <td>16 to 17 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>A Lavel</td>
+                        <td>17 to 18 years</td>                            
+                        </tr>
+                        <tr>
+                        <td>Pre - O Lavel</td>
+                        <td>17 to 18 years</td>                            
+                        </tr>
+                    </tbody>
+                    </Table>
             }
            <div className="heading secondheading">
                     <h4>

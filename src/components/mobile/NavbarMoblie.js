@@ -82,10 +82,7 @@ const NavbarMoblie = () => {
                       isActive ? activeStyle : undefined
                     }
                     >Notice</NavLink>
-                    <NavLink to="/planner" style={({ isActive }) =>
-                      isActive ? activeStyle : undefined
-                    }
-                    >Planner</NavLink>
+                    
                     <NavLink to="/career" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }

@@ -2,34 +2,20 @@
 @import '../../sassStyles/variables';
 @import '../../sassStyles/typography';
 @import '../../sassStyles/global';
-
-
-
-.studentagepagemain{
+.studenttimingpagemain{
     .desktop{
-        .stuentagecompropdown{
-            .dropdownwrapper{
-                
-                    
-                        width:470px;
-                        margin:35px auto;
-                    
-                
-            }
+        .footer{
+            margin-top: 85px;
         }
-        .myheadline{
-            h1{
-                margin-bottom: 5px;
+        .schooltimingcompdiv{
+    
+            .studentagecompropdown{
+                .dropdownwrapper{
+                    border-radius: 15px;
+                    width:470px;
+                    margin:0 auto;
+                }
             }
-        }
-        .smallheadingmsg{
-            h5{
-                text-align: center;
-                @include myfont(25px,500,$main_font);
-                margin-bottom: 40px;
-            }
-        }
-        .studentagecompdiv{
             .studentagesometext{
                 text-align: center;
                 h4{
@@ -37,61 +23,19 @@
                     margin-top: 50px;
                     margin-bottom: 40px;
                 }
-                p{
-                    @include myfont(16px,400,$main_font);
+                ul{
+                    list-style-type: disc;
                     width:870px;
                     margin:0 auto;
-                    margin-bottom: 110px;            
-                }
-            }
-            .basicinfopopulate{
-                padding: 0;
-                p{
-                    @include myfont(12px,400,$main_font);
-                }
-                input{
-                    width:100%;
-                    height: 60px;
-                    border-radius: 20px;
-                    border:1px solid rgba(0,0,0,0.2);
-                    padding-left: 0px;
-                    text-align: center;
-                    color:#000;
-                    &:focus-visible{
-                        // border: 1px solid #000;
-                        outline:1px solid #000;
-                    }
-                }
-            }
-            .nav-pills{
-                display: flex;
-                justify-content: space-between;
-                .nav-item{
-                    text-align: center;
-                    
-                    a{
-                        display: inline-block;
-                        // background-color: #ED1C24;
-                        border:1px solid rgba(0,0,0,0.2);
-                        background-color: #fff;
-                        color:#000;
-                        @include myfont(16px,400,$main_font);
-                        width: 288px;
-                        height:60px;
-                        border-radius: 20px;
-                        line-height: 43px;
-                        transition:0.4s;
-                        &.active{
-                            background-color: #ED1C24;
-                            color:#fff;
+                    li{
+                        text-align: left;
+                        p{
+                            @include myfont(16px,400,$main_font);
                         }
+                                   
                     }
+        
                 }
-            }
-            .tabspillscontainer{
-                width:920px;
-                margin:0 auto;
-                margin-top: 50px;
             }
             .juniortable{
                 width: 100%;
@@ -100,7 +44,8 @@
                 border-radius: 20px;
                 overflow: hidden;
                 border-spacing: 0;
-                margin-top: 20px;
+                margin-top: 30px;
+                margin-bottom: 45px;
                 border-left:1px solid $table_borer_color;
                 border-right: 1px solid $table_borer_color;
                 tbody{
@@ -115,9 +60,12 @@
                             overflow: hidden;
                             th{
                                 border-top:1px solid $table_borer_color;
-                                width:50%;
+                                width:33.33%;
                                 &:first-child{
                                     border-top-left-radius: 20px;
+                                    border-right:1px solid $table_borer_color;
+                                }
+                                &:nth-child(2){
                                     border-right:1px solid $table_borer_color;
                                 }
                                 &:last-child{
@@ -156,6 +104,9 @@
                             &:first-child{
                                 border-right:1px solid $table_borer_color;
                             }
+                            &:nth-child(2){
+                                border-right:1px solid $table_borer_color;
+                            }
                         }
                     }
                 }
@@ -163,3 +114,5 @@
         }
     }
 }
+
+

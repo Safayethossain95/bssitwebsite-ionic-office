@@ -1,7 +1,9 @@
 import React from 'react'
 import {Row,Col} from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
+import CommonButton from '../../subComponents/CommonButton'
 const AdmissionCompMb = () => {
+  let navigate = useNavigate()
     const admissioninfodata =[
         {
           heading:"Please check candidate age for eligible class",
@@ -52,10 +54,13 @@ const AdmissionCompMb = () => {
         {
           heading:"Karate Course",
           img:"./assets/images/admissionpage/5.png",
-          paragraph:"BSS is introducing an additional course on Karate. Our course will provide each student with the essential karate skills to succeed in our community and the life skills they need to succeed in school, at home and in life.",
+          paragraph:"BSS is introducing an additional course on Karate. Our course will provide each student with the essential karate skills to succeed in our community and the life skills they need to succeed in school, at home and in life. For more information ",
           link:"/"
         },
       ]
+      const handleapplyonline=()=>{
+        navigate('/')
+      }
   return (
     <>
         <div className="admissioncompmb">
@@ -73,15 +78,16 @@ const AdmissionCompMb = () => {
               return(
                 <Col lg={12} className="px-0" key={key}>
                 <div className="adinfobox">
-                  <div className="adinfoboxleft firstrow">
+                  
+                  <div className="adinfoboxleft">
+                    <img className={item.customimgwidthclass?"customimgwidthclass":""} src={item.img} alt="" />
+                  </div>
+                  <div className="adinfoboxright">
                     <div className="wrapflex">
                     <h3>{item.heading}</h3>
                     
                     
                     </div>
-                  </div>
-                  <div className="adinfoboxright">
-                    <img className={item.customimgwidthclass?"customimgwidthclass":""} src={item.img} alt="" />
                   </div>
                 </div>
               
@@ -104,7 +110,7 @@ const AdmissionCompMb = () => {
                 
               </ul>
               <p>Note: If all the above data & requirement is fulfilled then click the Proceed button for apply</p>
-              
+              <CommonButton myclick={handleapplyonline} buttonTitle="Apply Online"/>
             </div>
             <Row>
             {
@@ -112,15 +118,16 @@ const AdmissionCompMb = () => {
               return(
                 <Col lg={12} className="px-0" key={key}>
                 <div className="adinfobox">
+                  
                   <div className="adinfoboxleft secondrow">
-                    <div className="wrapflex">
-                    <h3>{item.heading}</h3>
-                    
-                    
-                    </div>
+                    <img className={item.customimgwidthclass?"customimgwidthclass":""} src={item.img} alt="" />
                   </div>
                   <div className="adinfoboxright secondrow">
-                    <img className={item.customimgwidthclass?"customimgwidthclass":""} src={item.img} alt="" />
+                    <div className="wrapflex">
+                    <h3>{item.heading}</h3>
+                    <Link to="/">Click here</Link>
+                    
+                    </div>
                   </div>
                 </div>
               
@@ -134,13 +141,13 @@ const AdmissionCompMb = () => {
             {
             thirdrowcards.map((item,key)=>{
               return(
-                <Col lg={12} className="px-0" key={key}>
+                <Col lg={12} className="px-0 text-center" key={key}>
                 <div className="adinfobox thirdrow">
                
                     <img src={item.img} alt="" />
                     <div className="wrapflex">
-                    <h3>{item.heading}</h3>
-                    <p>{item.paragraph}</p>
+                    
+                    <p>{item.paragraph}<Link to="/">click here</Link></p>
                     
                     </div>
                   

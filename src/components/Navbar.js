@@ -1,12 +1,19 @@
 import React from 'react'
 import { Navbar,Nav } from 'react-bootstrap'
 import CommonButton from './subComponents/CommonButton'
-import {NavLink,Link} from 'react-router-dom';
+import {NavLink,Link,useNavigate} from 'react-router-dom';
 
 const Mynavbar = () => {
+
+  let navigate=useNavigate()
+
+  const handleadmissionclick=()=>{
+    navigate('/admission')
+  }
     let activeStyle = {
     color:"#ED1C24"
   };
+  
   // useEffect(()=>{
     
     
@@ -63,7 +70,7 @@ const Mynavbar = () => {
                     >Contact</NavLink>
                     
                 </Nav>
-                <CommonButton buttonTitle="Admission"/>
+                <CommonButton myclick={handleadmissionclick} buttonTitle='Admission'/>
                 </Navbar.Collapse>
             
             </div>

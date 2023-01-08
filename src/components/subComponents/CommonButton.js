@@ -8,7 +8,7 @@ const CommonButton = (props) => {
   return (
     <>
         <div className={`read-more navabrbutton ${props.displaynone} ${props.bannerbt} ${props.noticebt} ${props.eventbt} ${props.classChange}`}>
-        <Button type="submit"><span></span>{props.buttonTitle}</Button>
+        <Button onClick={props.myclick} type="submit"><span></span>{props.buttonTitle}</Button>
         </div>
     </>
   )

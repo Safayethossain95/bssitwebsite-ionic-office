@@ -1,13 +1,14 @@
 import React from 'react'
 import {Row,Col} from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
+import CommonButton from './subComponents/CommonButton'
 const AdmissionPageComp = () => {
-
+  let navigate = useNavigate()
   const admissioninfodata =[
     {
       heading:"Please check candidate age for eligible class",
       img:"./assets/images/admissionpage/1.png",
-      link:"/"
+      link:"/studentagecheck"
     },
     {
       heading:"Please check fee structure before apply for admission",
@@ -19,7 +20,7 @@ const AdmissionPageComp = () => {
     {
       heading:"School Timing",
       img:"./assets/images/admissionpage/3.png",
-      link:"/"
+      link:"/schooltiming"
     },
     {
       heading:"Track Admission",
@@ -31,7 +32,7 @@ const AdmissionPageComp = () => {
     {
       heading:"Karate Course",
       img:"./assets/images/admissionpage/5.png",
-      paragraph:"BSS is introducing an additional course on Karate. Our course will provide each student with the essential karate skills to succeed in our community and the life skills they need to succeed in school, at home and in life.",
+      paragraph:"BSS is introducing an additional course on Karate. Our course will provide each student with the essential karate skills to succeed in our community and the life skills they need to succeed in school, at home and in life. For more information ",
       link:"/"
     },
   ]
@@ -56,6 +57,9 @@ const AdmissionPageComp = () => {
     },
 
   ]
+  const handleProceed=()=>{
+    navigate('/admissionproceed')
+  }
   return (
     <>
         <div className="admissionpagecomp">
@@ -64,16 +68,16 @@ const AdmissionPageComp = () => {
             {
             admissioninfodata.map((item,key)=>{
               return(
-                <Col lg={6} style={{padding:"0 35px"}} key={key}>
+                <Col lg={6} style={{padding:"0 15px"}} key={key}>
                 <div className="adinfobox">
                   <div className="adinfoboxleft">
+                    <img src={item.img} alt="" />
+                  </div>
+                  <div className="adinfoboxright">
                     <div className="wrapflex">
                     <h3>{item.heading}</h3>
                     <Link to={item.link}>Click Here</Link>
                     </div>
-                  </div>
-                  <div className="adinfoboxright">
-                    <img src={item.img} alt="" />
                   </div>
                 </div>
               
@@ -98,22 +102,23 @@ const AdmissionPageComp = () => {
                 
               </ul>
               <p><span>Note:</span> If all the above data & requirement is fulfilled then click the Proceed button for apply</p>
-              <Link to="/">Proceed</Link>
+              <CommonButton myclick={handleProceed} buttonTitle="Apply Online"/>
             </div>
             <Row style={{marginBottom:"50px"}}>
             {
             secondrowcards.map((item,key)=>{
               return(
-                <Col lg={6} style={{padding:"0 35px"}} key={key}>
+                <Col lg={6} style={{padding:"0 15px"}} key={key}>
                 <div className="adinfobox">
+                  
                   <div className="adinfoboxleft">
+                    <img src={item.img} alt="" />
+                  </div>
+                  <div className="adinfoboxright">
                     <div className="wrapflex">
                     <h3>{item.heading}</h3>
                     <Link to={item.link}>Click Here</Link>
                     </div>
-                  </div>
-                  <div className="adinfoboxright">
-                    <img src={item.img} alt="" />
                   </div>
                 </div>
               
@@ -130,15 +135,16 @@ const AdmissionPageComp = () => {
               return(
                 <Col lg={12} key={key}>
                 <div className="adinfobox">
-                  <div className="adinfoboxleft">
+                  
+                  <div className="adinfoboxleft karate">
+                    <img src={item.img} alt="" />
+                  </div>
+                  <div className="adinfoboxright karate">
                     <div className="wrapflex">
                     <h3>{item.heading}</h3>
                     <p>{item.paragraph}</p>
-                    <Link to={item.link}>Click Here</Link>
+                    <Link to={item.link}>click here</Link>
                     </div>
-                  </div>
-                  <div className="adinfoboxright">
-                    <img style={{right:"83px"}} src={item.img} alt="" />
                   </div>
                 </div>
               

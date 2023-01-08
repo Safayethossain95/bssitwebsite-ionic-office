@@ -38,6 +38,7 @@ const StudentAgeCheckPage = () => {
           
       }
       window.onscroll = function() {myFunction()};
+      
   return (
     <>
         <div className="studentagepagemain">

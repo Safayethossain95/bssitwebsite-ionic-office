@@ -1,0 +1,162 @@
+@import '../../../sassStyles/mixins';
+@import '../../../sassStyles/variables';
+@import '../../../sassStyles/typography';
+@import '../../../sassStyles/global';
+@import './mobileGlobal.scss';
+
+
+.admissionpagemain{
+    .mobile{
+        .footermobile{
+            margin-top: 17px;
+        }      
+        .admissioncompmb{
+            .documentsrequirements{
+                a{
+                    text-decoration: none;
+                    color: #fff;
+                    background-color: #ED1C24;
+                    display: inline-block;
+                    @include myfont(16px,500,$button_font);
+                    border-radius: 10px;
+                    border:none;
+                    padding: 16px 76px;
+                    
+                }
+                .read-more{
+                    text-align: center;
+                    &>button{
+                        margin:30px auto;
+                        margin-bottom: 0;
+                        padding: 13px 38px;
+                        &:hover{
+                            background-color: #000;
+                            color:#fff;
+                        }
+                    }
+                }
+                
+                
+                width:100%;
+                    margin:0 auto;
+                    
+                margin-bottom: 50px;
+                h2{
+                    @include myfont(16px,600,$main_font);
+                    margin-left: -7px;
+                }
+                ul{
+                    padding-left: 7px;
+                    list-style-type: disc;
+                    text-align: left;
+                    margin-bottom: 0;
+                    li{
+                        @include myfont(12px,400,$main_font);
+                        color:rgba(0,0,0,0.7);
+                    }
+                }
+                p{
+                   
+                    margin-left: -7px;
+                    text-align: left;
+                    @include myfont(12px,400,$main_font);
+                   
+                }
+            }
+            .heading{
+                h4{
+                    @include myfont(25px,600,$main_font);
+                    text-align: center;
+                    margin: 73px 0 34px 0 !important;
+                }
+            }
+            .adinfobox{
+                &.thirdrow{
+                    height:237px;
+                    display: inline-block;
+                    text-align: center;
+                    width: 100%;
+                    max-width: 428px; 
+                    margin:0 auto;
+                    img{
+                        text-align: center                      
+                    }
+                    h3{
+                        @include myfont(16px,500,$main_font);
+                    }
+                    padding:10px 20px;
+                    p{
+                        @include myfont(12px,400,$main_font);
+                        display: inline-block;
+                        text-align: left;
+                        a{
+                            color:#ED1C24;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                height: 100px;
+                width:100%;   
+                max-width: 428px;   
+                margin:0 auto;      
+                border-radius: 20px;
+                display: flex;
+                border: 1px solid $border_twenty;
+                margin-bottom: 10px;
+                .adinfoboxright{
+                   
+                    display: flex;
+                    align-items: center;
+                    .wrapflex{
+                        h3{
+                            font-size: 12px;
+                            font-weight: 400;
+                            font-family: "Poppins", sans-serif;
+                            margin-bottom: 0;
+                            color: #000;
+                            margin-left: 15px;
+                            margin-right: 48px;
+                        }
+                        p{
+                            @include myfont(16px,400,$button_font);
+                            margin-bottom: 20px;
+                        }
+                        a{
+                            text-decoration: underline;                            
+                            color: #ED1C24;                            
+                            display: inline-block;
+                            @include myfont(12px,400,$button_font);
+                            border-radius: 10px;
+                            border:none;
+                            margin-left:15px;
+                            
+                            
+                        }
+                    }
+                }
+                .adinfoboxleft{
+                    &.secondrow{
+                        width:34%;
+                      
+                    }
+                    width:46%;
+                    display: flex;
+                    align-items: center;
+                    
+                    position:relative;
+                    img{
+                        width:100%;
+                        position:absolute;
+                        right:0px;
+                        width:auto;
+                        top:50%;
+                        transform:translateY(-50%);
+                        &.customimgwidthclass{
+                           right:-5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

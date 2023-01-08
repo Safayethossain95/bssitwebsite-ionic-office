@@ -1,6 +1,5 @@
 import React from 'react'
-import {BsTelephoneFill} from 'react-icons/bs'
-import {ImLocation} from 'react-icons/im'
+
 import { Link } from "react-router-dom";
 import {Row,Col} from 'react-bootstrap'
 const Header = () => {
@@ -11,10 +10,10 @@ const Header = () => {
             <Col lg={6} sm={6} md={7}>
               <div className="headerinfoleft">
                 <div className="hinfo">
-                  <BsTelephoneFill/> <span>880247115628</span>                   
+                  <img src="./assets/images/icons/phone.png" alt="" /> <span>880247115628</span>                   
                 </div>
                 <div className="hinfo">
-                  <ImLocation/> <span>13, Larmini Street Wari, Dhaka</span>                        
+                  <img src="./assets/images/icons/location.png" alt="" /> <span>13, Larmini Street Wari, Dhaka</span>                        
                 </div>       
               </div>
             </Col>

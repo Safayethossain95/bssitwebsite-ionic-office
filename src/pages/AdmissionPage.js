@@ -8,6 +8,7 @@ import FooterMobile from '../components/mobile/FooterMobile'
 import HeadlineOfOtherPage from '../components/subComponents/HeadlineOfOtherPage'
 import '../sassFiles/sassPages/admissionPage.scss'
 import AdmissionCompMb from '../components/mobile/admissionPage/AdmissionCompMb'
+import '../sassFiles/mobile/sassPages/admissionPagemb.scss'
 const AdmissionPage = () => {
   return (
     <>

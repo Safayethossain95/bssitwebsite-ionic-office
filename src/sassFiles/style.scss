@@ -294,10 +294,24 @@ a:focus { text-decoration: none;
     // left:0;
     // z-index: 999;
     .read-more{
-       button{
-         padding: 11px 30px;
-       }
+        &>button{
+            padding:10px 25px;
+        }
     }
+    .adbutton{
+        
+         text-decoration: none;
+         color: #fff;
+         background-color: #ED1C24;
+         display: inline-block;
+         @include myfont(16px,500,$button_font);
+         border-radius: 10px;
+         border:none;
+          padding: 11px 30px;
+
+    }
+       
+    
     padding:0!important;
     .headerwrapper{
         height: 62px;

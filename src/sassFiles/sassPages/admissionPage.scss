@@ -3,6 +3,7 @@
 @import '../../sassStyles/typography';
 @import '../../sassStyles/global';
 
+$border_twenty:rgba(0,0,0,0.2);
 
 .admissionpagemain{
     .desktop{
@@ -11,65 +12,82 @@
         }
         .admissionpagecomp{
             .adinfobox{
-                height: 375px;
+                height: 150px;
                 width:100%;            
                 border-radius: 20px;
                 display: flex;
-                box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
-                .adinfoboxleft{
+                border: 1px solid $border_twenty;
+                .adinfoboxright{
                     width:48%;
                     display: flex;
                     align-items: center;
-                    margin-left: 43px;
+                    margin-left: 30px;
+                    &.karate{
+                        width:66%;
+                        .wrapflex{
+                            
+                            h3{
+                                @include myfont(25px,500,$main_font);
+                            }
+                            p{
+                                display: inline;
+                            }
+                            a{
+                                display: inline;
+                                @include myfont(16px,400,$button_font);
+                            }
+                        }
+                    }
                     .wrapflex{
                         h3{
-                            @include myfont(25px,500,$main_font);
-                            margin-bottom: 20px;
+                            @include myfont(20px,400,$main_font);
+                            margin-bottom: 0px;
                         }
                         p{
                             @include myfont(16px,400,$button_font);
                             margin-bottom: 20px;
                         }
                         a{
-                            text-decoration: none;
-                            color: #fff;
-                            background-color: #ED1C24;
+                            text-decoration: underline;                            
+                            color: #ED1C24;                            
                             display: inline-block;
-                            @include myfont(16px,500,$button_font);
+                            @include myfont(20px,400,$button_font);
                             border-radius: 10px;
                             border:none;
-                            padding: 16px 34px;
+                            
                             
                         }
                     }
                 }
-                .adinfoboxright{
-                    width:52%;
-                    display: flex;
-                    align-items: center;
-                    
+                .adinfoboxleft{
+                    width:33%;
                     position:relative;
+                    &.karate{
+                        width:18%;
+                    }
                     img{
                         position:absolute;
-                        right:0px;
-                        transform: translateY(-50%);
                         top:50%;
+                        transform:translateY(-50%);
+                        right:0;
 
                     }
                 }
             }
             .documentsrequirements{
-                a{
-                    text-decoration: none;
-                    color: #fff;
-                    background-color: #ED1C24;
-                    display: inline-block;
-                    @include myfont(16px,500,$button_font);
-                    border-radius: 10px;
-                    border:none;
-                    padding: 16px 76px;
+                button{
+                    // text-decoration: none;
+                    // color: #fff;
+                    // background-color: #ED1C24;
+                    // display: inline-block;
+                    // @include myfont(16px,500,$button_font);
+                    // border-radius: 10px;
+                    // border:none;
+                    padding: 14px 55px;
                     margin-top: 55px;
+                    
                 }
+              
                 text-align: center;
                 
                 width:864px;
@@ -101,163 +119,5 @@
         }
 
     }
-    .mobile{
-        .footermobile{
-            margin-top: 17px;
-        }      
-        .admissioncompmb{
-            .documentsrequirements{
-                a{
-                    text-decoration: none;
-                    color: #fff;
-                    background-color: #ED1C24;
-                    display: inline-block;
-                    @include myfont(16px,500,$button_font);
-                    border-radius: 10px;
-                    border:none;
-                    padding: 16px 76px;
-                    margin-top: 55px;
-                }
-                
-                
-                width:100%;
-                    margin:0 auto;
-                    margin-top: 64px;
-                margin-bottom: 50px;
-                h2{
-                    @include myfont(16px,600,$main_font);
-                    margin-left: -7px;
-                }
-                ul{
-                    padding-left: 7px;
-                    list-style-type: disc;
-                    text-align: left;
-                    margin-bottom: 0;
-                    li{
-                        @include myfont(12px,400,$main_font);
-                        color:rgba(0,0,0,0.7);
-                    }
-                }
-                p{
-                   
-                    margin-left: -7px;
-                    text-align: left;
-                    @include myfont(12px,400,$main_font);
-                   
-                }
-            }
-            .heading{
-                h4{
-                    @include myfont(25px,600,$main_font);
-                    text-align: center;
-                    margin: 73px 0 34px 0 !important;
-                }
-            }
-            .adinfobox{
-                &.thirdrow{
-                    height:324px;
-                    flex-direction: column;
-                    img{
-                        width: 227px;
-                        margin:0 auto;
-                        
-                    }
-                    h3{
-                        @include myfont(16px,500,$main_font);
-                    }
-                    padding:10px 20px;
-                    p{
-                        @include myfont(12px,400,$main_font);
-                    }
-                }
-                height: 147px;
-                width:100%;            
-                border-radius: 20px;
-                display: flex;
-                box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
-                margin-bottom: 10px;
-                .adinfoboxleft{
-                    &.firstrow{
-                        h3{
-                            max-width:205px;
-                            @include media(smDevice){
-                                max-width:100%;
-                            }
-                            @include media(mdDevice){
-                                max-width:100%;
-                            }
-                           
-                        }
-                    }
-                    &.secondrow{
-                        width:56%;
-                        
-                           
-
-                        
-                    }
-                    width:67%;
-                    display: flex;
-                    align-items: center;
-                    margin-left: 20px;
-                    
-                    .wrapflex{
-                        h3{
-                            @include myfont(16px,500,$main_font);
-                            margin-bottom: 0;
-                            color:#000;
-                        }
-                        p{
-                            @include myfont(16px,400,$button_font);
-                            margin-bottom: 20px;
-                        }
-                        a{
-                            text-decoration: none;
-                            color: #fff;
-                            background-color: #ED1C24;
-                            display: inline-block;
-                            @include myfont(16px,500,$button_font);
-                            border-radius: 10px;
-                            border:none;
-                            padding: 16px 34px;
-                            
-                        }
-                    }
-                }
-                .adinfoboxright{
-                    &.secondrow{
-                        width:34%;
-                        img{
-                            width:105%;
-                            height: 75%;
-                            @include media(smDevice){
-                                width: auto;
-                                height: 136px;
-                            }
-                            @include media(mdDevice){
-                                width: auto;
-                                height: 136px;
-                            }
-                        }
-                    }
-                    width:33%;
-                    display: flex;
-                    align-items: center;
-                    
-                    position:relative;
-                    img{
-                        height:140px;
-                        position:absolute;
-                        right:0px;
-                        width:auto;
-                        bottom:0;
-                        &.customimgwidthclass{
-                            width: auto;
-                            height: 108px;
-                        }
-                    }
-                }
-            }
-        }
-    }
+    
 }
