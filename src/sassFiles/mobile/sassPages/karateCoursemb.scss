@@ -1,0 +1,113 @@
+@import '../../../sassStyles/mixins';
+@import '../../../sassStyles/variables';
+@import '../../../sassStyles/typography';
+@import '../../../sassStyles/global';
+@import '../../../sassFiles/mobile/sassPages/mobileGlobal.scss';
+
+
+.karatecoursepagemain{
+    .mobile{
+        
+        .heading{
+            h4{
+                @include myfont(25px,600,$main_font);
+                text-align: center;
+                margin: 73px 0 10px 0 !important;
+            }
+            p{
+                @include myfont(12px,400,$main_font);
+                text-align: left;
+                color:#000;
+                margin-bottom: 20px;
+                text-align: justify;
+            }          
+        }
+
+        .cards{
+            .karateinfobox{
+                padding:0 19px;
+                height: 160px;
+                text-align: center;
+                border: 1px solid $border_twenty;
+                border-radius: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 10px;
+                h4{
+                    @include myfont(16px,600,$main_font);
+                    margin-bottom: 16px;
+                    color: #000;
+                }
+                p{
+                    @include myfont(12px,400,$main_font);
+                    color: #000;
+                }
+            }
+        }
+        .facilities{
+            h6{
+                @include myfont(25px,600,$main_font);
+                text-align: center;
+                margin-top: 50px;
+            }
+            p{
+                @include myfont(12px,400,$main_font);
+                color:$seventyblack;
+                text-align: justify;
+
+            }
+        }
+        .karateteacher{
+            margin-top: 34px;
+            
+            .teacherimg{
+                margin-bottom: 15px;
+            }
+
+            h5{
+                @include myfont(16px,600,$main_font);
+            }
+            p{
+                @include myfont(12px,400,$main_font);
+                color:$seventyblack;
+
+            }
+            .socialicons{
+                justify-content: center;
+                margin-top: 16px;
+                .firstimgmgtop{
+                    margin-top: 3px;
+                }
+                img{
+                    margin:0 7px;
+                }
+            }
+        }
+        .contactaddresspart{
+            .contactforadmissioninfo{
+                .contactinfokaratebox{
+                    height: 147px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width:100%;
+                    border-radius: 10px;
+                    border: 1px solid $border_twenty;
+                    margin-top: 50px;
+                    h5{
+                        @include myfont(16px,500,$main_font);
+                        width:190px;
+                        margin: 0 auto;
+                        text-align: center;
+                    }
+                    p{
+                        @include myfont(12px,400,$main_font);
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+    }
+}

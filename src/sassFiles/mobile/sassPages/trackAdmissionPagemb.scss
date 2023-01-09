@@ -1,0 +1,69 @@
+@import '../../../sassStyles/mixins';
+@import '../../../sassStyles/variables';
+@import '../../../sassStyles/typography';
+@import '../../../sassStyles/global';
+@import '../../../sassFiles/mobile/sassPages/mobileGlobal.scss';
+
+
+.trackadmissionpagemain{
+    .mobile{
+        .footermobile{
+            margin-top: 166px;
+        }
+        .heading{
+            h4{
+                @include myfont(25px,600,$main_font);
+                text-align: center;
+                margin: 73px 0 0px 0 !important;
+            }
+            p{
+                @include myfont(12px,400,$main_font);
+                text-align: center;
+                color:#000;
+                margin-bottom: 20px;
+            }
+            &.secondheading{
+                h4{
+                    margin:45px 0 30px 0!important;
+                }
+                p{
+                    text-align: left;
+                    color: $seventyblack;
+                }
+            }
+        }
+        .searchpart{
+            .mybutton{
+                text-align: center;
+            }
+            h5{
+                @include myfont(16px,500,$main_font);
+                margin-bottom: 20px;
+                margin-top: 90px;
+            }
+            input{
+                width:100%;
+                height: 40px;
+                margin: 0 auto;
+                border-radius: 10px;
+                border:1px solid rgba(0,0,0,0.2);
+                padding-left: 10px;                    
+                color:#000;
+                @include myfont(12px,400,$main_font);
+                color:rgba(0,0,0,0.7);
+                &:focus-visible{
+                    // border: 1px solid #000;
+                    outline:1px solid #000;
+                }
+            }
+            .read-more{
+                button{
+                    padding:15px 60px;
+                    @include myfont(16px,400,$main_font);
+                    margin-top: 20px;
+                }
+            }
+        }
+
+    }
+}

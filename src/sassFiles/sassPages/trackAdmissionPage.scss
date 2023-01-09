@@ -1,0 +1,63 @@
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/global';
+
+.trackadmissionpagemain{
+    .desktop{
+
+        .myheadline{
+            h1{
+                margin-bottom: 0;
+            }
+        }
+        .smallheadingmsg{
+            text-align: center;
+            h5{
+                @include myfont(25px,500,$main_font);
+                margin-bottom: 65px;
+            }
+        }
+        .trackadmissioncompdiv{
+            margin-bottom: 250px;
+            .basicinfopopulate{
+                .searchandsearchbutton{
+                    width: 760px;
+                    margin: 0 auto;
+                    
+                    input{
+                        width:576px;
+                        height: 63px;
+                        margin: 0 auto;
+                        border-radius: 20px;
+                        border:1px solid rgba(0,0,0,0.2);
+                        padding-left: 10px;                    
+                        color:#000;
+                        @include myfont(12px,400,$main_font);
+                        color:rgba(0,0,0,0.7);
+                        &:focus-visible{
+                            // border: 1px solid #000;
+                            outline:1px solid #000;
+                        }
+                    }
+                    .read-more{
+                        button{
+                            padding: 18px 61px;
+                            border-radius: 20px;
+                            font-size: 18px;
+                            margin-left: 30px;
+                        }
+                    }
+                }
+                padding: 0;
+                p{
+                    @include myfont(12px,400,$main_font);
+                    // position:relative;
+                    display: inline-block;
+                    
+                }
+               
+            }
+        }
+    }
+}

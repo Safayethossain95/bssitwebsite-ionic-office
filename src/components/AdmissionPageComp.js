@@ -25,7 +25,7 @@ const AdmissionPageComp = () => {
     {
       heading:"Track Admission",
       img:"./assets/images/admissionpage/4.png",
-      link:"/"
+      link:"/trackadmission"
     },
   ]
   const thirdrowcards=[
@@ -33,7 +33,7 @@ const AdmissionPageComp = () => {
       heading:"Karate Course",
       img:"./assets/images/admissionpage/5.png",
       paragraph:"BSS is introducing an additional course on Karate. Our course will provide each student with the essential karate skills to succeed in our community and the life skills they need to succeed in school, at home and in life. For more information ",
-      link:"/"
+      link:"/karatecourse"
     },
   ]
   const documentrequirementlist=[
