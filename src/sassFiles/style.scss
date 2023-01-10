@@ -16,7 +16,13 @@ a:focus { text-decoration: none;
          transition: 0.3s linear; 
     }
 
-
+input:focus-visible {
+    outline: 1px solid #000;
+    
+}
+textarea:focus-visible{
+    outline: 1px solid #000;
+}
 .read-more > button {
     text-decoration: none;
     color: #fff;
@@ -26,7 +32,9 @@ a:focus { text-decoration: none;
     border-radius: 10px;
     border:none;
     padding: 16px 43px;
-    
+    &:first-child:active{
+        background-color: #000;
+    }
     
   }
 

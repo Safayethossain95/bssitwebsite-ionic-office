@@ -1,0 +1,41 @@
+@import '../../../sassStyles/mixins';
+@import '../../../sassStyles/variables';
+@import '../../../sassStyles/typography';
+@import '../../../sassStyles/global';
+@import '../../../sassFiles/mobile/sassPages/mobileGlobal.scss';
+
+
+
+.feestructurepagemain{
+    .mobile{
+        .feestructurecompdiv{
+            .feestructurecompmb{
+    
+                .heading{
+                    h4{
+                        @include myfont(25px,600,$main_font);
+                        text-align: center;
+                        margin: 73px 0 0px 0 !important;
+                    }
+                    p{
+                        @include myfont(12px,400,$main_font);
+                        text-align: center;
+                        color:#000;
+                        margin-bottom: 20px;
+                    }
+                    &.secondheading{
+                        h4{
+                            margin:45px 0 30px 0!important;
+                        }
+                        p{
+                            text-align: left;
+                            color: $seventyblack;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+}

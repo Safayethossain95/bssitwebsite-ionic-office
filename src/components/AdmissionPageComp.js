@@ -13,7 +13,7 @@ const AdmissionPageComp = () => {
     {
       heading:"Please check fee structure before apply for admission",
       img:"./assets/images/admissionpage/2.png",
-      link:"/"
+      link:"/feestructure"
     },
   ]
   const secondrowcards=[
