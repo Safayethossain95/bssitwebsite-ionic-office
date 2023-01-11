@@ -8,12 +8,12 @@ const AdmissionCompMb = () => {
         {
           heading:"Please check candidate age for eligible class",
           img:"./assets/images/mobile/admissionpage/1.png",
-          link:"/"
+          link:"/studentagecheck"
         },
         {
           heading:"Please check fee structure before apply for admission",
           img:"./assets/images/mobile/admissionpage/2.png",
-          link:"/",
+          link:"/feestructure",
           customimgwidthclass:"card"
         },
       ]
@@ -85,7 +85,7 @@ const AdmissionCompMb = () => {
                   <div className="adinfoboxright">
                     <div className="wrapflex">
                     <h3>{item.heading}</h3>
-                    
+                    <Link to={item.link}>Click here</Link>
                     
                     </div>
                   </div>

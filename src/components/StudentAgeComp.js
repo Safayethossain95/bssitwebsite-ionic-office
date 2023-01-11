@@ -1,8 +1,12 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState,useRef} from 'react'
 import { Nav,Tab,Row,Col,Table } from 'react-bootstrap'
 import moment from 'moment';
 import Dropdown from 'react-dropdown';
 import {BsChevronDown} from 'react-icons/bs'
+
+
+
+    
 const StudentAgeComp = () => {
     moment().format();
     const [presentAge,setPresentAge] = useState(0.0)
@@ -12,8 +16,24 @@ const StudentAgeComp = () => {
     const [eqclass,setEqclass] = useState("")
     const [fulldatedoad,setfulldatedoad] = useState("")
     const [fulldatedobd,setfulldatedobd] = useState("")
-    
-    
+    let menuRef = useRef()
+    useEffect(()=>{
+        
+        let handler = (event) => {
+            if(!menuRef.current.contains(event.target)){
+                var cot = document.getElementsByClassName("filterdropone");
+                cot.classList.remove("is-open")
+                console.log("hello man")
+            }
+        }
+
+        document.addEventListener("mousedown",handler)
+
+        return () => {
+            document.removeEventListener("mousedown",handler)
+        }
+    })
+
     const handleDateofbirth = (e)=>{
 
         
@@ -132,7 +152,7 @@ const StudentAgeComp = () => {
         </Row>
         <div className="stuentagecompropdown">
                 <div className="dropdownwrapper">
-                    <Dropdown className='filterdropone' options={options} onChange={(e)=>dropdownvalue(e)} value={defaultOption} />
+                    <Dropdown ref={menuRef} className='filterdropone' options={options} onChange={(e)=>dropdownvalue(e)} value={defaultOption} />
                     <BsChevronDown/>
                 </div>
         </div>

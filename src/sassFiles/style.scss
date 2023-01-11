@@ -472,6 +472,10 @@ textarea:focus-visible{
                 right: 29%;
                 transform: translateX(50%);
             }
+            @include media(lgDevice){
+                height: unset;
+                width:184%;
+            }
         }
         
     }

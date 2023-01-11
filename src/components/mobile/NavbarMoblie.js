@@ -91,8 +91,11 @@ const NavbarMoblie = () => {
                       isActive ? activeStyle : undefined
                     }
                     >Contact</NavLink>
+                    <div className="buttonswrapper">
+
                     <CommonButton classChange="whitebuttonbg" buttonTitle="Bill Pay"/>
                     <CommonButton buttonTitle="Login"/>
+                    </div>
                 </Nav>
                 
                 
