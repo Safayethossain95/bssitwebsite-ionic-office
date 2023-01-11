@@ -34,6 +34,13 @@
             }
 
             .totalAmountPopulate{
+                .totalamounttitle{
+                    h5{
+                        @include myfont(25px,500,$main_font);
+                        text-align: center;
+                        margin-bottom: 15px;
+                    }
+                }
                 .dropdownwrapper{
                     margin-bottom: 15px;
                 }
