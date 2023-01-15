@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navbar,Nav } from 'react-bootstrap'
-
+import CommonButton from './subComponents/CommonButton'
 import {NavLink,Link,useNavigate} from 'react-router-dom';
 
 const Mynavbar = () => {
@@ -41,11 +41,12 @@ const Mynavbar = () => {
   // },[])
   return (
     <>
-        
         <Navbar id="mynavbar" className="mynavbar" expand="lg">
-        <div className="myContainer">
+            
             <div className="headerwrapper">
-                
+                <Navbar.Brand>
+                    <Link to="/"><img src="./assets/images/Logo.svg" alt="logo" /></Link>
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
@@ -53,48 +54,26 @@ const Mynavbar = () => {
                     <NavLink to="/aboutus" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
-                    >About Us
-                    </NavLink>
-
-                    <NavLink to="/admission" style={({ isActive }) =>
-                      isActive ? activeStyle : undefined
-                    }
-                    >Admission
-                    </NavLink>
-
+                    >About Us</NavLink>
                     <NavLink to="/notice" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
-                    >Notice
-                    </NavLink>
+                    >Notice</NavLink>
                     
                     <NavLink to="/career" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
-                    >Career
-                    </NavLink>
-
+                    >Career</NavLink>
                     <NavLink to="/contact" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
                     >Contact</NavLink>
-
-                    <NavLink to="/contact" style={({ isActive }) =>
-                      isActive ? activeStyle : undefined
-                    }
-                    >Student Panel</NavLink>
-
-                    <NavLink to="/contact" style={({ isActive }) =>
-                      isActive ? activeStyle : undefined
-                    }
-                    >Teacher Panel</NavLink>
                     
                 </Nav>
-                
+                <CommonButton myclick={handleadmissionclick} buttonTitle='Admission'/>
                 </Navbar.Collapse>
-                <Link className='appplybutton'>Apply Online <img src="./assets/images/icons/arrowright.png" alt="" /> </Link>
+            
             </div>
-        </div>
             </Navbar>
     </>
   )

@@ -2,42 +2,118 @@ import React from 'react'
 import {BsFacebook,BsTwitter,BsYoutube} from 'react-icons/bs'
 import {MdEmail} from 'react-icons/md'
 import {Row,Col} from 'react-bootstrap'
+import {usefullinkslist,inportantlinks,officeaddressesdata} from '../utils/Homepage'
+import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <>
         <div className="footer">
             <div className="myContainer">
-                <div className="socialicons">
+                {/* <div className="socialicons">
                     <div className="socialswrapper">
                         <a href='https://www.facebook.com' target="_blank" rel="noopener noreferrer"><BsFacebook/></a>
                         <a href='https://www.twitter.com' target="_blank" rel="noopener noreferrer"><BsTwitter/></a>
                         <a href='https://www.youtube.com' target="_blank" rel="noopener noreferrer"><BsYoutube/></a>
                         <a href='https://www.facebook.com' target="_blank" rel="noopener noreferrer"><MdEmail/></a>
                     </div>
-                </div>
-                <div className="contactinfo">
-                    <h4 className="text-center">Contact address</h4>
-                    <div className="cdetails text-center">
-                    <p>+880 199999999999</p>
-                    <p>contact@britishstandardschool.com</p>
-                    <p>13 Larmini Street, wari, Dhaka, Bangladesh</p>
-
-                    </div>
-                </div>
-                <div className="footersmall">
+                </div> */}
+               <div className="firstrowoffooter">
                     <Row>
-                        <Col lg={3} className="footersmallleft">
-                            <img src="./assets/images/bclogo.png" alt="bclogo" />
-                            <img src="./assets/images/edexcellogo.png" alt="edexcellogo" />
+                        <Col lg={3}>
+                            <img className='footerlogoclass' src="./assets/images/footer_logo.png" alt="footer_logo.png" />
                         </Col>
-                        <Col lg={6} className="footersmallmiddle text-center">
-                            <p>&copy; This website is copyrighted by BSSIT 2004 - 2022 </p>
+                        <Col lg={3} style={{marginTop:"20px"}}>
+                            <div className="footeritemslist">
+                                <div className="fthead">
+                                    <h4>Useful Links</h4>
+                                </div>
+                                <div className="ftitems">   
+                                    <Row>
+                                        {
+                                            usefullinkslist.map((item,key)=>{
+                                                return(
+                                                    <Col lg={6} key={key}>
+                                                        <Link to={item.link}>{item.listitem}</Link>
+                                                    </Col>
+                                                )
+                                            })
+                                        }
+                                    </Row>
+                                </div>
+                            </div>
                         </Col>
-                        <Col lg={3} className="footersmallright">
-                            <img src="./assets/images/BSSITlogo.png" alt="BSSITlogo" />
+                        <Col lg={3} style={{marginTop:"20px"}}>
+                        <div className="footeritemslist">
+                                <div className="fthead">
+                                    <h4>Important Links</h4>
+                                </div>
+                                <div className="ftitems">   
+                                    <Row>
+                                        {
+                                            inportantlinks.map((item,key)=>{
+                                                return(
+                                                    <Col lg={12} key={key}>
+                                                        <Link to={item.link}>{item.listitem}</Link>
+                                                    </Col>
+                                                )
+                                            })
+                                        }
+                                    </Row>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col lg={3} style={{marginTop:"20px"}}>
+                            <div className="footeritemslist">
+                                <div className="fthead">
+                                    <h4>
+                                        Social Links
+                                    </h4>
+                                </div>
+                                <div className="socialicons">
+                                    <div className="socialswrapper">
+                                        <a href='https://www.facebook.com' target="_blank" rel="noopener noreferrer"><BsFacebook/></a>
+                                        <a href='https://www.twitter.com' target="_blank" rel="noopener noreferrer"><BsTwitter/></a>
+                                        <a href='https://www.youtube.com' target="_blank" rel="noopener noreferrer"><BsYoutube/></a>
+                                        <a href='https://www.facebook.com' target="_blank" rel="noopener noreferrer"><MdEmail/></a>
+                                    </div>
+                                </div>
+                                <div className="brandicons">
+                                    <Row>
+                                        <Col lg={4} className="brandiconsdiv">
+                                            <img src="./assets/images/bclogo.png" alt="bclogo.png" />
+                                        </Col>
+                                        <Col lg={4} className="brandiconsdiv">
+                                            <img src="./assets/images/edexcellogo.png" alt="" />
+                                        </Col>
+                                        <Col lg={4} className="brandiconsdiv">
+                                            <img src="./assets/images/BSSITlogo.png" alt="" />
+                                        </Col>
+                                    </Row>
+                                </div> 
+                            </div>
                         </Col>
                     </Row>
-                </div>
+
+                        <div className="officeaddresses">
+                        <Row>
+                            {
+                                officeaddressesdata.map((item,key)=>{
+                                    return(
+                                        <Col lg={4}>
+                                            <h5>{item.officename}</h5>
+                                            <p>{item.address}</p>
+                                            <p>TEL: {item.phone}</p>
+                                            <p>{item.email}</p>
+                                        </Col>
+                                    )
+                                })
+                            }
+                        </Row>
+                        </div>
+                        <div className="copyright">
+                            <p>&copy; This website is copyrighted by BSSIT 2004 - 2022 </p>
+                        </div>
+               </div>
             </div>
         </div>
     </>

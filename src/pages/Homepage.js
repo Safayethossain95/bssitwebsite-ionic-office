@@ -125,7 +125,7 @@ useEffect(()=>{
           <AboutUs/>
           <WhyChooseUs/>
           <EventAndNews/>
-          <Notice/>
+          
           <LearnFromAnywhere/>
           <ScrollTop/>
           <Footer/>

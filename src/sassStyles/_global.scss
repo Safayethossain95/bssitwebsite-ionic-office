@@ -52,6 +52,9 @@ input{
 .myContainer{
     width:80%;
     margin:0 auto;
+    @include media(lgDevice){
+        width:900px;
+    }
     @include media(xxlgDevice){
         width:1152px;
     }

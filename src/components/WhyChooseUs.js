@@ -2,6 +2,7 @@ import React from 'react'
 import {Row,Col} from 'react-bootstrap'
 import RedCardwithText from './subComponents/RedCardwithText'
 import $ from 'jquery';
+import {noticelist} from '../utils/Homepage'
 const WhyChooseUs = () => {
 
   // $(window).load(function(){
@@ -11,95 +12,119 @@ const WhyChooseUs = () => {
     <>
         <div className="myContainer">
           <div className="whychooseus">
-              <h3>Why Choose Us</h3>
-              <div className="wcuheadingp">
+             <Row>
+              <Col lg={7} className="whyleft">
+                <h4>Why Choose Us</h4>
                 <p>The decision to become an exceptional is a highly personal one, based on a number of factors that you must weigh for yourself. It's not a step to be taken lightly. We are different because</p>
-              </div>
 
-              <Row>
-                    <Col lg={12}>
-                    <div className="ourmethodcards">
-                            <Row>
-                                <Col lg={6}>                                                                                                                                 
-                                    <RedCardwithText imgsrc="./assets/images/wcucardicon1.png" paragraph="Encourage contact between Students and Faculty"/>
-                                </Col>
-                                <Col lg={6}>
-                                    <RedCardwithText imgsrc="./assets/images/wcucardicon2.png" paragraph="Develop Reciprocity and cooperation among students"/>
-                                </Col>
-                                <Col lg={6}>
-                                    <RedCardwithText imgsrc="./assets/images/wcucardicon3.png" paragraph="Encourage Active Learning"/>
-                                </Col>
-                                <Col lg={6}>
-                                    <RedCardwithText imgsrc="./assets/images/wcucardicon4.png" paragraph="Give Prompt Feedback"/>
-                                </Col>
-                                <Col lg={6}>
-                                    <RedCardwithText imgsrc="./assets/images/wcucardicon5.png" paragraph="Emphasize time on task"/>
-                                </Col>
-                                <Col lg={6}>
-                                    <RedCardwithText imgsrc="./assets/images/wcucardicon6.png" paragraph="Communicate high expectations"/>
-                                </Col>
-                            </Row>
-                        </div>
-                    </Col>
+                <Row>
+                  <Col lg={6}>
+                    <Row style={{height:"50px",marginBottom:"25px"}}>
+                      <Col lg={2}>
+                      <div className="whysmbox">
+                        <img src="./assets/images/wcucardicon1.png" alt="" />
+                      </div>
+                      </Col>
+                      <Col lg={10} className='innerp d-flex align-items-center'>
+                      <p>Encourage contact between Students and Faculty</p>
+                      </Col>
+                      
+                    </Row>
+                    <Row style={{height:"50px",marginBottom:"25px"}}>
+                      <Col lg={2}>
+                      <div className="whysmbox">
+                        <img src="./assets/images/wcucardicon3.png" alt="" />
+                      </div>
+                      </Col>
+                      <Col lg={10} className='innerp d-flex align-items-center'>
+                      <p>Encourage Active Learning</p>
+                      </Col>
+                      
+                    </Row>
+                    <Row style={{height:"50px",marginBottom:"25px"}}>
+                      <Col lg={2}>
+                      <div className="whysmbox">
+                        <img src="./assets/images/wcucardicon5.png" alt="" />
+                      </div>
+                      </Col>
+                      <Col lg={10} className='innerp d-flex align-items-center'>
+                      <p>Emphasize time on task</p>
+                      </Col>
+                      
+                    </Row>
+                   
+                      
+
+                  </Col>
+                  <Col lg={6}>
+                  <Row style={{height:"50px",marginBottom:"25px"}}>
+                      <Col lg={2}>
+                      <div className="whysmbox">
+                        <img src="./assets/images/wcucardicon2.png" alt="" />
+                      </div>
+                      </Col>
+                      <Col lg={10} className='innerp d-flex align-items-center'>
+                      <p>Develop Reciprocity and cooperation among students</p>
+                      </Col>
+                  </Row>
+                  <Row style={{height:"50px",marginBottom:"25px"}}>
+                      <Col lg={2}>
+                      <div className="whysmbox">
+                        <img src="./assets/images/wcucardicon4.png" alt="" />
+                      </div>
+                      </Col>
+                      <Col lg={10} className='innerp d-flex align-items-center'>
+                      <p>Give Prompt Feedback</p>
+                      </Col>
+                  </Row>
+                  <Row >
+                      <Col lg={2}>
+                      <div className="whysmbox">
+                        <img src="./assets/images/wcucardicon6.png" alt="" />
+                      </div>
+                      </Col>
+                      <Col lg={10} className='innerp d-flex align-items-center'>
+                      <p>Communicate high expectations
+</p>
+                      </Col>
+                  </Row>
+                  </Col>
                 </Row>
-              {/* <Row className="wcucontent wcugapup">
-                <Col lg={4} md={6} sm={6}>
-                  <div className="wcubox">
-                    <img src="./assets/images/wcuicon1.png" alt="" />
-                    <p>Encourage contact between Students <br/> and Faculty</p>
+              </Col>
+              <Col lg={5}>
+                <div className="whyright">
+                <h4>Notice</h4>
+                <div className="noticecase">
+                  <div className="tablelikediv">
+                    {
+                      noticelist.map((item,key)=>{
+                        return(
+                          <div className="tbdiv" key={key}>
+                             <div className="flexwrap">
+                             <h5>{item.heading}</h5>
+                             {
+                              item.paragraph?
+                              
+                                <p>{item.paragraph}</p>
+                              
+                              :""
+                             }
+                             <div className="cald">
+                              <img src="./assets/images/icons/cal.png" alt="" />
+                              <p>{item.publishdate}</p>
+                             </div>
+                             </div>
+                          </div>
+                        )
+                      })
+                    }
+                    
+                    
                   </div>
-                </Col>
-                <Col lg={4} md={6} sm={6}>
-                  <div className="wcubox">
-                    <img src="./assets/images/wcuicon2.png" alt="" />
-                    <p>Develop Reciprocity and cooperation <br/> among students</p>
-                  </div>
-                </Col>
-                <Col lg={4} md={6} sm={6}>
-                <div className="wcubox">
-                    <img src="./assets/images/wcuicon3.png" alt="" />
-                    <p>Encourage Active Learning</p>
-                  </div>
-                </Col>
-                <Col lg={4} md={6} sm={6} className="wcugapsmall">
-                  <div className="wcubox">
-                    <img src="./assets/images/wcuicon4.png" alt="" />
-                    <p>Encourage contact between Students <br/> and Faculty</p>
-                  </div>
-                </Col>
-                <Col lg={4} md={6} sm={6} className="wcugapsmall">
-                  <div className="wcubox">
-                    <img src="./assets/images/wcuicon5.png" alt="" />
-                    <p>Develop Reciprocity and cooperation <br/> among students</p>
-                  </div>
-                </Col>
-                <Col lg={4} md={6} sm={6} className="wcugapsmall">
-                <div className="wcubox">
-                    <img src="./assets/images/wcuicon6.png" alt="" />
-                    <p>Encourage Active Learning</p>
-                  </div>
-                </Col>
-              </Row> */}
-              {/* <Row  className="wcucontent wcugapsmall">
-                <Col lg={4}>
-                  <div className="wcubox">
-                    <img src="./assets/images/wcuicon4.png" alt="" />
-                    <p>Encourage contact between Students <br/> and Faculty</p>
-                  </div>
-                </Col>
-                <Col lg={4}>
-                  <div className="wcubox">
-                    <img src="./assets/images/wcuicon5.png" alt="" />
-                    <p>Develop Reciprocity and cooperation <br/> among students</p>
-                  </div>
-                </Col>
-                <Col lg={4}>
-                <div className="wcubox">
-                    <img src="./assets/images/wcuicon6.png" alt="" />
-                    <p>Encourage Active Learning</p>
-                  </div>
-                </Col>
-              </Row> */}
+                </div>
+                </div>
+              </Col>
+             </Row>
           </div>
         </div>
     </>
