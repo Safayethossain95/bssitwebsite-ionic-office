@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { noticedata } from '../utils/Homepage'
+import { noticedata } from '../utils/NoticePageApi'
 import NavbarMoblie from '../components/mobile/NavbarMoblie'
 import FooterMobile from '../components/mobile/FooterMobile'
 import Header from '../components/Header'
@@ -10,6 +10,10 @@ import '../sassFiles/mobile/sassPages/noticepagesingled.scss'
 const NoticePageSingleDetail = () => {
 
 
+    useEffect(()=>{
+        var navbar = document.getElementById("mynavbar");
+        navbar.classList.remove("sticky");
+    },[])
     let {id} = useParams()
     console.log(id)
     

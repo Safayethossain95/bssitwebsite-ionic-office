@@ -724,7 +724,7 @@ textarea:focus-visible{
         }
     }
     
-
+    
     .noticebox{
         &.upcoming{
             border: 1px solid $border_twenty;
@@ -863,6 +863,7 @@ textarea:focus-visible{
             }
         }
     }
+   
     .whyright{
         h4{
             @include myfont(25px,600,$main_font);
@@ -882,12 +883,28 @@ textarea:focus-visible{
                     display: flex;
                     align-items: center;
                     padding-left: 20px;
-                    
+                    .flexwrap{
+                        .mainparagraph{
+                            display: none;
+                            
+                        }
+                        
+
+                    }
                     &:first-child{
                         height:70px;
                         h5{
                             color:#000;
                             margin-bottom: 4px;
+                        }
+                        .flexwrap{
+                            .mainparagraph{
+                                display: block;
+                                span{
+                                    display: block;
+                                }
+                            }
+
                         }
                     }
                     height: 60px;

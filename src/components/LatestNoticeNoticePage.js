@@ -31,6 +31,7 @@ const LatestNoticeNoticePage = () => {
 
       const handleNoticeSinglePage=(id)=>{
           navigate(`/notice/latest/${id}`)
+         
       }
   return (
     <>

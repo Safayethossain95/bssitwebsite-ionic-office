@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { oldernoticedata } from '../utils/NoticePageApi'
 import NavbarMoblie from '../components/mobile/NavbarMoblie'
@@ -12,6 +12,11 @@ const OlderNoticeSingleDetailPage = () => {
 
     let {id} = useParams()
     console.log(id)
+
+    useEffect(()=>{
+      var navbar = document.getElementById("mynavbar");
+      navbar.classList.remove("sticky");
+    },[])
     
   function myFunction() {
     var navbar = document.getElementById("mynavbar");

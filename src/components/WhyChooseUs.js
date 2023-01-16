@@ -4,6 +4,7 @@ import RedCardwithText from './subComponents/RedCardwithText'
 import $ from 'jquery';
 import {noticelist} from '../utils/Homepage'
 import { useNavigate } from 'react-router-dom';
+import { noticedata } from '../utils/NoticePageApi';
 const WhyChooseUs = () => {
 
   // $(window).load(function(){
@@ -102,18 +103,17 @@ const WhyChooseUs = () => {
                 <div className="noticecase">
                   <div className="tablelikediv">
                     {
-                      noticelist.map((item,key)=>{
+                      noticedata.map((item,key)=>{
+                        let trimmedString= item.paragraph.substr(0, 38)
                         return(
                           <div className="tbdiv" onClick={()=>handleNoticeClick(item.id)} key={key}>
                              <div className="flexwrap">
                              <h5>{item.heading}</h5>
-                             {
-                              item.paragraph?
-                              
-                                <p>{item.paragraph}</p>
-                              
-                              :""
-                             }
+                             <p className='mainparagraph'>
+                               
+                               {trimmedString}...
+                               {/* <span>...</span> */}
+                               </p>
                              <div className="cald">
                               <img src="./assets/images/icons/cal.png" alt="" />
                               <p>{item.publishdate}</p>
