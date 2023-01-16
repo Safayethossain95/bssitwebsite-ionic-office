@@ -87,6 +87,16 @@ body{
     transition: .5s ease-in-out;
     cursor: pointer;
   }
+  .mynavbarnav{
+    .appplybutton{
+        @include myfont(16px,500,$main_font);
+        color:#000;
+        border-bottom: 2px solid #ED1C24;
+        img{
+            margin-top: -2px;
+        }
+    }
+  }
   
   #nav-icon4 span {
     display: block;
@@ -600,6 +610,21 @@ body{
 .noticemobile{
     .noticebox{
         border-radius: 20px;
+        .noticeheading{
+            h4{
+                @include myfont(16,500,$main_font);
+                margin-bottom: 1px;
+            }
+           
+        }
+        .lastrow{
+                
+            margin-top: 3px;
+            p{
+                margin-left: 6px;
+            }
+        
+    }
     }
     .heading{
         h4{
@@ -621,7 +646,7 @@ body{
         &.noticeboxlast{
             border:1px solid red;
             width:288px;
-            height:220px;
+            height:106px;
             border:1px solid rgba(0, 0, 0,0.2);
             display: flex!important;
             justify-content: center;
@@ -667,7 +692,7 @@ body{
         }
         @include media(xsmDevice){
             width:100%;
-            height:220px;
+            height:106px;
             margin-bottom: 25px!important;
         }
         @include media(lgDevice){
@@ -709,12 +734,12 @@ body{
     &.noticeboxlast{
         border:1px solid red;
         width:288px;
-        height:220px;
+        height:106px;
         border:1px solid rgba(0, 0, 0,0.2);
     }
     border:1px solid rgba(0, 0, 0,0.2);
     width:288px;
-    height:350px;
+    height:106px;
     border-radius: 20px;
     padding:27px 22px;
     transition: 0.4s;
@@ -724,7 +749,7 @@ body{
     }
     @include media(xsmDevice){
         width:100%;
-        height: auto;
+        height: 106px;
         margin-bottom: 25px!important;
     }
     @include media(lgDevice){

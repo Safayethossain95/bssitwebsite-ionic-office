@@ -680,10 +680,8 @@ textarea:focus-visible{
     }
 }
 .noticecontent{
-    padding:45px 0 105px 0;
-    &.noticecontentolder{
-        padding:45px 0 0px 0;
-    }
+    
+    
     @include media(xsmDevice){
         padding: 35px 0;
     }
@@ -706,7 +704,44 @@ textarea:focus-visible{
             margin-top: 60px;
         }
     }
+    .myContainer{
+        &:first-child{
+            .noticebox{
+                height:150px!important;
+                .mainparagraph{
+                    display: block;
+                    width:100%;
+                }
+                &.upcoming{
+                    
+                    height:100px!important;
+                    .mainparagraph{
+                        display: none;
+                        
+                    }
+                }
+            }
+        }
+    }
+    
+
     .noticebox{
+        &.upcoming{
+            border: 1px solid $border_twenty;
+        }
+        .lastrow{
+            margin-top: 3px;
+            img{
+                width: 22px;
+                height: 21px;
+            }
+            p{
+                @include myfont(16px,400,$main_font);
+            }
+        }
+        .mainparagraph{
+            display: none;
+        }
         &.noticeboxmiddle{
             left:50%;
             transform:translateX(-50%);
@@ -731,12 +766,19 @@ textarea:focus-visible{
                 transform:translateX(-50%);
             }
         }
-        border:1px solid rgba(0, 0, 0,0.2);
-        width:288px;
-        height:350px;
+        
+        border:1px solid rgba(0, 0, 0,0.7);
+        width:100%;
+        height:100px!important;
         border-radius: 20px;
-        padding:27px 22px;
+        padding:0 22px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
         transition: 0.4s;
+        .flexwrap{
+            width: 100%;
+        }
 
         @include media(xsmDevice){
             width:100%;
@@ -758,7 +800,8 @@ textarea:focus-visible{
         }
         .noticeheading{
             h4{
-                @include myfont(20px,500,$main_font);
+                @include myfont(25px,500,$main_font);
+                margin-bottom: 3px;
                 span{
                     @include myfont(40px,600,$main_font);
                     
@@ -767,7 +810,7 @@ textarea:focus-visible{
         }
         p{
             width:230px;
-            @include myfont(16px,400,$main_font);
+            @include myfont(16px,500,$main_font);
             @include media(xsmDevice){
                 width:100%;
             }

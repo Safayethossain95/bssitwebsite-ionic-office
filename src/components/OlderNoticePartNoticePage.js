@@ -1,7 +1,10 @@
 import React from 'react'
 import {Row,Col} from 'react-bootstrap'
 import $ from 'jquery'
+import { oldernoticedata } from '../utils/NoticePageApi'
+import { useNavigate } from 'react-router-dom'
 const OlderNoticePartNoticePage = () => {
+  let navigate = useNavigate()
     $(function noticehover() {
       
         let x,y;
@@ -22,6 +25,10 @@ const OlderNoticePartNoticePage = () => {
           });
         });
       });
+
+      const handleNoticeSinglePage=(id)=>{
+        navigate(`/notice/older/${id}`)
+      }
   return (
     <>
         <div className="oldernoticepartnoticepage">
@@ -32,117 +39,35 @@ const OlderNoticePartNoticePage = () => {
                 </div>
 
                 <Row className="noticecontent noticecontentolder">
-                    <Col lg={4} md={6}>
-                        
-                        <div className="noticebox noticeboxleft m-auto">
-                            <span></span>
+                {
+                      oldernoticedata.map((item,key)=>{
+                        let trimmedString= item.paragraph.substr(0, 38)
+                      return(
+                        <div className="myContainer">
+                          <Col lg={12} md={12} key={key}>
+                        <div className="noticebox noticeboxleft upcoming" onClick={()=>handleNoticeSinglePage(item.id)}>
+                        <span></span>
+                        <div className="flexwrap">
                         <div className="noticeheading">
-                                <h4><span>15</span> Nov, 2022 </h4>
+                        <h4>{item.heading}</h4>
                             </div>
-                                <p>Campus 3 is going to celebrate "Fruit Festival" on this Thursday in our premises. Everyone of our BSS family is welcome to experience the event. We will be happy to welcome you all.</p>
-                      
+                                <p className='mainparagraph'>
+                               
+                                {trimmedString}...
+                                </p>
+                                <div className="lastrow d-flex">
+                                <img src="./assets/images/icons/calfaded.png" alt="" /> 
+                                <p>{item.publishdate}</p>
+
+                                </div>
                         </div>
-                        
-                    </Col>
-                    <Col lg={4} md={6}>
-                        <div className="noticebox noticeboxmiddle">
-                        <span></span>
-                            <div className="noticeheading">
-                                <h4><span>14</span> Dec, 2022 </h4>
-                            </div>
-                                <p>Notice for Starter to Nursery
-                                Respected Guardians,   
-                                You are informed to come and see the T. Bks. and C/W Ex. Bks. of your ward's on Saturday,
-                                 05 November 2022 instead of Saturday, 29 October 2022. 
-                                Timing : 10:30 am to 12:00 pm</p>
                         </div>
-                    </Col>
-                    <Col lg={4} md={12}>
-                        <div className="noticebox noticeboxright m-auto noticelastbox">
-                        <span></span>
-                            <div className="noticeheading">
-                                <h4><span>16</span> Dec, 2022 </h4>
-                            </div>
-                                <p>Notice for Jr. KG & Sr. KG
-                                Respected Guardians,
-                                This is to inform you that we are going to celebrate "Breakfast Making Day" 
-                                on Thursday, 29 September 2022. a and details of the event will be given in WhatsApp group. </p>
+                      </Col>
+
                         </div>
-                    </Col>
-                    <Col lg={4} md={6}>
-                        
-                        <div className="noticebox noticeboxleft m-auto">
-                            <span></span>
-                        <div className="noticeheading">
-                                <h4><span>15</span> Nov, 2022 </h4>
-                            </div>
-                                <p>Campus 3 is going to celebrate "Fruit Festival" on this Thursday in our premises. Everyone of our BSS family is welcome to experience the event. We will be happy to welcome you all.</p>
-                      
-                        </div>
-                        
-                    </Col>
-                    <Col lg={4} md={6}>
-                        <div className="noticebox noticeboxmiddle">
-                        <span></span>
-                            <div className="noticeheading">
-                                <h4><span>14</span> Dec, 2022 </h4>
-                            </div>
-                                <p>Notice for Starter to Nursery
-                                Respected Guardians,   
-                                You are informed to come and see the T. Bks. and C/W Ex. Bks. of your ward's on Saturday,
-                                 05 November 2022 instead of Saturday, 29 October 2022. 
-                                Timing : 10:30 am to 12:00 pm</p>
-                        </div>
-                    </Col>
-                    <Col lg={4} md={12}>
-                        <div className="noticebox noticeboxright m-auto noticelastbox">
-                        <span></span>
-                            <div className="noticeheading">
-                                <h4><span>16</span> Dec, 2022 </h4>
-                            </div>
-                                <p>Notice for Jr. KG & Sr. KG
-                                Respected Guardians,
-                                This is to inform you that we are going to celebrate "Breakfast Making Day" 
-                                on Thursday, 29 September 2022. a and details of the event will be given in WhatsApp group. </p>
-                        </div>
-                    </Col>
-                    <Col lg={4} md={6}>
-                        
-                        <div className="noticebox noticeboxleft m-auto">
-                            <span></span>
-                        <div className="noticeheading">
-                                <h4><span>15</span> Nov, 2022 </h4>
-                            </div>
-                                <p>Campus 3 is going to celebrate "Fruit Festival" on this Thursday in our premises. Everyone of our BSS family is welcome to experience the event. We will be happy to welcome you all.</p>
-                      
-                        </div>
-                        
-                    </Col>
-                    <Col lg={4} md={6}>
-                        <div className="noticebox noticeboxmiddle">
-                        <span></span>
-                            <div className="noticeheading">
-                                <h4><span>14</span> Dec, 2022 </h4>
-                            </div>
-                                <p>Notice for Starter to Nursery
-                                Respected Guardians,   
-                                You are informed to come and see the T. Bks. and C/W Ex. Bks. of your ward's on Saturday,
-                                 05 November 2022 instead of Saturday, 29 October 2022. 
-                                Timing : 10:30 am to 12:00 pm</p>
-                        </div>
-                    </Col>
-                    <Col lg={4} md={12}>
-                        <div className="noticebox noticeboxright m-auto noticelastbox">
-                        <span></span>
-                            <div className="noticeheading">
-                                <h4><span>16</span> Dec, 2022 </h4>
-                            </div>
-                                <p>Notice for Jr. KG & Sr. KG
-                                Respected Guardians,
-                                This is to inform you that we are going to celebrate "Breakfast Making Day" 
-                                on Thursday, 29 September 2022. a and details of the event will be given in WhatsApp group. </p>
-                        </div>
-                    </Col>
+                      )
+                    })
+                  }
                     
                 </Row>
             </div>

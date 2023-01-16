@@ -49,6 +49,10 @@ import SchoolTimingPage from './pages/SchoolTimingPage';
 import TrackAdmissionPage from './pages/TrackAdmissionPage';
 import KarateCoursePage from './pages/KarateCoursePage';
 import FeeStructurePage from './pages/FeeStructurePage';
+import NoticePageSingleDetail from './pages/NoticePageSingleDetail';
+import UpcomingPageSingledetail from './pages/UpcomingPageSingledetail';
+import OlderNoticeSingleDetailPage from './pages/OlderNoticeSingleDetailPage';
+
 setupIonicReact();
 
 const App: React.FC = () => {
@@ -64,6 +68,12 @@ const App: React.FC = () => {
         <Route  path="/aboutus" element={<AboutUsPage />}/>
           
         <Route  path="/notice" element={<NoticePage/>}/>
+        
+        <Route  path="/notice/latest/:id" element={<NoticePageSingleDetail/>}/>
+        
+        <Route  path="/notice/upcoming/:id" element={<UpcomingPageSingledetail/>}/>
+        
+        <Route  path="/notice/older/:id" element={<OlderNoticeSingleDetailPage/>}/>
           
         <Route  path="/career" element={<CareerPage/>}/>
 

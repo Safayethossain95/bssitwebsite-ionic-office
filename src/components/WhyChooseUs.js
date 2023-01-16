@@ -3,11 +3,16 @@ import {Row,Col} from 'react-bootstrap'
 import RedCardwithText from './subComponents/RedCardwithText'
 import $ from 'jquery';
 import {noticelist} from '../utils/Homepage'
+import { useNavigate } from 'react-router-dom';
 const WhyChooseUs = () => {
 
   // $(window).load(function(){
   //   $(".static").addClass("aa")
   // })
+  let navigate = useNavigate()
+  const handleNoticeClick=(id)=>{
+    navigate(`/notice/latest/${id}`)
+  }
   return (
     <>
         <div className="myContainer">
@@ -99,7 +104,7 @@ const WhyChooseUs = () => {
                     {
                       noticelist.map((item,key)=>{
                         return(
-                          <div className="tbdiv" key={key}>
+                          <div className="tbdiv" onClick={()=>handleNoticeClick(item.id)} key={key}>
                              <div className="flexwrap">
                              <h5>{item.heading}</h5>
                              {

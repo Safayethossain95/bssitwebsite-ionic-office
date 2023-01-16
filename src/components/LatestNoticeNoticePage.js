@@ -1,9 +1,11 @@
 import React,{useEffect} from 'react'
 import {Row,Col} from 'react-bootstrap'
 import $ from 'jquery';
-
+import { noticedata } from '../utils/NoticePageApi';
+import { useNavigate } from 'react-router-dom';
 const LatestNoticeNoticePage = () => {
    
+      let navigate = useNavigate()
       useEffect(()=>{
         $(function noticehover() {
           
@@ -26,6 +28,10 @@ const LatestNoticeNoticePage = () => {
           });
         });
       },[])
+
+      const handleNoticeSinglePage=(id)=>{
+          navigate(`/notice/latest/${id}`)
+      }
   return (
     <>
         <div className="latestNoticepart" id="latestNoticepart">
@@ -37,24 +43,37 @@ const LatestNoticeNoticePage = () => {
             <Row className="noticecontent">
               
 
-                    <Col lg={12} md={12}>
                         
-                        <div className="noticebox noticeboxwide m-auto">
-                            <span></span>
+                    {
+                      noticedata.map((item,key)=>{
+                        let trimmedString= item.paragraph.substr(0, 38)
+                      return(
+                        <div className="myContainer">
+                          <Col lg={12} md={12} key={key}>
+                        <div className="noticebox noticeboxleft" onClick={()=>handleNoticeSinglePage(item.id)}>
+                        <span></span>
+                        <div className="flexwrap">
                         <div className="noticeheading">
-                                <h4><span>07</span> Nov, 2022 </h4>
+                        <h4>{item.heading}</h4>
                             </div>
-                                <p>Notice for Play:Diamond-I,  Nursery:Diamond-I, Ruby-I, & pearl-I 
-                                Respected Guardians,
-                                You are requested to attend a meeting with the AVP on Sunday, 21 August 2022. 
-                                Agenda: Academic, Rules &amp; regulations
-                                Time	: 10:00 AM to 11:00 AM. Venue	: Campus 4 [13, Larmini Street Wari]
-                                Your presence will be highly appreciated.
-                                Regards,
-                                BSS</p>
+                                <p className='mainparagraph'>
+                               
+                                {trimmedString}...
+                                </p>
+                                <div className="lastrow d-flex">
+                                <img src="./assets/images/icons/cal27.png" alt="" /> 
+                                <p>{item.publishdate}</p>
+
+                                </div>
                         </div>
+                        </div>
+                      </Col>
+
+                        </div>
+                      )
+                    })
+                  }
                         
-                    </Col>
               
                     
                 </Row>

@@ -22,6 +22,16 @@
 //     height: auto;
 //   }
 }
+
+.read-more{
+
+    &>button{
+        @include media(xsmDevice){
+            background-color: #312783;
+
+        }
+    }
+}
 .mobilecontainer{
     width:84%;
     margin:0 auto;
@@ -85,6 +95,7 @@
             }
             &>button{
                 width:80%;
+                
             }
         }
         .navbar-brand2{
@@ -147,7 +158,7 @@
                         color:#ED1C24;
                         
                     } 
-                    margin-left: 80px; 
+                    margin-left: 50px; 
                   
                     // @include media(xsmDevice){
                     //     margin:5px 0;

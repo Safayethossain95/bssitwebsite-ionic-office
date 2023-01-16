@@ -74,10 +74,21 @@ const NavbarMoblie = () => {
                 
                 <Nav className="mynavbarnav" id="mynavbarnav">
                     
+                    <NavLink to="/" style={({ isActive }) =>
+                      isActive ? activeStyle : undefined
+                    }
+                    >Home</NavLink>
+
                     <NavLink to="/aboutus" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
                     >About Us</NavLink>
+
+                    <NavLink to="/admission" style={({ isActive }) =>
+                      isActive ? activeStyle : undefined
+                    }
+                    >Admission</NavLink>
+
                     <NavLink to="/notice" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
@@ -87,15 +98,23 @@ const NavbarMoblie = () => {
                       isActive ? activeStyle : undefined
                     }
                     >Career</NavLink>
+
                     <NavLink to="/contact" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
                     >Contact</NavLink>
-                    <div className="buttonswrapper">
 
-                    <CommonButton classChange="whitebuttonbg" buttonTitle="Bill Pay"/>
-                    <CommonButton buttonTitle="Login"/>
-                    </div>
+                    <NavLink to="/stuentpanel" style={({ isActive }) =>
+                      isActive ? activeStyle : undefined
+                    }
+                    >Student Panel</NavLink>
+
+                    <NavLink to="/teacgerpanel" style={({ isActive }) =>
+                      isActive ? activeStyle : undefined
+                    }
+                    >Teacher Panel</NavLink>
+
+                    <Link className='appplybutton'>Apply Online <img src="./assets/images/icons/arrowright.png" alt="" /> </Link>
                 </Nav>
                 
                 

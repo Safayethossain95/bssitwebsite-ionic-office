@@ -1,6 +1,7 @@
 import React from 'react'
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
+import { noticedata } from '../../../utils/NoticePageApi';
 import $ from 'jquery'
 const LatestSliderNoticePage = (props) => {
     const settings = {
@@ -48,45 +49,28 @@ const LatestSliderNoticePage = (props) => {
                   <h5>{props.subtitle}</h5>
                 </div>
                 <Slider {...settings}>
-                <div className="noticebox noticeboxleft m-auto">
-                            <span></span>
-                <div className="noticeheading">
-                        <h4><span>07</span> Nov, 2022 </h4>
-                    </div>
-                        <p>
-                        The school will be off for National Cancer Awareness Day. <br/>
-                        National Cancer Awareness Day is observed on November <br/>
-                        7 in India. The day highlights
-                        the significance of increased awareness
-                        <br/> about cancer
-                        </p>
-                </div>
-                <div className="noticebox noticeboxleft m-auto">
-                            <span></span>
-                <div className="noticeheading">
-                        <h4><span>07</span> Nov, 2022 </h4>
-                    </div>
-                        <p>
-                        The school will be off for National Cancer Awareness Day. <br/>
-                        National Cancer Awareness Day is observed on November <br/>
-                        7 in India. The day highlights
-                        the significance of increased awareness
-                        <br/> about cancer
-                        </p>
-                </div>
-                <div className="noticebox noticeboxleft m-auto">
-                            <span></span>
-                <div className="noticeheading">
-                        <h4><span>07</span> Nov, 2022 </h4>
-                    </div>
-                        <p>
-                        The school will be off for National Cancer Awareness Day. <br/>
-                        National Cancer Awareness Day is observed on November <br/>
-                        7 in India. The day highlights
-                        the significance of increased awareness
-                        <br/> about cancer
-                        </p>
-                </div>
+                {
+                    noticedata.map((item,key)=>{
+                      let trimmedString= item.paragraph.substr(0, 38)
+                      return(
+                        <div className="noticebox noticeboxleft m-auto">
+                        <span></span>
+                        <div className="noticeheading">
+                        <h4>{item.heading}</h4>
+                            </div>
+                                <p className='mainparagraph'>
+                               
+                                {trimmedString}...
+                                </p>
+                                <div className="lastrow d-flex">
+                                <img src="./assets/images/icons/cal.png" alt="" /> 
+                                <p>{item.publishdate}</p>
+
+                                </div>
+                        </div>
+                      )
+                    })
+                  }
                 <div className="noticebox noticeboxlast m-auto">
                 <span></span>
                 <div className="ntcwrapper ">

@@ -1,0 +1,52 @@
+@import '../../../sassStyles/mixins';
+@import '../../../sassStyles/variables';
+@import '../../../sassStyles/typography';
+@import '../../../sassStyles/global';
+@import './mobileGlobal.scss';
+
+
+.mobile{
+    .heading{
+        h3{
+            @include myfont(22px,600,$main_font);
+            // text-align: center;
+            margin: 90px 0 20px 0 !important;
+        }
+        p{
+            @include myfont(16px,400,$main_font);
+            margin-top: 30px;
+            color:$seventyblack;
+        }
+        .gapadjustmargin{
+            margin-top: 0;
+            margin-left: 6px;
+            @include myfont(14px,400,$main_font);
+        }
+    }
+}
+
+.desktop{
+    .noticepagesinglecompdesk{
+        padding: 50px 0;
+    }
+    .heading{
+        
+        h3{
+            @include myfont(30px,600,$main_font);
+            margin-bottom: 35px;
+        }
+        .datewrap{
+            margin-bottom: 30px;
+            img{
+                margin-top: 2px;
+            }
+            p{
+                margin-left: 10px;
+                @include myfont(16px,400,$main_font);
+            }
+        }
+        p{
+            @include myfont(16px,400,$main_font);
+        }
+    }
+}
