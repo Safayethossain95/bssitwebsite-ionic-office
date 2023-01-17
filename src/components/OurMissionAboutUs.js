@@ -4,7 +4,7 @@ const OurMissionAboutUs = () => {
   return (
     <>
         <div className="myContainer">
-            <div className="ourmissionaboutus">
+            <div className="ourmissionaboutus" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                 <Row className="ourmissionaboutuscontent">
                     <Col lg={4} md={6} className="text-center">
                         <img src="./assets/images/ourmissionaboutus.png" alt="about us" />

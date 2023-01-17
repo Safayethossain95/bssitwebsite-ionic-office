@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react'
 import { Container,Col,Row } from 'react-bootstrap';
-import CommonButton from './subComponents/CommonButton';
+
 import $ from 'jquery';
 const Banner = () => {
   useEffect(()=>{
@@ -12,13 +12,13 @@ const Banner = () => {
     <div className="myContainer">
         <div className="mybanner" id="bntxinner">
         <Row>
-            <Col lg={9} className="bannertext">
-              <div className="bntxinner" >
+            <Col lg={9} className="bannertext"  >
+              <div className="bntxinner" data-aos-delay="400" data-aos="fade-right" data-aos-duration="2000">
                 <h3>Welcome to <br/> <p>British Standard School</p>   </h3>
-                <p className="bannerdetailsp">"Education is the manifestation of perfection already in man." It is true that every individual has education in them but it is the school that gives them the shape to become the enlightened one. So join school, join BSS!!</p>
+                <p className="bannerdetailsp" style={{marginBottom:"36px"}}>"Education is the manifestation of perfection already in man." It is true that every individual has education in them but it is the school that gives them the shape to become the enlightened one. So join school, join BSS!!</p>
 
               </div>
-                <CommonButton bannerbt="bannerbutton" buttonTitle="Learn More"/>
+                
                 
 
                 
@@ -27,20 +27,20 @@ const Banner = () => {
                  <Row>
                   <Col lg={11}>
                     <Row>
-                    <Col lg={4} xs={12} className="bannersmallboxcenter">
-                    <div className='bannersmallbox' >         
+                    <Col lg={4} xs={12} className="bannersmallboxcenter" >
+                    <div className='bannersmallbox' data-aos-delay="400" data-aos="fade-up" data-aos-duration="2000">         
                         <img src="./assets/images/smallvectorbanner1.png" alt="" />
                         <p><span>1000+</span>"Student from all over the Dhaka city"</p>
                     </div>                  
                   </Col>
-                  <Col lg={4} xs={12} className="bannersmallboxcenter">
-                  <div className='bannersmallbox gap' >         
+                  <Col lg={4} xs={12} className="bannersmallboxcenter" >
+                  <div className='bannersmallbox gap' data-aos-delay="500" data-aos="fade-up" data-aos-duration="2000">         
                       <img src="./assets/images/smallvectorbanner2.png" alt="" />
                       <p><span>1000+</span>"Student from all over the Dhaka city"</p>
                   </div>
                   </Col>
-                  <Col lg={4} xs={12} className="bannersmallboxcenter">
-                    <div className='bannersmallbox gap2' >         
+                  <Col lg={4} xs={12} className="bannersmallboxcenter" >
+                    <div className='bannersmallbox gap2' data-aos-delay="600" data-aos="fade-up" data-aos-duration="2000">         
                         <img src="./assets/images/smallvectorbanner3.png" alt="" />
                         <p><span>1000+</span>"Student from all over the Dhaka city"</p>
                     </div>

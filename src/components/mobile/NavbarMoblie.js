@@ -51,11 +51,11 @@ const NavbarMoblie = () => {
               <Row style={{width:"100%"}}>
                 <Col xs={2}>
                     <div className='navbar-brand2'>
-                      <Link to="/"><img src="./assets/images/Logo.svg" alt="logo" /> </Link>
+                      <Link to="/"><img src="./assets/images/logo/navbar_logo.png" alt="logo" /> </Link>
                                          
                 </div>                
                 </Col>
-                <Col xs={9} className="togglermenuclass2">
+                <Col xs={9} style={{paddingRight:"0",paddingLeft:"0"}} className="togglermenuclass2">
                     <p>British Standard School</p> 
                 </Col>
 

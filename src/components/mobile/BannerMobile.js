@@ -1,5 +1,5 @@
 import React from 'react'
-import CommonButton from '../subComponents/CommonButton'
+
 import { Parallax } from 'react-parallax';
 import { useNavigate } from 'react-router-dom';
 const BannerMobile = () => {
@@ -32,7 +32,7 @@ const BannerMobile = () => {
                     <div className="textparagraph">
                         <p>"Education is the manifestation of perfection already in man." It is true that every individual has education in them but it is the school that gives them the shape to become the enlightened one. So join school, join BSS!!</p>
                     </div>
-                    <CommonButton myclick={handleredirecttoadmission} classChange="bannermb" buttonTitle="Admission"/>
+                   
                     </div>
 
                     </div>

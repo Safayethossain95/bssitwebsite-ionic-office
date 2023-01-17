@@ -34,7 +34,7 @@ const OlderNoticePartNoticePage = () => {
         <div className="oldernoticepartnoticepage">
             <div className="myContainerMini">
                 
-                <div className="subheadingandparagraph">
+                <div className="subheadingandparagraph" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                     <h3>Older</h3>                    
                 </div>
 
@@ -43,9 +43,9 @@ const OlderNoticePartNoticePage = () => {
                       oldernoticedata.map((item,key)=>{
                         let trimmedString= item.paragraph.substr(0, 38)
                       return(
-                        <div className="myContainer">
+                        <div className="myContainermini">
                           <Col lg={12} md={12} key={key}>
-                        <div className="noticebox noticeboxleft upcoming" onClick={()=>handleNoticeSinglePage(item.id)}>
+                        <div className="noticebox noticeboxleft upcoming" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000" onClick={()=>handleNoticeSinglePage(item.id)}>
                         <span></span>
                         <div className="flexwrap">
                         <div className="noticeheading">

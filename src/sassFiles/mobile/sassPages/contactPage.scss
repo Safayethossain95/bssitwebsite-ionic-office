@@ -73,6 +73,7 @@
                     padding-left: 20px;
                     @include myfont(12px,400,$main_font);
                     width:100%;
+                    background:#fff;
                     border: 1px solid rgba(0,0,0,0.2);
                     border-radius: 10px;
                     &::placeholder{

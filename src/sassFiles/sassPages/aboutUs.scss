@@ -1,3 +1,43 @@
+
+.appplybutton{
+    @include myfont(16px,500,$main_font);
+    color:#000;
+    position:relative;
+    &::after{
+        position: absolute;
+        width: 100%;
+        right: 0;
+        bottom:-3px;
+        height: 3px;
+        background: #ED1C24;
+        content: "";
+        animation: mymove 3s infinite;
+        transform: scaleX(0);
+        transform-origin: bottom left;
+        transition:transform 3s infinite;
+    }
+    @keyframes mymove {
+        0% {
+         transform: scaleX(1);
+         transform-origin: bottom left;
+        }
+        
+        50% {
+            transform: scaleX(0);
+            transform-origin: bottom left;
+        }
+        100%{
+            transform: scaleX(1);
+         transform-origin: bottom right;
+        }
+        
+      }
+    img{
+        margin-top: -2px;
+    }
+}
+
+
 .subheadingandparagraph{
     
     h3{
@@ -83,12 +123,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width:119px;
-        height:119px;
-        border:1px solid rgba(0,0,0,0.2);
-        border-radius: 20px;
+        width: 50px;
+        height: 50px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
         
-        
+        img{
+            width: 13px;
+            height: 13px;
+        }
     }
     .redcardright{
         display: flex;
@@ -102,7 +145,7 @@
             padding-left: 28px;
         }
         p{
-            @include myfont(16px,400,$main_font);
+            @include myfont(14px,400,$main_font);
         }
     }
 }

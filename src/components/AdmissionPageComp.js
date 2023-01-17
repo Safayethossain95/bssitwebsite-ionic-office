@@ -62,7 +62,7 @@ const AdmissionPageComp = () => {
   }
   return (
     <>
-        <div className="admissionpagecomp">
+        <div className="admissionpagecomp" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
           <div className="myContainerseventy">
             <Row>
             {
@@ -89,7 +89,7 @@ const AdmissionPageComp = () => {
               
             </Row>
 
-            <div className="documentsrequirements">
+            <div className="documentsrequirements" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
               <h2>Document Requirments</h2>
               <ul>
                 {
@@ -109,7 +109,7 @@ const AdmissionPageComp = () => {
             secondrowcards.map((item,key)=>{
               return(
                 <Col lg={6} style={{padding:"0 15px"}} key={key}>
-                <div className="adinfobox">
+                <div className="adinfobox" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                   
                   <div className="adinfoboxleft">
                     <img src={item.img} alt="" />
@@ -134,7 +134,7 @@ const AdmissionPageComp = () => {
             thirdrowcards.map((item,key)=>{
               return(
                 <Col lg={12} key={key}>
-                <div className="adinfobox">
+                <div className="adinfobox" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                   
                   <div className="adinfoboxleft karate">
                     <img src={item.img} alt="" />

@@ -5,12 +5,12 @@ const RedCardwithText = (props) => {
     <>
         <div className="redcardwithtext">
             <Row>
-                <Col lg={3}>
+                <Col lg={2}>
                 <div className="redcardleft">
                     <img src={props.imgsrc} alt="redcardaboutpage1" />
                 </div>
                 </Col>
-                <Col lg={9}>
+                <Col lg={10}>
                     <div className="redcardright">
                         <p>{props.paragraph}
                         </p>

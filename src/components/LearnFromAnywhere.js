@@ -4,7 +4,7 @@ const LearnFromAnywhere = () => {
   return (
     <>
         <div className="myContainer">
-            <div className="learnfaw">
+            <div className="learnfaw" data-aos="fade-up" data-aos-duration="2000">
                 <Row>
                     <Col lg={7} xl={8} className="learnleftimg">
                         <img src="./assets/images/LearnFromAnywhere.png" alt="LearnFromAnywhere" />

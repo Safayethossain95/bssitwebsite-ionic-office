@@ -39,6 +39,9 @@ const OlderPartSlideNoticepage = (props) => {
         });
         
       });
+      const handleNoticeSinglePage=(id)=>{
+        navigate(`/notice/older/${id}`)
+      }
   return (
     <>
          <div className="noticemobile" data-aos="fade-up" data-aos-duration="2000">
@@ -54,7 +57,7 @@ const OlderPartSlideNoticepage = (props) => {
                     oldernoticedata.map((item,key)=>{
                       let trimmedString= item.paragraph.substr(0, 38)
                       return(
-                        <div className="noticebox noticeboxleft m-auto">
+                        <div className="noticebox noticeboxleft m-auto" onClick={()=>handleNoticeSinglePage(item.id)}>
                         <span></span>
                         <div className="noticeheading">
                         <h4>{item.heading}</h4>

@@ -42,12 +42,12 @@ const AdmissionCompMb = () => {
         {
           heading:"School Timing",
           img:"./assets/images/mobile/admissionpage/3.png",
-          link:"/"
+          link:"/schooltiming"
         },
         {
           heading:"Track Admission",
           img:"./assets/images/mobile/admissionpage/4.png",
-          link:"/"
+          link:"/trackadmission"
         },
       ]
       const thirdrowcards=[
@@ -55,7 +55,7 @@ const AdmissionCompMb = () => {
           heading:"Karate Course",
           img:"./assets/images/admissionpage/5.png",
           paragraph:"BSS is introducing an additional course on Karate. Our course will provide each student with the essential karate skills to succeed in our community and the life skills they need to succeed in school, at home and in life. For more information ",
-          link:"/"
+          link:"/karatecourse"
         },
       ]
       const handleapplyonline=()=>{
@@ -125,7 +125,7 @@ const AdmissionCompMb = () => {
                   <div className="adinfoboxright secondrow">
                     <div className="wrapflex">
                     <h3>{item.heading}</h3>
-                    <Link to="/">Click here</Link>
+                    <Link to={item.link}>Click here</Link>
                     
                     </div>
                   </div>
@@ -147,7 +147,7 @@ const AdmissionCompMb = () => {
                     <img src={item.img} alt="" />
                     <div className="wrapflex">
                     
-                    <p>{item.paragraph}<Link to="/">click here</Link></p>
+                    <p>{item.paragraph}<Link to={item.link}>click here</Link></p>
                     
                     </div>
                   

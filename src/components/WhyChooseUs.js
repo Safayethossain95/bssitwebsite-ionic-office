@@ -17,7 +17,7 @@ const WhyChooseUs = () => {
   return (
     <>
         <div className="myContainer">
-          <div className="whychooseus">
+          <div className="whychooseus" data-aos="fade-up" data-aos-duration="2000">
              <Row>
               <Col lg={7} className="whyleft">
                 <h4>Why Choose Us</h4>

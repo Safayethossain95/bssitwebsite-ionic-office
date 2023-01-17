@@ -116,14 +116,14 @@ const SearchpartCareer = () => {
             <div className="myContainer">
                 <Row>
                     <Col lg={6}>
-                        <div className="searchbar">
+                        <div className="searchbar" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                             <input type="text" placeholder='Search...' name="search" onChange={handleSearch} value={searchworddesk}/>
                             <FiSearch/>
                         </div>
                         
                     </Col>
                     <Col lg={6}>
-                        <Row>
+                        <Row data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                             <Col lg={6}>
                                 <div className="dropdownwrapper">
                                     <Dropdown className='filterdropone' options={options} onChange={(e)=>dropdownvalue(e)} value={defaultOption} placeholder="Select an option" />
@@ -155,7 +155,7 @@ const SearchpartCareer = () => {
                                         let lowerit = item.heading.toLowerCase()
                                         if(lowerit.includes(searchworddesk)){
                                             return(
-                                                <div className="careerBox" key={key}>
+                                                <div className="careerBox" key={key} data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                                                 <div className="careerBoxInnerWrapper">
                                                 <div className='careerboxtext' >
                                                     <h4>{item.heading}</h4>
@@ -173,7 +173,7 @@ const SearchpartCareer = () => {
                                 else{
                                     if(drplocationdesk==item.location && drpepdesk==item.department){
                                         return(
-                                            <div className="careerBox" key={key}>
+                                            <div className="careerBox" key={key}  data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                                             <div className="careerBoxInnerWrapper">
                                             <div className='careerboxtext' >
                                                 <h4>{item.heading}</h4>
@@ -194,7 +194,7 @@ const SearchpartCareer = () => {
                             searchdata.map((item,key)=>{
                                 if(drplocationdesk==item.location){
                                     return(
-                                        <div className="careerBox" key={key}>
+                                        <div className="careerBox" key={key}  data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                                         <div className="careerBoxInnerWrapper">
                                         <div className='careerboxtext' >
                                             <h4>{item.heading}</h4>
@@ -211,7 +211,7 @@ const SearchpartCareer = () => {
                             searchdata.map((item,key)=>{
                                 if(drpepdesk==item.department){
                                     return(
-                                        <div className="careerBox" key={key}>
+                                        <div className="careerBox" key={key}  data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                                         <div className="careerBoxInnerWrapper">
                                         <div className='careerboxtext' >
                                             <h4>{item.heading}</h4>
@@ -229,7 +229,7 @@ const SearchpartCareer = () => {
                                 let lowerit = item.heading.toLowerCase()
                                 if(lowerit.includes(searchworddesk)){
                                     return(
-                                        <div className="careerBox" key={key}>
+                                        <div className="careerBox" key={key}  data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                                         <div className="careerBoxInnerWrapper">
                                         <div className='careerboxtext' >
                                             <h4>{item.heading}</h4>
@@ -247,7 +247,7 @@ const SearchpartCareer = () => {
                             searchdata.map((item,key)=>{
                                 if(drplocationdesk=="" && drpepdesk==""){
                                     return(
-                                        <div className="careerBox" key={key}>
+                                        <div className="careerBox" key={key}  data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                                         <div className="careerBoxInnerWrapper">
                                         <div className='careerboxtext' >
                                             <h4>{item.heading}</h4>

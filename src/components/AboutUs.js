@@ -5,8 +5,11 @@ const AboutUs = () => {
   return (
     <>
         <div className="myContainer">
-        <div className="aboutus">
-            <h3>About Us</h3>
+        <div className="aboutus"  data-aos-delay="400" data-aos="fade-up" data-aos-duration="2000">
+            <div className="headingdiv">
+                <h3 className="appplybutton">About Us</h3>
+
+            </div>
 
             <Row className="aboutuscontent">
                 <Col lg={5} md={6} className="text-center">

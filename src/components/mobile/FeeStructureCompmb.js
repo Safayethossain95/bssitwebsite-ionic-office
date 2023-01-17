@@ -608,7 +608,7 @@ const FeeStructureCompmb = () => {
                 </div>
 
                 <div className="heading subinfoheading feenoteheading">
-                  <h4>Notes</h4>
+                  <h4>Note</h4>
                 </div>
 
                 <div className="feenote">

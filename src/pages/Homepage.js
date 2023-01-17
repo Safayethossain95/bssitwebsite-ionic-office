@@ -21,11 +21,12 @@ import NoticeMobile from '../components/mobile/NoticeMobile'
 import '../sassFiles/style.scss'
 import '../sassFiles/mobile/sassPages/homepage.scss'
 
+
 // import { isPlatform } from '@ionic/react';
 
 const Homepage = () => {
 
-  // alert(isPlatform('cordova'))
+  
 
 useEffect(()=>{
   // $(".navbar-toggler").click(function(){
@@ -119,14 +120,29 @@ useEffect(()=>{
           <FooterMobile/>
         </div>
         <div className="desktop">
+          <section>
+
           <Header/>
           <Mynavbar/>
-          <Banner/>
-          <AboutUs/>
-          <WhyChooseUs/>
-          <EventAndNews/>
+          </section>
+          <section>
+            <Banner/>
+          </section>
+          <section>
+            <AboutUs/>
+          </section>
           
+          <section>
+          <WhyChooseUs/>
+          </section>
+          <section>
+          <EventAndNews/>
+
+          </section>
+          <section>
+
           <LearnFromAnywhere/>
+          </section>
           <ScrollTop/>
           <Footer/>
 

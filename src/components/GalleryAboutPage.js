@@ -21,7 +21,7 @@ const GalleryAboutPage = () => {
   return (
     <>
         <div className="myContainer">
-            <div className="galleryaboutpage" style={{padding:"0 50px"}}>
+            <div className="galleryaboutpage" style={{padding:"0 50px"}} data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
             <HeadlineOfOtherPage headline="Gallery"/>
 
             <div className="gallery-slider">

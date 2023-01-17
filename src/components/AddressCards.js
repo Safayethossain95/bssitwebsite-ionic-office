@@ -3,7 +3,7 @@ import {Row,Col} from 'react-bootstrap'
 const AddressCards = () => {
   return (
     <>
-        <div className="addresscards">
+        <div className="addresscards" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
             <div className="myContainer">
                 <Row className="addresscardsrow">
                     <Col lg={6}>

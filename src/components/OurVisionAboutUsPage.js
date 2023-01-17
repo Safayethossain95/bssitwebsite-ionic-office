@@ -5,7 +5,7 @@ const OurVisionAboutUsPage = () => {
   return (
     <>
         <div className="myContainer">
-            <div className="ourVisionAboutPage">
+            <div className="ourVisionAboutPage" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
             <div className="subheadingandparagraph">
                     <h3>Our Vision</h3>
                     <Row>
@@ -22,7 +22,7 @@ const OurVisionAboutUsPage = () => {
 
                 <Row>
                     <Col lg={12}>
-                    <div className="ourmethodcards">
+                    <div className="ourmethodcards myContainer896">
                             <Row>
                                 <Col lg={6}>
                                     <RedCardwithText imgsrc="./assets/images/redcardourvision1.png" paragraph="PHYSICALLY"/>

@@ -20,6 +20,7 @@ const OlderNoticeSingleDetailPage = () => {
     
   function myFunction() {
     var navbar = document.getElementById("mynavbar");
+    navbar.classList.remove("sticky");
     if(myheadlineother == !null){
       var myheadlineother = document.getElementById("noticepagegapbalance")
 

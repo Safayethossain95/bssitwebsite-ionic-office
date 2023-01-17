@@ -48,7 +48,7 @@ const NoticeMobile = (props) => {
         
             <div className="noticemobile" data-aos="fade-up" data-aos-duration="2000">
             <div className={props.title?"heading":"d-none"}>
-                        <h4>{props.title?props.title:"Notice"}</h4>
+                        <h4 className='appplybutton'>{props.title?props.title:"Notice"}</h4>
                     </div>
                     <div className="mobilecontainer">
                   <h5>{props.subtitle}</h5>

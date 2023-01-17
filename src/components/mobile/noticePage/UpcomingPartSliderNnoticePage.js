@@ -15,9 +15,7 @@ const UpcomingPartSliderNnoticePage = (props) => {
       };
 
       var navigate = useNavigate()
-      const handleViewall=()=>{
-        navigate("/aboutus")
-      }
+      
       $(function noticehover() {
       
         let x,y;
@@ -39,6 +37,9 @@ const UpcomingPartSliderNnoticePage = (props) => {
         });
         
       });
+      const handleNoticeSinglePage=(id)=>{
+        navigate(`/notice/upcoming/${id}`)
+    }
   return (
     <>
          <div className="noticemobile" data-aos="fade-up" data-aos-duration="2000">
@@ -54,7 +55,7 @@ const UpcomingPartSliderNnoticePage = (props) => {
                     upcomingnoticedata.map((item,key)=>{
                       let trimmedString= item.paragraph.substr(0, 38)
                       return(
-                        <div className="noticebox noticeboxleft m-auto">
+                        <div className="noticebox noticeboxleft m-auto" onClick={()=>handleNoticeSinglePage(item.id)}>
                         <span></span>
                         <div className="noticeheading">
                         <h4>{item.heading}</h4>

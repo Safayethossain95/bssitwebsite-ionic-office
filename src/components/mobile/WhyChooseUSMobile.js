@@ -7,7 +7,7 @@ const WhyChooseUSMobile = () => {
         <div className="mobilecontainer">
             <div className="whychooseusmobile" data-aos="fade-up" data-aos-duration="2000">
             <div className="heading">
-                    <h4>Why Choose Us</h4>
+                    <h4 className='appplybutton'>Why Choose Us</h4>
                 </div>
             <div className="wcucontent">
                 <p>The decision to become an exceptional is a highly personal one, based on a number of factors that you must weigh for yourself. It's not a step to be taken lightly. We are different because</p>

@@ -4,7 +4,7 @@ import RedCardwithText from './subComponents/RedCardwithText'
 const OurMethodAboutPage = () => {
   return (
     <>
-        <div className="ourmethodaboutpage">
+        <div className="ourmethodaboutpage" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
             <div className="myContainer">
                 <div className="subheadingandparagraph">
                     <h3>Our Method</h3>
@@ -21,7 +21,7 @@ const OurMethodAboutPage = () => {
                 </div>
                 <Row>
                     <Col lg={12}>
-                    <div className="ourmethodcards">
+                    <div className="ourmethodcards myContainer896">
                             <Row>
                                 <Col lg={6}>
                                     <RedCardwithText imgsrc="./assets/images/redcardaboutpage1.png" paragraph="To prepare a Standard through planning and evaluate analyse the actual with perfection"/>

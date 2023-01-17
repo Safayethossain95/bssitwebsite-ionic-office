@@ -72,10 +72,49 @@
 
 .ourmethodaboutpagemb{
     .heading{
+        text-align: center;
+        
+        .appplybutton{
+            color:#000;
+            position:relative;
+            &::after{
+                position: absolute;
+                width: 100%;
+                right: 0;
+                bottom:-3px;
+                height: 3px;
+                background: #ED1C24;
+                content: "";
+                animation: mymove 3s infinite;
+                transform: scaleX(0);
+                transform-origin: bottom left;
+                transition:transform 3s infinite;
+            }
+            @keyframes mymove {
+                0% {
+                 transform: scaleX(1);
+                 transform-origin: bottom left;
+                }
+                
+                50% {
+                    transform: scaleX(0);
+                    transform-origin: bottom left;
+                }
+                100%{
+                    transform: scaleX(1);
+                 transform-origin: bottom right;
+                }
+                
+              }
+            img{
+                margin-top: -2px;
+            }
+        }
+        
         h4{
-            @include myfont(25px,500,$main_font);
-            text-align: center;
+            @include myfont(25px,500,$main_font);            
             margin: 24px 0 34px 0 !important;
+            display: inline-block;
         }
     }
     .ourmethodmbpara{

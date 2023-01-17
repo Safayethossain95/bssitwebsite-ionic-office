@@ -11,14 +11,17 @@ const NoticePageSingleDetail = () => {
 
 
     useEffect(()=>{
-        var navbar = document.getElementById("mynavbar");
-        navbar.classList.remove("sticky");
+      var navbar = document.getElementById("mynavbar");
+      navbar.classList.remove("sticky");
     },[])
+    
     let {id} = useParams()
     console.log(id)
     
   function myFunction() {
     var navbar = document.getElementById("mynavbar");
+    
+      navbar.classList.remove("sticky");
     if(myheadlineother == !null){
       var myheadlineother = document.getElementById("noticepagegapbalance")
 

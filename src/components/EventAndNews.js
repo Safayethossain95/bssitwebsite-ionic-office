@@ -1,12 +1,15 @@
 import React from 'react'
 import {Row,Col} from 'react-bootstrap'
-import CommonButton from './subComponents/CommonButton';
+
 const EventAndNews = () => {
   return (
     <>
         <div className="myContainer">
-            <div className="eventandnews">
-                <h3>Event & News</h3>
+            <div className="eventandnews" data-aos="fade-up" data-aos-duration="2000">
+            <div className="headingdiv">
+                <h3 className="appplybutton">Event & News</h3>
+
+            </div>
                 <Row className="eventcardsall">
                   <Col lg={6} md={12} className="eventcardfirst">
                     <div className="eventcardwrapper">
@@ -84,7 +87,7 @@ const EventAndNews = () => {
                     </Row>
                     
                   </Col>
-                  <CommonButton eventbt="eventbt" buttonTitle="View All"/>
+                  
                 </Row>
                 
             </div>

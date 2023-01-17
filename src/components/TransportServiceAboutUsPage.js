@@ -5,7 +5,7 @@ const TransportServiceAboutUsPage = () => {
   return (
     <>
         <div className="myContainer">
-            <div className="transportserviceaboutpage">
+            <div className="transportserviceaboutpage" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                 <HeadlineOfOtherPage headline="Transport Service"/>
                 <Row>
                     <Col lg={6}>

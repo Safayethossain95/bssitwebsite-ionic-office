@@ -4,11 +4,22 @@
 @import '../../../sassStyles/global';
 @import '../sassPages/mobileGlobal.scss';
 
-
+.bannermobile{
+    .react-parallax{
+        height:475px;
+    }
+}
 body{
     overflow-x: hidden;
 }
-
+// .desktop{
+//     scroll-snap-type: y mandatory;
+//     height: 100vh;
+//     overflow-y: scroll;
+//     section{
+//         scroll-snap-align: start;
+//     }
+// }
 .sticky2{
     position: fixed!important;
     top: 0;
@@ -16,6 +27,7 @@ body{
     z-index: 1030;
     
 }
+
 .sticky2shadow{
     -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
     -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
@@ -32,6 +44,24 @@ body{
         position: relative;
         padding-left: 27px;
         padding-top:5px;
+        position: relative;
+        &::after{
+            position: absolute;
+            width: 0%;
+            left: 0;
+            bottom:-10px;
+            height: 3px;
+            background: #ED1C24;
+            content: "";            
+            transition:0.4s;
+            
+            
+        }
+        &:hover{
+            &:after{
+                width:100%;
+            }
+        }
         img{
             position:absolute;
             top:10px;
@@ -88,10 +118,41 @@ body{
     cursor: pointer;
   }
   .mynavbarnav{
+    overflow-y: scroll;
     .appplybutton{
         @include myfont(16px,500,$main_font);
         color:#000;
-        border-bottom: 2px solid #ED1C24;
+        // border-bottom: 2px solid #ED1C24;
+        position:relative;
+            &::after{
+                position: absolute;
+                width: 100%;
+                right: 0;
+                bottom:-3px;
+                height: 3px;
+                background: #ED1C24;
+                content: "";
+                animation: mymove 3s infinite;
+                transform: scaleX(0);
+                transform-origin: bottom left;
+                transition:transform 3s infinite;
+            }
+            @keyframes mymove {
+                0% {
+                 transform: scaleX(1);
+                 transform-origin: bottom left;
+                }
+                
+                50% {
+                    transform: scaleX(0);
+                    transform-origin: bottom left;
+                }
+                100%{
+                    transform: scaleX(1);
+                 transform-origin: bottom right;
+                }
+                
+              }
         img{
             margin-top: -2px;
         }
@@ -164,7 +225,14 @@ body{
   }
   
 
-
+.aboutus{
+    .headingdiv{
+        text-align: center;
+        h3{
+            display: inline-block;
+        }
+    }
+}
 .fullwidth{
     position:relative;
     .bannermobilebg {
@@ -273,9 +341,47 @@ body{
 
 .aboutuspartmobile{
     .heading{
+        text-align: center;
+        .appplybutton{
+            color:#000;
+            position:relative;
+            &::after{
+                position: absolute;
+                width: 100%;
+                right: 0;
+                bottom:-3px;
+                height: 3px;
+                background: #ED1C24;
+                content: "";
+                animation: mymove 3s infinite;
+                transform: scaleX(0);
+                transform-origin: bottom left;
+                transition:transform 3s infinite;
+            }
+            @keyframes mymove {
+                0% {
+                 transform: scaleX(1);
+                 transform-origin: bottom left;
+                }
+                
+                50% {
+                    transform: scaleX(0);
+                    transform-origin: bottom left;
+                }
+                100%{
+                    transform: scaleX(1);
+                 transform-origin: bottom right;
+                }
+                
+              }
+            img{
+                margin-top: -2px;
+            }
+        }
         h4{
             @include myfont(25px,500,$main_font);
             text-align: center;
+            display: inline-block;
             margin: 24px 0 34px 0 !important;
         }
     }
@@ -300,10 +406,48 @@ body{
         padding-left: 0!important;        
     }
     .heading{
+        text-align: center;
+        .appplybutton{
+            color:#000;
+            position:relative;
+            &::after{
+                position: absolute;
+                width: 100%;
+                right: 0;
+                bottom:-3px;
+                height: 3px;
+                background: #ED1C24;
+                content: "";
+                animation: mymove 3s infinite;
+                transform: scaleX(0);
+                transform-origin: bottom left;
+                transition:transform 3s infinite;
+            }
+            @keyframes mymove {
+                0% {
+                 transform: scaleX(1);
+                 transform-origin: bottom left;
+                }
+                
+                50% {
+                    transform: scaleX(0);
+                    transform-origin: bottom left;
+                }
+                100%{
+                    transform: scaleX(1);
+                 transform-origin: bottom right;
+                }
+                
+              }
+            img{
+                margin-top: -2px;
+            }
+        }
         h4{
             @include myfont(25px,500,$main_font);
             text-align: center;
-            margin: 60px 0 15px 0 !important;
+            display: inline-block;
+            margin: 24px 0 34px 0 !important;
         }
     }
     .wcucontent{
@@ -342,13 +486,97 @@ body{
         }
     }
 }
-
+.eventandnews{
+    
+    .headingdiv{
+        text-align: center;
+        h3{
+            display:inline-block;
+            &.appplybutton{
+               
+                color:#000;
+                // border-bottom: 2px solid #ED1C24;
+                position:relative;
+                    &::after{
+                        position: absolute;
+                        width: 100%;
+                        right: 0;
+                        bottom:-3px;
+                        height: 3px;
+                        background: #ED1C24;
+                        content: "";
+                        animation: mymove 3s infinite;
+                        transform: scaleX(0);
+                        transform-origin: bottom left;
+                        transition:transform 3s infinite;
+                    }
+                    @keyframes mymove {
+                        0% {
+                         transform: scaleX(1);
+                         transform-origin: bottom left;
+                        }
+                        
+                        50% {
+                            transform: scaleX(0);
+                            transform-origin: bottom left;
+                        }
+                        100%{
+                            transform: scaleX(1);
+                         transform-origin: bottom right;
+                        }
+                        
+                      }
+                img{
+                    margin-top: -2px;
+                }
+            }
+        }
+    }
+}
 .eventandnewsmobile{
     .heading{
+        text-align: center;
+        .appplybutton{
+            color:#000;
+            position:relative;
+            &::after{
+                position: absolute;
+                width: 100%;
+                right: 0;
+                bottom:-3px;
+                height: 3px;
+                background: #ED1C24;
+                content: "";
+                animation: mymove 3s infinite;
+                transform: scaleX(0);
+                transform-origin: bottom left;
+                transition:transform 3s infinite;
+            }
+            @keyframes mymove {
+                0% {
+                 transform: scaleX(1);
+                 transform-origin: bottom left;
+                }
+                
+                50% {
+                    transform: scaleX(0);
+                    transform-origin: bottom left;
+                }
+                100%{
+                    transform: scaleX(1);
+                 transform-origin: bottom right;
+                }
+                
+              }
+            img{
+                margin-top: -2px;
+            }
+        }
         h4{
-            @include myfont(25px,600,$main_font);
+            @include myfont(25px,500,$main_font);
             text-align: center;
-            margin: 55px 0 25px 0 !important;
+            display: inline-block;
+            margin: 24px 0 34px 0 !important;
         }
     }
     
@@ -608,6 +836,51 @@ body{
 
 
 .noticemobile{
+    .heading{
+        text-align: center;
+        .appplybutton{
+            color:#000;
+            position:relative;
+            &::after{
+                position: absolute;
+                width: 100%;
+                right: 0;
+                bottom:-3px;
+                height: 3px;
+                background: #ED1C24;
+                content: "";
+                animation: mymove 3s infinite;
+                transform: scaleX(0);
+                transform-origin: bottom left;
+                transition:transform 3s infinite;
+            }
+            @keyframes mymove {
+                0% {
+                 transform: scaleX(1);
+                 transform-origin: bottom left;
+                }
+                
+                50% {
+                    transform: scaleX(0);
+                    transform-origin: bottom left;
+                }
+                100%{
+                    transform: scaleX(1);
+                 transform-origin: bottom right;
+                }
+                
+              }
+            img{
+                margin-top: -2px;
+            }
+        }
+        h4{
+            @include myfont(25px,500,$main_font);
+            text-align: center;
+            display: inline-block;
+            margin: 24px 0 34px 0 !important;
+        }
+    }
     .noticebox{
         border-radius: 20px;
         .noticeheading{

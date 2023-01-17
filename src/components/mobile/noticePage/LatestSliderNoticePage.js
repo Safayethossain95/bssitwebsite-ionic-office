@@ -15,9 +15,7 @@ const LatestSliderNoticePage = (props) => {
       };
 
       var navigate = useNavigate()
-      const handleViewall=()=>{
-        navigate("/aboutus")
-      }
+      
       $(function noticehover() {
       
         let x,y;
@@ -39,6 +37,10 @@ const LatestSliderNoticePage = (props) => {
         });
         
       });
+      const handleNoticeSinglePage=(id)=>{
+        navigate(`/notice/latest/${id}`)
+       
+    }
   return (
     <>
          <div className="noticemobile" data-aos="fade-up" data-aos-duration="2000">
@@ -53,7 +55,7 @@ const LatestSliderNoticePage = (props) => {
                     noticedata.map((item,key)=>{
                       let trimmedString= item.paragraph.substr(0, 38)
                       return(
-                        <div className="noticebox noticeboxleft m-auto">
+                        <div className="noticebox noticeboxleft m-auto" onClick={()=>handleNoticeSinglePage(item.id)}>
                         <span></span>
                         <div className="noticeheading">
                         <h4>{item.heading}</h4>
@@ -74,7 +76,7 @@ const LatestSliderNoticePage = (props) => {
                 <div className="noticebox noticeboxlast m-auto">
                 <span></span>
                 <div className="ntcwrapper ">
-                    <div className="carditemwrapper" onClick={handleViewall}>
+                    <div className="carditemwrapper">
                     
                     <p style={{fontSize:"12px"}}>No more</p>
                     </div>

@@ -37,11 +37,11 @@ const LatestNoticeNoticePage = () => {
     <>
         <div className="latestNoticepart" id="latestNoticepart">
             <div className="myContainerMini">
-            <div className="subheadingandparagraph">
+            <div className="subheadingandparagraph" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                     <h3>Latest</h3>
                     
                 </div>
-            <Row className="noticecontent">
+            <Row className="noticecontent" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
               
 
                         
@@ -49,9 +49,9 @@ const LatestNoticeNoticePage = () => {
                       noticedata.map((item,key)=>{
                         let trimmedString= item.paragraph.substr(0, 38)
                       return(
-                        <div className="myContainer">
+                        <div className="myContainermini">
                           <Col lg={12} md={12} key={key}>
-                        <div className="noticebox noticeboxleft" onClick={()=>handleNoticeSinglePage(item.id)}>
+                        <div className="noticebox noticeboxleft" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000" onClick={()=>handleNoticeSinglePage(item.id)}>
                         <span></span>
                         <div className="flexwrap">
                         <div className="noticeheading">
