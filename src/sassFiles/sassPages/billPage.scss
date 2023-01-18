@@ -197,6 +197,14 @@ body{
         }
     }
     .lowerpart{
+        .wrapperforscrollbar{
+            padding:5px;
+            margin-top: 10px;
+            background-color: #fff;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            height: calc(100vh - 384px);
+        }
         .previoushistorylist{
             width:100%;
             height:calc(100vh - 384px);

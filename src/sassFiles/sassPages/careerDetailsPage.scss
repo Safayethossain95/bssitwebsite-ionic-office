@@ -1,0 +1,147 @@
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/global';
+
+
+.mobile{
+    .careerdetailspage{
+        h3{
+            @include myfont(12px,500,$main_font);
+            color:#000;
+            margin-top: 20px;
+            &:first-child{
+                margin-top: 100px;
+
+            }
+        }
+        p{
+            @include myfont(12px,400,$main_font);
+            color:$seventyblack;
+            text-align: justify;
+        }
+        ul{
+            list-style-type: disc;
+            padding-left: 15px;
+            li{
+                @include myfont(12px,400,$main_font);
+                color:$seventyblack;
+            }
+        }
+        .bottombox{
+            height: 398px;
+            width:100%;
+            border: 1px solid $border_twenty;
+            border-radius: 20px;
+            margin-top: 40px;
+            padding:25px;
+            h4{
+                @include myfont(12px,500,$main_font);
+                margin-top: 22px;
+                &:first-child{
+                    margin-top: 0;
+                }
+            }
+            .read-more2 > button {
+                text-decoration: none;
+                color: #fff;
+                // background-color: #ED1C24;
+                background-color: #312783;
+                display: inline-block;
+                @include myfont(16px,500,$button_font);
+                border-radius: 10px;
+                border:none;
+                padding: 16px 43px;
+                width: 100%;
+                height: 52px;
+                margin-top: 12px;
+                &:first-child:active{
+                    background-color: #000;
+                }
+                
+              }
+            
+              .read-more2 > button:hover {
+                background: #000;
+                color:#fff;
+              }
+        }
+    }
+}
+
+
+.desktop{
+    .careerdetailspage{
+        .wrapper{
+            .leftbox{
+                height:902px;
+                border:1px solid $border_twenty;
+                border-radius: 20px;
+                padding:50px 32px;
+                margin: 40px 0 145px 0;
+                h2{
+                    @include myfont(25px,500,$main_font);
+                }
+                p{
+                    @include myfont(16px,400,$main_font);
+                    color: $seventyblack;
+                }
+                h3{
+                    @include myfont(16px,400,$main_font);
+                    color:#000;
+                    margin-bottom: 5px;
+                    margin-top: 30px;
+                }
+                ul{
+                    list-style-type: disc;
+                    li{
+                        @include myfont(16px,400,$main_font);
+                        color: $seventyblack;
+                    }
+                }
+            }
+            .rightbox{
+                height:465px;
+                border:1px solid $border_twenty;
+                border-radius: 20px;
+                padding:40px 20px;
+                margin-top: 40px;
+                h3{
+                    margin-top: 18px;
+                    @include myfont(16px,500,$main_font);
+                    color: #000;
+                    &:first-child{
+                        margin-top: 0;
+                    }
+                }
+                p{
+                    @include myfont(14,400,$main_font);
+                    color: $seventyblack;
+                }
+                .read-more2 > button {
+                    text-decoration: none;
+                    color: #fff;
+                    // background-color: #ED1C24;
+                    background-color: #312783;
+                    display: inline-block;
+                    @include myfont(16px,500,$button_font);
+                    border-radius: 10px;
+                    border:none;
+                    padding: 16px 43px;
+                    width: 100%;
+                    height: 52px;
+                    margin-top: 22px;
+                    &:first-child:active{
+                        background-color: #000;
+                    }
+                    
+                  }
+                
+                  .read-more2 > button:hover {
+                    background: #000;
+                    color:#fff;
+                  }
+            }
+        }
+    }
+}

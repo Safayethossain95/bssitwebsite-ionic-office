@@ -252,13 +252,13 @@ body{
     overflow-x: hidden;
     .bluroverlay{
         position: absolute;
-            width: 724px;
-            height: 444px;
-            left: 50%;
-            top: 218px;
-            background: #FFFFFF;
-            filter: blur(50px);
-            transform: translateX(-50%);
+        width: 724px;
+        height: 499px;
+        left: 50%;
+        top: 83px;
+        background: #FFFFFF;
+        transform: translateX(-50%);
+        -webkit-mask: -webkit-gradient(linear, left 52%, left 8%, from(rgb(0, 0, 0)), to(rgba(0, 0, 0, 0)));
     }
     
     .bannermobileimg{

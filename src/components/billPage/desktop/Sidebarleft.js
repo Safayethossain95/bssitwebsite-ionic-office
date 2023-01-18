@@ -11,7 +11,7 @@ const Sidebarleft = () => {
                 </div>
                 <div className="menupart">
                   <ul>
-                    <li><Link to="/">Bill Entry</Link></li>
+                    <li><Link to="/billentry">Bill Entry</Link></li>
                     <li><Link to="/">Option 1</Link></li>
                     <li><Link to="/">Option 2</Link></li>
                     <li><Link to="/">Option 3</Link></li>

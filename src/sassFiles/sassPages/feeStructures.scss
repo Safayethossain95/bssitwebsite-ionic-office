@@ -93,12 +93,12 @@
                         height:60px;
                         width:100%;
                         border:1px solid rgba(0,0,0,0.2);
-                        @include myfont(12px,400,$main_font);
+                        @include myfont(16px,400,$main_font);
                         border-radius: 20px;
                         padding-left: 20px;
                         margin-bottom: 10px;
                         &::placeholder{
-                            @include myfont(12px,400,$main_font);
+                            @include myfont(16px,400,$main_font);
                             color:rgba(0,0,0,0.7);
                         }
                     }
@@ -107,12 +107,12 @@
                             height:268px;
                             padding-top: 16px;
                             padding-left: 20px;
-                            @include myfont(12px,400,$main_font);
+                            @include myfont(16px,400,$main_font);
                             width:100%;
                             border: 1px solid rgba(0,0,0,0.2);
                             border-radius: 20px;
                             &::placeholder{
-                                @include myfont(12px,400,$main_font);
+                                @include myfont(16px,400,$main_font);
                                 color:rgba(0,0,0,0.7);
                             }
                         }

@@ -121,8 +121,9 @@ const Headerpartbill = () => {
         <div className="lowerpart">
             <Row style={{paddingBottom:"15px"}}>
                 <Col lg={7} >
-                    <div className="lowerpartflexuppercolumn" style={{height:"638px",flexDirection:"column",display:"flex",justifyContent:"space-between"}}>
-                    <div className="previoushistorylist" style={{flex:"1 1 88%"}}>
+                    <div className="lowerpartflexuppercolumn" style={{height:"624px",flexDirection:"column",display:"flex",justifyContent:"space-between"}}>
+                        <div className="wrapperforscrollbar">
+                        <div className="previoushistorylist" style={{flex:"1 1 88%"}}>
                         <div className="headingwithiconfixed">
                             <h5><span><MdHistory/></span>Previous Collection History</h5>
                         </div>
@@ -298,6 +299,8 @@ const Headerpartbill = () => {
                         </table>
                         
                     </div>
+                        </div>
+
                     <div className="prelistbottom" style={{flex:"1 1 12%"}}>
                             <div className="prelistbtminner">
                                 <h6>Total collection: 73604.00 BDT</h6>

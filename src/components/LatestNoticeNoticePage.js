@@ -47,6 +47,7 @@ const LatestNoticeNoticePage = () => {
                         
                     {
                       noticedata.map((item,key)=>{
+                        
                         let trimmedString= item.paragraph.substr(0, 38)
                       return(
                         <div className="myContainermini">

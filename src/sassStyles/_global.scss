@@ -25,6 +25,25 @@ input{
     @include myfont(auto,400,$main_font);
 }
 
+
+::-webkit-scrollbar{
+    width:5px;
+    // height:95%;
+    // margin-top: 5px;
+   
+    
+}
+::-webkit-scrollbar-track{
+    background-color: #fff;
+    padding: 15x 0;
+}
+::-webkit-scrollbar-thumb{
+    width:5px;
+    border-radius: 25px;
+    background-color: #ddd;
+}
+
+
 @font-face {
     font-family: customfont;
     src: url(../../public/fonts/OLDENGL.TTF);

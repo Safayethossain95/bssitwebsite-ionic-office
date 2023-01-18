@@ -1,10 +1,11 @@
 import React from 'react'
 import {Row,Col} from 'react-bootstrap'
 import RedCardwithText from './subComponents/RedCardwithText'
-import $ from 'jquery';
 import {noticelist} from '../utils/Homepage'
 import { useNavigate } from 'react-router-dom';
 import { noticedata } from '../utils/NoticePageApi';
+
+
 const WhyChooseUs = () => {
 
   // $(window).load(function(){
@@ -14,6 +15,8 @@ const WhyChooseUs = () => {
   const handleNoticeClick=(id)=>{
     navigate(`/notice/latest/${id}`)
   }
+  
+    
   return (
     <>
         <div className="myContainer">
@@ -100,8 +103,10 @@ const WhyChooseUs = () => {
               <Col lg={5}>
                 <div className="whyright">
                 <h4>Notice</h4>
-                <div className="noticecase">
-                  <div className="tablelikediv">
+             
+                 <div className="extraforborder">
+                 <div className="noticecase" id="noticecase">                  
+                      <div className="tablelikediv">
                     {
                       noticedata.map((item,key)=>{
                         let trimmedString= item.paragraph.substr(0, 38)
@@ -124,10 +129,19 @@ const WhyChooseUs = () => {
                       })
                     }
                     
+                </div>
                     
-                  </div>
+                 
                 </div>
-                </div>
+                 </div>
+                
+                
+           
+
+                  
+              </div>
+                
+                
               </Col>
              </Row>
           </div>
