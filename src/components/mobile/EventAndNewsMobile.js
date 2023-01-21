@@ -20,8 +20,8 @@ const EventAndNewsMobile = () => {
     <>
         <div className="mobilecontainer2">
             <div className="eventandnewsmobile" data-aos="fade-up" data-aos-duration="2000">
-                <div className="heading">
-                        <h4 className='appplybutton'>Event & News</h4>
+                <div className="myheading">
+                        <h4 className='myappplybutton'>Event & News</h4>
                     </div>
 
                    

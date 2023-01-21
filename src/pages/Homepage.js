@@ -114,8 +114,8 @@ useEffect(()=>{
           <BannerMobile/>
           <AboutUsMobile/>
           <WhyChooseUSMobile/>
-          <EventAndNewsMobile/>
           <NoticeMobile title="Notice"/>
+          <EventAndNewsMobile/>
           <LearnFromAnywhereMobile/>
           <FooterMobile/>
         </div>

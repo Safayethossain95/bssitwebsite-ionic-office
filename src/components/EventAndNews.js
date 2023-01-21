@@ -7,7 +7,7 @@ const EventAndNews = () => {
         <div className="myContainer">
             <div className="eventandnews" data-aos="fade-up" data-aos-duration="2000">
             <div className="headingdiv">
-                <h3 className="appplybutton">Event & News</h3>
+                <h3 className="appplybuttonother">Event & News</h3>
 
             </div>
                 <Row className="eventcardsall">

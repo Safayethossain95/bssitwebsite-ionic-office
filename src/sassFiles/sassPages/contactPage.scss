@@ -68,8 +68,11 @@
                         width:100%;
                         border: 1px solid rgba(0,0,0,0.2);
                         border-radius: 20px;
+                        background-color: #fff;
+                        color: $seventyblack;
                         &::placeholder{
                             @include myfont(16px,400,$main_font);
+                            color: $seventyblack;
                         }
                     }
                     input{

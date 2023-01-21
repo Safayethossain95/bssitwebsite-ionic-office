@@ -93,32 +93,7 @@
    
 }
 .redcardwithtext{
-    margin-bottom: 50px;
-    // &:hover{
-    //     .redcardleft{
-
-    //         img{
-
-    //             animation: redcardanime 2s linear infinite;
-    //         }
-    //     }
-    // }
-    // @keyframes redcardanime{
-    //     0%{
-    //         transform: rotate(0deg);
-    //     }
-    //     50%{
-    //         transform:rotate(10deg);
-    //     }
-    //     75%{
-    //         transform:rotate(-10deg);
-    //     }
-    //     100%{
-    //         transform: rotate(0deg);
-    //     }
-        
-        
-    // }
+    margin-bottom: 50px;    
     .redcardleft{
         display: flex;
         align-items: center;
@@ -131,6 +106,7 @@
         img{
             width: 13px;
             height: 13px;
+            opacity: 70%;
         }
     }
     .redcardright{

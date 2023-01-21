@@ -19,24 +19,7 @@ const noticedata = [
       publishdate:"October 1, 2022",
       id:"3"
     },
-    {
-      heading:"Victory Day Notice",
-      paragraph:"The school will be off for victory day. This day is a very special day for our country.",
-      publishdate:"October 1, 2022",
-      id:"3"
-    },
-    {
-      heading:"Victory Day Notice",
-      paragraph:"The school will be off for victory day. This day is a very special day for our country.",
-      publishdate:"October 1, 2022",
-      id:"3"
-    },
-    {
-      heading:"Victory Day Notice",
-      paragraph:"The school will be off for victory day. This day is a very special day for our country.",
-      publishdate:"October 1, 2022",
-      id:"3"
-    },
+   
   ]
 const upcomingnoticedata = [
     

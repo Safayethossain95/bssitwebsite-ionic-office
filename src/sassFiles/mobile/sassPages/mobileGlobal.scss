@@ -210,4 +210,97 @@
    
 }
 
+.footermobile{
+    .mobilecontainer{
+        .footerlogocenter{
+            text-align: center;
+  
+        }
+        .useful_links{
+            margin-top: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid $seventywhite;
+            .footeritemslist{
+                .fthead{
+                    h4{
+                        @include myfont(14px,600,$main_font);
+                        color:#fff;
+                    }
+                }
+                .ftitems{
+                    a{
+                        @include myfont(12px,400,$main_font);
+                        color:#fff;
+                    }
+                }
+            }
+            .socialicons{
+                margin-top: 0px;
+                .fthead{
+                    h4{
+                        @include myfont(14px,600,$main_font);
+                        color:#fff;
+                    }
+                }
+               
+                .socialswrapper{
+                    display: unset;
+                    a{
+                        margin-left: 0;
+                        margin-right: 20px;
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                        svg{
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        .officeaddresses{
+            text-align: center;
+            color:#fff;
+            padding-top: 14px;
+            h5{
+                @include myfont(12px,400,$main_font);
+                margin-top: 12px;
+            }
+            p{
+                @include myfont(12px,400,$main_font);
+            }
+        }
+        .brandicons{
+            margin-top: 15px;
+            .brandiconsdiv{
+                
+                    &:first-child{
+                        img{
+                            width:60px;
+                        }
+                    }
+                    &:nth-child(2){
+                        img{
+                            width: 84px;
+                        }
+                    }
+                    &:nth-child(3){
+                        img{
+                            width:57px;
+                        }
+                    }
+                
+            }
+        }
+        .copyright{
+            text-align: center;
+            margin-top: 25px;
+            p{
+                @include myfont(10px,300,$main_font);
+                color:#fff;
+            }
+        }
+    }
+}
+
 

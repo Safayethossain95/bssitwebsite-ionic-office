@@ -23,6 +23,73 @@ input:focus-visible {
 textarea:focus-visible{
     outline: 1px solid #000;
 }
+
+.headingdiv{
+    text-align: center;
+    .appplybuttonother{
+        margin:55px auto 35px auto;
+        @include myfont(40px,600,$main_font);
+        color:#000;
+        display: inline-block;
+        position:relative;
+        &::after{
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom:-3px;
+            height: 3px;
+            background: #ED1C24;
+            content: "";
+            animation: mymove 10s;
+            transition:transform 2s;
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        @keyframes mymove {
+            0% {
+                transform: scaleX(0);
+                width:0%;
+            }
+            100% {
+                transform: scaleX(1);
+                width:100%;
+            }
+          }
+      
+        img{
+            margin-top: -2px;
+        }
+        @include media(lgDevice){
+            @include myfont(14px,500,$main_font);
+        }
+    }
+    // .appplybuttonother{
+    //     color:#000;
+    //     position:relative;
+    //     display: inline-block;
+    //     &::after{
+    //         position: absolute;
+    //         width: 100%;
+    //         left: 0;
+    //         bottom:-3px;
+    //         height: 3px;
+    //         background: #ED1C24;
+    //         content: "";
+            
+            
+    //     }
+       
+    //     img{
+    //         margin-top: -2px;
+    //     }
+    
+    
+    h4{
+        @include myfont(25px,500,$main_font);            
+        margin: 24px 0 34px 0 !important;
+        display: inline-block;
+    }
+}
 .read-more > button {
     text-decoration: none;
     color: #fff;
@@ -231,7 +298,7 @@ textarea:focus-visible{
         padding:15px;
     }
     @include media(lgDevice){
-        width:90%;
+        width:100%;
         padding:0;
     }
     
@@ -280,6 +347,16 @@ textarea:focus-visible{
 }
 .headerinforight{
     text-align: right;
+    @include media(xlgDevice){
+        text-align: left;
+        width: 285px;
+        margin-left: auto;
+    }
+    @include media(lgDevice){
+        text-align: left;
+        width: 247px;
+        margin-left: auto;
+    }
     a{
         @include myfont(12px,500,$main_font);
         text-decoration: none;
@@ -295,13 +372,20 @@ textarea:focus-visible{
     .hinfo{
         display: block;
         span{
-         @include myfont(18px,400,$main_font);
+         @include myfont(18px,500,$main_font);
          @include media(lgDevice){
-            @include myfont(15px,400,$main_font);
+            @include myfont(15px,500,$main_font);
          }
         }
         &:first-child{
             margin-bottom: 15px;
+        }
+        img{
+            margin-top: -4px;
+            margin-right: 3px;
+            @include media(lgDevice){
+                margin-top: -2px;
+            }
         }
      }
 }
@@ -346,27 +430,30 @@ textarea:focus-visible{
                 content: "";
                 animation: mymove 3s infinite;
                 transform: scaleX(0);
-                transform-origin: bottom left;
+                
                 transition:transform 3s infinite;
             }
             @keyframes mymove {
                 0% {
                  transform: scaleX(1);
-                 transform-origin: bottom left;
+                 
                 }
                 
                 50% {
                     transform: scaleX(0);
-                    transform-origin: bottom left;
+                    
                 }
                 100%{
                     transform: scaleX(1);
-                 transform-origin: bottom right;
+                 
                 }
                 
               }
             img{
                 margin-top: -2px;
+            }
+            @include media(lgDevice){
+                @include myfont(14px,500,$main_font);
             }
         }
 
@@ -406,7 +493,12 @@ textarea:focus-visible{
                     }
                     @include media(lgDevice){
                         @include myfont(14px,400,$main_font);
+                        margin:0 16px;
                     }
+                    @include media(lgDevice){                     
+                        margin:0 18px;
+                    }
+                    
                 
             }
         
@@ -446,6 +538,9 @@ textarea:focus-visible{
             box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.10);
             -webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.10);
             -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.10);
+            img{
+                opacity: 70%;
+            }
         
             @include media(xsmDevice){
                 width:auto;
@@ -457,10 +552,12 @@ textarea:focus-visible{
             }
             p{
                 width:181px!important;
+                
                 @include myfont(16px,400,$main_font);
                 margin-top: 3px;
                 span{
                     @include myfont(16px,600,$main_font);
+
                 }
                 @include media(lgDevice){
                     width:unset!important;
@@ -472,6 +569,9 @@ textarea:focus-visible{
                 @include media(xsmDevice){
                     margin-top: 30px;
                     
+                }
+                p{
+                    padding-right: 5px;
                 }
             }
             &.gap2{
@@ -488,13 +588,13 @@ textarea:focus-visible{
     padding:20px 0;
     padding-top: 60px;
     .main_image{
-        position: relative;
+        
         img{            
-            position: absolute;
-            top: -68px;
-            right: -57px;
-            height: 676px; 
-            z-index: 888; 
+            
+            // top: -68px;
+            // right: -57px;
+            // height: 676px; 
+            // z-index: 888; 
             @include media(xsmDevice){
                 top: -36px;
                 right: 50%;
@@ -603,6 +703,8 @@ textarea:focus-visible{
 }
 
 .aboutus{
+
+    
     @include media(xsmDevice){
         margin-top: 590px;
         padding:70px 0 0 0;
@@ -669,7 +771,7 @@ textarea:focus-visible{
             p{
                 @include myfont(16px,400,$main_font);
                 line-height: 30px;
-                width:107%;
+                width:100%;
                 color:$seventyblack;
                 @include media(xsmDevice){
                     width:100%;
@@ -679,6 +781,11 @@ textarea:focus-visible{
                 }
                 @include media(mdDevice){
                     line-height: 30px;
+                }
+                a{
+                    @include myfont(14px,400,$main_font);
+                    color:#312783;
+                    text-decoration: underline;
                 }
             }
             button{
@@ -896,10 +1003,17 @@ textarea:focus-visible{
             @include myfont(25px,600,$main_font);
         }
         .extraforborder{
-            border: 1px solid $border_twenty;
-
-            border-radius: 20px;
-            padding:15px 0;
+            position:relative;
+            &::after{
+                position:absolute;
+                left:-20px;
+                top:0;
+                width:1px;
+                height:100%;
+                background-color: $border_twenty;
+                content:'';
+            }
+            
             .noticecase{
                 height:294px;
                 width: 100%;
@@ -1034,50 +1148,22 @@ textarea:focus-visible{
             } 
         }
         .blackbuttons{
-            // margin-top: 45px;
-            .blackbutton{
-                width:165px;
-                height:55px;
-                background-color: #000;
-                border-radius: 10px;
-                position: relative;
-                padding-left: 52px;
-                padding-top:11px;
-                img{
-                    position:absolute;
-                    top:14px;
-                    left:16px;
-                }
-                p{
-                    margin-top: 0;
-                    color:#fff;
-                    @include myfont(11px,400,$main_font); 
-                    span{
-                        @include myfont(11px,600,$main_font); 
-    
+            display: flex;
+                a{
+                    display: inline-block;
+                    width:157px;
+                    height: 48px;
+                    img{
+                        width:157px;
+                        height: 48px;
                     }
-                    text-align: left;
+                    margin-right: 14px;
                 }
-                @include media(xsmDevice)                {
-                    margin: 10px auto;
-
-                }
-                @include media(lgDevice){
-                    margin-left: auto;
-                    margin-bottom: 20px;
-                }
-                &.blackbuttonlg2{
-                    @include media(lgDevice){
-                        margin-left: 30px;
-                    }
-                    @include media(xlgDevice){
-                        margin-left: 15px;
-                    }
-
-                }
-            }
-
+               
+                
+            
         }
+        
     }
 }
 .eventandnews{
@@ -1303,6 +1389,8 @@ textarea:focus-visible{
         }
     }
 }
+
+
 
 // sticky scroll 
 

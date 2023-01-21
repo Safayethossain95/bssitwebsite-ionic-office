@@ -3,7 +3,7 @@ import {Row,Col} from 'react-bootstrap'
 import RedCardwithText from './subComponents/RedCardwithText'
 import {noticelist} from '../utils/Homepage'
 import { useNavigate } from 'react-router-dom';
-import { noticedata } from '../utils/NoticePageApi';
+import { noticedata,upcomingnoticedata } from '../utils/NoticePageApi';
 
 
 const WhyChooseUs = () => {
@@ -15,6 +15,10 @@ const WhyChooseUs = () => {
   const handleNoticeClick=(id)=>{
     navigate(`/notice/latest/${id}`)
   }
+  const handleNoticeClickupcoming=(id)=>{
+    navigate(`/notice/upcoming/${id}`)
+  }
+
   
     
   return (
@@ -127,7 +131,30 @@ const WhyChooseUs = () => {
                           </div>
                         )
                       })
+                      
                     }
+                    {
+                      upcomingnoticedata.map((item,key)=>{
+                        let trimmedString2= item.paragraph.substr(0, 38)
+                        return(
+                          <div className="tbdiv" onClick={()=>handleNoticeClickupcoming(item.id)} key={key}>
+                             <div className="flexwrap">
+                             <h5>{item.heading}</h5>
+                             <p className='mainparagraph'>
+                               
+                               {trimmedString2}...
+                               {/* <span>...</span> */}
+                               </p>
+                             <div className="cald">
+                              <img src="./assets/images/icons/cal.png" alt="" />
+                              <p>{item.publishdate}</p>
+                             </div>
+                             </div>
+                          </div>
+                        )
+                      })
+                    }
+
                     
                 </div>
                     

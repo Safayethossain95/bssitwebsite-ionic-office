@@ -87,22 +87,23 @@
                 content: "";
                 animation: mymove 3s infinite;
                 transform: scaleX(0);
-                transform-origin: bottom left;
-                transition:transform 3s infinite;
+                
+                transition:transform 3s normal;
+                animation-iteration-count : 1;
             }
             @keyframes mymove {
                 0% {
                  transform: scaleX(1);
-                 transform-origin: bottom left;
+                 
                 }
                 
                 50% {
                     transform: scaleX(0);
-                    transform-origin: bottom left;
+                    
                 }
                 100%{
                     transform: scaleX(1);
-                 transform-origin: bottom right;
+                 
                 }
                 
               }

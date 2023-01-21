@@ -5,8 +5,9 @@
 @import '../sassPages/mobileGlobal.scss';
 
 .bannermobile{
+
     .react-parallax{
-        height:475px;
+        height:553px;
     }
 }
 body{
@@ -28,79 +29,96 @@ body{
     
 }
 
+.react-parallax{
+    padding-top: 62px;
+}
+
 .sticky2shadow{
     -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
     -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
     box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
     background:#fff;
 }
+// .blackbuttons{
+//     padding-top: 25px;
+//     .blackbutton{
+//         width:119px;
+//         height:37px;
+//         background-color: #000;
+//         border-radius: 10px;
+//         position: relative;
+//         padding-left: 27px;
+//         padding-top:5px;
+//         position: relative;
+//         &::after{
+//             position: absolute;
+//             width: 0%;
+//             left: 0;
+//             bottom:-10px;
+//             height: 3px;
+//             background: #ED1C24;
+//             content: "";            
+//             transition:0.4s;
+            
+            
+//         }
+//         &:hover{
+//             &:after{
+//                 width:100%;
+//             }
+//         }
+//         img{
+//             position:absolute;
+//             top:10px;
+//             left:6px;
+//             width:17px;
+//         }
+//         p{
+//             margin-top: 0;
+//             color:#fff;
+//             @include myfont(10px,400,$main_font); 
+//             span{
+//                 @include myfont(10px,600,$main_font); 
+
+//             }
+//             text-align: left;
+//         }
+//         @include media(xsmDevice)                {
+//             margin: 0;
+
+//         }
+//         @include media(lgDevice){
+//             margin-left: auto;
+//             margin-bottom: 20px;
+//         }
+//         &.blackbuttonlg2{
+//             padding-left: 34px;
+//             img{
+//                 left:9px;
+//             }
+//             @include media(lgDevice){
+//                 margin-left: 30px;
+//             }
+//             @include media(xlgDevice){
+//                 margin-left: 15px;
+//             }
+
+//         }
+//     }
+
+// }
 .blackbuttons{
-    padding-top: 25px;
-    .blackbutton{
-        width:119px;
-        height:37px;
-        background-color: #000;
-        border-radius: 10px;
-        position: relative;
-        padding-left: 27px;
-        padding-top:5px;
-        position: relative;
-        &::after{
-            position: absolute;
-            width: 0%;
-            left: 0;
-            bottom:-10px;
-            height: 3px;
-            background: #ED1C24;
-            content: "";            
-            transition:0.4s;
-            
-            
-        }
-        &:hover{
-            &:after{
-                width:100%;
-            }
-        }
+    margin-top: 15px;
+    &.row>*{
+        padding: 0 5px!important;
+
+    }
+    a{
         img{
-            position:absolute;
-            top:10px;
-            left:6px;
-            width:17px;
-        }
-        p{
-            margin-top: 0;
-            color:#fff;
-            @include myfont(10px,400,$main_font); 
-            span{
-                @include myfont(10px,600,$main_font); 
-
-            }
-            text-align: left;
-        }
-        @include media(xsmDevice)                {
-            margin: 0;
-
-        }
-        @include media(lgDevice){
-            margin-left: auto;
-            margin-bottom: 20px;
-        }
-        &.blackbuttonlg2{
-            padding-left: 34px;
-            img{
-                left:9px;
-            }
-            @include media(lgDevice){
-                margin-left: 30px;
-            }
-            @include media(xlgDevice){
-                margin-left: 15px;
-            }
-
+            width: 118px;
+            height:36px;
         }
     }
-
 }
 #nav-icon4 {
     width: 22px;
@@ -124,35 +142,35 @@ body{
         color:#000;
         // border-bottom: 2px solid #ED1C24;
         position:relative;
-            &::after{
-                position: absolute;
-                width: 100%;
-                right: 0;
-                bottom:-3px;
-                height: 3px;
-                background: #ED1C24;
-                content: "";
-                animation: mymove 3s infinite;
-                transform: scaleX(0);
-                transform-origin: bottom left;
-                transition:transform 3s infinite;
+        &::after{
+            position: absolute;
+            width: 100%;
+            right: 0;
+            bottom:-3px;
+            height: 3px;
+            background: #ED1C24;
+            content: "";
+            animation: mymove 3s infinite;
+            transform: scaleX(0);
+            
+            transition:transform 3s infinite;
+        }
+        @keyframes mymove {
+            0% {
+             transform: scaleX(1);
+             
             }
-            @keyframes mymove {
-                0% {
-                 transform: scaleX(1);
-                 transform-origin: bottom left;
-                }
+            
+            50% {
+                transform: scaleX(0);
                 
-                50% {
-                    transform: scaleX(0);
-                    transform-origin: bottom left;
-                }
-                100%{
-                    transform: scaleX(1);
-                 transform-origin: bottom right;
-                }
-                
-              }
+            }
+            100%{
+                transform: scaleX(1);
+             
+            }
+            
+          }
         img{
             margin-top: -2px;
         }
@@ -223,15 +241,55 @@ body{
     top: 18px;
     left: 3px;
   }
-  
+  .myheading{
+    text-align: center;        
+        .myappplybutton{
+            margin:55px auto 35px auto;
+            @include myfont(25px,600,$main_font);
+            color:#000;
+            display: inline-block;
+            position:relative;
+            &::after{
+                position: absolute;
+                width: 100%;
+                left: 0;
+                bottom:-3px;
+                height: 3px;
+                background: #ED1C24;
+                content: "";
+                animation: mymove 10s;
+                transition:transform 2s;
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+            @keyframes mymove {
+                0% {
+                    transform: scaleX(0);
+                    width:0%;
+                }
+                100% {
+                    transform: scaleX(1);
+                    width:100%;
+                }
+              }
+          
+            img{
+                margin-top: -2px;
+            }
+            @include media(lgDevice){
+                @include myfont(14px,500,$main_font);
+            }
+        }
+    
+
+}
 
 .aboutus{
-    .headingdiv{
-        text-align: center;
-        h3{
-            display: inline-block;
-        }
-    }
+   
+      
+        
+    
+    
 }
 .fullwidth{
     position:relative;
@@ -258,6 +316,7 @@ body{
         top: 83px;
         background: #FFFFFF;
         transform: translateX(-50%);
+        mask: -webkit-gradient(linear, left 52%, left 8%, from(rgb(0, 0, 0)), to(rgba(0, 0, 0, 0)));
         -webkit-mask: -webkit-gradient(linear, left 52%, left 8%, from(rgb(0, 0, 0)), to(rgba(0, 0, 0, 0)));
     }
     
@@ -305,7 +364,11 @@ body{
         display: flex;
         justify-content: space-between;
         margin-top: 30px;
+        margin-bottom: 20px;
         .bannercardsmallsinglebox{
+            img{
+                opacity: 70%;
+            }
             &.smgap1{
                 margin-left: 10px;
                 margin-top: 30px;
@@ -319,7 +382,7 @@ body{
             background: #FFFFFF;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.08);
             border-radius: 10px;
-            padding:20px 7px;
+            padding:15px 9px;
             h4{
                 margin-top: 7px;
                 @include myfont(12px,600,$main_font);
@@ -328,9 +391,8 @@ body{
             p{
                 @include myfont(12px,400,$main_font);
                 margin-top: 8px;
-                &.removegap{
-                    margin-top: 0;
-                }
+                
+              
                 span{
                     @include myfont(12px,600,$main_font);
                 }
@@ -353,24 +415,19 @@ body{
                 height: 3px;
                 background: #ED1C24;
                 content: "";
-                animation: mymove 3s infinite;
+                animation: mymove 3s normal;
                 transform: scaleX(0);
                 transform-origin: bottom left;
-                transition:transform 3s infinite;
+                transition:transform 3s;
+                animation-iteration-count : 1;
             }
             @keyframes mymove {
                 0% {
-                 transform: scaleX(1);
-                 transform-origin: bottom left;
+                 transform: scaleX(0);                 
                 }
                 
-                50% {
-                    transform: scaleX(0);
-                    transform-origin: bottom left;
-                }
                 100%{
-                    transform: scaleX(1);
-                 transform-origin: bottom right;
+                    transform: scaleX(1);                 
                 }
                 
               }
@@ -393,63 +450,26 @@ body{
             @include myfont(12px,400,$main_font);
             color: rgba(0, 0, 0, 0.70);
             margin-top: 30px;
+            a{
+                @include myfont(12px,400,$main_font);
+                text-decoration: underline;
+                color: #312783;
+            }
         }
         .aboutusmobilebutton{
             text-align: center;
             padding-top: 30px;
         }
     }
+
+    
 }
 
 .whychooseusmobile{
     .row > * {                                
         padding-left: 0!important;        
     }
-    .heading{
-        text-align: center;
-        .appplybutton{
-            color:#000;
-            position:relative;
-            &::after{
-                position: absolute;
-                width: 100%;
-                right: 0;
-                bottom:-3px;
-                height: 3px;
-                background: #ED1C24;
-                content: "";
-                animation: mymove 3s infinite;
-                transform: scaleX(0);
-                transform-origin: bottom left;
-                transition:transform 3s infinite;
-            }
-            @keyframes mymove {
-                0% {
-                 transform: scaleX(1);
-                 transform-origin: bottom left;
-                }
-                
-                50% {
-                    transform: scaleX(0);
-                    transform-origin: bottom left;
-                }
-                100%{
-                    transform: scaleX(1);
-                 transform-origin: bottom right;
-                }
-                
-              }
-            img{
-                margin-top: -2px;
-            }
-        }
-        h4{
-            @include myfont(25px,500,$main_font);
-            text-align: center;
-            display: inline-block;
-            margin: 24px 0 34px 0 !important;
-        }
-    }
+   
     .wcucontent{
         p{
             @include myfont(12px,400,$main_font);
@@ -457,7 +477,7 @@ body{
         }
     }
     .wcuboxesgap{
-        margin-bottom: 60px;
+        margin-bottom: 10px;
     }
 
 }
@@ -473,9 +493,9 @@ body{
         align-items: center;
         margin:0 auto;
         margin-top: 38px;
-        // img{
-        //     width:38px;
-        // }
+        img{
+            opacity:70%;
+        }
     }
     .writingofwcu{
         text-align: center;
@@ -488,97 +508,11 @@ body{
 }
 .eventandnews{
     
-    .headingdiv{
-        text-align: center;
-        h3{
-            display:inline-block;
-            &.appplybutton{
-               
-                color:#000;
-                // border-bottom: 2px solid #ED1C24;
-                position:relative;
-                    &::after{
-                        position: absolute;
-                        width: 100%;
-                        right: 0;
-                        bottom:-3px;
-                        height: 3px;
-                        background: #ED1C24;
-                        content: "";
-                        animation: mymove 3s infinite;
-                        transform: scaleX(0);
-                        transform-origin: bottom left;
-                        transition:transform 3s infinite;
-                    }
-                    @keyframes mymove {
-                        0% {
-                         transform: scaleX(1);
-                         transform-origin: bottom left;
-                        }
-                        
-                        50% {
-                            transform: scaleX(0);
-                            transform-origin: bottom left;
-                        }
-                        100%{
-                            transform: scaleX(1);
-                         transform-origin: bottom right;
-                        }
-                        
-                      }
-                img{
-                    margin-top: -2px;
-                }
-            }
-        }
-    }
+    
 }
 .eventandnewsmobile{
-    .heading{
-        text-align: center;
-        .appplybutton{
-            color:#000;
-            position:relative;
-            &::after{
-                position: absolute;
-                width: 100%;
-                right: 0;
-                bottom:-3px;
-                height: 3px;
-                background: #ED1C24;
-                content: "";
-                animation: mymove 3s infinite;
-                transform: scaleX(0);
-                transform-origin: bottom left;
-                transition:transform 3s infinite;
-            }
-            @keyframes mymove {
-                0% {
-                 transform: scaleX(1);
-                 transform-origin: bottom left;
-                }
-                
-                50% {
-                    transform: scaleX(0);
-                    transform-origin: bottom left;
-                }
-                100%{
-                    transform: scaleX(1);
-                 transform-origin: bottom right;
-                }
-                
-              }
-            img{
-                margin-top: -2px;
-            }
-        }
-        h4{
-            @include myfont(25px,500,$main_font);
-            text-align: center;
-            display: inline-block;
-            margin: 24px 0 34px 0 !important;
-        }
-    }
+    margin-bottom: 50px;
+   
     
 }
 
@@ -602,7 +536,7 @@ body{
     }
 }
 .footermobile{
-    padding: 32px 0 18px 0;
+    padding: 12px 0 32px 0;
     background: $footer_bg;
     margin-top: 60px;
     .mobilecontainer{
@@ -781,7 +715,7 @@ body{
                     height: 30px;
                     width:120px;
                     transform:translateY(50%);
-                    background: #ED1C24;
+                    background: #f5f5f5;
                     border-radius: 48px;
                     @include media(xsmDevice){
                         left:25px;
@@ -793,7 +727,7 @@ body{
                     p{
                         @include myfont(12px,400,$main_font); 
                         margin-bottom: 0;
-                        color:#fff;
+                        color:#000;
                         
                     }
                     &.smallleft{
@@ -836,51 +770,7 @@ body{
 
 
 .noticemobile{
-    .heading{
-        text-align: center;
-        .appplybutton{
-            color:#000;
-            position:relative;
-            &::after{
-                position: absolute;
-                width: 100%;
-                right: 0;
-                bottom:-3px;
-                height: 3px;
-                background: #ED1C24;
-                content: "";
-                animation: mymove 3s infinite;
-                transform: scaleX(0);
-                transform-origin: bottom left;
-                transition:transform 3s infinite;
-            }
-            @keyframes mymove {
-                0% {
-                 transform: scaleX(1);
-                 transform-origin: bottom left;
-                }
-                
-                50% {
-                    transform: scaleX(0);
-                    transform-origin: bottom left;
-                }
-                100%{
-                    transform: scaleX(1);
-                 transform-origin: bottom right;
-                }
-                
-              }
-            img{
-                margin-top: -2px;
-            }
-        }
-        h4{
-            @include myfont(25px,500,$main_font);
-            text-align: center;
-            display: inline-block;
-            margin: 24px 0 34px 0 !important;
-        }
-    }
+    
     .noticebox{
         border-radius: 20px;
         .noticeheading{

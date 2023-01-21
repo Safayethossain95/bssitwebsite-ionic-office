@@ -20,7 +20,7 @@ const Footer = () => {
                <div className="firstrowoffooter">
                     <Row>
                         <Col lg={3}>
-                            <img className='footerlogoclass' src="./assets/images/footer_logo.png" alt="footer_logo.png" />
+                            <img className='footerlogoclass' src="./assets/images/logo/footer_logo_big.png" alt="footer_logo.png" />
                         </Col>
                         <Col lg={3} style={{marginTop:"20px"}}>
                             <div className="footeritemslist">
