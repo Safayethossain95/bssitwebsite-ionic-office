@@ -14,8 +14,7 @@ const AboutUsMobile = () => {
                     IT based teaching with the help of Ebook and Mylab. Teaching through Phonetics and Audiovisual Presentation
                     Lectures, Group Discussions, Class Orientation
                     Mock Test, Examination, Solves Class. Teaching the students to observe accurately, to think positively and truthfully, to speak correctly, and to write clearly, is the main motto. <Link to="/aboutus">Read more</Link> 
-                    </p>
-                        
+                    </p>                        
                 </div>
 
             </div>

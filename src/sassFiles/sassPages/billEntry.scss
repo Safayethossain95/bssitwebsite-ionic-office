@@ -3,7 +3,17 @@
 @import '../../sassStyles/typography';
 @import '../../sassStyles/global';
 
-
+ .wrapperforscrollbar2{
+            
+    margin-top: 15px;
+    background-color: #fff;
+    padding-top: 15px;
+    border-radius: 20px;
+    padding-bottom: 15px;
+    margin-right: 15px;
+    border-radius: 20px;
+    padding-right: 3px;
+}
 .desktopforbillEntry{
     display: flex;
 }
@@ -81,7 +91,7 @@ body{
         z-index: 999;
         .leftsidesearch{
             position: relative;
-            margin-top: 15px;
+            margin-top: 4px;
             width:295px;
             span{
                 cursor:pointer;
@@ -96,6 +106,7 @@ body{
            
             input{
                 padding: 17px 13px;
+                margin-left: 1px;
                 width:295px;
                 height:50px;
                 background-color: #fff;
@@ -173,7 +184,7 @@ body{
     .billentrytop{
         // height: 410px;
         height: calc(100vh - 393px);
-        width:calc(100% - 15px);
+        width:100%;
         background:#fff;
         border-radius: 20px;
         overflow-y: scroll;

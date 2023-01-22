@@ -15,12 +15,14 @@ body{
 }
 // .desktop{
 //     scroll-snap-type: y mandatory;
-//     height: 100vh;
+    
 //     overflow-y: scroll;
 //     section{
+//         height: 100vh;
 //         scroll-snap-align: start;
 //     }
 // }
+
 .sticky2{
     position: fixed!important;
     top: 0;
@@ -284,13 +286,7 @@ body{
 
 }
 
-.aboutus{
-   
-      
-        
-    
-    
-}
+
 .fullwidth{
     position:relative;
     .bannermobilebg {
@@ -506,10 +502,7 @@ body{
         }
     }
 }
-.eventandnews{
-    
-    
-}
+
 .eventandnewsmobile{
     margin-bottom: 50px;
    

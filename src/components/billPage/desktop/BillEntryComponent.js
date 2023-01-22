@@ -91,9 +91,9 @@ const BillEntryComponent = () => {
        
     
         </div>
-
+        <div className="wrapperforscrollbar2">
         <div className="billentrytop">
-            
+                    
                     <div className="billentrytopmenu">
                         <Row style={{width:"100%"}}>
                             <Col style={{flexGrow:"1.5"}}>
@@ -121,6 +121,9 @@ const BillEntryComponent = () => {
                             
                         </Row>
                         </div>
+                   
+                    
+
                         <Row className="mx-0">
                             <Col lg={12} >
                                 <div className="billentrytoptable">
@@ -267,6 +270,8 @@ const BillEntryComponent = () => {
                         
                      
         </div>
+        </div>
+        
 
         <div className="billentrybottom">
             <div className="billentrybottombox">

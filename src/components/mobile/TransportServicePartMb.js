@@ -9,7 +9,7 @@ const TransportServicePartMb = () => {
                     <h4>Transport Service</h4>                
                 </div>
             <div className="transportserviceimg">
-                <img src="./assets/images/transportimg.png" alt="transportimg.png" />
+                <img src="./assets/images/mobile/transportimg.png" alt="transportimg.png" />
             </div>
             <div className="transportservicetext">
                         <h3>Our Facilities</h3>

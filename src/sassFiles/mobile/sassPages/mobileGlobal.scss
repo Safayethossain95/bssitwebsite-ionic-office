@@ -148,7 +148,7 @@
                 a{
                     @include myfont(16px,400,$main_font);
                     color:$main_font_color;
-                    margin:20px 50px;
+                    margin: 15px 0 15px 0;
                     padding:0; 
                     transition:0.4s;
                     
@@ -158,6 +158,12 @@
                         color:#ED1C24;
                         
                     } 
+                    &.appplybutton{
+                        &::after{
+                            width:125px;
+                            left:0;
+                        }
+                    }
                     margin-left: 50px; 
                   
                     // @include media(xsmDevice){

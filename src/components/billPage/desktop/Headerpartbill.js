@@ -120,7 +120,7 @@ const Headerpartbill = () => {
         </div>
         <div className="lowerpart">
             <Row style={{paddingBottom:"15px"}}>
-                <Col lg={7} >
+                <Col lg={7} style={{paddingRight:"15px"}}>
                     <div className="lowerpartflexuppercolumn" style={{height:"624px",flexDirection:"column",display:"flex",justifyContent:"space-between"}}>
                         <div className="wrapperforscrollbar">
                         <div className="previoushistorylist" style={{flex:"1 1 88%"}}>
@@ -299,23 +299,25 @@ const Headerpartbill = () => {
                         </table>
                         
                     </div>
-                        </div>
 
                     <div className="prelistbottom" style={{flex:"1 1 12%"}}>
                             <div className="prelistbtminner">
                                 <h6>Total collection: 73604.00 BDT</h6>
                             </div>
                     </div>
+                        </div>
+
                     </div>
                 </Col>
-                <Col lg={5} style={{paddingLeft:"0",}} >
+                <Col lg={5} style={{paddingLeft:"0",paddingRight:"15px"}} >
                     <div className="lowerrightwrap" style={{flexDirection:"column",display:"flex",justifyContent:"space-between"}}>
-                    <div className="dueboard" style={{flex:"1 1 40%"}}>
+                        <div className="wrapperforscrollbar2">
+                            <div className="dueboard" style={{flex:"1 1 40%"}}>
                         <div className="headingwithiconfixed">
                             <h5><span><MdHistory/></span>Due Information</h5>
                             <p>You have total 5 months tuition fee due</p>
                         </div>
-                    <ul>
+                        <ul>
                             <li>
                                 <div className="left">
                                     <h5>22-Oct</h5>
@@ -389,6 +391,8 @@ const Headerpartbill = () => {
                             <h6>Receive Bill</h6>
                        </div>
                     </div>
+                        </div>
+                    
 
                     <div className="notepart" style={{flex:"1 1 50%"}}>
                         <h5><span><AiOutlineInfoCircle/></span>Note</h5>

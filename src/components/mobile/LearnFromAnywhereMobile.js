@@ -7,8 +7,8 @@ const LearnFromAnywhereMobile = () => {
         <div className="mobilecontainer">
             <div className="learnfromanywheremobile" data-aos="fade-up" data-aos-duration="2000">
                 <img src="./assets/images/mobile/eventandnewsmobileimg.png" alt="" />
-                <div className="myheading">
-                    <h4 >Learn From Anywhere</h4>
+                <div className="heading">
+                    <h4>Learn From Anywhere</h4>
                 </div>
                 <div className="paragraphmini">
                     <p>To improve the human resources by educating them on all round development of human being i.e. - development of all four levels</p>

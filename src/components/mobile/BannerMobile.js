@@ -18,13 +18,12 @@ const BannerMobile = () => {
         
         <Parallax  bgImage="./assets/images/hompagebannerimage/banner1.png" bgImageAlt="the cat" strength={500}>
         
-        <div className="bluroverlay">
+        <div className="bluroverlay"></div>
 
-                </div>
-                <div className="content">
-                    <div className="mobilecontainer4">
-                <div className="bannermobileimgoverlay">
-                    <div className="textpartov">
+            <div className="content">
+                <div className="mobilecontainer4">
+            <div className="bannermobileimgoverlay">
+                <div className="textpartov">
                     <h4>Welcome to</h4>
                     <p>British Standard School</p>
 
@@ -32,12 +31,12 @@ const BannerMobile = () => {
                     <div className="textparagraph">
                         <p>"Education is the manifestation of perfection already in man." It is true that every individual has education in them but it is the school that gives them the shape to become the enlightened one. So join school, join BSS!!</p>
                     </div>
-                   
-                    </div>
-
-                    </div>
-
+                    
                 </div>
+
+            </div>
+
+            </div>
         </Parallax>
         
             {/* <div className="bannermobileimg">
