@@ -91,7 +91,8 @@ const BillEntryComponent = () => {
        
     
         </div>
-        <div className="wrapperforscrollbar2">
+        <div className="flexpercentagevertical" style={{flexDirection:"column",display:"flex",justifyContent:"space-between"}}>
+        <div className="wrapperforscrollbar2" style={{flex:"1 1 55%"}}>
         <div className="billentrytop">
                     
                     <div className="billentrytopmenu">
@@ -273,7 +274,7 @@ const BillEntryComponent = () => {
         </div>
         
 
-        <div className="billentrybottom">
+        <div className="billentrybottom" style={{flex:"1 1 45%"}}>
             <div className="billentrybottombox">
                 <div className="billentrybottomboxflexwrapper">
                 <Row>
@@ -349,6 +350,8 @@ const BillEntryComponent = () => {
                 </div>
             </div>
         </div>
+        </div>
+        
     </>
   )
 }

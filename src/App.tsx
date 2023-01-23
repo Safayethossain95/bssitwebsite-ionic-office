@@ -53,6 +53,7 @@ import NoticePageSingleDetail from './pages/NoticePageSingleDetail';
 import UpcomingPageSingledetail from './pages/UpcomingPageSingledetail';
 import OlderNoticeSingleDetailPage from './pages/OlderNoticeSingleDetailPage';
 import CareerDetailsPage from './pages/CareerDetailsPage';
+import StudentDashboardPage from './pages/dashboard/StudentDashboardPage';
 
 setupIonicReact();
 
@@ -101,6 +102,8 @@ const App: React.FC = () => {
         <Route  path="/billpage" element={<BillPage/>}/>
 
         <Route  path="/billentry" element={<BillEntryPage/>}/>
+        
+        <Route  path="/studashboard" element={<StudentDashboardPage/>}/>
 
         <Route  path="/studentaddmissionentry" element={<StudentAdmissionEntryBillPage/>}/>
 

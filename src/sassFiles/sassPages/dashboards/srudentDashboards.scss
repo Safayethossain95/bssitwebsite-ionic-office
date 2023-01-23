@@ -1,0 +1,245 @@
+@import '../../../sassStyles/mixins';
+@import '../../../sassStyles/variables';
+@import '../../../sassStyles/typography';
+@import '../../../sassStyles/global';
+
+
+.studentdashboardwrapper{
+    background-color: #f2f2f2;
+    .stu_sidebar{
+        display: flex;
+        .sidebarleftbill{
+            height: 100vh;
+            position:relative;
+            width:315px;
+            .sidebarleftbillbox{
+                background-color: #fff;
+                position:absolute;
+                top:15px;
+                left:15px;
+                
+                width:255px;
+                height: calc(100vh - 30px);
+                
+                border-radius: 20px;
+                .logo{
+                    text-align: center;
+                    img{
+                        margin-top: 31px;
+                        margin-bottom: 40px;                    
+                    }
+                }
+                .menupart{
+                    ul{
+                        padding-left: 0;
+                        
+                        li{
+                            margin:0px 8px;
+                            
+                            a{
+                                @include myfont(16px,400,$main_font);
+                                color:rgba(0,0,0,0.7);
+                                
+                                border-radius: 10px;
+                                display: inline-block;
+                                height: 50px;
+                                width:100%;
+                                line-height: 50px;
+                                padding-left: 35px;
+                                &.active{
+                                    background-color: #F3F1FF;
+                                }
+                                img{
+                                    margin-top: -2px;
+                                    margin-right: 5px;
+                                    width: 13px;
+                                    height: 13px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .logout{
+                    button{
+                        background-color: #fff;
+                        color:#000;
+                        border:none;
+                        position: absolute;
+                        bottom:26px;
+                        left:50%;                    
+                        transform:translateX(-50%);
+                        @include myfont(16px,400,$main_font);
+                    }
+                }
+            }
+
+        }
+        .rightpartcontentwrap{
+            width:calc(100% - 15px);
+            margin-left: 15px;
+            margin-right: 15px;
+            @include media(xlgDevice){
+                margin-left: 30px;
+            }
+            .headerpartbill{
+                height: 75px;
+                width:100%;
+                display: flex;
+                position:sticky;
+                background: linear-gradient(180deg, #F2F2F2 0%, rgba(242, 242, 242, 0.52) 100%);
+                backdrop-filter: blur(5px);
+                top:0;
+                z-index: 999;
+                
+                .leftsidecontent{
+                    h3{
+                        @include myfont(20px,500,$main_font);
+                        margin-top: 10px;
+                        margin-left: 15px;
+                    }
+                }
+                .rightsidestuff{
+                    width:265px;
+                    height:100%;        
+                    margin-left: auto;
+                    margin-right: 19px;
+                    display: flex;
+                    .bellicon{
+                        position:relative;
+                        width:32px;
+                        margin-right: 19px;
+                        height: 100%;
+                        
+                        svg{
+                            
+                            font-size: 32px;
+                            position:absolute;
+                            top:28px;
+                            left:0;
+                            
+                        }
+                        &::after{
+                            position: absolute;
+                            content: "";
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background-color: #ED1C24;
+                            right: 6px;
+                            top: 33px;
+                            border:1px solid #f2f2f2;
+        
+                        }
+                        
+                    }
+                    .profilesmallinfo{
+                        display: flex;
+                        .profilepic{
+                            width: 50px;
+                            height: 50px;
+                            background: #fff;
+                            margin-top: 15px;
+                            border-radius: 50%;
+                            text-align: center;
+                            img{
+                                width:39px;
+                                height: 48x;
+                                border-radius: 50%;
+                                margin-top: 2px;
+                            }
+                        }
+                        .roleandid{
+                            display: flex;
+                            align-items: center;
+                            .roleidwrapper{
+                                margin-left: 13px;
+                                line-height: 0;
+                                h5{
+                                    @include myfont(16px,400,$main_font);
+        
+                                }
+                                p{
+                                    @include myfont(14px,400,$main_font);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .samebox{
+                width:100%;
+                height:378px;
+                background-color: #fff;
+                border-radius: 20px;
+                padding:25px 12px;
+                .headerpart{
+                    padding:0 10px;
+                    .flexwrap{
+                        display: flex;
+                        justify-content: space-between;
+                        h4{
+                            @include myfont(16px,500,$main_font);
+                            color:#000;
+                        }
+                        p{
+                            @include myfont(10px,400,$main_font);
+                            color: #000;
+                        }
+                    }
+                }
+                .contentpart{
+                    margin-top: 27px;
+                    .smallbarcard{
+                        margin-bottom: 5px;
+                        position: relative;
+                        height: 50px;
+                        width:100%;
+                        border-radius: 10px;
+                        border:1px solid $border_twenty;
+                        padding:0 10px;
+                        display: flex;
+                        .textssmallbar{
+                            display: flex;
+                            align-items: center;
+                            .flexwrap{
+
+                                h5{
+                                    @include myfont(12px,500,$main_font);
+                                    margin-bottom: 0;
+                                }
+                                p{
+                                    @include myfont(10px,400,$main_font);
+                                    color: #000;
+                                }
+                            }
+                        }
+                        img{
+                            width:42px;
+                            height: 42px;
+                            margin-right: 10px;
+                        }
+                        .downloadbutton{
+                            position:absolute;
+                            background:#F3F1FF;
+                            right:10px;
+                            top:50%;
+                            transform:translateY(-50%);
+                            width:40px;
+                            height:40px;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            img{
+                                width:24px;
+                                height: 24px;
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

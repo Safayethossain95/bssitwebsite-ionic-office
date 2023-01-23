@@ -207,13 +207,7 @@ body{
             height: calc(100vh - 384px);
         }
         .wrapperforscrollbar2{
-            
-            // padding-top: 10px;
             margin-top: 15px;
-            // background-color: #fff;
-            // border-top-right-radius: 20px;
-            // border-top-left-radius: 20px;
-            // height: calc(100vh - 384px);
             background-color: #fff;
             padding-top: 5px;
             border-radius: 20px;
@@ -236,12 +230,6 @@ body{
            }
            table{
             position:relative;
-            // th {
-            //     background: white;
-            //     position: sticky;
-            //     top: 65px; /* Don't forget this, required for the stickiness */
-            //     box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
-            //   }
               tr{
                 &:first-child{
                     background: white;

@@ -183,7 +183,8 @@ body{
 
     .billentrytop{
         // height: 410px;
-        height: calc(100vh - 393px);
+        // height: calc(100vh - 393px);
+        height: calc(100vh - 438px);
         width:100%;
         background:#fff;
         border-radius: 20px;
@@ -191,7 +192,7 @@ body{
         position:relative;
         top:3px;
         @include media(xlgDevice){
-            height: calc(100vh - 316px);
+            height: calc(100vh - 361px);
         }
         .billentrytopmenu{
             position: sticky;
@@ -205,6 +206,8 @@ body{
             justify-content: space-between;
             align-items: center;
             padding: 16px;
+            padding-top: 0;
+            
             z-index: 999;
             button{
                 text-align: center;

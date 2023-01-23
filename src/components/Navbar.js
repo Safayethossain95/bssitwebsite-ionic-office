@@ -79,7 +79,7 @@ const Mynavbar = () => {
                     }
                     >Contact</NavLink>
 
-                    <NavLink to="/studentpanel" style={({ isActive }) =>
+                    <NavLink to="/login" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
                     >Student Panel</NavLink>

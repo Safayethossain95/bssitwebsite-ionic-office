@@ -1,12 +1,11 @@
 import React,{useState} from 'react'
 import {Row,Col, Form} from 'react-bootstrap'
 import CommonButton from '../components/subComponents/CommonButton';
-import {Link, useNavigate} from 'react-router-dom'
-import axios from 'axios';
+import {Link} from 'react-router-dom'
 const LoginPageComp = () => {
     const [isSubscribed, setIsSubscribed] = useState(false);
  
-  const navigate = useNavigate()
+
   const [formdata,setFormdata] = useState({
     username:"",
     password:""
@@ -20,30 +19,9 @@ const LoginPageComp = () => {
     setIsSubscribed(current => !current);
   };
 
-  const headers= {    
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "*",
-      "Access-Control-Allow-Methods": "*",     
-    }
-
   const handleSubmit=(e)=>{
     e.preventDefault()
-    console.log(formdata.username,formdata.password)
-    // navigate('/aboutus');
-    try {
-      axios.post('https://localhost:7229/api/Auth/login', {
-        username: formdata.username,
-        password: formdata.password
-      },headers)
-      .then(function (response) {
-        console.log(response);
-        navigate('/aboutus')
-      })
-    } catch (err) {
-      if (err) {
-        console.error(err);
-      } 
-    }
+    console.log(JSON.stringify(formdata))
   }
   const handleInput=(e)=>{    
     setFormdata({...formdata,[e.target.name]: e.target.value} )

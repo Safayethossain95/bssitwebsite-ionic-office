@@ -18,6 +18,7 @@ const Banner = () => {
       fade:true,
       autoplay:true,
       autoplaySpeed: 5000,
+      loop:true
      
     };
   var settings2 = {
@@ -30,7 +31,22 @@ const Banner = () => {
       fade:true,
       autoplay:true,
       autoplaySpeed: 5000,
+      loop:true
     };
+  var settings3 = {
+      dots: false,
+      infinite: true,
+      speed: 1200,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows:false,
+      fade:true,
+      autoplay:true,
+      autoplaySpeed: 5000,
+      loop:true
+    };
+
+    
 
     const [nav1, setNav1] = useState();
     const [nav2, setNav2] = useState();
@@ -57,9 +73,60 @@ const Banner = () => {
             </Slider>
                
 
-                <div className="bannersmallboxwrapper">                                  
+                <div className="bannersmallboxwrapper">  
+                <Slider  {...settings3} asNavFor={nav2} ref={(slider1) => setNav1(slider1)}>                        
                  <Row>
-                  <Col lg={11}>
+                  <Col lg={12}>
+                    <Row>
+                    <Col lg={4} xs={12} className="bannersmallboxcenter " >
+                    <div className='bannersmallbox' data-aos-delay="400" data-aos="fade-up" data-aos-duration="2000">         
+                        <img src="./assets/images/smallvectorbanner2.png" alt="" />
+                        <p><span>18+</span> Years Since Founded in 2004</p>
+                    </div>                  
+                  </Col>
+                  <Col lg={4} xs={12} className="bannersmallboxcenter" >
+                  <div className='bannersmallbox gap' data-aos-delay="500" data-aos="fade-up" data-aos-duration="2000">         
+                      <img src="./assets/images/smallvectorbanner1.png" alt="" />
+                      <p><span>1000+</span> Student from all over Dhaka city</p>
+                  </div>
+                  </Col>
+                  <Col lg={4} xs={12} className="bannersmallboxcenter" >
+                    <div className='bannersmallbox gap2' data-aos-delay="600" data-aos="fade-up" data-aos-duration="2000">         
+                        <img src="./assets/images/smallvectorbanner3.png" alt="" />
+                        <p><span>400+</span> Teachers & Staff providing excellence</p>
+                    </div>
+                  </Col>
+                    </Row>
+                  </Col>
+                  
+                 </Row>
+                 <Row>
+                  <Col lg={12}>
+                    <Row>
+                    <Col lg={4} xs={12} className="bannersmallboxcenter" >
+                    <div className='bannersmallbox' data-aos-delay="400" data-aos="fade-up" data-aos-duration="2000">         
+                        <img src="./assets/images/smallvectorbanner2.png" alt="" />
+                        <p><span>20+</span> Branches in Dhaka</p>
+                    </div>                  
+                  </Col>
+                  <Col lg={4} xs={12} className="bannersmallboxcenter" >
+                  <div className='bannersmallbox gap' data-aos-delay="500" data-aos="fade-up" data-aos-duration="2000">         
+                      <img src="./assets/images/smallvectorbanner1.png" alt="" />
+                      <p><span>5000+</span> Student from all over the country</p>
+                  </div>
+                  </Col>
+                  <Col lg={4} xs={12} className="bannersmallboxcenter" >
+                    <div className='bannersmallbox gap2' data-aos-delay="600" data-aos="fade-up" data-aos-duration="2000">         
+                        <img src="./assets/images/smallvectorbanner3.png" alt="" />
+                        <p><span>300+</span> Teachers & Staff providing excellence</p>
+                    </div>
+                  </Col>
+                    </Row>
+                  </Col>
+                  
+                 </Row>
+                 <Row>
+                  <Col lg={12}>
                     <Row>
                     <Col lg={4} xs={12} className="bannersmallboxcenter" >
                     <div className='bannersmallbox' data-aos-delay="400" data-aos="fade-up" data-aos-duration="2000">         
@@ -76,13 +143,14 @@ const Banner = () => {
                   <Col lg={4} xs={12} className="bannersmallboxcenter" >
                     <div className='bannersmallbox gap2' data-aos-delay="600" data-aos="fade-up" data-aos-duration="2000">         
                         <img src="./assets/images/smallvectorbanner3.png" alt="" />
-                        <p><span>400+</span> Teachers & Staff providing excellence</p>
+                        <p><span>400+</span> Teachers & Staff providing excellence</p>
                     </div>
                   </Col>
                     </Row>
                   </Col>
                   
                  </Row>
+                 </Slider> 
                 </div>
             </Col>
             <Col lg={4} className="main_image">

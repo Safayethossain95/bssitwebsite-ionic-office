@@ -12,11 +12,8 @@ const Header = () => {
 
               <div className="headerinfoleft">
                 <Link to="/"><img src="./assets/images/newlogo.png" alt="" /></Link>
-                <h3>British Standard School</h3>
+                <h3><Link to="/">British Standard School</Link></h3>
               </div>
-              
-                     
-              
             </Col>
             <Col lg={4} >
               <div className="headerinforight">

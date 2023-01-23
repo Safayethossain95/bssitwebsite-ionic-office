@@ -99,7 +99,7 @@ const Footer = () => {
                             {
                                 officeaddressesdata.map((item,key)=>{
                                     return(
-                                        <Col lg={4}>
+                                        <Col lg={4} key={key}>
                                             <h5>{item.officename}</h5>
                                             <p>{item.address}</p>
                                             <p>TEL: {item.phone}</p>

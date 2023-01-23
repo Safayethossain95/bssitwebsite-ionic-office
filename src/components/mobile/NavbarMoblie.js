@@ -104,7 +104,7 @@ const NavbarMoblie = () => {
                     }
                     >Contact</NavLink>
 
-                    <NavLink to="/stuentpanel" style={({ isActive }) =>
+                    <NavLink to="/login" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
                     >Student Panel</NavLink>

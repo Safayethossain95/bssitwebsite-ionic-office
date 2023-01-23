@@ -58,7 +58,7 @@ const NoticeMobile = (props) => {
                     noticedata.map((item,key)=>{
                       let trimmedString= item.paragraph.substr(0, 38)
                       return(
-                        <div className="noticebox noticeboxleft m-auto" onClick={(e)=>handleNoticeClick(item.id)}>
+                        <div key={key} className="noticebox noticeboxleft m-auto" onClick={(e)=>handleNoticeClick(item.id)}>
                         <span></span>
                         <div className="noticeheading">
                         <h4>{item.heading}</h4>
