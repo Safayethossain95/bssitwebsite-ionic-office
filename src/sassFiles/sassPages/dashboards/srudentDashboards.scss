@@ -3,11 +3,9 @@
 @import '../../../sassStyles/typography';
 @import '../../../sassStyles/global';
 
-body{
-    background-color: #f2f2f2;
-}
+
 .studentdashboardwrapper{
-    
+    background-color: #f2f2f2;
     .stu_sidebar{
         display: flex;
         .sidebarleftbill{
@@ -47,8 +45,9 @@ body{
                                 display: inline-block;
                                 height: 50px;
                                 width:100%;
-                                line-height: 35px;
+                                line-height: 51px;
                                 padding-left: 35px;
+                                cursor:pointer;
                                 &.active{
                                     background-color: #F3F1FF;
                                 }
@@ -86,15 +85,20 @@ body{
             
 
             .tabPane{
-                height:calc(100vh - 90px);
-                display:flex;
-                flex-direction: column;
-                justify-content: space-between;
+              
+               
+                margin-bottom: 15px;
                 @include media(lgDevice){
                     height: calc(100vh + 100px);
                 }
                 @include media(xlgDevice){
                     height: calc(100vh + 200px);
+                }
+                .tabpaneheightadjust{
+                    height: calc(100vh - 90px);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
                 }
             }
             .headerpartbill{
@@ -130,7 +134,7 @@ body{
                             
                             font-size: 32px;
                             position:absolute;
-                            top:28px;
+                            top:11px;
                             left:0;
                             
                         }
@@ -142,7 +146,7 @@ body{
                             border-radius: 50%;
                             background-color: #ED1C24;
                             right: 6px;
-                            top: 33px;
+                            top: 16px;
                             border:1px solid #f2f2f2;
         
                         }
@@ -154,7 +158,7 @@ body{
                             width: 50px;
                             height: 50px;
                             background: #fff;
-                            margin-top: 15px;
+                            
                             border-radius: 50%;
                             text-align: center;
                             img{
@@ -166,7 +170,8 @@ body{
                         }
                         .roleandid{
                             display: flex;
-                            align-items: center;
+                            margin-top: 8px;
+
                             .roleidwrapper{
                                 margin-left: 13px;
                                 line-height: 0;
@@ -186,8 +191,12 @@ body{
                 @include media(xlgDevice){
                     margin-bottom: 15px;
                 }
+                .headerpart{
+                    margin-bottom: 30px;
+                }
                 .samebox{
                     height: 100%;
+                    
                     &.sameboxroutine{
                         position:relative;
                         .extraclassbox{
@@ -205,6 +214,154 @@ body{
                             p{
                                 @include myfont(12px,400,$main_font);
                                 color:$border_twenty;
+                            }
+                        }
+                    }
+                    &.prevhistory{
+                        position:relative;
+                        .paymentbutton{
+                            position: absolute;
+                            bottom: 15px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: calc(100% - 30px);
+                            height: 50px;
+                            background-color: #F3F1FF;
+                            border-radius: 10px;
+                            color: #312783;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;                            
+                            border: 0;
+                        }
+                        .smallheading{
+                            h5{
+                                @include myfont(12px,400,$main_font);
+                                padding-left: 5px;
+                            }
+                        }
+                        .cardbarprevphistory{
+                            .duepartcardbar{
+                                width:100%;
+                                height:50px;
+                                background-color: #f9f9f9;
+                                border-radius: 10px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                padding:0 15px;
+                                margin-bottom: 5px;
+                                h3{
+                                    @include myfont(12px,400,$main_font);
+                                    margin-bottom: 0;
+                                }
+                                .rightsidflexpart{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    .amount{
+                                        p{
+                                            @include myfont(12px,400,$main_font);
+                                        }
+                                    }
+                                    .pillright{
+                                        display: flex;
+                                        align-items: center;
+                                        height:25px;
+                                        background-color: rgba(237, 28, 36,0.05);
+                                        padding:0 12px;
+                                        padding-right: 26px;
+                                        border-radius: 38px;
+                                        margin-right: 12px;
+                                        h6{
+                                            margin-bottom: 0;
+                                            @include myfont(12px,400,$main_font);
+                                            color: rgba(237, 28, 36,0.5);
+                                            position:relative;
+                                            &::after{
+                                                position:absolute;
+                                                width:6px;
+                                                height:6px;
+                                                border-radius: 50%;
+                                                background:rgba(237, 28, 36,0.5);
+                                                content:'';
+                                                top:50%;
+                                                transform:translateY(-50%);
+                                                right:-14px;
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                            .paymenthistoryoverview{
+                                
+                               
+                                .paymenthistoryovflexwrap{
+                                    .payhpartcardbar{
+                                        width:100%;
+                                        height:50px;
+                                        background-color: #f9f9f9;
+                                        border-radius: 10px;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        align-items: center;
+                                        padding:0 15px;
+                                        margin-bottom: 5px;
+
+                                        .monthdatewrapper{
+                                            h3{
+                                                @include myfont(12px,400,$main_font);
+                                                margin-bottom: 0;
+                                                color:$seventyblack;
+                                            }
+                                            p{
+                                                @include myfont(8px,400,$main_font);
+                                                color: $seventyblack;
+                                            }
+
+                                        }
+                                        .rightsidflexpart{
+                                            display: flex;
+                                            justify-content: space-between;
+                                    align-items: center;
+                                            .amount{
+                                                p{
+                                                    @include myfont(12px,400,$main_font);
+                                                    color: $seventyblack;
+                                                }
+                                            }
+                                            .pillright{
+                                                display: flex;
+                                                align-items: center;
+                                                height:25px;
+                                                background-color: rgba(0, 202, 85,0.05);
+                                                padding:0 12px;
+                                                padding-right: 26px;
+                                                border-radius: 38px;
+                                                margin-right: 12px;
+                                                h6{
+                                                    margin-bottom: 0;
+                                                    @include myfont(12px,400,$main_font);
+                                                    color: rgba(0, 202, 85,0.5);
+                                                    position:relative;
+                                                    &::after{
+                                                        position:absolute;
+                                                        width:6px;
+                                                        height:6px;
+                                                        border-radius: 50%;
+                                                        background:rgba(0, 202, 85,0.5);
+                                                        content:'';
+                                                        top:50%;
+                                                        transform:translateY(-50%);
+                                                        right:-14px;
+                                                    }
+                                                }
+        
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -396,6 +553,65 @@ body{
                                     transition:0.4s;
                                     &.active{
                                         border-bottom: 2px solid #000;
+                                    }
+                                }
+                            }
+                        }
+                        .tab-content{
+                            padding-top: 30px;
+                            @include media(xlgDevice)
+                            {
+                                padding-top: 15px;
+                            }
+                            .tab-pane{
+                                position:relative;
+                                
+                                .presenttext{
+                                    position:absolute;
+                                    bottom:0px;
+                                    right:60px;
+                                    @include myfont(16px,400,$main_font);
+                                    text-align: center;
+                                    @include media(xlgDevice){
+                                        right:0px;
+                                    }
+                                    p{
+                                        &:last-child{
+                                            position:relative;
+                                            &::after{
+                                                position:absolute;
+                                                top:-1px;
+                                                left:0;
+                                                width:100%;
+                                                height: 3px;
+                                                background-color: rgba(49, 39, 131,0.5);
+                                                content: '';
+                                            }
+                                        }
+                                    }
+                                }
+                                .absenttext{
+                                    position:absolute;
+                                    bottom:0px;
+                                    left:60px;
+                                    @include media(xlgDevice){
+                                        left:0;
+                                    }
+                                    @include myfont(16px,400,$main_font);
+                                    text-align: center;
+                                    p{
+                                        &:last-child{
+                                            position:relative;
+                                            &::after{
+                                                position:absolute;
+                                                top:-1px;
+                                                left:0;
+                                                width:100%;
+                                                height: 3px;
+                                                background-color: rgba(237, 28, 35, 0.5);
+                                                content: '';
+                                            }
+                                        }
                                     }
                                 }
                             }

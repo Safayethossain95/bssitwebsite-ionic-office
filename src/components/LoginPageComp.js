@@ -11,6 +11,7 @@ const LoginPageComp = () => {
     username:"",
     password:""
   })
+  
   const handleChange = event => {
     if (event.target.checked) {
       console.log('✅ Checkbox is checked');
@@ -31,13 +32,18 @@ const LoginPageComp = () => {
     console.log(formdata.username,formdata.password)
     // navigate('/aboutus');
     try {
-      axios.post('https://localhost:7229/api/Auth/login', {
+      axios.post('https://localhost:7229/api/Auth', {
         username: formdata.username,
         password: formdata.password
       },headers)
       .then(function (response) {
         console.log(response);
-        navigate('/aboutus')
+        if(response.ok){
+          navigate('/')
+        }else{
+          navigate('/userpassnotmatched')
+
+        }
       })
     } catch (err) {
       if (err) {

@@ -84,10 +84,10 @@ const Mynavbar = () => {
                     }
                     >Student Panel</NavLink>
 
-                    <NavLink to="/teacherspanel" style={({ isActive }) =>
+                    <NavLink to="/studashboard" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
-                    >Teacher Panel</NavLink>
+                    >Student Dashboard</NavLink>
                     
                 </Nav>
                 

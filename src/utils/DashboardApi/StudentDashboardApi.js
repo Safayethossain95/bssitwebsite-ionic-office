@@ -99,6 +99,30 @@ const periodsubjectdata = [
 
 ]
 
+const paymentHistoryDue = {
+    dueAmount:61450,
+    dueformonths:5
+
+}
+const prevPaymentHistory = [
+    {
+        month:"Dec",
+        date:"22/12/2022",
+        amount:32080
+    },
+    {
+        month:"Nov",
+        date:"22/11/2022",
+        amount:32080
+    },
+    {
+        month:"Oct",
+        date:"22/10/2022",
+        amount:32080
+    },
+    
+]
+
 const StudentDashboardApi = () => {
   return (
     <>
@@ -106,6 +130,6 @@ const StudentDashboardApi = () => {
     </>
   )
 }
-export {noticeData,documentData,attendenceApi,periodsubjectdata}
+export {prevPaymentHistory,paymentHistoryDue,noticeData,documentData,attendenceApi,periodsubjectdata}
 
 export default StudentDashboardApi

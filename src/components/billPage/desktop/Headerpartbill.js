@@ -4,6 +4,7 @@ import {HiOutlineBell} from 'react-icons/hi'
 import { Col, Row } from 'react-bootstrap'
 import {MdHistory} from 'react-icons/md'
 import {AiOutlineInfoCircle} from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom'
 const Headerpartbill = () => {
 
     const [basicinfodata,setBasicInfoData] = useState({
@@ -16,6 +17,7 @@ const Headerpartbill = () => {
         date:"",
 
     })
+    const navigate = useNavigate()
     const handleInput=(e)=>{    
         setBasicInfoData({...basicinfodata,[e.target.name]: e.target.value} )
       }
@@ -37,6 +39,9 @@ const Headerpartbill = () => {
       function getWindowSize() {
         const {innerWidth, innerHeight} = window;
         return {innerWidth, innerHeight};
+      }
+      const handleReceiveBill = ()=>{
+        navigate('/billentry')
       }
   return (
     <>
@@ -387,7 +392,7 @@ const Headerpartbill = () => {
 
                     </div>
                     <div className="dueboardbottom" style={{flex:"1 1 10%"}}>
-                       <div className="dueboardbottominner">
+                       <div className="dueboardbottominner" onClick={handleReceiveBill}>
                             <h6>Receive Bill</h6>
                        </div>
                     </div>

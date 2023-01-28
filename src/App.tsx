@@ -54,6 +54,7 @@ import UpcomingPageSingledetail from './pages/UpcomingPageSingledetail';
 import OlderNoticeSingleDetailPage from './pages/OlderNoticeSingleDetailPage';
 import CareerDetailsPage from './pages/CareerDetailsPage';
 import StudentDashboardPage from './pages/dashboard/StudentDashboardPage';
+import UsernameORPassCouldnotMatch from './components/subComponents/UsernameORPassCouldnotMatch';
 
 setupIonicReact();
 
@@ -106,6 +107,8 @@ const App: React.FC = () => {
         <Route  path="/studashboard" element={<StudentDashboardPage/>}/>
 
         <Route  path="/studentaddmissionentry" element={<StudentAdmissionEntryBillPage/>}/>
+        
+        <Route  path="/userpassnotmatched" element={<UsernameORPassCouldnotMatch/>}/>
 
       </Routes>
       
