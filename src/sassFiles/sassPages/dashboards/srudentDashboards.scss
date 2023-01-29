@@ -88,18 +88,26 @@
               
                
                 margin-bottom: 15px;
+
                 @include media(lgDevice){
                     height: calc(100vh + 100px);
                 }
                 @include media(xlgDevice){
                     height: calc(100vh + 200px);
+                    margin-bottom: 0;
                 }
                 .tabpaneheightadjust{
                     height: calc(100vh - 90px);
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
+                    background-color: #F2F2F2;
+                    .documenttabbox{
+                        width: 100%;
+
+                    }
                 }
+                
             }
             .headerpartbill{
                 height: 75px;
@@ -241,6 +249,8 @@
                             }
                         }
                         .cardbarprevphistory{
+                            overflow-y: scroll;
+                            height: 222px;
                             .duepartcardbar{
                                 width:100%;
                                 height:50px;
@@ -373,6 +383,59 @@
                 background-color: #fff;
                 border-radius: 20px;
                 padding:25px 12px;
+                &.sameboxcalender{
+                    padding:0 0 15px 0;
+                    display: flex;
+                    justify-content: center;
+                    position:relative;
+                    .eventbox{
+                        height:74px;
+                        width:calc(100% - 30px);
+                        position:absolute;
+                        bottom:15px;
+                        left:50%;
+                        transform:translateX(-50%);
+                        border-radius: 15px;
+                        background-color: #f9f9f9;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .rdp{
+                        --rdp-cell-size: 41px;
+                        --rdp-accent-color:#F3F1FF;
+                        @include media(xlgDevice){
+                            
+                            --rdp-cell-size: 33px;
+                        }
+                        .rdp-table{
+                            width:345px;
+                            @include media(xlgDevice){
+                                width:274px;
+                            }
+                            @include media(xxlgDevice){
+                                width:319px;
+                            }
+                            max-width: unset;
+                        }
+                        .rdp-day{
+                            @include myfont(14px,400,$main_font);
+                        }
+                        .rdp-day_today{
+                            background-color: #F3F1FF;
+                            color:#312783;
+                            @include myfont(14px,400,$main_font);
+                        }
+                        .rdp-day_selected{
+                            color:#312783;
+                        }
+                        .rdp-weeknumber, .rdp-day{
+                            border-radius: 14px!important;
+                        }
+                    }
+                    text-align: center;
+                    
+                }
                 .dropdownwrapper{
                     position:relative;
                     z-index: 2;
@@ -424,13 +487,13 @@
                         display: flex;
                         justify-content: space-between;
                         h4{
-                            @include myfont(16px,500,$main_font);
+                            @include myfont($sameboxHeadingsize,600,$main_font);
                             color:#000;
                         }
                        .flexwrap2{
                         display: flex;
                         h4{
-                            @include myfont(16px,500,$main_font);
+                            @include myfont($sameboxHeadingsize,500,$main_font);
                             color:#000;
                         }
                         div{
@@ -451,7 +514,7 @@
                         }
                        }
                         p{
-                            @include myfont(10px,400,$main_font);
+                            @include myfont($viewallButtonSize,400,$main_font);
                             color: #000;
                         }
                     }
@@ -474,11 +537,11 @@
                             .flexwrap{
 
                                 h5{
-                                    @include myfont(12px,500,$main_font);
+                                    @include myfont($documentlistFontSize,500,$main_font);
                                     margin-bottom: 0;
                                 }
                                 p{
-                                    @include myfont(10px,400,$main_font);
+                                    @include myfont($documentlistParaFontSize,400,$main_font);
                                     color: #000;
                                 }
                             }
@@ -510,31 +573,45 @@
                     .noticebarmini{
                         background-color: #F9F9F9;
                         border-radius: 10px;
-                        height:50px;
+                        height:103px;
                         padding:12px;
                         margin-bottom: 5px;
                         
                         h5{
-                            @include myfont(12px,400,$main_font);  
+                            @include myfont($sameboxNoticeboxh5,400,$main_font);  
                             margin-bottom: 0; 
-                            color:$seventyblack;                     
-                            span{
-                                @include myfont(12px,300,$main_font);
-                                display:inline-block;
-                                color:$seventyblack;
+                            color:#000;                     
+                            margin-top: 5px;
+                        }
+                        &:first-child{
+                            .publishdatepill{
+                                background-color: $noticebarpillSamebox1st;
                             }
                         }
-                        &:nth-child(1){
-                            height:67px!important;
-                            h5{
-                               font-size: 15px!important;
-                                color:#000!important;                     
-                                span{
-                                    
-                                    color:#000!important;
+                        &:nth-child(2){
+                            .publishdatepill{
+                                background-color: $noticebarpillSamebox2nd;
+                            }
+                        }
+                        &:nth-child(3){
+                            .publishdatepill{
+                                background-color: $noticebarpillSamebox3rd;
+                            }
+                        }
+                        .publishdatepill{
+                                width:124px;
+                                height:35px;
+                                border-radius: 60px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                p{
+                                    @include myfont($noticebarpillFontSize,500,$main_font);
+                                    color:$noticebarpillFontColor;
                                 }
-                            }
+                                
                         }
+                        
                     }
                 }
                 .chartidtabd{
@@ -558,22 +635,31 @@
                             }
                         }
                         .tab-content{
-                            padding-top: 30px;
+                            
                             @include media(xlgDevice)
                             {
                                 padding-top: 15px;
                             }
                             .tab-pane{
                                 position:relative;
+                                .chartwrapperheight{
+                                    height:250px;
+                                }
                                 
                                 .presenttext{
                                     position:absolute;
                                     bottom:0px;
-                                    right:60px;
-                                    @include myfont(16px,400,$main_font);
+                                    left:90px;
+                                    @include myfont($chartlebeltextsize,400,$main_font);
                                     text-align: center;
                                     @include media(xlgDevice){
-                                        right:0px;
+                                        left:0px;
+                                    }
+                                    @include media(xlgDevice){
+                                        left:0px;
+                                    }
+                                    @include media(lgDevice){
+                                        left:0px;
                                     }
                                     p{
                                         &:last-child{
@@ -581,10 +667,10 @@
                                             &::after{
                                                 position:absolute;
                                                 top:-1px;
-                                                left:0;
+                                                right:0;
                                                 width:100%;
                                                 height: 3px;
-                                                background-color: rgba(49, 39, 131,0.5);
+                                                background-color: $chartpresentcolor;
                                                 content: '';
                                             }
                                         }
@@ -593,11 +679,14 @@
                                 .absenttext{
                                     position:absolute;
                                     bottom:0px;
-                                    left:60px;
+                                    right:90px;
                                     @include media(xlgDevice){
-                                        left:0;
+                                        right:0;
                                     }
-                                    @include myfont(16px,400,$main_font);
+                                    @include media(lgDevice){
+                                        right:0;
+                                    }
+                                    @include myfont($chartlebeltextsize,400,$main_font);
                                     text-align: center;
                                     p{
                                         &:last-child{
@@ -608,7 +697,35 @@
                                                 left:0;
                                                 width:100%;
                                                 height: 3px;
-                                                background-color: rgba(237, 28, 35, 0.5);
+                                                background-color: $chartabsentcolor;
+                                                content: '';
+                                            }
+                                        }
+                                    }
+                                }
+                                .latetext{
+                                    position:absolute;
+                                    bottom:0px;
+                                    left:50%;
+                                    transform:translateX(-50%);
+                                    @include media(xlgDevice){
+                                        left:50%;
+                                    }
+                                    @include media(lgDevice){
+                                        left:50%;
+                                    }
+                                    @include myfont($chartlebeltextsize,400,$main_font);
+                                    text-align: center;
+                                    p{
+                                        &:last-child{
+                                            position:relative;
+                                            &::after{
+                                                position:absolute;
+                                                top:-1px;
+                                                left:0;
+                                                width:100%;
+                                                height: 3px;
+                                                background-color: $chartlatecolor;
                                                 content: '';
                                             }
                                         }
@@ -622,7 +739,7 @@
                             overflow: hidden;
                         }
                         .tab-content>.tab-pane.active {
-                            height: 250px;
+                            height: 314px;
                         }
 
                     

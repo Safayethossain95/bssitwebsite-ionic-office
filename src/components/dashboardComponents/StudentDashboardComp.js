@@ -8,31 +8,47 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import Dropdown from 'react-dropdown';
 import {BsChevronDown} from 'react-icons/bs'
+import { format } from 'date-fns';
+import { DayPicker } from 'react-day-picker';
+import 'react-day-picker/dist/style.css';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 const StudentDashboardComp = () => {
+
+    const [selected, setSelected] = React.useState(Date);;
    
     const chdata = {
-        labels:["present","absent"],
+        labels:["absent","present","late"],
         datasets:[{
-            data:[attendenceApi.firstSemester.present,attendenceApi.firstSemester.absent],
+            data:[attendenceApi.firstSemester.absent,attendenceApi.firstSemester.present,attendenceApi.firstSemester.late],
             backgroundColor:[
-                "rgba(49, 39, 131, 0.5)",
-                "rgba(237, 28, 36, 0.5)",
+                "rgb(249, 57, 161)",
+                "rgb(64, 223, 205)",
+                "rgb(251, 213, 64)"
+
             ],
             borderWidth:0,
             
             
         }],
+        options: {
+            plugins: {
+              legend: {
+                display: false
+              }
+            }
+          }
         
     }
     const chdata2 = {
-        labels:["present","absent"],
+        labels:["absent","present","late"],
         datasets:[{
-            data:[attendenceApi.secondSemester.present,attendenceApi.secondSemester.absent],
+            data:[attendenceApi.secondSemester.absent,attendenceApi.secondSemester.present,attendenceApi.secondSemester.late],
             backgroundColor:[
-                "rgba(49, 39, 131, 0.5)",
-                "rgba(237, 28, 36, 0.5)",
+                "rgb(249, 57, 161)",
+                "rgb(64, 223, 205)",
+                "rgb(251, 213, 64)"
+
             ],
             borderWidth:0,
             
@@ -45,9 +61,10 @@ const StudentDashboardComp = () => {
     const dropdownvalue=(e)=>{
         // console.log(e.value)
         setDrpday(e.value)
+        console.log(drpday)
       }
       const dayoptions = [
-        'Select Day','Sturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Frriday'
+        'Select Day','Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Frriday'
       ];
       const defaultOptiontype = dayoptions[0];
       const [variableactivekey,setvariableactivekey] = useState("first")
@@ -162,6 +179,7 @@ const StudentDashboardComp = () => {
                             
                                             <div className="smallbarcard" >
                                                 <img src="./assets/images/dashboards/studentDashboard/smallbaricon1.png" alt="smallbaricon1.png" />
+                                                
                                                 <div className="textssmallbar">
                                                     <div className="flexwrap">
                                                     <h5>{documentData.homework.filetype}</h5>
@@ -232,7 +250,7 @@ const StudentDashboardComp = () => {
                             <div className="flexwrap">
                                 <div className="flexwrap2">
                                 <h4>Notice </h4>
-                                <div><span>18</span></div>
+                                {/* <div><span>18</span></div> */}
                                 </div>
                                 <p>View more</p>
                             </div>
@@ -242,7 +260,10 @@ const StudentDashboardComp = () => {
                             noticeData.map((item,key)=>{
                                 return(
                                 <div className="noticebarmini" key={key}>
-                                    <h5> {item.noticeheading}- <span>Published : {item.publishDate}</span></h5>                    
+                                    <div className="publishdatepill">
+                                        <p>{item.publishDate}</p>
+                                    </div>
+                                    <h5> {item.noticeheading}</h5>                    
                                 </div>
                                 )
                             })
@@ -276,14 +297,36 @@ const StudentDashboardComp = () => {
                                         <p>{attendenceApi.firstSemester.present}%</p>
                                         <p>present</p>
                                         </div>
+                                        <div className="latetext">
+                                        <p>{attendenceApi.firstSemester.late}%</p>
+                                        <p>late</p>
+                                        </div>
                                         <div className="absenttext">
                                         <p >{attendenceApi.firstSemester.absent}%</p>
                                         <p>absent</p>
                                         </div>
-                                        <Doughnut style={{margin:"0 auto",width:"250px",height:"250px"}} data={chdata}/>
+                                        <div className="chartwrapperheight">
+                                            <Doughnut style={{margin:"0 auto",width:"250px",height:"250px"}} data={chdata}/>
+
+                                        </div>
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="second-chart">
+                                        <div className="presenttext">
+                                        <p>{attendenceApi.secondSemester.present}%</p>
+                                        <p>present</p>
+                                        </div>
+                                        <div className="latetext">
+                                        <p>{attendenceApi.secondSemester.late}%</p>
+                                        <p>late</p>
+                                        </div>
+                                        <div className="absenttext">
+                                        <p >{attendenceApi.secondSemester.absent}%</p>
+                                        <p>absent</p>
+                                        </div>
+                                        <div className="chartwrapperheight">
+
                                         <Doughnut style={{margin:"0 auto",width:"50%!important",height:"50%!important"}} data={chdata2}/>
+                                        </div>
                                         
                                     </Tab.Pane>
                                 </Tab.Content>
@@ -353,7 +396,7 @@ const StudentDashboardComp = () => {
                                 <div className="flexwrap">
                                     <h4>Class Routine</h4>
                                     <div className="dropdownwrapper">
-                                        <Dropdown className='filterdropone' options={dayoptions} onChange={(e)=>dropdownvalue(e)} value={defaultOptiontype} placeholder="Select an option" />
+                                        <Dropdown className='filterdropone' options={dayoptions} onChange={(e)=>dropdownvalue(e)} value={defaultOptiontype}  />
                                         <BsChevronDown/>
                                     </div>
                                 </div>
@@ -361,7 +404,8 @@ const StudentDashboardComp = () => {
                             <div className="routinetable">
                                 <table>
                                     {
-                                        periodsubjectdata.map((item,key)=>{
+                                        drpday=="Saturday"?
+                                        periodsubjectdata.saturday.map((item,key)=>{
                                             return(
                                                 <tr>
                                                     <td>{item.periodnumber} Period </td>
@@ -369,6 +413,79 @@ const StudentDashboardComp = () => {
                                                 </tr>
                                             )
                                         })
+                                        :
+                                        drpday=="Sunday"?
+                                        periodsubjectdata.sunday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.subject}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        
+                                        :
+                                        
+                                        drpday=="Monday"?
+                                        periodsubjectdata.monday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.subject}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        
+                                        :
+                                        drpday=="Tuesday"?
+                                        periodsubjectdata.tuesday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.subject}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        :
+                                        drpday=="Wednesday"?
+                                        periodsubjectdata.wednesday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.subject}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        :
+                                        drpday=="Thursday"?
+                                        periodsubjectdata.thursday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.subject}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        :
+                                        drpday=="Friday"?
+                                        periodsubjectdata.friday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.subject}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        :
+                                        periodsubjectdata.saturday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.subject}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        
                                     }
                                 
                                 </table>
@@ -380,7 +497,16 @@ const StudentDashboardComp = () => {
                     </Col>
                     <Col lg={4} style={{paddingLeft:"0",paddingRight:"15px"}}>
                         <div className="samebox sameboxcalender">
-                            
+                        <DayPicker
+                            mode="single"
+                            selected={selected}
+                            onSelect={setSelected}
+                            showOutsideDays
+                            />
+
+                            <div className="eventbox">
+                                <p>No Event</p>
+                            </div>
                             
                         </div>
                     </Col>
@@ -389,91 +515,17 @@ const StudentDashboardComp = () => {
                 </div>
             </Tab.Pane>
             <Tab.Pane eventKey="second">
+                <div className="tabpaneheightadjust">
             <Row>
-            <Col lg={4}>
-                <div className="samebox">
-                    <div className="headerpart">
-                        <div className="flexwrap">
-                            <h4>Documnets Second Page</h4>
-                            <p>View more</p>
-                        </div>
-                    </div>
-                    <div className="contentpart">
-                        <div className="smallbarcard">
-                            <img src="./assets/images/dashboards/studentDashboard/smallbaricon1.png" alt="smallbaricon1.png" />
-                            <div className="textssmallbar">
-                                <div className="flexwrap">
-                                <h5>Home Work</h5>
-                                <p>8  files available for download</p>
-                                </div>
-                            </div>
-                            <div className="downloadbutton">
-                                <img src="./assets/images/dashboards/studentDashboard/downloadimg.png" alt="downloadimg.png" />
-                            </div>
-                        </div>
-                        <div className="smallbarcard">
-                            <img style={{width:"38px"}} src="./assets/images/dashboards/studentDashboard/smallbaricon2.png" alt="smallbaricon1.png" />
-                            <div className="textssmallbar">
-                                <div className="flexwrap">
-                                <h5>Class Work</h5>
-                                <p>8  files available for download</p>
-                                </div>
-                            </div>
-                            <div className="downloadbutton">
-                                <img src="./assets/images/dashboards/studentDashboard/downloadimg.png" alt="downloadimg.png" />
-                            </div>
-                        </div>
-                        <div className="smallbarcard">
-                            <img style={{width:"42px"}} src="./assets/images/dashboards/studentDashboard/smallbaricon3.png" alt="smallbaricon1.png" />
-                            <div className="textssmallbar">
-                                <div className="flexwrap">
-                                <h5>Assesment</h5>
-                                <p>8  files available for download</p>
-                                </div>
-                            </div>
-                            <div className="downloadbutton">
-                                <img src="./assets/images/dashboards/studentDashboard/downloadimg.png" alt="downloadimg.png" />
-                            </div>
-                        </div>
-                        <div className="smallbarcard">
-                            <img style={{width:"42px"}} src="./assets/images/dashboards/studentDashboard/smallbaricon4.png" alt="smallbaricon1.png" />
-                            <div className="textssmallbar">
-                                <div className="flexwrap">
-                                <h5>Exam Paper</h5>
-                                <p>8  files available for download</p>
-                                </div>
-                            </div>
-                            <div className="downloadbutton">
-                                <img src="./assets/images/dashboards/studentDashboard/downloadimg.png" alt="downloadimg.png" />
-                            </div>
-                        </div>
-                        <div className="smallbarcard">
-                            <img style={{width:"42px"}} src="./assets/images/dashboards/studentDashboard/smallbaricon5.png" alt="smallbaricon1.png" />
-                            <div className="textssmallbar">
-                                <div className="flexwrap">
-                                <h5>Syllabus</h5>
-                                <p>8  files available for download</p>
-                                </div>
-                            </div>
-                            <div className="downloadbutton">
-                                <img src="./assets/images/dashboards/studentDashboard/downloadimg.png" alt="downloadimg.png" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </Col>
-            <Col lg={4}>
-            <div className="samebox">
+                <Col lg={12}>
 
-                </div>
-            </Col>
-            <Col lg={4}>
-            <div className="samebox">
+                    <div className="documenttabbox">
 
-                </div>
-            </Col>
-        </Row>
+                    </div>
+                </Col>
+            
+            </Row>
+            </div>
             </Tab.Pane>
           </Tab.Content>
         

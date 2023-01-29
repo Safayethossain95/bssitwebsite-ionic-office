@@ -1,4 +1,5 @@
 import React from 'react'
+import { MdAmpStories } from 'react-icons/md'
 
 
 const documentData = {
@@ -37,67 +38,247 @@ const noticeData = [
         publishDate:"10-11-2022"
     },
     {
-        noticeheading:"Holiday notice for Eid ul Fitr (I-VIII)",
+        noticeheading:"Holiday notice for Durga Puja & Eid-e- Miladunnabi",
         publishDate:"15-11-2022"
     },
     {
-        noticeheading:"Holiday notice for Maghi Purnima (V-VII)",
+        noticeheading:"Holiday notice for Durga Puja & Eid-e- Miladunnabi",
         publishDate:"12-12-2022"
     },
-    {
-        noticeheading:"Holiday notice for Eid ul Ajha (X-XII)",
-        publishDate:"13-07-2022"
-    },
-    {
-        noticeheading:"Holiday notice for Eid ul Ajha (X-XII)",
-        publishDate:"23-07-2022"
-    },
+    
 
 ]
 
 const attendenceApi = {
     firstSemester:{
-        present:64.4,
-        absent:35.6
+        absent:35.6,
+        present:34.1,
+        late:30.3
     },
     secondSemester:{
-        present:30.9,
-        absent:69.1
+        absent:69.1,
+        present:20.4,
+        late:10.5
     }
     
 }
 
-const periodsubjectdata = [
-    {
-        periodnumber:"1st",
-        subject:"ICT"
-    },
-    {
-        periodnumber:"2nd",
-        subject:"MATH"        
-    },
-    {
-        periodnumber:"3rd",
-        subject:"ENG LANG"
-    },
-    {
-        periodnumber:"4th",
-        subject:"ENG LIT"
-    },
-    {
-        periodnumber:"5th",
-        subject:"SCL"
-    },
-    {
-        periodnumber:"6th",
-        subject:"ISLAM"
-    },
-    {
-        periodnumber:"7th",
-        subject:"BENGALI"
-    },
+const periodsubjectdata = {
+   
+        saturday:[
+            {
+                periodnumber:"1st",
+                subject:"ICT"
+            },
+            {
+                periodnumber:"2nd",
+                subject:"MATH"        
+            },
+            {
+                periodnumber:"3rd",
+                subject:"ENG LANG"
+            },
+            {
+                periodnumber:"4th",
+                subject:"ENG LIT"
+            },
+            {
+                periodnumber:"5th",
+                subject:"SCL"
+            },
+            {
+                periodnumber:"6th",
+                subject:"ISLAM"
+            },
+            {
+                periodnumber:"7th",
+                subject:"BENGALI"
+            },
+        ],
+        sunday:[
+            {
+                periodnumber:"1st",
+                subject:"MATH"
+            },
+            {
+                periodnumber:"2nd",
+                subject:"ICT"        
+            },
+            {
+                periodnumber:"3rd",
+                subject:"ENG LANG"
+            },
+            {
+                periodnumber:"4th",
+                subject:"ENG LIT"
+            },
+            {
+                periodnumber:"5th",
+                subject:"SCL"
+            },
+            {
+                periodnumber:"6th",
+                subject:"ISLAM"
+            },
+            {
+                periodnumber:"7th",
+                subject:"BENGALI"
+            },
+        ],
+        monday:[
+            {
+                periodnumber:"1st",
+                subject:"MATH"
+            },
+            {
+                periodnumber:"2nd",
+                subject:"ICT"        
+            },
+            {
+                periodnumber:"3rd",
+                subject:"ENG LANG"
+            },
+            {
+                periodnumber:"4th",
+                subject:"ENG LIT"
+            },
+            {
+                periodnumber:"5th",
+                subject:"SCL"
+            },
+            {
+                periodnumber:"6th",
+                subject:"ISLAM"
+            },
+            {
+                periodnumber:"7th",
+                subject:"BENGALI"
+            },
+        ],
+        tuesday:[
+            {
+                periodnumber:"1st",
+                subject:"MATH"
+            },
+            {
+                periodnumber:"2nd",
+                subject:"ICT"        
+            },
+            {
+                periodnumber:"3rd",
+                subject:"ENG LANG"
+            },
+            {
+                periodnumber:"4th",
+                subject:"ENG LIT"
+            },
+            {
+                periodnumber:"5th",
+                subject:"SCL"
+            },
+            {
+                periodnumber:"6th",
+                subject:"ISLAM"
+            },
+            {
+                periodnumber:"7th",
+                subject:"BENGALI"
+            },
+        ],
+        wednesday:[
+            {
+                periodnumber:"1st",
+                subject:"MATH"
+            },
+            {
+                periodnumber:"2nd",
+                subject:"ICT"        
+            },
+            {
+                periodnumber:"3rd",
+                subject:"ENG LANG"
+            },
+            {
+                periodnumber:"4th",
+                subject:"ENG LIT"
+            },
+            {
+                periodnumber:"5th",
+                subject:"SCL"
+            },
+            {
+                periodnumber:"6th",
+                subject:"ISLAM"
+            },
+            {
+                periodnumber:"7th",
+                subject:"BENGALI"
+            },
+        ],
+        thursday:[
+            {
+                periodnumber:"1st",
+                subject:"MATH"
+            },
+            {
+                periodnumber:"2nd",
+                subject:"ICT"        
+            },
+            {
+                periodnumber:"3rd",
+                subject:"ENG LANG"
+            },
+            {
+                periodnumber:"4th",
+                subject:"ENG LIT"
+            },
+            {
+                periodnumber:"5th",
+                subject:"SCL"
+            },
+            {
+                periodnumber:"6th",
+                subject:"ISLAM"
+            },
+            {
+                periodnumber:"7th",
+                subject:"BENGALI"
+            },
+        ],
+        friday:[
+            {
+                periodnumber:"1st",
+                subject:"MATH"
+            },
+            {
+                periodnumber:"2nd",
+                subject:"ICT"        
+            },
+            {
+                periodnumber:"3rd",
+                subject:"ENG LANG"
+            },
+            {
+                periodnumber:"4th",
+                subject:"ENG LIT"
+            },
+            {
+                periodnumber:"5th",
+                subject:"SCL"
+            },
+            {
+                periodnumber:"6th",
+                subject:"ISLAM"
+            },
+            {
+                periodnumber:"7th",
+                subject:"BENGALI"
+            },
+        ],
 
-]
+    
+
+    }
 
 const paymentHistoryDue = {
     dueAmount:61450,
@@ -113,6 +294,26 @@ const prevPaymentHistory = [
     {
         month:"Nov",
         date:"22/11/2022",
+        amount:32080
+    },
+    {
+        month:"Oct",
+        date:"22/10/2022",
+        amount:32080
+    },
+    {
+        month:"Oct",
+        date:"22/10/2022",
+        amount:32080
+    },
+    {
+        month:"Oct",
+        date:"22/10/2022",
+        amount:32080
+    },
+    {
+        month:"Oct",
+        date:"22/10/2022",
         amount:32080
     },
     {
