@@ -49,6 +49,34 @@ input{
     src: url(../../public/fonts/OLDENGL.TTF);
     // /assets/fonts/CloisterBlackLight-axjg.ttf
   }
+
+
+  .Dropdown2{
+    @include measurement(100%,35px,10px);
+    background-color: #fff;
+    border: 1px solid $border_twenty;
+    position:relative;
+    img{
+        position:absolute;
+        right:10px;
+        top:50%;
+        transform: translateY(-50%);
+    }
+    .Dropdown2-menu{
+        position:absolute;
+        top:calc(100% + 2px);
+        left:0;
+        @include measurement(100%,auto,10px);
+        background-color: #fff;
+        z-index: 888;
+        @include borderthin();
+        opacity: 0;
+        &.showme{
+            opacity: 1!important;
+        }
+    }
+  }
+
 .mynavbarmb{
     p{
         font-family:customfont;
@@ -195,12 +223,13 @@ p{
         right: 20px;
         top:50%;
         transform:translateY(-50%);
+        
     }
 }
 .filterdropone{
     .Dropdown-menu{
         border-radius: 10px;
-        top:101%;
+        top:calc(100% + 1px);
         .Dropdown-option{
             color:rgba(0,0,0,0.7);
             @include myfont(16px,400,$main_font);
@@ -216,6 +245,7 @@ p{
     .Dropdown-control{
         height:50px;
         border-radius: 10px;
+        
         .Dropdown-placeholder{
             position:absolute;
             top:12px;

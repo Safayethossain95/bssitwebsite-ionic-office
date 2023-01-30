@@ -102,9 +102,228 @@
                     flex-direction: column;
                     justify-content: space-between;
                     background-color: #F2F2F2;
+                    margin-right: 6px;
+                    padding: 21px 2px;
+                    background: #fff;
+                    border-radius: 20px;
+
+                    .atttabbox{
+                        .firstrow{
+                            padding:0 70px;
+                        }
+                        .reqcorrectionbutton{
+                            background-color: #F3F1FF;
+                            padding:10px 25px;
+                            color:#312783;
+                            @include myfont(12px,400,$main_font);
+                            border:0;
+                            border-radius: 10px;
+                        }
+                        
+                        input{
+                            height: 35px;
+                            width:100%;
+                            border-radius:10px;
+                            border:1px solid $border_twenty;
+                            padding: 0 10px;
+                            @include myfont(12px,400,$main_font);
+                        }
+                        .dropdownwrapper{
+                            margin-top: 15px;
+                            .Dropdown-menu{
+                                .Dropdown-option{
+                                    @include myfont(12px,400,$main_font);
+                                }
+                            }
+                            .Dropdown-control{
+                                height: 35px;
+                                .Dropdown-placeholder{
+                                    top:8px;
+                                    @include myfont(12px,400,$main_font);
+                                }
+                            }
+                        }
+                        table{
+                            width:100%;
+                            margin-top: 30px;
+                            th{
+                                @include myfont(16px,400,$main_font);
+                                &:first-child{
+                                    text-align: center;
+                                }
+                                &:last-child{
+                                    text-align: center;
+                                }
+                                position:relative;
+                                img{
+                                    position:absolute;
+                                    top:50%;
+                                    transform:translateY(-50%);
+                                    right:10px;
+                                }
+                                width:13.33%;
+                                &:nth-child(2){
+                                    width:20%;
+                                }
+                            }
+                            tr{
+
+                                height:40px;
+                                border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+                                td{
+                                        width:13.33%;
+                                        &:nth-child(2){
+                                            width:20%;
+                                        }
+                                    @include myfont(16px,400,$main_font);
+                                    &:first-child{
+                                        text-align: center;
+                                    }
+                                    &:last-child{
+                                        text-align: center;
+                                    }
+                                    &>button{
+                                        background-color: transparent;
+                                        border:0;
+                                    }
+                                }
+                            }
+                        }
+                    }
                     .documenttabbox{
                         width: 100%;
 
+                    }
+                    .rotuinetabbox{
+                        width:100%;
+                        height:calc(100vh - 90px);
+                        background:#fff;
+                        border-radius: 20px;
+                        padding:22px 30px;
+                        overflow-y: scroll;
+                        position:relative;
+                        &::after{
+                            position:absolute;
+                            content:'';
+                            height:33px;
+                            width:100%;
+                            background: linear-gradient(180deg, rgba(255, 255, 255, 0.19) 0%, #FFFFFF 100%);
+                            bottom:0;
+                            left:0;
+
+                        }
+                        
+                        table{
+                            width:100%;
+                            margin-top: 30px;
+                            th{
+                                @include myfont(16px,400,$main_font);
+                                &:first-child{
+                                    text-align: center;
+                                }
+                                &:last-child{
+                                    text-align: center;
+                                }
+                                position:relative;
+                                img{
+                                    position:absolute;
+                                    top:50%;
+                                    transform:translateY(-50%);
+                                    right:10px;
+                                }
+                                width:13.33%;
+                                &:nth-child(2){
+                                    width:20%;
+                                }
+                            }
+                            tr{
+
+                                height:40px;
+                                border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+                                td{
+                                        width:13.33%;
+                                        &:nth-child(2){
+                                            width:20%;
+                                        }
+                                    @include myfont(16px,400,$main_font);
+                                    &:first-child{
+                                        text-align: center;
+                                    }
+                                    &:last-child{
+                                        text-align: center;
+                                    }
+                                    &>button{
+                                        background-color: transparent;
+                                        border:0;
+                                    }
+                                }
+                            }
+                        }
+                        input{
+                            height: 35px;
+                            width:100%;
+                            border-radius:10px;
+                            border:1px solid $border_twenty;
+                            padding: 0 10px;
+                            @include myfont(12px,400,$main_font);
+                        }
+                        .dropdownwrapper{
+                            margin-top: 15px;
+                            .Dropdown-menu{
+                                .Dropdown-option{
+                                    @include myfont(12px,400,$main_font);
+                                }
+                            }
+                            .Dropdown-control{
+                                height: 35px;
+                                .Dropdown-placeholder{
+                                    top:8px;
+                                    @include myfont(12px,400,$main_font);
+                                }
+                            }
+                        }
+                    }
+                    .noticetabbox{
+                        width:100%;
+                        height:calc(100vh - 90px);
+                        background:#fff;
+                        border-radius: 20px;
+                        padding:12px;
+                        .noticetabboxbar{
+                            padding-left: 40px;
+                            width:100%;
+                            height: 96px;
+                            border-radius: 10px;
+                            border: 1px solid $border_twenty;
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 10px;
+                            h3{
+                                @include myfont(16px,400,$main_font);
+                                margin-bottom: 0;
+                                color:$seventyblack;
+                                span{
+                                    @include myfont(16px,300,$main_font);
+
+                                }
+                            }
+                        }
+                        .noticetabboxbarbig{
+                            height: 228px;
+                            width: 100%;
+                            padding-left: 40px;
+                            border-radius: 10px;
+                            border: 1px solid $seventyblack;
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 10px;
+                            h3{
+                                @include myfont(16px,400,$main_font);
+                                color:$seventyblack;
+                                
+                                line-height: 23px;
+                            }
+                        }
                     }
                 }
                 

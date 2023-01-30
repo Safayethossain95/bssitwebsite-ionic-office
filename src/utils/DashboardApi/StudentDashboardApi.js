@@ -33,6 +33,8 @@ const documentData = {
 }
 
 const noticeData = [
+    
+
     {
         noticeheading:"Holiday notice for Durga Puja & Eid-e- Miladunnabi",
         publishDate:"10-11-2022"
@@ -48,6 +50,9 @@ const noticeData = [
     
 
 ]
+const noticeDataGreetings = "Notice for Play:Diamond-I,  Nursery:Diamond-I, Ruby-I, & pearl-I\n Respected Guardians,\n You are requested to attend a meeting with the AVP on Sunday, 21 August 2022.\n Agenda: Academic, Rules & regulations\n Time	: 10:00 AM to 11:00 AM. Venue	: Campus 4 [13, Larmini Street Wari]\n Your presence will be highly appreciated.\n Regards,\n BSS"
+    
+
 
 const attendenceApi = {
     firstSemester:{
@@ -324,6 +329,287 @@ const prevPaymentHistory = [
     
 ]
 
+const routineTabData = {
+    header:[
+        {
+            headeritem:"Period"
+        },
+        {
+            headeritem:"All Subjects",
+            img:"./assets/images/icons/drpdwnicon.png"
+        },
+        {
+            headeritem:"Day"
+        },
+        {
+            headeritem:"Date"
+        },
+        {
+            headeritem:"Time"
+        },
+        {
+            headeritem:"Class No"
+        },
+        {
+            headeritem:"Document"
+        },
+    ],
+    innerTableData : [
+        {
+            period:"01",
+            Allsubjects:"Moral Science",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"02",
+            Allsubjects:"Social Science",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"03",
+            Allsubjects:"Islam",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"04",
+            Allsubjects:"Music",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"01",
+            Allsubjects:"Moral Science",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"02",
+            Allsubjects:"Social Science",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"03",
+            Allsubjects:"Islam",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"04",
+            Allsubjects:"Music",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"01",
+            Allsubjects:"Moral Science",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"02",
+            Allsubjects:"Social Science",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"03",
+            Allsubjects:"Islam",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"04",
+            Allsubjects:"Music",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"01",
+            Allsubjects:"Moral Science",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"02",
+            Allsubjects:"Social Science",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"03",
+            Allsubjects:"Islam",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"04",
+            Allsubjects:"Music",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"01",
+            Allsubjects:"Moral Science",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"02",
+            Allsubjects:"Social Science",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"03",
+            Allsubjects:"Islam",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+        {
+            period:"04",
+            Allsubjects:"Music",
+            day:"Saturday",
+            date:"01-01-2023",
+            time:"10:00 AM",
+            classno:2003,
+            document:""
+        },
+    ]
+}
+
+const attendanceData = {
+    header:[
+        {
+            headeritem:"SL"
+        },
+        {
+            headeritem:"Date"
+        },
+        {
+            headeritem:"In Time"
+        },
+        {
+            headeritem:"Out Time"
+        },
+        {
+            headeritem:"Late Time"
+        },
+        {
+            headeritem:"Type"
+        },
+    ],
+    innerTableData: [
+        
+            {
+                SL:"01",
+                date:"01-01-2023",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",
+                time:"10:00 AM",
+                latetime:"---",
+                Type:"absent"
+            },
+            {
+                SL:"02",
+                date:"01-01-2023",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",
+                time:"10:00 AM",
+                latetime:"---",
+                Type:"absent"
+            },
+            {
+                SL:"03",
+                date:"01-01-2023",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",
+                time:"10:00 AM",
+                latetime:"---",
+                Type:"absent"
+            },
+            {
+                SL:"04",
+                date:"01-01-2023",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",
+                time:"10:00 AM",
+                latetime:"---",
+                Type:"absent"
+            },
+            {
+                SL:"05",
+                date:"01-01-2023",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",
+                time:"10:00 AM",
+                latetime:"---",
+                Type:"absent"
+            },
+        
+    ]
+}
+
 const StudentDashboardApi = () => {
   return (
     <>
@@ -331,6 +617,6 @@ const StudentDashboardApi = () => {
     </>
   )
 }
-export {prevPaymentHistory,paymentHistoryDue,noticeData,documentData,attendenceApi,periodsubjectdata}
+export {prevPaymentHistory,paymentHistoryDue,noticeData,documentData,attendenceApi,periodsubjectdata,noticeDataGreetings,routineTabData,attendanceData}
 
 export default StudentDashboardApi

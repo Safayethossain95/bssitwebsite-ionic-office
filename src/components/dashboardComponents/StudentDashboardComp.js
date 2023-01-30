@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
+
 import { Button } from 'react-bootstrap'
 import {HiOutlineBell} from 'react-icons/hi'
 import {Row,Col,Nav,Tab} from 'react-bootstrap'
-import { prevPaymentHistory,paymentHistoryDue,noticeData,documentData,attendenceApi,periodsubjectdata } from '../../utils/DashboardApi/StudentDashboardApi'
+import { prevPaymentHistory,routineTabData,attendanceData,paymentHistoryDue,noticeData,noticeDataGreetings,documentData,attendenceApi,periodsubjectdata } from '../../utils/DashboardApi/StudentDashboardApi'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import Dropdown from 'react-dropdown';
@@ -11,12 +12,50 @@ import {BsChevronDown} from 'react-icons/bs'
 import { format } from 'date-fns';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
-
+import $ from 'jquery';
+import Dropdown2 from '../subComponents/CustomSubComponents/Dropdown2'
 ChartJS.register(ArcElement, Tooltip, Legend);
 const StudentDashboardComp = () => {
 
     const [selected, setSelected] = React.useState(Date);;
+    
+    const optionme = [
+        {
+            opt:'Select Section'
+        },
+        {
+            opt:'First Semester'
+        }
+    ]
+    
+    $(".dropdownwrapper svg").click(function(){
+        $(".Dropdown-root").toggleClass("is-open")
+
+        $(".Dropdown-menu").css("display","block")
+        // $(".Dropdown-menu").attr("aria-expanded","true")
+      });
+    const [startDate,setStartDate] = useState("")
+      const handleStartDate=(e)=>{
+        setStartDate(e.target.value)
+        console.log(startDate)
+      }
+    const [endDate,setEndtDate] = useState("")
+      const handleEndDate=(e)=>{
+        setEndtDate(e.target.value)
+        console.log(endDate)
+      }
    
+    function replaceWithBr() {
+        return noticeDataGreetings.replace(/\n/g, "<br />")
+        }
+
+    const handleDocumentDownload=(documenttoDownload)=>{
+
+    }
+    const handleReqCorrection=()=>{
+
+    }
+
     const chdata = {
         labels:["absent","present","late"],
         datasets:[{
@@ -67,6 +106,31 @@ const StudentDashboardComp = () => {
         'Select Day','Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Frriday'
       ];
       const defaultOptiontype = dayoptions[0];
+
+      const [drproutinetype,setdrproutinetype] = useState("")
+    
+    const dropdownvalueroutinetype=(e)=>{
+        // console.log(e.value)
+        setdrproutinetype(e.value)
+        console.log(drpday)
+      }
+      const Optionroutinetype = [
+        'Routine Type','Type One','Type two'
+      ];
+      const defaultOptionroutinetype = Optionroutinetype[0];
+
+      const [drpsection,setdrpsection] = useState("")
+    
+    const dropdownvaluesection=(e)=>{
+        // console.log(e.value)
+        setdrpsection(e.value)
+        console.log(drpday)
+      }
+      const optionsemester = [
+        "Select semester",
+        "First Semester"
+      ]
+      const defaultOptionsemester = optionsemester[0];
       const [variableactivekey,setvariableactivekey] = useState("first")
 
       const handleSelecttab = (tabvalue)=>{
@@ -94,7 +158,7 @@ const StudentDashboardComp = () => {
       }
   return (
     <>
-        <Tab.Container id="left-tabs-example" defaultActiveKey="first" activeKey={variableactivekey}>
+        <Tab.Container id="left-tabs-example" activeKey={variableactivekey}>
         <div className="sidebarleftbill">
             <div className="sidebarleftbillbox">
                 <div className="logo">
@@ -526,6 +590,209 @@ const StudentDashboardComp = () => {
             
             </Row>
             </div>
+            </Tab.Pane>
+            <Tab.Pane eventKey="third" className="tabPane">
+                <div className="tabpaneheightadjust">
+            <Row>
+                <Col lg={12}>
+               
+                    <div className="noticetabbox">
+                        <div className="noticetabboxbarbig">
+                            <h3 dangerouslySetInnerHTML={{__html: replaceWithBr()}} ></h3>
+                        </div>
+                    {
+                        noticeData.map((item,key)=>{
+                            return(
+                                    <div className="noticetabboxbar">
+                                        <h3>{item.noticeheading} - <span>Published : {item.publishDate}</span></h3>
+                                    </div>
+
+                            )
+                        })
+                    }
+                    </div>
+                </Col>
+            
+            </Row>
+            </div>
+            </Tab.Pane>
+            <Tab.Pane eventKey="fourth" className="tabPane">
+                <div className="tabpaneheightadjust">
+                    <div className="rotuinetabbox">
+                        <Row>
+                            <Col lg={{span: 2 ,offset: 2}}>
+                            <div className="dropdownwrapper" id="routinedrp">
+                                <Dropdown open={true} className='filterdropone'  options={Optionroutinetype} onChange={(e)=>dropdownvalueroutinetype(e)} value={defaultOptionroutinetype} placeholder="Select an option" />
+                                <BsChevronDown/>
+                            </div>
+                            </Col>
+                            <Col lg={2}>
+                                <div className="dropdownwrapper">
+                                    <Dropdown className='filterdropone' options={optionsemester} onChange={(e)=>dropdownvaluesection(e)} value={defaultOptionsemester} placeholder="Select an option" />
+                                    <BsChevronDown/>
+                                </div>                            
+                            </Col>
+                            <Col lg={2} className="d-flex align-items-end">
+                            
+                                <input type="date" placeholder='start date' onChange={(e)=>handleStartDate(e)} />
+                           
+                            </Col>
+                            <Col lg={2} className="d-flex align-items-end">
+                            
+                                <input type="date" placeholder='end date' onChange={(e)=>handleEndDate(e)} />
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col lg={12}>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            {
+                                                routineTabData.header.map((item,key)=>{
+                                                    return (
+                                                        <th>
+                                                            {item.headeritem}
+                                                            {
+                                                                item.img?
+                                                                <img src={item.img} alt="" />
+                                                                
+                                                                :
+                                                                ""
+                                                            }
+                                                        </th>
+                                                    )
+                                                })
+                                            }                                           
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            routineTabData.innerTableData.map((item,key)=>{
+                                                return (
+                                                    <tr>
+                                                        <td>
+                                                            {item.period}
+                                                        </td>
+                                                        <td>
+                                                            {item.Allsubjects}
+                                                        </td>
+                                                        <td>
+                                                            {item.day}
+                                                        </td>
+                                                        <td>
+                                                            {item.date}
+                                                        </td>
+                                                        <td>
+                                                            {item.time}
+                                                        </td>
+                                                        <td>
+                                                            {item.classno}
+                                                        </td>
+                                                        <td>
+                                                            
+                                                            <Button onClick={()=>handleDocumentDownload(item.document)}><img src="./assets/images/icons/Document_icon.png" alt="Document_icon" /></Button>
+                                                        </td>
+                                                    </tr>
+                                                )
+                                            })
+                                        }
+                                    </tbody>
+                                </table>
+                            </Col>
+                        </Row>
+                    </div>
+                </div>
+            </Tab.Pane>
+            <Tab.Pane eventKey="fifth" className="tabPane">
+                <div className="tabpaneheightadjust">
+                    <div className="atttabbox">
+                    <Row className='firstrow'>
+                            <Col >
+                            <div className="dropdownwrapper" id="routinedrp">
+                                <Dropdown open={true} className='filterdropone'  options={Optionroutinetype} onChange={(e)=>dropdownvalueroutinetype(e)} value={defaultOptionroutinetype} placeholder="Select an option" />
+                                <BsChevronDown/>
+                            </div>
+                            </Col>
+                            <Col className="d-flex align-items-end">
+                                {/* <div className="dropdownwrapper">
+                                    <Dropdown className='filterdropone' options={optionsemester} onChange={(e)=>dropdownvaluesection(e)} value={defaultOptionsemester} placeholder="Select an option" />
+                                    <BsChevronDown/>
+                                </div>                             */}
+                               <Dropdown2 options={optionme}/>
+                            </Col>
+                            <Col  className="d-flex align-items-end">
+                            
+                                <input type="date" placeholder='start date' onChange={(e)=>handleStartDate(e)} />
+                           
+                            </Col>
+                            <Col className="d-flex align-items-end">
+                            
+                                <input type="date" placeholder='end date' onChange={(e)=>handleEndDate(e)} />
+                            </Col>
+                            <Col className="d-flex align-items-end">
+                                <Button className='reqcorrectionbutton' onClick={handleReqCorrection}>Request for correction</Button>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col lg={12}>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            {
+                                                attendanceData.header.map((item,key)=>{
+                                                    return (
+                                                        <th>
+                                                            {item.headeritem}
+                                                            {
+                                                                item.img?
+                                                                <img src={item.img} alt="" />
+                                                                
+                                                                :
+                                                                ""
+                                                            }
+                                                        </th>
+                                                    )
+                                                })
+                                            }                                           
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            attendanceData.innerTableData.map((item,key)=>{
+                                                return (
+                                                    <tr>
+                                                        <td>
+                                                            {item.SL}
+                                                        </td>
+                                                        <td>
+                                                            {item.date}
+                                                        </td>
+                                                        <td>
+                                                            {item.intime}
+                                                        </td>
+                                                        <td>
+                                                            {item.outtime}
+                                                        </td>
+                                                        <td>
+                                                            {item.time}
+                                                        </td>
+                                                        <td>
+                                                            {item.latetime}
+                                                        </td>
+                                                        <td>
+                                                            
+                                                            {item.type}
+                                                        </td>
+                                                    </tr>
+                                                )
+                                            })
+                                        }
+                                    </tbody>
+                                </table>
+                            </Col>
+                        </Row>
+                    </div>
+                </div>
             </Tab.Pane>
           </Tab.Content>
         
