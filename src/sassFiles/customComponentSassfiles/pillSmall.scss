@@ -1,0 +1,61 @@
+.iampillsmall{
+    width:86px;
+    height:25px;
+    border-radius: 38px;
+    p{
+        line-height: 25px;
+        padding-left: 12px;
+        
+    }
+    &.Present{
+        width:83px;
+        p{
+            position:relative;
+            &::after{
+                position:absolute;
+                width:6px;
+                height:6px;
+                border-radius: 50%;
+                background-color: rgba(0, 202, 85, 1);
+                content:'';
+                right: 11px;
+                top:50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    &.Late{
+        width:65px;
+        p{
+            position:relative;
+            &::after{
+                position:absolute;
+                width:6px;
+                height:6px;
+                border-radius: 50%;
+                background-color:rgba(255, 173, 0, 1);
+                content:'';
+                right: 11px;
+                top:50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    &.Earlyleave{
+        width:100px;
+        p{
+            position:relative;
+            &::after{
+                position:absolute;
+                width:6px;
+                height:6px;
+                border-radius: 50%;
+                background-color:rgba(100, 158, 255, 1);
+                content:'';
+                right: 11px;
+                top:50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}

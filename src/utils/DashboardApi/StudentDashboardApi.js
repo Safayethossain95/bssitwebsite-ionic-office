@@ -37,21 +37,30 @@ const noticeData = [
 
     {
         noticeheading:"Holiday notice for Durga Puja & Eid-e- Miladunnabi",
-        publishDate:"10-11-2022"
+        publishDate:"10-11-2022",
+        publishDateDayMonth:"16 JUN",
+        publishDateYear:"2023"
     },
     {
         noticeheading:"Holiday notice for Durga Puja & Eid-e- Miladunnabi",
-        publishDate:"15-11-2022"
+        publishDate:"15-11-2022",
+        publishDateDayMonth:"16 JUN",
+        publishDateYear:"2023"
     },
     {
         noticeheading:"Holiday notice for Durga Puja & Eid-e- Miladunnabi",
-        publishDate:"12-12-2022"
+        publishDate:"12-12-2022",
+        publishDateDayMonth:"16 JUN",
+        publishDateYear:"2023"
     },
     
 
 ]
 const noticeDataGreetings = "Notice for Play:Diamond-I,  Nursery:Diamond-I, Ruby-I, & pearl-I\n Respected Guardians,\n You are requested to attend a meeting with the AVP on Sunday, 21 August 2022.\n Agenda: Academic, Rules & regulations\n Time	: 10:00 AM to 11:00 AM. Venue	: Campus 4 [13, Larmini Street Wari]\n Your presence will be highly appreciated.\n Regards,\n BSS"
-    
+const noticeGreetingsdaydate = {
+    day:"16 JUN",
+    year:"2023"
+}
 
 
 const attendenceApi = {
@@ -547,13 +556,13 @@ const attendanceData = {
             headeritem:"Date"
         },
         {
+            headeritem:"School Time"
+        },
+        {
             headeritem:"In Time"
         },
         {
             headeritem:"Out Time"
-        },
-        {
-            headeritem:"Late Time"
         },
         {
             headeritem:"Type"
@@ -564,51 +573,299 @@ const attendanceData = {
             {
                 SL:"01",
                 date:"01-01-2023",
+                schooltime:"09:10 AM",
                 intime:"09:10 AM",
-                outtime:"04:30 PM",
-                time:"10:00 AM",
-                latetime:"---",
-                Type:"absent"
+                outtime:"04:30 PM",                                
+                type:"Early Leave"
             },
             {
-                SL:"02",
+                SL:"01",
                 date:"01-01-2023",
+                schooltime:"09:10 AM",
                 intime:"09:10 AM",
-                outtime:"04:30 PM",
-                time:"10:00 AM",
-                latetime:"---",
-                Type:"absent"
+                outtime:"04:30 PM",                                
+                type:"Present"
             },
             {
-                SL:"03",
+                SL:"01",
                 date:"01-01-2023",
+                schooltime:"09:10 AM",
                 intime:"09:10 AM",
-                outtime:"04:30 PM",
-                time:"10:00 AM",
-                latetime:"---",
-                Type:"absent"
+                outtime:"04:30 PM",                                
+                type:"Late"
             },
             {
-                SL:"04",
+                SL:"01",
                 date:"01-01-2023",
+                schooltime:"09:10 AM",
                 intime:"09:10 AM",
-                outtime:"04:30 PM",
-                time:"10:00 AM",
-                latetime:"---",
-                Type:"absent"
+                outtime:"04:30 PM",                                
+                type:"Early Leave"
             },
             {
-                SL:"05",
+                SL:"01",
                 date:"01-01-2023",
+                schooltime:"09:10 AM",
                 intime:"09:10 AM",
-                outtime:"04:30 PM",
-                time:"10:00 AM",
-                latetime:"---",
-                Type:"absent"
+                outtime:"04:30 PM",                                
+                type:"Present"
             },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Late"
+            },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Early Leave"
+            },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Present"
+            },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Late"
+            },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Early Leave"
+            },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Present"
+            },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Late"
+            },
+            
+           
         
     ]
 }
+
+const billInfoData = {
+    duepayment:{
+        header:[
+            {
+                headerline:"SL"
+            },
+            {
+                headerline:"Month"
+            },
+            {
+                headerline:"Type"
+            },
+            {
+                headerline:"Last Date"
+            },
+            {
+                headerline:"Due Amount"
+            },
+        ],
+        tabledata:[
+            {
+                sl:"01",
+                month:"DEC-22",
+                type:"Tuition Fee",
+                lastdate:"Sat, 31 Dec, 2022",
+                dueamount:10307.00
+            },
+            {
+                sl:"02",
+                month:"DEC-22",
+                type:"Tuition Fee",
+                lastdate:"Sat, 31 Dec, 2022",
+                dueamount:10307.00
+            },
+            {
+                sl:"03",
+                month:"DEC-22",
+                type:"Tuition Fee",
+                lastdate:"Sat, 31 Dec, 2022",
+                dueamount:10307.00
+            },
+            {
+                sl:"04",
+                month:"DEC-22",
+                type:"Tuition Fee",
+                lastdate:"Sat, 31 Dec, 2022",
+                dueamount:10307.00
+            },
+            {
+                sl:"05",
+                month:"DEC-22",
+                type:"Tuition Fee",
+                lastdate:"Sat, 31 Dec, 2022",
+                dueamount:10307.00
+            },
+            {
+                sl:"05",
+                month:"DEC-22",
+                type:"Tuition Fee",
+                lastdate:"Sat, 31 Dec, 2022",
+                dueamount:10307.00
+            },
+            {
+                sl:"05",
+                month:"DEC-22",
+                type:"Tuition Fee",
+                lastdate:"Sat, 31 Dec, 2022",
+                dueamount:10307.00
+            },
+            {
+                sl:"05",
+                month:"DEC-22",
+                type:"Tuition Fee",
+                lastdate:"Sat, 31 Dec, 2022",
+                dueamount:10307.00
+            },
+        ]
+    },
+    previouspayment:{
+        header:[
+            {
+                headerline:"SL"
+            },
+            {
+                headerline:"Bill Date"
+            },
+            {
+                headerline:"Period Name"
+            },
+            {
+                headerline:"Type"
+            },
+            {
+                headerline:"Payable Amount"
+            },
+            {
+                headerline:"Received Amount"
+            },
+        ],
+        tabledata:[
+            {
+                sl:"01",
+                billdate:"DEC-22",
+                periodname:"Tuition Fee",
+                type:"Sat, 31 Dec, 2022",
+                payableamount:10307.00,
+                receivedamount:10307.00
+            },
+            {
+                sl:"01",
+                billdate:"DEC-22",
+                periodname:"Tuition Fee",
+                type:"Sat, 31 Dec, 2022",
+                payableamount:10307.00,
+                receivedamount:10307.00
+            },
+            {
+                sl:"01",
+                billdate:"DEC-22",
+                periodname:"Tuition Fee",
+                type:"Sat, 31 Dec, 2022",
+                payableamount:10307.00,
+                receivedamount:10307.00
+            },
+            {
+                sl:"01",
+                billdate:"DEC-22",
+                periodname:"Tuition Fee",
+                type:"Sat, 31 Dec, 2022",
+                payableamount:10307.00,
+                receivedamount:10307.00
+            },
+            {
+                sl:"01",
+                billdate:"DEC-22",
+                periodname:"Tuition Fee",
+                type:"Sat, 31 Dec, 2022",
+                payableamount:10307.00,
+                receivedamount:10307.00
+            },
+            {
+                sl:"01",
+                billdate:"DEC-22",
+                periodname:"Tuition Fee",
+                type:"Sat, 31 Dec, 2022",
+                payableamount:10307.00,
+                receivedamount:10307.00
+            },
+            {
+                sl:"01",
+                billdate:"DEC-22",
+                periodname:"Tuition Fee",
+                type:"Sat, 31 Dec, 2022",
+                payableamount:10307.00,
+                receivedamount:10307.00
+            },
+            {
+                sl:"01",
+                billdate:"DEC-22",
+                periodname:"Tuition Fee",
+                type:"Sat, 31 Dec, 2022",
+                payableamount:10307.00,
+                receivedamount:10307.00
+            },
+            {
+                sl:"01",
+                billdate:"DEC-22",
+                periodname:"Tuition Fee",
+                type:"Sat, 31 Dec, 2022",
+                payableamount:10307.00,
+                receivedamount:10307.00
+            },
+            {
+                sl:"01",
+                billdate:"DEC-22",
+                periodname:"Tuition Fee",
+                type:"Sat, 31 Dec, 2022",
+                payableamount:10307.00,
+                receivedamount:10307.00
+            },
+            {
+                sl:"01",
+                billdate:"DEC-22",
+                periodname:"Tuition Fee",
+                type:"Sat, 31 Dec, 2022",
+                payableamount:10307.00,
+                receivedamount:10307.00
+            },
+           
+        ],
+
+    }
+}
+
 
 const StudentDashboardApi = () => {
   return (
@@ -617,6 +874,6 @@ const StudentDashboardApi = () => {
     </>
   )
 }
-export {prevPaymentHistory,paymentHistoryDue,noticeData,documentData,attendenceApi,periodsubjectdata,noticeDataGreetings,routineTabData,attendanceData}
+export {prevPaymentHistory,billInfoData,paymentHistoryDue,noticeData,documentData,attendenceApi,periodsubjectdata,noticeGreetingsdaydate,noticeDataGreetings,routineTabData,attendanceData}
 
 export default StudentDashboardApi

@@ -6,6 +6,7 @@ const StudentDashboardPage = () => {
     <>
         <div className="desktop">
             <div className="studentdashboardwrapper">
+                <div className="overlayfordrpdwn"></div>
                 <div className="stu_sidebar">
                     <StudentDashboardComp/>
 

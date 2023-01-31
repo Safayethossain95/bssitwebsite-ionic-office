@@ -35,3 +35,54 @@
 @mixin borderthin(){
   border: 1px solid $border_twenty;
 }
+@mixin commontablecss(){
+  table{
+    width:100%;
+    thead{
+      tr{
+        position: sticky;
+        top: 0px;
+        background-color: #fff;
+      }
+    }
+    th{
+        
+      @include myfont(16px,400,$main_font);
+      &:first-child{
+          text-align: center;
+      }
+     
+      position:relative;
+      img{
+          position:absolute;
+          top:50%;
+          transform:translateY(-50%);
+          right:10px;
+      }
+      width:14;
+      &:nth-child(2){
+          width:30%;
+      }
+  }
+    tr{
+
+        height:40px;
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+        td{
+                width:14%;
+                &:nth-child(2){
+                    width:30%;
+                }
+            @include myfont(16px,400,$main_font);
+            &:first-child{
+                text-align: center;
+            }
+            
+            &>button{
+                background-color: transparent;
+                border:0;
+            }
+        }
+    }
+}
+}

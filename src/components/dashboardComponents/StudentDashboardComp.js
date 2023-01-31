@@ -1,10 +1,10 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
-
+import '../../sassFiles/style.scss'
 import { Button } from 'react-bootstrap'
 import {HiOutlineBell} from 'react-icons/hi'
 import {Row,Col,Nav,Tab} from 'react-bootstrap'
-import { prevPaymentHistory,routineTabData,attendanceData,paymentHistoryDue,noticeData,noticeDataGreetings,documentData,attendenceApi,periodsubjectdata } from '../../utils/DashboardApi/StudentDashboardApi'
+import { prevPaymentHistory,routineTabData,attendanceData,paymentHistoryDue,noticeData,noticeDataGreetings,documentData,attendenceApi,periodsubjectdata,billInfoData,noticeGreetingsdaydate } from '../../utils/DashboardApi/StudentDashboardApi'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import Dropdown from 'react-dropdown';
@@ -14,6 +14,9 @@ import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import $ from 'jquery';
 import Dropdown2 from '../subComponents/CustomSubComponents/Dropdown2'
+import { MdRestaurantMenu } from 'react-icons/md'
+import PillSmall from '../subComponents/CustomSubComponents/PillSmall'
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 const StudentDashboardComp = () => {
 
@@ -27,6 +30,8 @@ const StudentDashboardComp = () => {
             opt:'First Semester'
         }
     ]
+
+    const [prevsum,setprevsum] = useState(0)
     
     $(".dropdownwrapper svg").click(function(){
         $(".Dropdown-root").toggleClass("is-open")
@@ -34,6 +39,8 @@ const StudentDashboardComp = () => {
         $(".Dropdown-menu").css("display","block")
         // $(".Dropdown-menu").attr("aria-expanded","true")
       });
+
+      
     const [startDate,setStartDate] = useState("")
       const handleStartDate=(e)=>{
         setStartDate(e.target.value)
@@ -578,17 +585,154 @@ const StudentDashboardComp = () => {
 
                 </div>
             </Tab.Pane>
-            <Tab.Pane eventKey="second">
-                <div className="tabpaneheightadjust">
-            <Row>
-                <Col lg={12}>
-
-                    <div className="documenttabbox">
-
+            <Tab.Pane eventKey="second" className="tabPane">
+            <div className="tabpaneheightadjust tabpanedocument">
+                <div className="todaydocuments">
+                    <h4>Today Documents</h4>
+                    <Row>
+                        <Col lg={6} style={{paddingRight:"15px"}}>
+                            <div className="documenttabsignlebar">
+                                <img src="./assets/images/dashboards/studentDashboard/documentTab/1.png" alt="" />
+                                <div className="documenttabtexts">
+                                    <h6>Home Work</h6>
+                                    <p>8 files available to download</p>
+                                </div>
+                                <div className="downloadbuttondoctab">
+                                    <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col lg={6} style={{paddingLeft:"0"}}>
+                            <div className="documenttabsignlebar">
+                                    <img src="./assets/images/dashboards/studentDashboard/documentTab/2.png" alt="" />
+                                    <div className="documenttabtexts">
+                                        <h6>Class Work</h6>
+                                        <p>8 files available to download</p>
+                                    </div>
+                                    <div className="downloadbuttondoctab">
+                                        <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
+                                    </div>
+                                </div>
+                        </Col>
+                    </Row>
+                    <Row style={{marginTop:"15px"}}>
+                        <Col lg={6} style={{paddingRight:"15px"}}>
+                            <div className="documenttabsignlebar">
+                                <img src="./assets/images/dashboards/studentDashboard/documentTab/3.png" alt="" />
+                                <div className="documenttabtexts">
+                                    <h6>Exam Paper</h6>
+                                    <p>8 files available to download</p>
+                                </div>
+                                <div className="downloadbuttondoctab">
+                                    <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col lg={6} style={{paddingLeft:"0"}}>
+                            <div className="documenttabsignlebar">
+                                    <img src="./assets/images/dashboards/studentDashboard/documentTab/4.png" alt="" />
+                                    <div className="documenttabtexts">
+                                        <h6>Assessment</h6>
+                                        <p>8 files available to download</p>
+                                    </div>
+                                    <div className="downloadbuttondoctab">
+                                        <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
+                                    </div>
+                                </div>
+                        </Col>
+                    </Row>
+                    <Row style={{marginTop:"15px"}}>
+                        <Col lg={6} style={{paddingRight:"15px"}}>
+                            <div className="documenttabsignlebar">
+                                <img src="./assets/images/dashboards/studentDashboard/documentTab/5.png" alt="" />
+                                <div className="documenttabtexts">
+                                    <h6>Syllabus</h6>
+                                    <p>8 files available to download</p>
+                                </div>
+                                <div className="downloadbuttondoctab">
+                                    <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
+                <div className="preveousdocumnets">
+                    <h4>Previous Documents</h4>
+                    <div className="docselects">
+                        <div className="dropdownwrapper docseletssingle">
+                            <Dropdown className='filterdropone' options={Optionroutinetype} onChange={(e)=>dropdownvaluesection(e)} value={drpsection} />
+                            <BsChevronDown/>
+                        </div>
+                        <input type="date" />
+                        <input type="date" />
                     </div>
-                </Col>
-            
-            </Row>
+                    <Row>
+                        <Col lg={6} style={{paddingRight:"15px"}}>
+                            <div className="documenttabsignlebar">
+                                <img src="./assets/images/dashboards/studentDashboard/documentTab/1.png" alt="" />
+                                <div className="documenttabtexts">
+                                    <h6>Home Work</h6>
+                                    <p>8 files available to download</p>
+                                </div>
+                                <div className="downloadbuttondoctab">
+                                    <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col lg={6} style={{paddingLeft:"0"}}>
+                            <div className="documenttabsignlebar">
+                                    <img src="./assets/images/dashboards/studentDashboard/documentTab/2.png" alt="" />
+                                    <div className="documenttabtexts">
+                                        <h6>Class Work</h6>
+                                        <p>8 files available to download</p>
+                                    </div>
+                                    <div className="downloadbuttondoctab">
+                                        <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
+                                    </div>
+                                </div>
+                        </Col>
+                    </Row>
+                    <Row style={{marginTop:"15px"}}>
+                        <Col lg={6} style={{paddingRight:"15px"}}>
+                            <div className="documenttabsignlebar">
+                                <img src="./assets/images/dashboards/studentDashboard/documentTab/3.png" alt="" />
+                                <div className="documenttabtexts">
+                                    <h6>Exam Paper</h6>
+                                    <p>8 files available to download</p>
+                                </div>
+                                <div className="downloadbuttondoctab">
+                                    <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col lg={6} style={{paddingLeft:"0"}}>
+                            <div className="documenttabsignlebar">
+                                    <img src="./assets/images/dashboards/studentDashboard/documentTab/4.png" alt="" />
+                                    <div className="documenttabtexts">
+                                        <h6>Assessment</h6>
+                                        <p>8 files available to download</p>
+                                    </div>
+                                    <div className="downloadbuttondoctab">
+                                        <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
+                                    </div>
+                                </div>
+                        </Col>
+                    </Row>
+                    <Row style={{marginTop:"15px"}}>
+                        <Col lg={6} style={{paddingRight:"15px"}}>
+                            <div className="documenttabsignlebar">
+                                <img src="./assets/images/dashboards/studentDashboard/documentTab/5.png" alt="" />
+                                <div className="documenttabtexts">
+                                    <h6>Syllabus</h6>
+                                    <p>8 files available to download</p>
+                                </div>
+                                <div className="downloadbuttondoctab">
+                                    <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
             </div>
             </Tab.Pane>
             <Tab.Pane eventKey="third" className="tabPane">
@@ -598,12 +742,18 @@ const StudentDashboardComp = () => {
                
                     <div className="noticetabbox">
                         <div className="noticetabboxbarbig">
+                            <div className="dateofnoticebox">
+                                <h5>{noticeGreetingsdaydate.day}<br/>{noticeGreetingsdaydate.year}</h5>
+                            </div>
                             <h3 dangerouslySetInnerHTML={{__html: replaceWithBr()}} ></h3>
                         </div>
                     {
                         noticeData.map((item,key)=>{
                             return(
                                     <div className="noticetabboxbar">
+                                        <div className="dateofnoticebox">
+                                            <h5>{item.publishDateDayMonth}<br/>{item.publishDateYear}</h5>
+                                        </div>
                                         <h3>{item.noticeheading} - <span>Published : {item.publishDate}</span></h3>
                                     </div>
 
@@ -617,7 +767,7 @@ const StudentDashboardComp = () => {
             </div>
             </Tab.Pane>
             <Tab.Pane eventKey="fourth" className="tabPane">
-                <div className="tabpaneheightadjust">
+                <div className="tabpaneheightadjust tabpaneroutinetab">
                     <div className="rotuinetabbox">
                         <Row>
                             <Col lg={{span: 2 ,offset: 2}}>
@@ -704,7 +854,7 @@ const StudentDashboardComp = () => {
                 </div>
             </Tab.Pane>
             <Tab.Pane eventKey="fifth" className="tabPane">
-                <div className="tabpaneheightadjust">
+                <div className="tabpaneheightadjust tabpanerightattandancetab">
                     <div className="atttabbox">
                     <Row className='firstrow'>
                             <Col >
@@ -718,7 +868,7 @@ const StudentDashboardComp = () => {
                                     <Dropdown className='filterdropone' options={optionsemester} onChange={(e)=>dropdownvaluesection(e)} value={defaultOptionsemester} placeholder="Select an option" />
                                     <BsChevronDown/>
                                 </div>                             */}
-                               <Dropdown2 options={optionme}/>
+                               <Dropdown2 fontsize="12" fontfamily="'Poppins', sans-serif" options={optionme}/>
                             </Col>
                             <Col  className="d-flex align-items-end">
                             
@@ -731,6 +881,27 @@ const StudentDashboardComp = () => {
                             </Col>
                             <Col className="d-flex align-items-end">
                                 <Button className='reqcorrectionbutton' onClick={handleReqCorrection}>Request for correction</Button>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col lg={12}>
+                                <div className="buttonview">
+                                    <div className="flexwrap">
+                                        <div className="totalpresentpill">
+                                            <p>Total Present : 00</p>
+                                        </div>
+                                        <div className="totalpresentpill totalabsentpill">
+                                            <p>Total Absent : 00</p>
+                                        </div>
+                                        <div className="totalpresentpill totallatepill">
+                                            <p>Total Late : 00</p>
+                                        </div>
+                                        <div className="totalpresentpill totalearlyleave">
+                                            <p>Total Present this : 00</p>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </Col>
                         </Row>
                         <Row>
@@ -768,20 +939,31 @@ const StudentDashboardComp = () => {
                                                             {item.date}
                                                         </td>
                                                         <td>
+                                                            {item.schooltime}
+                                                        </td>
+                                                        <td>
                                                             {item.intime}
                                                         </td>
                                                         <td>
                                                             {item.outtime}
                                                         </td>
-                                                        <td>
-                                                            {item.time}
-                                                        </td>
-                                                        <td>
-                                                            {item.latetime}
-                                                        </td>
+                                                        
+                                                        
                                                         <td>
                                                             
-                                                            {item.type}
+                                                            {
+                                                            item.type=="Present"?
+                                                            <PillSmall class={item.type} fontsize="12px" text={item.type} bg="rgba(0, 202, 85, 0.05)" textcolor="rgba(0,202,85, 1)" />
+                                                            :
+                                                            
+                                                            item.type=="Late"?
+                                                            <PillSmall class={item.type} fontsize="12px" text={item.type} bg=" rgba(255, 173, 0, 0.05)" textcolor="rgba(255, 173, 0, 1)" />
+                                                            :
+                                                            item.type=="Early Leave"?
+                                                            <PillSmall class="Earlyleave" fontsize="12px" text={item.type} bg="rgba(100, 158, 255, 0.05)" textcolor="rgba(100, 158, 255, 1)" />
+                                                            :
+                                                            ""    
+                                                        }
                                                         </td>
                                                     </tr>
                                                 )
@@ -791,6 +973,97 @@ const StudentDashboardComp = () => {
                                 </table>
                             </Col>
                         </Row>
+                    </div>
+                </div>
+            </Tab.Pane>
+            <Tab.Pane eventKey="sixth" className="tabPane">
+                <div className="tabpaneheightadjust tabpanebillinfo">
+                    <div className="duepaymentpart">
+                        <div className="headingofduepayment">
+                            <h3>Due Payment <span>&#40;You have total 5 months tuition fee due&#41;</span></h3>
+                        </div>
+                        <div className="bottombuttondiv">
+                            <Button>Pay Now</Button>
+                        </div>
+                        <div className="duepaymenttable">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        {
+                                            billInfoData.duepayment.header.map((item,key)=>{
+                                                return(
+                                                    <th key={key}>{item.headerline}</th>
+                                                )
+                                            })
+                                        }
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                      {
+                                        billInfoData.duepayment.tabledata.map((item,key)=>{
+                                            return(
+                                                <tr key={key}>
+                                                    <td>{item.sl}</td>
+                                                    <td>{item.month}</td>
+                                                    <td>{item.type}</td>
+                                                    <td>{item.lastdate}</td>
+                                                    <td>{item.dueamount}</td>
+                                                </tr>
+                                            )
+                                        })
+                                      }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div className="paymenthistory">
+                        <div className="headingofpaymenthistory">
+                            <h3>Previous Payment History</h3>
+                        </div>
+                        <div className="bottombuttondiv">
+                            {/* <Button>Total Amount: {billInfoData.previouspayment.tabledata.map((item,key)=>{
+                                var tempprevsum = tempprevsum + item.receivedamount
+                                setprevsum(tempprevsum)
+                                return(
+                                    <>
+                                    
+                                    </>
+                                )
+                            })} {prevsum} BDT</Button> */}
+                            <Button>Total</Button>
+                        </div>
+                        <div className="paymenthistorytable">
+                        <table>
+                                <thead>
+                                    <tr>
+                                        {
+                                            billInfoData.previouspayment.header.map((item,key)=>{
+                                                return(
+                                                    <th key={key}>{item.headerline}</th>
+                                                )
+                                            })
+                                        }
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                      {
+                                        billInfoData.previouspayment.tabledata.map((item,key)=>{
+                                            return(
+                                                <tr key={key}>
+                                                    <td>{item.sl}</td>
+                                                    <td>{item.billdate}</td>
+                                                    <td>{item.periodname}</td>
+                                                    <td>{item.type}</td>
+                                                    <td>{item.payableamount}</td>
+                                                    <td>{item.receivedamount}</td>
+                                                </tr>
+                                            )
+                                        })
+                                      }
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
                 </div>
             </Tab.Pane>
