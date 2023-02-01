@@ -338,214 +338,7 @@ const prevPaymentHistory = [
     
 ]
 
-const routineTabData = {
-    header:[
-        {
-            headeritem:"Period"
-        },
-        {
-            headeritem:"All Subjects",
-            img:"./assets/images/icons/drpdwnicon.png"
-        },
-        {
-            headeritem:"Day"
-        },
-        {
-            headeritem:"Date"
-        },
-        {
-            headeritem:"Time"
-        },
-        {
-            headeritem:"Class No"
-        },
-        {
-            headeritem:"Document"
-        },
-    ],
-    innerTableData : [
-        {
-            period:"01",
-            Allsubjects:"Moral Science",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"02",
-            Allsubjects:"Social Science",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"03",
-            Allsubjects:"Islam",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"04",
-            Allsubjects:"Music",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"01",
-            Allsubjects:"Moral Science",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"02",
-            Allsubjects:"Social Science",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"03",
-            Allsubjects:"Islam",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"04",
-            Allsubjects:"Music",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"01",
-            Allsubjects:"Moral Science",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"02",
-            Allsubjects:"Social Science",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"03",
-            Allsubjects:"Islam",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"04",
-            Allsubjects:"Music",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"01",
-            Allsubjects:"Moral Science",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"02",
-            Allsubjects:"Social Science",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"03",
-            Allsubjects:"Islam",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"04",
-            Allsubjects:"Music",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"01",
-            Allsubjects:"Moral Science",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"02",
-            Allsubjects:"Social Science",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"03",
-            Allsubjects:"Islam",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-        {
-            period:"04",
-            Allsubjects:"Music",
-            day:"Saturday",
-            date:"01-01-2023",
-            time:"10:00 AM",
-            classno:2003,
-            document:""
-        },
-    ]
-}
+
 
 const attendanceData = {
     header:[
@@ -866,6 +659,582 @@ const billInfoData = {
     }
 }
 
+const leavereqstatusData = {
+    heading:[
+        {
+            headline:"Type"
+        },
+        {
+            headline:"reason"
+        },
+        {
+            headline:"From"
+        },
+        {
+            headline:"To"
+        },
+        {
+            headline:"Duration"
+        },
+        {
+            headline:"Status"
+        },
+    ],
+    innnerData: [
+        {
+            type:"Early",
+            reason:"Fever and Flu",
+            from:"01-01-2023 (07:00 PM)",
+            to:"01-01-2023 (07:00 PM)",
+            duration:"7 Days 12 Hours",
+            status:"Accepted"
+        },
+        {
+            type:"Early",
+            reason:"Fever and Flu",
+            from:"01-01-2023 (07:00 PM)",
+            to:"01-01-2023 (07:00 PM)",
+            duration:"7 Days 12 Hours",
+            status:"Pending"
+        },
+    ]
+}
+
+const routinetabData = {
+    classRoutine:{
+        heading:[
+            {
+                headline:"Day"
+            },
+            {
+                headline:"Period"
+            },
+            {
+                headline:"Subjects"
+            },
+            {
+                headline:"Time"
+            },
+            {
+                headline:"Download"
+            }
+        ],
+        tableData:[
+            {
+                day:"Saturday",
+                period:[
+                    {
+                        perioditem:"1st"
+                    },
+                    {
+                        perioditem:"2nd"
+                    },
+                    {
+                        perioditem:"3rd"
+                    },
+                    {
+                        perioditem:"4th"
+                    },
+                    {
+                        perioditem:"5th"
+                    },
+                    {
+                        perioditem:"6th"
+                    },
+                    {
+                        perioditem:"7th"
+                    },
+                ],
+                subjects:[
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                ],
+                time:[
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                ],
+                download:""
+            },
+            {
+                day:"Sunday",
+                period:[
+                    {
+                        perioditem:"1st"
+                    },
+                    {
+                        perioditem:"2nd"
+                    },
+                    {
+                        perioditem:"3rd"
+                    },
+                    {
+                        perioditem:"4th"
+                    },
+                    {
+                        perioditem:"5th"
+                    },
+                    {
+                        perioditem:"6th"
+                    },
+                    {
+                        perioditem:"7th"
+                    },
+                ],
+                subjects:[
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                ],
+                time:[
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                ],
+                download:""
+            },
+            {
+                day:"Monday",
+                period:[
+                    {
+                        perioditem:"1st"
+                    },
+                    {
+                        perioditem:"2nd"
+                    },
+                    {
+                        perioditem:"3rd"
+                    },
+                    {
+                        perioditem:"4th"
+                    },
+                    {
+                        perioditem:"5th"
+                    },
+                    {
+                        perioditem:"6th"
+                    },
+                    {
+                        perioditem:"7th"
+                    },
+                ],
+                subjects:[
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                ],
+                time:[
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                ],
+                download:""
+            },
+            {
+                day:"Tuesday",
+                period:[
+                    {
+                        perioditem:"1st"
+                    },
+                    {
+                        perioditem:"2nd"
+                    },
+                    {
+                        perioditem:"3rd"
+                    },
+                    {
+                        perioditem:"4th"
+                    },
+                    {
+                        perioditem:"5th"
+                    },
+                    {
+                        perioditem:"6th"
+                    },
+                    {
+                        perioditem:"7th"
+                    },
+                ],
+                subjects:[
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                ],
+                time:[
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                ],
+                download:""
+            },
+            {
+                day:"Wednesday",
+                period:[
+                    {
+                        perioditem:"1st"
+                    },
+                    {
+                        perioditem:"2nd"
+                    },
+                    {
+                        perioditem:"3rd"
+                    },
+                    {
+                        perioditem:"4th"
+                    },
+                    {
+                        perioditem:"5th"
+                    },
+                    {
+                        perioditem:"6th"
+                    },
+                    {
+                        perioditem:"7th"
+                    },
+                ],
+                subjects:[
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                ],
+                time:[
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                ],
+                download:""
+            },
+            {
+                day:"Thursday",
+                period:[
+                    {
+                        perioditem:"1st"
+                    },
+                    {
+                        perioditem:"2nd"
+                    },
+                    {
+                        perioditem:"3rd"
+                    },
+                    {
+                        perioditem:"4th"
+                    },
+                    {
+                        perioditem:"5th"
+                    },
+                    {
+                        perioditem:"6th"
+                    },
+                    {
+                        perioditem:"7th"
+                    },
+                ],
+                subjects:[
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                ],
+                time:[
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                ],
+                download:""
+            },
+            {
+                day:"Friday",
+                period:[
+                    {
+                        perioditem:"1st"
+                    },
+                    {
+                        perioditem:"2nd"
+                    },
+                    {
+                        perioditem:"3rd"
+                    },
+                    {
+                        perioditem:"4th"
+                    },
+                    {
+                        perioditem:"5th"
+                    },
+                    {
+                        perioditem:"6th"
+                    },
+                    {
+                        perioditem:"7th"
+                    },
+                ],
+                subjects:[
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                    {
+                        subjectname:"Moral Science"
+                    },
+                ],
+                time:[
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                    {
+                        timename:"08:30 AM - 09:10 AM"
+                    },
+                ],
+                download:""
+            },
+        ]
+    }
+}
+
 
 const StudentDashboardApi = () => {
   return (
@@ -874,6 +1243,6 @@ const StudentDashboardApi = () => {
     </>
   )
 }
-export {prevPaymentHistory,billInfoData,paymentHistoryDue,noticeData,documentData,attendenceApi,periodsubjectdata,noticeGreetingsdaydate,noticeDataGreetings,routineTabData,attendanceData}
+export {prevPaymentHistory,leavereqstatusData,billInfoData,paymentHistoryDue,noticeData,documentData,attendenceApi,periodsubjectdata,noticeGreetingsdaydate,noticeDataGreetings,routinetabData,attendanceData}
 
 export default StudentDashboardApi

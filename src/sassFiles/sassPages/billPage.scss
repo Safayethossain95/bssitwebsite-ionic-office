@@ -96,6 +96,7 @@ body{
                 height:50px;
                 background-color: #fff;
                 border:none;
+                color:#000;
                 border-radius: 10px;
                 &::placeholder{
                     @include myfont(16px,400,$main_font);

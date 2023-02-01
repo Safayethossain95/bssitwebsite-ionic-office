@@ -4,7 +4,7 @@ import '../../sassFiles/style.scss'
 import { Button } from 'react-bootstrap'
 import {HiOutlineBell} from 'react-icons/hi'
 import {Row,Col,Nav,Tab} from 'react-bootstrap'
-import { prevPaymentHistory,routineTabData,attendanceData,paymentHistoryDue,noticeData,noticeDataGreetings,documentData,attendenceApi,periodsubjectdata,billInfoData,noticeGreetingsdaydate } from '../../utils/DashboardApi/StudentDashboardApi'
+import { prevPaymentHistory,attendanceData,paymentHistoryDue,noticeData,noticeDataGreetings,documentData,attendenceApi,periodsubjectdata,billInfoData,noticeGreetingsdaydate,leavereqstatusData,routinetabData } from '../../utils/DashboardApi/StudentDashboardApi'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import Dropdown from 'react-dropdown';
@@ -31,6 +31,9 @@ const StudentDashboardComp = () => {
         }
     ]
 
+    const handleDocumentDownloadroutine = (file)=>{
+
+    }
     const [prevsum,setprevsum] = useState(0)
     
     $(".dropdownwrapper svg").click(function(){
@@ -122,23 +125,27 @@ const StudentDashboardComp = () => {
         console.log(drpday)
       }
       const Optionroutinetype = [
-        'Routine Type','Type One','Type two'
+        'week','Month','Year'
       ];
       const defaultOptionroutinetype = Optionroutinetype[0];
-
-      const [drpsection,setdrpsection] = useState("")
+      
+      const [doctypeprevdoc,setdoctypeprevdoc] = useState("")
     
-    const dropdownvaluesection=(e)=>{
+    const dropdownvaluedovtypeprevdoc=(e)=>{
         // console.log(e.value)
-        setdrpsection(e.value)
+        setdoctypeprevdoc(e.value)
         console.log(drpday)
       }
-      const optionsemester = [
-        "Select semester",
-        "First Semester"
-      ]
-      const defaultOptionsemester = optionsemester[0];
+      const Optiondoctypeprevdoc = [
+        'All','Home Work','Class Work','Exam Paper','Assessment','Syllabus'
+      ];
+      const defaultOptiondoctypeprevdoc = Optiondoctypeprevdoc[0];
+
+      const [drpsection,setdrpsection] = useState("")
+   
       const [variableactivekey,setvariableactivekey] = useState("first")
+      
+      const [dashheaderchange,setdashheaderchange] = useState("")
 
       const handleSelecttab = (tabvalue)=>{
         setvariableactivekey(tabvalue)
@@ -162,6 +169,34 @@ const StudentDashboardComp = () => {
         eighththing.classList.remove("active");
         ninththing.classList.remove("active");
         element.classList.add("active");
+        if(tabvalue=="first"){
+            setdashheaderchange("Good Morning Jisan")
+        }
+        else if(tabvalue=="second"){
+            setdashheaderchange("Document")
+        }
+        else if(tabvalue=="third"){
+            setdashheaderchange("Notice")
+        }
+        else if(tabvalue=="fourth"){
+            setdashheaderchange("Class Routine")
+        }
+        else if(tabvalue=="fifth"){
+            setdashheaderchange("Attendance")
+        }
+        else if(tabvalue=="sixth"){
+            setdashheaderchange("Bill Informatioin")
+
+        }
+        else if(tabvalue=="seventh"){
+            setdashheaderchange("Result")            
+        }
+        else if(tabvalue=="eighth"){
+            setdashheaderchange("Leave Form")            
+        }
+        else{
+            setdashheaderchange("Profile")
+        }
       }
   return (
     <>
@@ -183,7 +218,7 @@ const StudentDashboardComp = () => {
                     <a id="third" onClick={()=>handleSelecttab("third")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Notice</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="fourth" onClick={()=>handleSelecttab("fourth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Routine</a>
+                    <a id="fourth" onClick={()=>handleSelecttab("fourth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Class Routine</a>
                     </Nav.Item>
                     <Nav.Item>
                     <a id="fifth" onClick={()=>handleSelecttab("fifth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Attendence</a>
@@ -212,7 +247,7 @@ const StudentDashboardComp = () => {
         <div className="headerpartbill">
             
             <div className="leftsidecontent">
-               <h3>Good Morning Jisan</h3>
+               <h3>{dashheaderchange}</h3>
             </div>
         
             <div className="rightsidestuff">
@@ -660,7 +695,7 @@ const StudentDashboardComp = () => {
                     <h4>Previous Documents</h4>
                     <div className="docselects">
                         <div className="dropdownwrapper docseletssingle">
-                            <Dropdown className='filterdropone' options={Optionroutinetype} onChange={(e)=>dropdownvaluesection(e)} value={drpsection} />
+                            <Dropdown className='filterdropone' options={Optiondoctypeprevdoc} onChange={(e)=>dropdownvaluedovtypeprevdoc(e)} value={defaultOptiondoctypeprevdoc} />
                             <BsChevronDown/>
                         </div>
                         <input type="date" />
@@ -768,86 +803,97 @@ const StudentDashboardComp = () => {
             </Tab.Pane>
             <Tab.Pane eventKey="fourth" className="tabPane">
                 <div className="tabpaneheightadjust tabpaneroutinetab">
+                <div className="bottombuttondiv">
+                            <Button><img style={{marginRight:"0px"}} src="./assets/images/dashboards/studentDashboard/routineTab/downloadcoloredbutton.png" alt="" /> Download Routine</Button>
+                        </div>
                     <div className="rotuinetabbox">
                         <Row>
-                            <Col lg={{span: 2 ,offset: 2}}>
+                            <Col lg={{span: 2 ,offset: 2}} style={{margin:"0 auto"}}>
                             <div className="dropdownwrapper" id="routinedrp">
                                 <Dropdown open={true} className='filterdropone'  options={Optionroutinetype} onChange={(e)=>dropdownvalueroutinetype(e)} value={defaultOptionroutinetype} placeholder="Select an option" />
                                 <BsChevronDown/>
                             </div>
                             </Col>
-                            <Col lg={2}>
-                                <div className="dropdownwrapper">
-                                    <Dropdown className='filterdropone' options={optionsemester} onChange={(e)=>dropdownvaluesection(e)} value={defaultOptionsemester} placeholder="Select an option" />
-                                    <BsChevronDown/>
-                                </div>                            
-                            </Col>
-                            <Col lg={2} className="d-flex align-items-end">
                             
-                                <input type="date" placeholder='start date' onChange={(e)=>handleStartDate(e)} />
-                           
-                            </Col>
-                            <Col lg={2} className="d-flex align-items-end">
-                            
-                                <input type="date" placeholder='end date' onChange={(e)=>handleEndDate(e)} />
-                            </Col>
                         </Row>
                         <Row>
                             <Col lg={12}>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            {
-                                                routineTabData.header.map((item,key)=>{
-                                                    return (
-                                                        <th>
-                                                            {item.headeritem}
-                                                            {
-                                                                item.img?
-                                                                <img src={item.img} alt="" />
-                                                                
-                                                                :
-                                                                ""
-                                                            }
+                                <div className="routineclassTable">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                {
+                                                  routinetabData.classRoutine.heading.map((item,key)=>{
+                                                    return(
+                                                        <th key={key}>
+                                                            {item.headline}
                                                         </th>
                                                     )
+                                                  })  
+                                                }
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {
+                                                routinetabData.classRoutine.tableData.map((item,key)=>{
+                                                    return(
+                                                        <tr>
+                                                            <td>
+                                                                {item.day}
+                                                            </td>
+                                                            <td>
+                                                                <table style={{marginTop:"0"}}>
+                                                                {
+                                                                    item.period.map((item2,key2)=>{
+                                                                        return(
+                                                                            <tr key={key2}>
+                                                                                <td style={{borderBottom:"1px dashed rgba(0, 0, 0, 0.1)",borderRight:"0"}}>{item2.perioditem}</td>
+                                                                            </tr>
+                                                                        )
+                                                                    })
+                                                                }
+                                                                </table>
+                                                            </td>
+                                                            <td>
+                                                                <table style={{marginTop:"0"}}>
+                                                                {
+                                                                    item.subjects.map((item3,key3)=>{
+                                                                        return(
+                                                                            <tr key={key3}>
+                                                                                <td style={{borderBottom:"1px dashed rgba(0, 0, 0, 0.1)",borderRight:"0"}}>{item3.subjectname}</td>
+                                                                            </tr>
+                                                                        )
+                                                                    })
+                                                                }
+
+                                                                </table>
+                                                            </td>
+                                                            <td>
+                                                                <table style={{marginTop:"0"}}>
+                                                                {
+                                                                    item.time.map((item4,key4)=>{
+                                                                        return(
+                                                                            <tr key={key4}>
+                                                                                <td>{item4.timename}</td>
+                                                                            </tr>
+                                                                        )
+                                                                    })
+                                                                }
+
+                                                                </table>
+                                                            </td>
+                                                            <td className='downbtncell'>
+                                                                <Button onClick={()=>handleDocumentDownloadroutine(item.download)}>
+                                                                    <img src="./assets/images/dashboards/studentDashboard/routineTab/download.png" alt="" />
+                                                                </Button>
+                                                            </td>
+                                                        </tr>
+                                                    )
                                                 })
-                                            }                                           
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {
-                                            routineTabData.innerTableData.map((item,key)=>{
-                                                return (
-                                                    <tr>
-                                                        <td>
-                                                            {item.period}
-                                                        </td>
-                                                        <td>
-                                                            {item.Allsubjects}
-                                                        </td>
-                                                        <td>
-                                                            {item.day}
-                                                        </td>
-                                                        <td>
-                                                            {item.date}
-                                                        </td>
-                                                        <td>
-                                                            {item.time}
-                                                        </td>
-                                                        <td>
-                                                            {item.classno}
-                                                        </td>
-                                                        <td>
-                                                            
-                                                            <Button onClick={()=>handleDocumentDownload(item.document)}><img src="./assets/images/icons/Document_icon.png" alt="Document_icon" /></Button>
-                                                        </td>
-                                                    </tr>
-                                                )
-                                            })
-                                        }
-                                    </tbody>
-                                </table>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
                             </Col>
                         </Row>
                     </div>
@@ -1064,6 +1110,147 @@ const StudentDashboardComp = () => {
                             </table>
                         </div>
 
+                    </div>
+                </div>
+            </Tab.Pane>
+            <Tab.Pane eventKey="seventh" className="tabPane">
+                <div className="tabpaneheightadjust resulttab">
+                    <div className="resulttabbox">
+
+                    </div>
+                </div>          
+            </Tab.Pane>
+            <Tab.Pane eventKey="eighth" className="tabPane">
+                <div className="tabpaneheightadjust leaveformtab">
+                    <div className="leaveformpart">
+                        <div className="bottombuttondiv">
+                            <Button>Submit</Button>
+                        </div>
+                        <div className="basicinfopopulate">
+                        <Row>
+                            <Col lg={4}>                            
+                                <p>Name</p>
+                                <input type="text" name="name" placeholder='MD Jisan Kahn'/>
+                            </Col>
+                            <Col>
+                                <p>ID</p>
+                                <input type="text" name="name" placeholder='1705032108'/>
+                            </Col>
+                            <Col>
+                                <p>Class</p>
+                                <input type="text" name="name" placeholder='Class 2'/>
+                            </Col>
+                            <Col>
+                                <p>Mobile Number</p>
+                                <input type="text" name="name" placeholder='01922330077'/>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col lg={6}>
+                                <Row>
+                                    <Col lg={12}>
+                                        <p>Type of leave request</p>
+                                        <input type="text" name="name" placeholder='01922330077'/>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col lg={6}>
+                                        <p>Leave Date From</p>
+                                        <input type="text" name="name" placeholder=''/>
+                                    </Col>
+                                    <Col lg={6}>
+                                        <p>Leave Time From</p>
+                                        <input type="text" name="name" placeholder=''/>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col lg={6}>
+                                        <p>Leave Date To</p>
+                                        <input type="text" name="name" placeholder=''/>
+                                    </Col>
+                                    <Col lg={6}>
+                                        <p>Leave Time To</p>
+                                        <input type="text" name="name" placeholder=''/>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col lg={6}>
+                                        <p>Request Submission date</p>
+                                        <input type="text" name="name" placeholder=''/>
+                                    </Col>
+                                    <Col lg={6}>
+                                        <p>Documents &#40;if any&#41;</p>
+                                        <input type="text" name="name" placeholder=''/>
+                                    </Col>
+                                </Row>
+                            </Col>
+                            <Col lg={6}>
+                                        <p>Valid Reason</p>
+                                        <textarea className="textbox" type="text" name="name" placeholder=''/>
+                            </Col>
+                        </Row>
+                            
+                        </div>
+                    </div>
+                    <div className="leaverequeststatus">
+                        <div className="headingofleaverea">
+                            <h4>Leave Request Status</h4>
+                        </div>
+                        <div className="levereqstatustablt d-flex align-items-center" style={{height:"calc(100% - 120px)"}} >
+                            <table>
+                                <thead>
+                                    <tr>
+                                        {
+                                            leavereqstatusData.heading.map((item,key)=>{
+                                                return(
+                                                    <th key={key}>
+                                                        {item.headline}
+                                                    </th>
+                                                )
+                                            })
+                                        } 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        leavereqstatusData.innnerData.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.type}</td>
+                                                    <td>{item.reason}</td>
+                                                    <td>{item.from}</td>
+                                                    <td>{item.to}</td>
+                                                    <td>{item.duration}</td>
+                                                    <td>{item.status=="Accepted"?
+                                                    <PillSmall class="Accepted" fontsize="12px" text={item.status} bg="rgba(0, 202, 85, 0.05)" textcolor="rgba(0,202,85, 1)" />
+                                                    :
+                                                    <PillSmall class={item.status} fontsize="12px" text={item.status} bg=" rgba(255, 173, 0, 0.05)" textcolor="rgba(255, 173, 0, 1)" />
+                                                    }</td>
+                                                </tr>
+                                            )
+                                        })
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </Tab.Pane>
+            <Tab.Pane eventKey="ninth" className="tabPane">
+                <div className="tabpaneheightadjust profiletab">
+                    <div className="flexwrapperprofile">
+                        <div className="profileleftcolumn">
+                            <div className="proleftcoltop">
+
+                            </div>
+                            <div className="proleftcolbottom">
+
+                            </div>
+                        </div>
+                        <div className="profilerightcolumn">
+                            
+                        </div>
                     </div>
                 </div>
             </Tab.Pane>

@@ -24,6 +24,40 @@
             }
         }
     }
+    &.Accepted{
+        width:94px;
+        p{
+            position:relative;
+            &::after{
+                position:absolute;
+                width:6px;
+                height:6px;
+                border-radius: 50%;
+                background-color: rgba(0, 202, 85, 1);
+                content:'';
+                right: 11px;
+                top:50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    &.Pending{
+        width:83px;
+        p{
+            position:relative;
+            &::after{
+                position:absolute;
+                width:6px;
+                height:6px;
+                border-radius: 50%;
+                background-color:rgba(255, 173, 0, 1);
+                content:'';
+                right: 11px;
+                top:50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
     &.Late{
         width:65px;
         p{
