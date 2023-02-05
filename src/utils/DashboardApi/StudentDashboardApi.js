@@ -1232,9 +1232,724 @@ const routinetabData = {
                 download:""
             },
         ]
+    },
+    examRoutine:{
+        heading:[
+            {
+                head:"Date",
+            },
+            {
+                head:"Day",
+            },
+            {
+                head:"start Time",
+            },
+            {
+                head:"End Time",
+            },
+            {
+                head:"Subject",
+            },
+            {
+                head:"Download",
+            },
+        ],
+        tableData:[
+            {                
+                date:"27 Nov 2023",
+                day:"Sunday",
+                starttime:"09:00 AM",
+                endtime:"11:30 AM",
+                subject:"English Language",
+                
+            },
+            {
+                date:"27 Nov 2023",
+                day:"Sunday",
+                starttime:"09:00 AM",
+                endtime:"11:30 AM",
+                subject:"English Language",                
+            },
+            {
+                date:"27 Nov 2023",
+                day:"Sunday",
+                starttime:"09:00 AM",
+                endtime:"11:30 AM",
+                subject:"English Language",                
+            },
+            {
+                date:"27 Nov 2023",
+                day:"Sunday",
+                starttime:"09:00 AM",
+                endtime:"11:30 AM",
+                subject:"English Language",                
+            },
+            {
+                date:"27 Nov 2023",
+                day:"Sunday",
+                starttime:"09:00 AM",
+                endtime:"11:30 AM",
+                subject:"English Language",                
+            },
+            {
+                date:"27 Nov 2023",
+                day:"Sunday",
+                starttime:"09:00 AM",
+                endtime:"11:30 AM",
+                subject:"English Language",                
+            },
+        ],
+        downloadlink:""
     }
 }
 
+const resulttabdata = {
+
+    firstSemester:{
+        dataTable:{
+            heading:[
+                {
+                    headline:"Subject",
+                },
+                {
+                    headline:"Sub Group",
+                },
+                {
+                    headline:"Total Test",
+                },
+                {
+                    headline:"Best Count",
+                },
+                {
+                    headline:"Assessment",
+                },
+                {
+                    headline:"Best",                    
+                },
+                {
+                    headline:"Total",                    
+                },
+
+
+            ],
+            tableData:[
+                {
+                    subject:"Eng Lit",
+                    subgroup:"written",
+                    totaltest:10,
+                    bestcount:5,
+                    assessment:[
+                        {
+                            value:8
+                        },
+                        {
+                            value:9.25
+                        },
+                        {
+                            value:8
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:9.25
+                        },
+                        {
+                            value:9.5
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:9
+                        },
+                        {
+                            value:9.5
+                        },
+                    ],
+                    
+                    
+
+                },
+                {
+                    subject:"Eng Lang",
+                    subgroup:"Creative Writing",
+                    totaltest:2,
+                    bestcount:1,
+                    assessment:[
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:7
+                        },
+                        {
+                            value:7.5
+                        },
+                    ],
+                    
+                    
+
+                },
+                {
+                    subject:"Eng Lang",
+                    subgroup:"Comprehension",
+                    totaltest:4,
+                    bestcount:2,
+                    assessment:[
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:8
+                        },
+                        {
+                            value:9.75
+                        },
+                        {
+                            value:9.75
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                    ],
+                    
+                    
+
+                },
+                {
+                    subject:"Eng Lang",
+                    subgroup:"Grammar",
+                    totaltest:4,
+                    bestcount:2,
+                    assessment:[
+                        {
+                            value:8.5
+                        },
+                        {
+                            value:9.25
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:9.75
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                    ],
+                    
+                    
+
+                },
+                {
+                    subject:"Bengali",
+                    subgroup:"Written",
+                    totaltest:10,
+                    bestcount:5,
+                    assessment:[
+                        {
+                            value:9.75
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:7.25
+                        },
+                        {
+                            value:8.25
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:7
+                        },
+                        {
+                            value:3
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:9
+                        },
+                    ],
+                    
+                    
+
+                },
+                {
+                    subject:"Mathemetics",
+                    subgroup:"Written",
+                    totaltest:10,
+                    bestcount:5,
+                    assessment:[
+                        {
+                            value:6
+                        },
+                        {
+                            value:7
+                        },
+                        {
+                            value:8.5
+                        },
+                        {
+                            value:8
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:9
+                        },
+                        {
+                            value:8.75
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:10
+                        },
+                    ],
+                    
+                    
+
+                },
+                {
+                    subject:"ICT",
+                    subgroup:"Written",
+                    totaltest:6,
+                    bestcount:4,
+                    assessment:[
+                        {
+                            value:8
+                        },
+                        {
+                            value:7
+                        },
+                        {
+                            value:8.5
+                        },
+                        {
+                            value:8
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:9
+                        },
+                        {
+                            value:8.75
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:10
+                        },
+                    ],
+                    
+                    
+
+                },
+                {
+                    subject:"Art & Craft",
+                    subgroup:"Art & Craft",
+                    totaltest:6,
+                    bestcount:4,
+                    assessment:[
+                        {
+                            value:8
+                        },
+                        {
+                            value:7
+                        },
+                        {
+                            value:8.5
+                        },
+                        {
+                            value:8
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:9
+                        },
+                        {
+                            value:8.75
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:10
+                        },
+                    ],
+                    
+                    
+
+                },
+                {
+                    subject:"Eng Lit",
+                    subgroup:"written",
+                    totaltest:10,
+                    bestcount:5,
+                    assessment:[
+                        {
+                            value:8
+                        },
+                        {
+                            value:9.25
+                        },
+                        {
+                            value:8
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:9.25
+                        },
+                        {
+                            value:9.5
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:9
+                        },
+                        {
+                            value:9.5
+                        },
+                    ],
+                    
+                    
+
+                },
+                {
+                    subject:"Eng Lang",
+                    subgroup:"Creative Writing",
+                    totaltest:2,
+                    bestcount:1,
+                    assessment:[
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:7
+                        },
+                        {
+                            value:7.5
+                        },
+                    ],
+                    
+                    
+
+                },
+                {
+                    subject:"Eng Lang",
+                    subgroup:"Comprehension",
+                    totaltest:4,
+                    bestcount:2,
+                    assessment:[
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:8
+                        },
+                        {
+                            value:9.75
+                        },
+                        {
+                            value:9.75
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                    ],
+                    
+                    
+
+                },
+                {
+                    subject:"Eng Lang",
+                    subgroup:"Grammar",
+                    totaltest:4,
+                    bestcount:2,
+                    assessment:[
+                        {
+                            value:8.5
+                        },
+                        {
+                            value:9.25
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:9.75
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:0
+                        },
+                    ],
+                    
+                    
+
+                },
+                {
+                    subject:"Bengali",
+                    subgroup:"Written",
+                    totaltest:10,
+                    bestcount:5,
+                    assessment:[
+                        {
+                            value:9.75
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:7.25
+                        },
+                        {
+                            value:8.25
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:7
+                        },
+                        {
+                            value:3
+                        },
+                        {
+                            value:0
+                        },
+                        {
+                            value:10
+                        },
+                        {
+                            value:9
+                        },
+                    ],
+                    
+                    
+
+                },
+                
+                
+            ]
+        },
+
+        resultTable:{
+          
+                heading:[
+                    {
+                        head:"Subject",
+                    },
+                    {
+                        head:"Assessment",
+                    },
+                    {
+                        head:"First Semester Exam",
+                    },
+                    {
+                        head:"Total Mark Obtained",
+                    },
+                    {
+                        head:"Percentage %",
+                    },
+                    {
+                        head:"Grade",
+                    },
+                ],
+
+                tableData:[
+                    {
+                        subject:"Eng Lit",
+                        assessment:48.25,
+                        firstsemesterexdam:93.75,
+                        totalmarkobtained:142.00,
+                        percentage:94.67,
+                        grade:"A+"
+                    },
+                    {
+                        subject:"Eng Lang",
+                        assessment:48.25,
+                        firstsemesterexdam:93.75,
+                        totalmarkobtained:142.00,
+                        percentage:94.67,
+                        grade:"A+"
+                    },
+                    {
+                        subject:"Bengali",
+                        assessment:48.25,
+                        firstsemesterexdam:93.75,
+                        totalmarkobtained:142.00,
+                        percentage:94.67,
+                        grade:"A+"
+                    },
+                    {
+                        subject:"Mathematics",
+                        assessment:48.25,
+                        firstsemesterexdam:93.75,
+                        totalmarkobtained:142.00,
+                        percentage:94.67,
+                        grade:"A+"
+                    },
+                    {
+                        subject:"Science",
+                        assessment:48.25,
+                        firstsemesterexdam:93.75,
+                        totalmarkobtained:142.00,
+                        percentage:94.67,
+                        grade:"A+"
+                    },
+                    {
+                        subject:"ICT",
+                        assessment:48.25,
+                        firstsemesterexdam:93.75,
+                        totalmarkobtained:142.00,
+                        percentage:94.67,
+                        grade:"A+"
+                    },
+                ]
+                
+            
+        }
+    }
+
+}
 
 const StudentDashboardApi = () => {
   return (
@@ -1243,6 +1958,6 @@ const StudentDashboardApi = () => {
     </>
   )
 }
-export {prevPaymentHistory,leavereqstatusData,billInfoData,paymentHistoryDue,noticeData,documentData,attendenceApi,periodsubjectdata,noticeGreetingsdaydate,noticeDataGreetings,routinetabData,attendanceData}
+export {prevPaymentHistory,resulttabdata,leavereqstatusData,billInfoData,paymentHistoryDue,noticeData,documentData,attendenceApi,periodsubjectdata,noticeGreetingsdaydate,noticeDataGreetings,routinetabData,attendanceData}
 
 export default StudentDashboardApi

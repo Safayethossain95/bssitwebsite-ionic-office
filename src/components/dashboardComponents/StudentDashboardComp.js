@@ -4,7 +4,7 @@ import '../../sassFiles/style.scss'
 import { Button } from 'react-bootstrap'
 import {HiOutlineBell} from 'react-icons/hi'
 import {Row,Col,Nav,Tab} from 'react-bootstrap'
-import { prevPaymentHistory,attendanceData,paymentHistoryDue,noticeData,noticeDataGreetings,documentData,attendenceApi,periodsubjectdata,billInfoData,noticeGreetingsdaydate,leavereqstatusData,routinetabData } from '../../utils/DashboardApi/StudentDashboardApi'
+import { prevPaymentHistory,attendanceData,paymentHistoryDue,resulttabdata,noticeData,noticeDataGreetings,documentData,attendenceApi,periodsubjectdata,billInfoData,noticeGreetingsdaydate,leavereqstatusData,routinetabData } from '../../utils/DashboardApi/StudentDashboardApi'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import Dropdown from 'react-dropdown';
@@ -63,6 +63,9 @@ const StudentDashboardComp = () => {
 
     }
     const handleReqCorrection=()=>{
+
+    }
+    const handleExamRoutineDownload=()=>{
 
     }
 
@@ -136,6 +139,26 @@ const StudentDashboardComp = () => {
         setdoctypeprevdoc(e.value)
         console.log(drpday)
       }
+      const optionsemsterresulttab = [
+        'First Semester','Second Semester'
+      ];
+      const defaultOptionsemestertype = optionsemsterresulttab[0];
+      const [semesterselectresult,setsemesterselectresult] = useState("")
+    
+    const drpdwnsemesterselecthandler=(e)=>{        
+        setsemesterselectresult(e.value)
+        
+      }
+      const optiontyperesulttab = [
+        'Assessment','Result'
+      ];
+      const defaultOptionstyperesulttab = optiontyperesulttab[0];
+      const [typeresulttab,settyperesulttab] = useState("")
+    
+    const drpdwntyperesulttabhandler=(e)=>{        
+        settyperesulttab(e.value)
+        
+      }
       const Optiondoctypeprevdoc = [
         'All','Home Work','Class Work','Exam Paper','Assessment','Syllabus'
       ];
@@ -159,6 +182,7 @@ const StudentDashboardComp = () => {
         var sevenththing = document.getElementById("seventh");
         var eighththing = document.getElementById("eighth");
         var ninththing = document.getElementById("ninth");
+        var tenththing = document.getElementById("tenth");
         firstthing.classList.remove("active");
         secondthing.classList.remove("active");
         thirdthing.classList.remove("active");
@@ -168,6 +192,7 @@ const StudentDashboardComp = () => {
         sevenththing.classList.remove("active");
         eighththing.classList.remove("active");
         ninththing.classList.remove("active");
+        tenththing.classList.remove("active");
         element.classList.add("active");
         if(tabvalue=="first"){
             setdashheaderchange("Good Morning Jisan")
@@ -194,8 +219,12 @@ const StudentDashboardComp = () => {
         else if(tabvalue=="eighth"){
             setdashheaderchange("Leave Form")            
         }
+        else if(tabvalue=="ninth"){
+            setdashheaderchange("Profile")            
+            
+        }
         else{
-            setdashheaderchange("Profile")
+            setdashheaderchange("Exam Routine")
         }
       }
   return (
@@ -234,6 +263,9 @@ const StudentDashboardComp = () => {
                     </Nav.Item>
                     <Nav.Item>
                     <a id="ninth" onClick={()=>handleSelecttab("ninth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Profile</a>
+                    </Nav.Item>
+                    <Nav.Item>
+                    <a id="tenth" onClick={()=>handleSelecttab("tenth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Exam Routine</a>
                     </Nav.Item>
                 </Nav>
                   
@@ -805,7 +837,7 @@ const StudentDashboardComp = () => {
                 <div className="tabpaneheightadjust tabpaneroutinetab">
                 <div className="bottombuttondiv">
                             <Button><img style={{marginRight:"0px"}} src="./assets/images/dashboards/studentDashboard/routineTab/downloadcoloredbutton.png" alt="" /> Download Routine</Button>
-                        </div>
+                </div>
                     <div className="rotuinetabbox">
                         <Row>
                             <Col lg={{span: 2 ,offset: 2}} style={{margin:"0 auto"}}>
@@ -1116,7 +1148,204 @@ const StudentDashboardComp = () => {
             <Tab.Pane eventKey="seventh" className="tabPane">
                 <div className="tabpaneheightadjust resulttab">
                     <div className="resulttabbox">
+                        <Row>
+                            <Col lg={5} style={{margin:"0 auto"}}>
+                                <Row>
+                                <Col lg={6}>
+                                    <div className="basicinfopopulate">
+                                        <p>
+                                            Select Semeseter
+                                        </p>
+                                        <div className="dropdownwrapper" id="routinedrp">
+                                            <Dropdown open={true} className='filterdropone'  options={optionsemsterresulttab} onChange={(e)=>drpdwnsemesterselecthandler(e)} value={defaultOptionsemestertype} placeholder="Select an option" />
+                                            <BsChevronDown/>
+                                        </div>
+                                    </div>
+                                
+                                </Col>
+                                <Col lg={6}>
+                                    <div className="basicinfopopulate">
+                                        <p>
+                                            Select Type
+                                        </p>
+                                        <div className="dropdownwrapper" id="routinedrp">
+                                            <Dropdown open={true} className='filterdropone'  options={optiontyperesulttab} onChange={(e)=>drpdwntyperesulttabhandler(e)} value={defaultOptionstyperesulttab} placeholder="Select an option" />
+                                            <BsChevronDown/>
+                                        </div>
+                                    </div>
+                                
+                                </Col>
+                                </Row>
+                            </Col>
+                            
+                        </Row>
+                        {
+                            typeresulttab=="Assessment"?
+                            <div className="resulttable">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            {
+                                                resulttabdata.firstSemester.dataTable.heading.map((item,key)=>{
+                                                    return(
+                                                        <th key={key}>{item.headline}</th>
+                                                    )
+                                                })
+                                            }
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            resulttabdata.firstSemester.dataTable.tableData.map((item,key)=>{
+                                                return(
+                                                    <tr key={key}>
+                                                        <td>{item.subject}</td>
+                                                        <td>{item.subgroup}</td>
+                                                        <td>{item.totaltest}</td>
+                                                        <td>{item.bestcount}</td>
+                                                        <td style={{width:"60%"}}>
+                                                            <table style={{marginTop:"0"}}>
+                                                                <tr>
+                                                                {
+                                                                    item.assessment.map((item2,key2)=>{
+                                                                        return(
+                                                                            <td style={{width:"34px"}} key={key2}>{item2.value==0?"-":item2.value}</td>
+                                                                        )
+                                                                    })
+                                                                }
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td><p>10+20+30</p></td>
+                                                        <td><p>46.00</p></td>
+                                                        
+                                                    </tr>
+                                                )
+                                            })
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            :
+                            typeresulttab=="Result"?
+                            <div className="resulttable resultresulttable">
+                            <table >
+                                <thead>
+                                    <tr>
+                                        {
+                                            resulttabdata.firstSemester.resultTable.heading.map((item,key)=>{
+                                                return(
+                                                    <th className="text-center" key={key}>{item.head}</th>
+                                                )
+                                            })
+                                        }
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                         resulttabdata.firstSemester.resultTable.tableData.map((item,key)=>{
+                                            return(
+                                                <tr key={key}>
+                                                    <td>{item.subject}</td>    
+                                                    <td>{item.assessment}</td>    
+                                                    <td>{item.firstsemesterexdam}</td>    
+                                                    <td>{item.totalmarkobtained}</td>    
+                                                    <td>{item.percentage}</td>    
+                                                    <td>{item.grade}</td>    
+                                                </tr>
+                                            )
+                                         })
+                                    }
+                                    <tr style={{borderBottom:"0"}}>
+                                        <td colSpan={2}>Grand Total: 900.00</td>
+                                        <td colSpan={2}>Mark Obtained: 805.50</td>
+                                        <td>89.50%</td>
+                                        <td>A</td>
+                                    </tr>
+                                </tbody>
+                            </table>
 
+                            <div className="stats">
+                                <Row>
+                                    <Col lg={6} style={{paddingRight:"15px"}}>
+                                        <div className="statsboxresulttab">
+                                            <h5>Rank</h5>
+                                            <div className="centerwrapper">                                          
+                                            <p>Total Percentage Obtained = 89.50</p>
+                                            <p>Position in section = 14</p>
+                                            <p>Position in class = 30</p>                                           
+                                            </div>
+                                        </div>
+                                    </Col>
+                                    <Col lg={6} style={{paddingLeft:"0"}}>
+                                        <div className="statsboxresulttab">
+                                        <h5>Rank</h5>
+                                            <div className="centerwrapper centerwrapperright">                                          
+                                            <p>Highest Total Percentage Obtained in Class= 99.50</p>
+                                            <p>Highest Total Percentage Obtained in Section = 99.53</p>
+                                            <p>2nd Highest Total Percentage Obtained in Class = 98.72</p>                                           
+                                            <p>3rd Highest Total Percentage Obtained in Class= 98.71</p>                                           
+                                            </div>
+                                        </div>
+                                    </Col>
+                                </Row>
+                                <div className="downloadbuttonforresult">
+                                    <Button>
+                                        Download Now
+                                    </Button>
+                                </div>
+                            </div>
+                            </div>
+                            :
+                            <div className="resulttable">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            {
+                                                resulttabdata.firstSemester.dataTable.heading.map((item,key)=>{
+                                                    return(
+                                                        <th key={key}>{item.headline}</th>
+                                                    )
+                                                })
+                                            }
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            resulttabdata.firstSemester.dataTable.tableData.map((item,key)=>{
+                                                return(
+                                                    <tr key={key}>
+                                                        <td>{item.subject}</td>
+                                                        <td>{item.subgroup}</td>
+                                                        <td>{item.totaltest}</td>
+                                                        <td>{item.bestcount}</td>
+                                                        <td style={{width:"60%"}}>
+                                                            <table style={{marginTop:"0"}}>
+                                                                <tr>
+                                                                {
+                                                                    item.assessment.map((item2,key2)=>{
+                                                                        return(
+                                                                            <td style={{width:"34px"}} key={key2}>{item2.value==0?"-":item2.value}</td>
+                                                                        )
+                                                                    })
+                                                                }
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td><p>10+20+30</p></td>
+                                                        <td><p>46.00</p></td>
+                                                        
+                                                    </tr>
+                                                )
+                                            })
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                        
                     </div>
                 </div>          
             </Tab.Pane>
@@ -1242,7 +1471,32 @@ const StudentDashboardComp = () => {
                     <div className="flexwrapperprofile">
                         <div className="profileleftcolumn">
                             <div className="proleftcoltop">
+                                <img src="./assets/images/dashboards/studentDashboard/profilePicBig.png" alt="profilePicBig.png" />
+                                <h4>Md Jisan Khan</h4>
+                                <p>ID 1705032108</p>
 
+                                <div className="profiledetailpoints">
+                                    <div className="minidivswrapper d-flex">
+                                        <div className="minidivleft" style={{width:"95px"}}>
+                                            CLASS
+                                        </div>
+                                        <span>:</span>
+                                        <div className="minidivright">
+                                            Class 2
+                                        </div>
+                                        
+                                    </div>
+                                    <div className="minidivswrapper d-flex">
+                                        <div className="minidivleft" style={{width:"95px"}}>
+                                            SECTION
+                                        </div>
+                                        <span>:</span>
+                                        <div className="minidivright">
+                                            Diamond 1
+                                        </div>
+                                        
+                                    </div>
+                                </div>
                             </div>
                             <div className="proleftcolbottom">
 
@@ -1252,6 +1506,107 @@ const StudentDashboardComp = () => {
                             
                         </div>
                     </div>
+                </div>
+            </Tab.Pane>
+            <Tab.Pane eventKey="tenth" className="tabPane">
+                <div className="tabpaneheightadjust examRoutineTab">
+                    <div className="examroutinetable">
+                        <table>
+                        <thead>
+                                    <tr>
+                                        {
+                                            routinetabData.examRoutine.heading.map((item,key)=>{
+                                                return(
+                                                    <th className='text-center' key={key}>
+                                                        {item.head}
+                                                    </th>
+                                                )
+                                            })
+                                        } 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  
+                                    <tr>
+                                    <td>
+                                        <table>
+                                            {
+                                                routinetabData.examRoutine.tableData.map((item,key)=>{
+                                                    return(
+                                                        <tr>
+                                                            <td>{item.date}</td>
+                                                        </tr>
+                                                    )
+                                                })
+                                            }
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table>
+                                            {
+                                                routinetabData.examRoutine.tableData.map((item,key)=>{
+                                                    return(
+                                                        <tr>
+                                                            <td>{item.day}</td>
+                                                        </tr>
+                                                    )
+                                                })
+                                            }
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table>
+                                            {
+                                                routinetabData.examRoutine.tableData.map((item,key)=>{
+                                                    return(
+                                                        <tr>
+                                                            <td>{item.starttime}</td>
+                                                        </tr>
+                                                    )
+                                                })
+                                            }
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table>
+                                            {
+                                                routinetabData.examRoutine.tableData.map((item,key)=>{
+                                                    return(
+                                                        <tr>
+                                                            <td>{item.endtime}</td>
+                                                        </tr>
+                                                    )
+                                                })
+                                            }
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table>
+                                            {
+                                                routinetabData.examRoutine.tableData.map((item,key)=>{
+                                                    return(
+                                                        <tr>
+                                                            <td>{item.subject}</td>
+                                                        </tr>
+                                                    )
+                                                })
+                                            }
+                                        </table>
+                                    </td>
+
+                                    <td rowSpan={6} className='downbtncell'>
+                                    <Button onClick={()=>handleDocumentDownloadroutine(routinetabData.examRoutine.downloadlink)}>
+                                        <img src="./assets/images/dashboards/studentDashboard/routineTab/download.png" alt="" />
+                                    </Button>
+                                    </td>
+                                    </tr>
+                                
+                                </tbody>
+                        </table>
+                    </div>
+                        <div className="bottombuttondiv">
+                            <Button onClick={handleExamRoutineDownload}><img style={{marginRight:"0px"}} src="./assets/images/dashboards/studentDashboard/routineTab/downloadcoloredbutton.png" alt="" /> Download Routine</Button>
+                        </div>
                 </div>
             </Tab.Pane>
           </Tab.Content>
