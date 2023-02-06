@@ -33,21 +33,22 @@ const documentData = {
 }
 
 const noticeData = [
-    
-
     {
+        heading:"Holiday notice for Durga Puja",
         noticeheading:"Holiday notice for Durga Puja & Eid-e- Miladunnabi",
         publishDate:"10-11-2022",
         publishDateDayMonth:"16 JUN",
         publishDateYear:"2023"
     },
     {
+        heading:"Holiday notice for Durga Puja",
         noticeheading:"Holiday notice for Durga Puja & Eid-e- Miladunnabi",
         publishDate:"15-11-2022",
         publishDateDayMonth:"16 JUN",
         publishDateYear:"2023"
     },
     {
+        heading:"Holiday notice for Durga Puja",
         noticeheading:"Holiday notice for Durga Puja & Eid-e- Miladunnabi",
         publishDate:"12-12-2022",
         publishDateDayMonth:"16 JUN",
@@ -1951,6 +1952,69 @@ const resulttabdata = {
 
 }
 
+const profiletabApi = {
+    personaldetails:{
+        fullname:"Md Jisan Khan",
+        email:"ms3starenterprise@gmail.com",
+        dateofbirth:"23-06-2013",
+        residentialphone:"01618335505",
+        placeofbirth:"Dhaka",
+        country:"Bangladesh",
+        nationality:"Bangladeshi",
+        gender:"Male",
+        religion:"Islam",
+        bloodgroup:"B+",
+        birthcertificate:"329529342309420",
+        passport:"A2156321",
+        medicalhistory:"-",
+        emergencymedicalaction:"-",
+        holding:"53/4",
+        street:"Jonshon Road",
+        area:"Koltabazar",
+        postcode:"1100",
+        policestation:"Sutrapur",
+        city:"Dhaka",
+        division:"Dhaka",
+        country:"Bangladesh",
+        siblingname:"-",
+        siblingID:"-"
+
+
+    },
+    fathersinfo:{
+            fullname:"Md Jashim Uddin Khan",
+            email:"-",
+            nationalid:"8611477483547",
+            passport:"A214535392",
+            mobilenumber:"01922330077",
+            telephonenumber:"01979477988",
+            occupation:"-",
+            designation:"M/S Three Star Enterprise (Owner)",
+            companyaddress:"53/4, Jonshon Road, Koltabazar, Sutrapur, Dhaka-1100, Bangladesh"
+        },
+    mothersinfo:{
+            fullname:"Bubly Begum",
+            email:"-",
+            nationalid:"8611477483548",
+            passport:"A214535392",
+            mobilenumber:"01922330077",
+            telephonenumber:"-",
+            occupation:"-",
+            designation:"House Wife",
+            companyaddress:"-"
+        },
+    localguardianinfo:{
+            fullname:"Md Saidul Islam",
+            email:"-",
+            nationalid:"0414759565725",
+            passport:"-",
+            mobilenumber:"01725727441",
+            relation:"Uncle",
+        },
+   
+    
+}
+
 const StudentDashboardApi = () => {
   return (
     <>
@@ -1958,6 +2022,6 @@ const StudentDashboardApi = () => {
     </>
   )
 }
-export {prevPaymentHistory,resulttabdata,leavereqstatusData,billInfoData,paymentHistoryDue,noticeData,documentData,attendenceApi,periodsubjectdata,noticeGreetingsdaydate,noticeDataGreetings,routinetabData,attendanceData}
+export {prevPaymentHistory,profiletabApi,resulttabdata,leavereqstatusData,billInfoData,paymentHistoryDue,noticeData,documentData,attendenceApi,periodsubjectdata,noticeGreetingsdaydate,noticeDataGreetings,routinetabData,attendanceData}
 
 export default StudentDashboardApi

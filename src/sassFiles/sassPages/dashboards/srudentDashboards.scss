@@ -118,6 +118,12 @@
                     @include media(xlgDevice){
                         height: 100vh;
                     }
+                    &.profiletab{
+                        @include media(xlgDevice){
+                            height: 132vh;
+                            margin-bottom: 15px;
+                        }
+                    }
                     
                     border-radius: 20px;
                     &.tabpanerightattandancetab{
@@ -130,6 +136,30 @@
                         padding-bottom: 112px;
                         background-color: #fff;
                         position:relative;
+                        .dropdownwrapper{
+                            margin-top: 15px;
+                            .Dropdown-menu{
+                                .Dropdown-option{
+                                    @include myfont(12px,400,$main_font);
+                                }
+                            }
+                            .Dropdown-control{
+                                height: 35px;
+                                .Dropdown-placeholder{
+                                    top:8px;
+                                    @include myfont(12px,400,$main_font);
+                                }
+                            }
+                        }
+                        .routineclassTable{
+                            thead{
+                                tr{
+                                    position: sticky;
+                                    top: 00px;
+                                    background-color: #fff;
+                                }
+                            }
+                        }
                         .bottombuttondiv{
                                                        
                             width:100%;
@@ -299,6 +329,13 @@
                                 background-color: #fff;
                                 overflow-y: scroll;
                                @include commontablecss();
+                               table{
+                                tr{
+                                    th{
+                                        font-weight: 600!important;
+                                    }
+                                }
+                               }
                                 
                             }
                             .headingofduepayment{
@@ -359,6 +396,13 @@
                                 width:100%;                            
                                 height:calc(100% - 72px);
                                 overflow-y: scroll;
+                                table{
+                                    tr{
+                                        th{
+                                            font-weight: 600!important;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -495,12 +539,53 @@
                         }
                             .resulttable{
                                 @include commontablecss();
+                                table{
+                                    thead{
+                                        tr{
+                                            th{
+                                                font-weight: 600!important;
+                                                &:nth-child(6){
+                                                    width:10%!important;
+                                                }
+                                            }
+                                        }
+                                        
+                                    }
+                                    tbody{
+                                        tr{
+
+                                            .customsumtd{
+                                                width:10%!important;
+                                            }
+                                            td{
+                                               
+                                                table{
+                                                    tr{
+                                                        td{
+                                                            width:34px!important;
+    
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                                 &.resultresulttable{
                                     table{
                                         tr{
                                             border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
                                             td{
                                                 border:0!important;
+                                            }
+                                        }
+                                        tbody{
+                                            tr{
+                                                &:last-child{
+                                                    td{
+                                                        font-weight: 600!important;
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -619,6 +704,44 @@
                                     border-radius: 20px;                            
                                     padding:20px;
                                     margin-bottom: 15px;
+                                    .profileimgbig{
+                                        h4{
+                                            margin-bottom: 0;
+                                            @include myfont(25px,500,$main_font);
+                                            margin-top: 20px;
+                                        }
+                                        p{
+                                            @include myfont(16px,400,$main_font);
+                                            color:$seventyblack;
+                                        }
+                                    }
+                                    .profiledetailpoints{
+                                        margin:0 auto;
+                                        width:215px;
+                                        margin-top: 46px;
+                                        @include media(xlgDevice){
+                                            margin-top: 20px;
+                                        }
+                                        .minidivswrapper{
+                                            margin-bottom: 20px;
+                                            @include media(xlgDevice){
+                                                margin-bottom: 0px;
+                                            }
+                                            .minidivleft{
+                                                p{
+                                                    @include myfont(16px,400,$main_font);
+                                                color:$seventyblack;
+                                                }
+                                            }
+                                            .minidivright{
+                                                margin-left: 25px;
+                                                p{
+                                                    @include myfont(16px,400,$main_font);
+                                                color:$seventyblack;
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                                 .proleftcolbottom{
                                     height: 33%;
@@ -626,13 +749,85 @@
                                     background-color: #fff;
                                     border-radius: 20px;                            
                                     padding:20px;
+                                    .proleftcolbottomflexwrapforbuttonw{
+                                        display: flex;
+                                        height:calc(100% - 60px);
+                                        .leftforicon,.rightforicon{
+                                            width:50%;                                            
+                                            height:100%;                                             
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            .flexwrap{
+                                                display: flex;
+                                                flex-direction: column;
+                                                align-items: center;
+                                                img{
+                                                    width:50px;
+                                                    height: 50px;
+                                                    margin:0 auto;
+                                                }
+                                                h5{
+                                                    @include myfont(16px,400,$main_font);
+                                                    margin-top: 15px;
+                                                }
+                                            }
+                                        }
+                                        
+                                    }
                                 }
                             }
                             .profilerightcolumn{
                                 height: 100%;
                                     width: 64%;
                                     background-color: #fff;
-                                    border-radius: 20px; 
+                                    border-radius: 20px;
+                                    padding:20px;
+                                    h3{
+                                        @include myfont(25px,500,$main_font);
+
+                                    } 
+                                    
+                                        .infopopulatebox{
+                                            height:50px;
+                                            width:100%;
+                                            @include borderthin();
+                                            border-radius:10px;
+                                            padding:7px 10px;
+                                            margin-bottom: 15px;
+                                            h5{
+                                                margin-bottom: 0;
+                                                @include myfont(16px,400,$main_font);
+                                            }
+                                            p{
+                                                @include myfont(12px,400,$main_font);
+                                                color:$seventyblack;
+                                            }
+                                        }
+                                    
+                                    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+                                        color:#000;
+                                        border-color: transparent;
+                                        border-bottom:2px solid #000;
+                                    
+                                    &:hover{
+                                        border-bottom:2px solid #000;
+                                    }
+                                    
+                                    
+                                    }
+                                    .nav-tabs{
+                                        
+                                            .nav-link{
+                                                @include myfont(16px,400,$main_font);
+                                                color:rgba(0, 0, 0, 0.5);
+                                                &:hover{
+                                                    border-color:transparent;
+                                                }
+                                            }
+                                        
+                                    }
+                                    
                             }
                         }
                     }
@@ -768,7 +963,7 @@
                             width:100%;
                             
                             th{
-                                @include myfont(16px,400,$main_font);
+                                @include myfont(16px,600,$main_font);
                                 &:first-child{
                                     text-align: center;
                                 }
@@ -865,13 +1060,14 @@
                         padding:22px 30px;
                         overflow-y: scroll;
                         position:relative;
+                        padding-top: 0;
                         
                         
                         table{
                             width:100%;
-                            margin-top: 30px;
+                            
                             th{
-                                @include myfont(16px,400,$main_font);
+                                @include myfont(16px,600,$main_font);
                                
                                     text-align: center;
                                 
@@ -944,21 +1140,7 @@
                             padding: 0 10px;
                             @include myfont(12px,400,$main_font);
                         }
-                        .dropdownwrapper{
-                            margin-top: 15px;
-                            .Dropdown-menu{
-                                .Dropdown-option{
-                                    @include myfont(12px,400,$main_font);
-                                }
-                            }
-                            .Dropdown-control{
-                                height: 35px;
-                                .Dropdown-placeholder{
-                                    top:8px;
-                                    @include myfont(12px,400,$main_font);
-                                }
-                            }
-                        }
+                        
                     }
                     .noticetabbox{
                         width:100%;
@@ -1176,7 +1358,7 @@
                                 padding:0 15px;
                                 margin-bottom: 5px;
                                 h3{
-                                    @include myfont(12px,400,$main_font);
+                                    @include myfont(16px,400,$main_font);
                                     margin-bottom: 0;
                                 }
                                 .rightsidflexpart{
@@ -1235,12 +1417,12 @@
 
                                         .monthdatewrapper{
                                             h3{
-                                                @include myfont(12px,400,$main_font);
+                                                @include myfont(16px,400,$main_font);
                                                 margin-bottom: 0;
                                                 color:$seventyblack;
                                             }
                                             p{
-                                                @include myfont(8px,400,$main_font);
+                                                @include myfont(12px,400,$main_font);
                                                 color: $seventyblack;
                                             }
 
@@ -1388,7 +1570,7 @@
                                     &:first-child{
                                         text-align: center;                                        
                                     }
-                                    @include myfont(12px,400,$main_font);
+                                    @include myfont(16px,400,$main_font);
                                     color:$seventyblack;
                                 }
                             }
@@ -1488,11 +1670,14 @@
                         background-color: #F9F9F9;
                         border-radius: 10px;
                         height:103px;
-                        padding:12px;
+                        padding:30px 20px;
+                        @include media(xlgDevice){
+                            padding: 15px;
+                        }
                         margin-bottom: 5px;
-                        
+                        display: flex;
                         h5{
-                            @include myfont($sameboxNoticeboxh5,400,$main_font);  
+                            @include myfont($sameboxNoticeboxh5,500,$main_font);  
                             margin-bottom: 0; 
                             color:#000;                     
                             margin-top: 5px;
@@ -1512,18 +1697,39 @@
                                 background-color: $noticebarpillSamebox3rd;
                             }
                         }
-                        .publishdatepill{
-                                width:124px;
-                                height:35px;
-                                border-radius: 60px;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
+                        &:nth-child(2){
+                            .publishdatepart{
                                 p{
-                                    @include myfont($noticebarpillFontSize,500,$main_font);
-                                    color:$noticebarpillFontColor;
+                                    color:$noticebarpillFontColorsecond;
                                 }
+
+                            }
+                        }
+                        &:nth-child(3){
+                            .publishdatepart{
+                                p{
+                                    color:$noticebarpillFontColorthird;
+                                }
+
+                            }
+
+                        }
+                        .publishdatepart{
+                               width:55px;
+                                p{
+                                    @include myfont($noticebarpillFontSize,$noticebarpillFontWeight,$main_font);
+                                    color:$noticebarpillFontColor;
+                                    width:55px;
+                                }
+                               
                                 
+                        }
+                        .noticeboxtextbox{
+                            padding-left: 20px;
+                            p{
+                                @include myfont($noticepartparagraphfontsize,$noticepartparagraphfontweight,$main_font);
+
+                            }
                         }
                         
                     }
