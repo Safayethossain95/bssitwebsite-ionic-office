@@ -483,10 +483,10 @@ const TeacherDashboardComp = () => {
                             </div>
                             <div className="chartwrapperheight">
                                 {
-                                   
+                                    
                                     attendanceApiteacher.map((item,key)=>{
                                         return(
-
+                                            yeardrpdwnval && monthdrpdwnval ?
                                             item.month.map((item2,key2)=>{
                                                 if(item.yearnum==yeardrpdwnval && item2.monthname==monthdrpdwnval){
                                                     
@@ -499,7 +499,11 @@ const TeacherDashboardComp = () => {
                                                     )
                                                 }
                                             })
+                                            :
+                                            <Doughnut style={{margin:"0 auto",width:"250px",height:"250px"}} data={chdata}/>
+
                                         )
+                                        
                                         
                                     })
                                     
