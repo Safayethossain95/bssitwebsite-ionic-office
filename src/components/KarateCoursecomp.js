@@ -26,12 +26,12 @@ const KarateCoursecomp = () => {
   return (
     <>
       <div className="myContainer">
-      <Row className="karateboxrow">
+      <Row className="karateboxrow" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
         {
           karateboxdata.map((item,key)=>{
             return(
               <Col lg={6}>
-                <div className="karateinfobox">
+                <div className="karateinfobox hoverscale">
                   <div className="flexwrap">
                     <h4>{item.heading?item.heading:""}</h4>
                     <p>{item.venue?`Venue: ${item.venue}`:""}</p>
@@ -50,7 +50,7 @@ const KarateCoursecomp = () => {
         }
        
       </Row>
-      <div className="facilities">
+      <div className="facilities" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
         <h6>Facilities</h6>
         <p>All students will be able to participate in the School Karate Championship, Victory Day Karate Championship, and Independence Day Karate Championship. They will also be able to participate in District and Division level competitions. There is an opportunity to develop their career in both Private and Government Organizations. For example Banks, Insurance companies, Universities, etc.</p>
       </div>
@@ -58,7 +58,7 @@ const KarateCoursecomp = () => {
       </div>
 
 
-      <div className="myContainerMinimini">
+      <div className="myContainerMinimini" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
         <div className="teachersinfo">
           <Row>
             <Col lg={6} className="d-flex align-items-center">
@@ -91,8 +91,8 @@ const KarateCoursecomp = () => {
         </div>
       </div>
       <div className="myContainer">
-        <div className="contactforadmissioninfo">
-          <div className="contactinfokaratebox">
+        <div className="contactforadmissioninfo" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
+          <div className="contactinfokaratebox hoverscale">
             <div className="flexwrap">
             <h5>Contact for Admission & Information</h5>
             <h2>Head Office</h2>

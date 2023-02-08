@@ -1,6 +1,12 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 import '../../sassFiles/style.scss'
+import {
+  CircularProgressbar,
+  CircularProgressbarWithChildren,
+  buildStyles
+} from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 import { Button } from 'react-bootstrap'
 import {HiOutlineBell} from 'react-icons/hi'
 import {Row,Col,Nav,Tab,Tabs} from 'react-bootstrap'
@@ -17,19 +23,49 @@ import Dropdown2 from '../subComponents/CustomSubComponents/Dropdown2'
 import { MdRestaurantMenu } from 'react-icons/md'
 import PillSmall from '../subComponents/CustomSubComponents/PillSmall'
 import '../../sassFiles/sassPages/dashboards/dashvariables.scss'
+import '../../sassFiles/sassPages/dashboards/teacherDashboard.scss'
+import { attendanceApiteacher, periodsubjectdatateacher, salaryInformationteacher,routinetabDatateacher } from '../../utils/DashboardApi/TeacherDashboardApi'
 
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-const StudentDashboardComp = () => {
+const TeacherDashboardComp = () => {
 
-    const [selected, setSelected] = React.useState(Date);;
+    const [selected, setSelected] = React.useState(Date);
+
+    const [monthdrpdwnval,setmonthdrpdwnval]=useState("")
+    const [yeardrpdwnval,setyeardrpdwnval]=useState("")
+
+    function drpfunctionmonth(data){
+        setmonthdrpdwnval(data)
+    }
+    function drpfunctionyear(data){
+        setyeardrpdwnval(data)
+    }
     
-    const optionme = [
+    // const [presentatt2,setpresentatt]=useState(0)
+    
+    const optionmemonth = [
         {
-            opt:'Select Section'
+            opt:'Jan'
         },
         {
+            opt:'Feb'
+        }
+    ]
+    const optionmeyear = [
+        {
+            opt:2023
+        },
+        {
+            opt:2022
+        }
+    ]
+    const optionme = [
+        {
             opt:'First Semester'
+        },
+        {
+            opt:'Second Semester'
         }
     ]
 
@@ -81,7 +117,7 @@ const StudentDashboardComp = () => {
     const chdata = {
         labels:["absent","present","late"],
         datasets:[{
-            data:[attendenceApi.firstSemester.absent,attendenceApi.firstSemester.present,attendenceApi.firstSemester.late],
+            data:[40,50,10],
             backgroundColor:[
                 chart1color1,
                 chart1color2,
@@ -119,8 +155,7 @@ const StudentDashboardComp = () => {
     }
     const [drpday,setDrpday] = useState("")
     
-    const dropdownvalue=(e)=>{
-        // console.log(e.value)
+    const dropdownvalue=(e)=>{        
         setDrpday(e.value)
         console.log(drpday)
       }
@@ -204,36 +239,32 @@ const StudentDashboardComp = () => {
         tenththing.classList.remove("active");
         element.classList.add("active");
         if(tabvalue=="first"){
-            setdashheaderchange("Good Morning Jisan")
+            setdashheaderchange(`Good Morning Farhana`)
         }
         else if(tabvalue=="second"){
-            setdashheaderchange("Document")
+            setdashheaderchange("Class Routine")
         }
         else if(tabvalue=="third"){
-            setdashheaderchange("Notice")
+            setdashheaderchange("Curriculum Entry")
         }
         else if(tabvalue=="fourth"){
-            setdashheaderchange("Class Routine")
+            setdashheaderchange("Result Entry")
         }
         else if(tabvalue=="fifth"){
             setdashheaderchange("Attendance")
         }
         else if(tabvalue=="sixth"){
-            setdashheaderchange("Bill Informatioin")
+            setdashheaderchange("Salary Information")
 
         }
         else if(tabvalue=="seventh"){
-            setdashheaderchange("Result")            
-        }
-        else if(tabvalue=="eighth"){
             setdashheaderchange("Leave Form")            
         }
-        else if(tabvalue=="ninth"){
+        else if(tabvalue=="eighth"){
             setdashheaderchange("Profile")            
-            
         }
         else{
-            setdashheaderchange("Exam Routine")
+            setdashheaderchange(`Good Morning Farhana`)
         }
       }
   return (
@@ -250,32 +281,27 @@ const StudentDashboardComp = () => {
                     <a id="first" className='active' onClick={()=>handleSelecttab("first")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Dashboard</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="second" onClick={()=>handleSelecttab("second")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Document</a>
+                    <a id="second" onClick={()=>handleSelecttab("second")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Class Routine</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="third" onClick={()=>handleSelecttab("third")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Notice</a>
+                    <a id="third" onClick={()=>handleSelecttab("third")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Curriculum Entry</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="fourth" onClick={()=>handleSelecttab("fourth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Class Routine</a>
+                    <a id="fourth" onClick={()=>handleSelecttab("fourth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Result Entry</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="fifth" onClick={()=>handleSelecttab("fifth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Attendence</a>
+                    <a id="fifth" onClick={()=>handleSelecttab("fifth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Attendance</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="sixth" onClick={()=>handleSelecttab("sixth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Bill Info</a>
+                    <a id="sixth" onClick={()=>handleSelecttab("sixth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Salary Info</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="seventh" onClick={()=>handleSelecttab("seventh")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Result</a>
+                    <a id="seventh" onClick={()=>handleSelecttab("seventh")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Leave Form</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="eighth" onClick={()=>handleSelecttab("eighth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Leave Form</a>
+                    <a id="eighth" onClick={()=>handleSelecttab("eighth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Profile</a>
                     </Nav.Item>
-                    <Nav.Item>
-                    <a id="ninth" onClick={()=>handleSelecttab("ninth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Profile</a>
-                    </Nav.Item>
-                    <Nav.Item>
-                    <a id="tenth" onClick={()=>handleSelecttab("tenth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Exam Routine</a>
-                    </Nav.Item>
+                    
                 </Nav>
                   
                 </div>
@@ -315,176 +341,209 @@ const StudentDashboardComp = () => {
                 <div className="tabpaneheightadjust">
                     <Row style={{flex:"1 1 50%"}}>
                     <Col lg={4} style={{paddingRight:"15px"}}>
-                        <div className="samebox">
+                        <div className="samebox sameboxroutine">
                             <div className="headerpart">
                                 <div className="flexwrap">
-                                    <h4>Documnets</h4>
-                                        <p onClick={()=>handleSelecttab("second")} >View more</p>
-                                </div>
-                            </div>
-                            <div className="contentpart" >
-                            
-                                            <div className="smallbarcard" >
-                                                <img src="./assets/images/dashboards/studentDashboard/smallbaricon1.png" alt="smallbaricon1.png" />
-                                                
-                                                <div className="textssmallbar">
-                                                    <div className="flexwrap">
-                                                    <h5>{documentData.homework.filetype}</h5>
-                                                    <p>{documentData.homework.numberOfFiles==0 ? "No File Available For Download":documentData.homework.numberOfFiles+ " files available for download"} </p>
-                                                    </div>
-                                                </div>
-                                                <div className="downloadbutton">
-                                                    <img src="./assets/images/dashboards/studentDashboard/downloadimg.png" alt="downloadimg.png" />
-                                                </div>
-                                            </div>
-                                            <div className="smallbarcard" >
-                                                <img src="./assets/images/dashboards/studentDashboard/smallbaricon2.png" alt="smallbaricon1.png" />
-                                                <div className="textssmallbar">
-                                                    <div className="flexwrap">
-                                                    <h5>{documentData.classwork.filetype}</h5>
-                                                    <p>{documentData.classwork.numberOfFiles==0 ? "No File Available For Download":documentData.homework.numberOfFiles+ " files available for download"} </p>
-                                                    </div>
-                                                </div>
-                                                <div className="downloadbutton">
-                                                    <img src="./assets/images/dashboards/studentDashboard/downloadimg.png" alt="downloadimg.png" />
-                                                </div>
-                                            </div>
-                                            <div className="smallbarcard" >
-                                                <img src="./assets/images/dashboards/studentDashboard/smallbaricon3.png" alt="smallbaricon1.png" />
-                                                <div className="textssmallbar">
-                                                    <div className="flexwrap">
-                                                    <h5>{documentData.assesment.filetype}</h5>
-                                                    <p>{documentData.assesment.numberOfFiles==0 ? "No File Available For Download":documentData.homework.numberOfFiles+ " files available for download"} </p>
-                                                    </div>
-                                                </div>
-                                                <div className="downloadbutton">
-                                                    <img src="./assets/images/dashboards/studentDashboard/downloadimg.png" alt="downloadimg.png" />
-                                                </div>
-                                            </div>
-                                            <div className="smallbarcard" >
-                                                <img src="./assets/images/dashboards/studentDashboard/smallbaricon4.png" alt="smallbaricon1.png" />
-                                                <div className="textssmallbar">
-                                                    <div className="flexwrap">
-                                                    <h5>{documentData.exampaper.filetype}</h5>
-                                                    <p>{documentData.exampaper.numberOfFiles==0 ? "No File Available For Download":documentData.homework.numberOfFiles+ " files available for download"} </p>
-                                                    </div>
-                                                </div>
-                                                <div className="downloadbutton">
-                                                    <img src="./assets/images/dashboards/studentDashboard/downloadimg.png" alt="downloadimg.png" />
-                                                </div>
-                                            </div>
-                                            <div className="smallbarcard" >
-                                                <img src="./assets/images/dashboards/studentDashboard/smallbaricon5.png" alt="smallbaricon1.png" />
-                                                <div className="textssmallbar">
-                                                    <div className="flexwrap">
-                                                    <h5>{documentData.syllabus.filetype}</h5>
-                                                    <p>{documentData.syllabus.numberOfFiles==0 ? "No File Available For Download":documentData.homework.numberOfFiles+ " files available for download"} </p>
-                                                    </div>
-                                                </div>
-                                                <div className="downloadbutton">
-                                                    <img src="./assets/images/dashboards/studentDashboard/downloadimg.png" alt="downloadimg.png" />
-                                                </div>
-                                            </div>
-                                
-                            
-                            </div>
-                        </div>
-                        
-                    </Col>
-                    <Col lg={4} style={{paddingLeft:"0",paddingRight:"15px"}}>
-                    <div className="samebox">
-                        <div className="headerpart">
-                            <div className="flexwrap">
-                                <div className="flexwrap2">
-                                <h4>Notice </h4>
-                                {/* <div><span>18</span></div> */}
-                                </div>
-                                <p>View more</p>
-                            </div>
-                        </div>
-                        <div className="contentpart">
-                        {
-                            noticeData.map((item,key)=>{
-                                return(
-                                <div className="noticebarmini" key={key}>
-                                    <div className="publishdatepart">
-                                        <p>{item.publishDateDayMonth}</p>
-                                        <p>{item.publishDateYear}</p>
+                                    <h4>Class Routine</h4>
+                                    <div className="dropdownwrapper">
+                                        <Dropdown className='filterdropone' options={dayoptions} onChange={(e)=>dropdownvalue(e)} value={defaultOptiontype}  />
+                                        <BsChevronDown/>
                                     </div>
-                                    <div className="noticeboxtextbox">
-                                    <h5> {item.heading}</h5>                    
-                                    <p>{item.noticeheading}</p>
-                                    </div>                                    
                                 </div>
-                                )
-                            })
-                        }
+                            </div>
+                            <div className="routinetable">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            {
+                                                periodsubjectdatateacher.heading.map((item,key)=>{
+                                                    return(
+                                                        <th>{item.head}</th>
+                                                    )
 
+                                                })
+                                            }
+                                        </tr>
+                                    </thead>
+                                    {
+                                        drpday=="Saturday"?
+                                        periodsubjectdatateacher.saturday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.class}</td>
+                                                    <td>{item.section}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        :
+                                        drpday=="Sunday"?
+                                        periodsubjectdatateacher.sunday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.class}</td>
+                                                    <td>{item.section}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        
+                                        :
+                                        
+                                        drpday=="Monday"?
+                                        periodsubjectdatateacher.monday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.class}</td>
+                                                    <td>{item.section}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        
+                                        :
+                                        drpday=="Tuesday"?
+                                        periodsubjectdatateacher.tuesday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.class}</td>
+                                                    <td>{item.section}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        :
+                                        drpday=="Wednesday"?
+                                        periodsubjectdatateacher.wednesday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.class}</td>
+                                                    <td>{item.section}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        :
+                                        drpday=="Thursday"?
+                                        periodsubjectdatateacher.thursday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.class}</td>
+                                                    <td>{item.section}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        :
+                                        drpday=="Friday"?
+                                        periodsubjectdatateacher.friday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.class}</td>
+                                                    <td>{item.section}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        :
+                                        periodsubjectdatateacher.saturday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.class}</td>
+                                                    <td>{item.section}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        
+                                    }
+                                </table>
+                            </div>
+                            <div className="extraclassbox">
+                                <p>No Extra Class</p>
+                            </div>
                         </div>
-                        
-                    </div>
                     </Col>
                     <Col lg={4} style={{paddingLeft:"0"}}>
                     <div className="samebox">
                             <div className="headerpart">
                                 <div className="flexwrap">
-                                    <h4>Attendence</h4>
+                                    <h4>Attendance</h4>
                                     <p eventKey="second">View all</p>
                                 </div>
                             </div>
-                            <div className="chartidtabd">
-                            <Tab.Container id="chartidtabs" defaultActiveKey="first-chart">
-                                <Nav variant="pills" className="flex-row">
-                                    <Nav.Item>
-                                    <Nav.Link eventKey="first-chart">First Semester</Nav.Link>
-                                    </Nav.Item>
-                                    <Nav.Item>
-                                    <Nav.Link eventKey="second-chart">Second Semester</Nav.Link>
-                                    </Nav.Item>
-                                </Nav>
-                                <Tab.Content>
-                                    <Tab.Pane eventKey="first-chart">
-                                        <div className="presenttext">
-                                        <p>{attendenceApi.firstSemester.present}%</p>
-                                        <p>present</p>
-                                        </div>
-                                        <div className="latetext">
-                                        <p>{attendenceApi.firstSemester.late}%</p>
-                                        <p>late</p>
-                                        </div>
-                                        <div className="absenttext">
-                                        <p >{attendenceApi.firstSemester.absent}%</p>
-                                        <p>absent</p>
-                                        </div>
-                                        <div className="chartwrapperheight">
-                                            <Doughnut style={{margin:"0 auto",width:"250px",height:"250px"}} data={chdata}/>
+                            <div className="drpmonthyearwrapper">
+                                <div className="leftone">
+                                    <Dropdown2 func={drpfunctionmonth} fontsize="12" fontfamily="'Poppins', sans-serif"  options={optionmemonth}/>
+                                </div>
+                                <div className="rightone">
+                                    <Dropdown2 func={drpfunctionyear} fontsize="12" fontfamily="'Poppins', sans-serif"  options={optionmeyear}/>
+                                </div>
 
-                                        </div>
-                                    </Tab.Pane>
-                                    <Tab.Pane eventKey="second-chart">
-                                        <div className="presenttext">
-                                        <p>{attendenceApi.secondSemester.present}%</p>
-                                        <p>present</p>
-                                        </div>
-                                        <div className="latetext">
-                                        <p>{attendenceApi.secondSemester.late}%</p>
-                                        <p>late</p>
-                                        </div>
-                                        <div className="absenttext">
-                                        <p >{attendenceApi.secondSemester.absent}%</p>
-                                        <p>absent</p>
-                                        </div>
-                                        <div className="chartwrapperheight">
-
-                                        <Doughnut style={{margin:"0 auto",width:"50%!important",height:"50%!important"}} data={chdata2}/>
-                                        </div>
-                                        
-                                    </Tab.Pane>
-                                </Tab.Content>
-
-                            </Tab.Container>
                             </div>
+                            <div className="chartwrapperheight">
+                                {
+                                   
+                                    attendanceApiteacher.map((item,key)=>{
+                                        return(
+
+                                            item.month.map((item2,key2)=>{
+                                                if(item.yearnum==yeardrpdwnval && item2.monthname==monthdrpdwnval){
+                                                    
+                                                    return(
+                                                        <>
+                                                        <p>{item2.data.present}</p>
+                                                        <Doughnut style={{margin:"0 auto",width:"250px",height:"250px"}} data={chdata}/>
+                                                        
+                                                        </>
+                                                    )
+                                                }
+                                            })
+                                        )
+                                        
+                                    })
+                                    
+                                }
+                            </div>
+                                
                         </div>
+                    </Col>
+                    <Col lg={4} style={{paddingLeft:"0",paddingRight:"15px"}}>
+                    <div className="samebox semesterprogress">
+                            <div className="headerpart">
+                                <div className="flexwrap">
+                                    <h4>Semester Progress</h4>
+                                    <p>View all</p>
+                                </div>
+                            </div>
+                            <div className="progressboxmini">
+                                <div className="progressminileft">
+                                <CircularProgressbar
+                                    value={91}
+                                    text={`91%`}
+                                    strokeWidth={10}
+                                    styles={buildStyles({
+                                    textColor: "#ED1C24",
+                                    pathColor: "#ED1C24",
+                                    trailColor: "white"
+                                    })}
+                                />
+                                </div>
+                                <div className="progressminiright">
+                                    <p>Lesson progress</p>
+                                    <h4><span style={{color:"#000"}}>30</span> / 33</h4>
+                                </div>
+                            </div>
+                            <div className="progressboxmini">
+                                <div className="progressminileft">
+                                <img src="./assets/images/dashboards/teacherDashboard/progress/calendar.png" alt="calendar.png" />
+                                </div>
+                                <div className="progressminiright">
+                                    <p>Semester Exam in</p>
+                                    <h4><span style={{color:"#000"}}>7 Days</span></h4>
+                                </div>
+                            </div>
+                    </div>
                     </Col>
                     </Row>
                     <Row className="secondRow" style={{flex:"1 1 50%"}}> 
@@ -492,30 +551,19 @@ const StudentDashboardComp = () => {
                         <div className="samebox prevhistory">
                             <div className="headerpart">
                                 <div className="flexwrap">
-                                    <h4>Payment History</h4>
+                                    <h4>Salary Information</h4>
                                     <p>View all</p>
                                 </div>
                             </div>
 
                             <div className="smallheading">
-                                <h5>{paymentHistoryDue.dueformonths==1?`You have total ${paymentHistoryDue.dueformonths} month tuition fee due`:paymentHistoryDue.dueformonths>1?`You have total ${paymentHistoryDue.dueformonths} months tuition fee due`:"You have no tution fee due"}</h5>
+                                <h5><span style={{fontWeight:"500"}}>Current Status:</span> {salaryInformationteacher.currentstatus}</h5>
                             </div>
                             <div className="cardbarprevphistory">
-                                <div className="duepartcardbar">
-                                    <h3>Due Amount</h3>
-                                    <div className="rightsidflexpart">
-                                        <div className="pillright">
-                                            <h6>Not Paid</h6>
-                                        </div>
-                                        <div className="amount">
-                                            <p>৳ {paymentHistoryDue.dueAmount}</p>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div className="paymenthistoryoverview">
                                     <div className="paymenthistoryovflexwrap">
                                         {
-                                        prevPaymentHistory.map((item,key)=>{
+                                        salaryInformationteacher.salaryinfodetails.map((item,key)=>{
                                             return(
                                                 <div className="payhpartcardbar">
                                                     <div className="monthdatewrapper">
@@ -542,109 +590,37 @@ const StudentDashboardComp = () => {
                         </div>
                     </Col>
                     <Col lg={4} style={{paddingLeft:"0",paddingRight:"15px"}}>
-                        <div className="samebox sameboxroutine">
-                            <div className="headerpart">
-                                <div className="flexwrap">
-                                    <h4>Class Routine</h4>
-                                    <div className="dropdownwrapper">
-                                        <Dropdown className='filterdropone' options={dayoptions} onChange={(e)=>dropdownvalue(e)} value={defaultOptiontype}  />
-                                        <BsChevronDown/>
-                                    </div>
+                       <div className="samebox">
+                        <div className="headerpart" style={{marginBottom:"-23px"}}>
+                            <div className="flexwrap">
+                                <div className="flexwrap2">
+                                <h4>Notice </h4>
+                               
                                 </div>
-                            </div>
-                            <div className="routinetable">
-                                <table>
-                                    {
-                                        drpday=="Saturday"?
-                                        periodsubjectdata.saturday.map((item,key)=>{
-                                            return(
-                                                <tr>
-                                                    <td>{item.periodnumber} Period </td>
-                                                    <td>{item.subject}</td>
-                                                </tr>
-                                            )
-                                        })
-                                        :
-                                        drpday=="Sunday"?
-                                        periodsubjectdata.sunday.map((item,key)=>{
-                                            return(
-                                                <tr>
-                                                    <td>{item.periodnumber} Period </td>
-                                                    <td>{item.subject}</td>
-                                                </tr>
-                                            )
-                                        })
-                                        
-                                        :
-                                        
-                                        drpday=="Monday"?
-                                        periodsubjectdata.monday.map((item,key)=>{
-                                            return(
-                                                <tr>
-                                                    <td>{item.periodnumber} Period </td>
-                                                    <td>{item.subject}</td>
-                                                </tr>
-                                            )
-                                        })
-                                        
-                                        :
-                                        drpday=="Tuesday"?
-                                        periodsubjectdata.tuesday.map((item,key)=>{
-                                            return(
-                                                <tr>
-                                                    <td>{item.periodnumber} Period </td>
-                                                    <td>{item.subject}</td>
-                                                </tr>
-                                            )
-                                        })
-                                        :
-                                        drpday=="Wednesday"?
-                                        periodsubjectdata.wednesday.map((item,key)=>{
-                                            return(
-                                                <tr>
-                                                    <td>{item.periodnumber} Period </td>
-                                                    <td>{item.subject}</td>
-                                                </tr>
-                                            )
-                                        })
-                                        :
-                                        drpday=="Thursday"?
-                                        periodsubjectdata.thursday.map((item,key)=>{
-                                            return(
-                                                <tr>
-                                                    <td>{item.periodnumber} Period </td>
-                                                    <td>{item.subject}</td>
-                                                </tr>
-                                            )
-                                        })
-                                        :
-                                        drpday=="Friday"?
-                                        periodsubjectdata.friday.map((item,key)=>{
-                                            return(
-                                                <tr>
-                                                    <td>{item.periodnumber} Period </td>
-                                                    <td>{item.subject}</td>
-                                                </tr>
-                                            )
-                                        })
-                                        :
-                                        periodsubjectdata.saturday.map((item,key)=>{
-                                            return(
-                                                <tr>
-                                                    <td>{item.periodnumber} Period </td>
-                                                    <td>{item.subject}</td>
-                                                </tr>
-                                            )
-                                        })
-                                        
-                                    }
-                                
-                                </table>
-                            </div>
-                            <div className="extraclassbox">
-                                <p>No Extra Class</p>
+                                <p>View more</p>
                             </div>
                         </div>
+                        <div className="contentpart">
+                        {
+                            noticeData.map((item,key)=>{
+                                return(
+                                <div className="noticebarmini" key={key}>
+                                    <div className="publishdatepart teacherpublishpart">
+                                        <p>{item.publishDateDayMonth}</p>
+                                        <p>{item.publishDateYear}</p>
+                                    </div>
+                                    <div className="noticeboxtextbox">
+                                    <h5> {item.heading}</h5>                    
+                                    <p>{item.noticeheading}</p>
+                                    </div>                                    
+                                </div>
+                                )
+                            })
+                        }
+
+                        </div>
+                        
+                    </div>
                     </Col>
                     <Col lg={4} style={{paddingLeft:"0",paddingRight:"15px"}}>
                         <div className="samebox sameboxcalender">
@@ -666,188 +642,7 @@ const StudentDashboardComp = () => {
                 </div>
             </Tab.Pane>
             <Tab.Pane eventKey="second" className="tabPane">
-            <div className="tabpaneheightadjust tabpanedocument">
-                <div className="todaydocuments">
-                    <h4>Today Documents</h4>
-                    <Row>
-                        <Col lg={6} style={{paddingRight:"15px"}}>
-                            <div className="documenttabsignlebar">
-                                <img src="./assets/images/dashboards/studentDashboard/documentTab/1.png" alt="" />
-                                <div className="documenttabtexts">
-                                    <h6>Home Work</h6>
-                                    <p>8 files available to download</p>
-                                </div>
-                                <div className="downloadbuttondoctab">
-                                    <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col lg={6} style={{paddingLeft:"0"}}>
-                            <div className="documenttabsignlebar">
-                                    <img src="./assets/images/dashboards/studentDashboard/documentTab/2.png" alt="" />
-                                    <div className="documenttabtexts">
-                                        <h6>Class Work</h6>
-                                        <p>8 files available to download</p>
-                                    </div>
-                                    <div className="downloadbuttondoctab">
-                                        <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
-                                    </div>
-                                </div>
-                        </Col>
-                    </Row>
-                    <Row style={{marginTop:"15px"}}>
-                        <Col lg={6} style={{paddingRight:"15px"}}>
-                            <div className="documenttabsignlebar">
-                                <img src="./assets/images/dashboards/studentDashboard/documentTab/3.png" alt="" />
-                                <div className="documenttabtexts">
-                                    <h6>Exam Paper</h6>
-                                    <p>8 files available to download</p>
-                                </div>
-                                <div className="downloadbuttondoctab">
-                                    <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col lg={6} style={{paddingLeft:"0"}}>
-                            <div className="documenttabsignlebar">
-                                    <img src="./assets/images/dashboards/studentDashboard/documentTab/4.png" alt="" />
-                                    <div className="documenttabtexts">
-                                        <h6>Assessment</h6>
-                                        <p>8 files available to download</p>
-                                    </div>
-                                    <div className="downloadbuttondoctab">
-                                        <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
-                                    </div>
-                                </div>
-                        </Col>
-                    </Row>
-                    <Row style={{marginTop:"15px"}}>
-                        <Col lg={6} style={{paddingRight:"15px"}}>
-                            <div className="documenttabsignlebar">
-                                <img src="./assets/images/dashboards/studentDashboard/documentTab/5.png" alt="" />
-                                <div className="documenttabtexts">
-                                    <h6>Syllabus</h6>
-                                    <p>8 files available to download</p>
-                                </div>
-                                <div className="downloadbuttondoctab">
-                                    <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
-                                </div>
-                            </div>
-                        </Col>
-                    </Row>
-                </div>
-                <div className="preveousdocumnets">
-                    <h4>Previous Documents</h4>
-                    <div className="docselects">
-                        <div className="dropdownwrapper docseletssingle">
-                            <Dropdown className='filterdropone' options={Optiondoctypeprevdoc} onChange={(e)=>dropdownvaluedovtypeprevdoc(e)} value={defaultOptiondoctypeprevdoc} />
-                            <BsChevronDown/>
-                        </div>
-                        <input type="date" />
-                        <input type="date" />
-                    </div>
-                    <Row>
-                        <Col lg={6} style={{paddingRight:"15px"}}>
-                            <div className="documenttabsignlebar">
-                                <img src="./assets/images/dashboards/studentDashboard/documentTab/1.png" alt="" />
-                                <div className="documenttabtexts">
-                                    <h6>Home Work</h6>
-                                    <p>8 files available to download</p>
-                                </div>
-                                <div className="downloadbuttondoctab">
-                                    <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col lg={6} style={{paddingLeft:"0"}}>
-                            <div className="documenttabsignlebar">
-                                    <img src="./assets/images/dashboards/studentDashboard/documentTab/2.png" alt="" />
-                                    <div className="documenttabtexts">
-                                        <h6>Class Work</h6>
-                                        <p>8 files available to download</p>
-                                    </div>
-                                    <div className="downloadbuttondoctab">
-                                        <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
-                                    </div>
-                                </div>
-                        </Col>
-                    </Row>
-                    <Row style={{marginTop:"15px"}}>
-                        <Col lg={6} style={{paddingRight:"15px"}}>
-                            <div className="documenttabsignlebar">
-                                <img src="./assets/images/dashboards/studentDashboard/documentTab/3.png" alt="" />
-                                <div className="documenttabtexts">
-                                    <h6>Exam Paper</h6>
-                                    <p>8 files available to download</p>
-                                </div>
-                                <div className="downloadbuttondoctab">
-                                    <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col lg={6} style={{paddingLeft:"0"}}>
-                            <div className="documenttabsignlebar">
-                                    <img src="./assets/images/dashboards/studentDashboard/documentTab/4.png" alt="" />
-                                    <div className="documenttabtexts">
-                                        <h6>Assessment</h6>
-                                        <p>8 files available to download</p>
-                                    </div>
-                                    <div className="downloadbuttondoctab">
-                                        <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
-                                    </div>
-                                </div>
-                        </Col>
-                    </Row>
-                    <Row style={{marginTop:"15px"}}>
-                        <Col lg={6} style={{paddingRight:"15px"}}>
-                            <div className="documenttabsignlebar">
-                                <img src="./assets/images/dashboards/studentDashboard/documentTab/5.png" alt="" />
-                                <div className="documenttabtexts">
-                                    <h6>Syllabus</h6>
-                                    <p>8 files available to download</p>
-                                </div>
-                                <div className="downloadbuttondoctab">
-                                    <Button><img src="./assets/images/dashboards/studentDashboard/documentTab/downloadbtn.png" alt="" /> Download</Button>
-                                </div>
-                            </div>
-                        </Col>
-                    </Row>
-                </div>
-            </div>
-            </Tab.Pane>
-            <Tab.Pane eventKey="third" className="tabPane">
-                <div className="tabpaneheightadjust">
-            <Row>
-                <Col lg={12}>
-               
-                    <div className="noticetabbox">
-                        <div className="noticetabboxbarbig">
-                            <div className="dateofnoticebox">
-                                <h5>{noticeGreetingsdaydate.day}<br/>{noticeGreetingsdaydate.year}</h5>
-                            </div>
-                            <h3 dangerouslySetInnerHTML={{__html: replaceWithBr()}} ></h3>
-                        </div>
-                    {
-                        noticeData.map((item,key)=>{
-                            return(
-                                    <div className="noticetabboxbar">
-                                        <div className="dateofnoticebox">
-                                            <h5>{item.publishDateDayMonth}<br/>{item.publishDateYear}</h5>
-                                        </div>
-                                        <h3>{item.noticeheading} - <span>Published : {item.publishDate}</span></h3>
-                                    </div>
-
-                            )
-                        })
-                    }
-                    </div>
-                </Col>
-            
-            </Row>
-            </div>
-            </Tab.Pane>
-            <Tab.Pane eventKey="fourth" className="tabPane">
-                <div className="tabpaneheightadjust tabpaneroutinetab">
+            <div className="tabpaneheightadjust tabpaneroutinetab">
                 <div className="bottombuttondiv">
                             <Button><img style={{marginRight:"0px"}} src="./assets/images/dashboards/studentDashboard/routineTab/downloadcoloredbutton.png" alt="" /> Download Routine</Button>
                 </div>
@@ -868,7 +663,7 @@ const StudentDashboardComp = () => {
                                         <thead>
                                             <tr>
                                                 {
-                                                  routinetabData.classRoutine.heading.map((item,key)=>{
+                                                  routinetabDatateacher.classRoutine.heading.map((item,key)=>{
                                                     return(
                                                         <th key={key}>
                                                             {item.headline}
@@ -880,7 +675,7 @@ const StudentDashboardComp = () => {
                                         </thead>
                                         <tbody>
                                             {
-                                                routinetabData.classRoutine.tableData.map((item,key)=>{
+                                                routinetabDatateacher.classRoutine.tableData.map((item,key)=>{
                                                     return(
                                                         <tr>
                                                             <td>
@@ -897,6 +692,35 @@ const StudentDashboardComp = () => {
                                                                         )
                                                                     })
                                                                 }
+                                                                </table>
+                                                            </td>
+                                                            <td>
+                                                                <table style={{marginTop:"0"}}>
+                                                                {
+                                                                    item.class.map((itemclass,keyclass)=>{
+                                                                        return(
+                                                                            <tr key={keyclass}>
+                                                                                <td>{itemclass.classnam}</td>
+                                                                            </tr>
+                                                                        )
+                                                                    })
+                                                                }
+
+                                                                </table>
+                                                            </td>
+                                                    
+                                                            <td>
+                                                                <table style={{marginTop:"0"}}>
+                                                                {
+                                                                    item.section.map((itemcsection,keycsection)=>{
+                                                                        return(
+                                                                            <tr key={keycsection}>
+                                                                                <td>{itemcsection.sectionname}</td>
+                                                                            </tr>
+                                                                        )
+                                                                    })
+                                                                }
+
                                                                 </table>
                                                             </td>
                                                             <td>
@@ -943,6 +767,40 @@ const StudentDashboardComp = () => {
                         </Row>
                     </div>
                 </div>
+            </Tab.Pane>
+            <Tab.Pane eventKey="third" className="tabPane">
+                <div className="tabpaneheightadjust">
+            <Row>
+                <Col lg={12}>
+               
+                    <div className="noticetabbox">
+                        <div className="noticetabboxbarbig">
+                            <div className="dateofnoticebox">
+                                <h5>{noticeGreetingsdaydate.day}<br/>{noticeGreetingsdaydate.year}</h5>
+                            </div>
+                            <h3 dangerouslySetInnerHTML={{__html: replaceWithBr()}} ></h3>
+                        </div>
+                    {
+                        noticeData.map((item,key)=>{
+                            return(
+                                    <div className="noticetabboxbar">
+                                        <div className="dateofnoticebox">
+                                            <h5>{item.publishDateDayMonth}<br/>{item.publishDateYear}</h5>
+                                        </div>
+                                        <h3>{item.noticeheading} - <span>Published : {item.publishDate}</span></h3>
+                                    </div>
+
+                            )
+                        })
+                    }
+                    </div>
+                </Col>
+            
+            </Row>
+            </div>
+            </Tab.Pane>
+            <Tab.Pane eventKey="fourth" className="tabPane">
+               
             </Tab.Pane>
             <Tab.Pane eventKey="fifth" className="tabPane">
                 <div className="tabpaneheightadjust tabpanerightattandancetab">
@@ -2039,4 +1897,4 @@ const StudentDashboardComp = () => {
   )
 }
 
-export default StudentDashboardComp
+export default TeacherDashboardComp

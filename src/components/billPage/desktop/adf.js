@@ -3,47 +3,99 @@ import React from 'react'
 const adf = () => {
   return (
     <>
-    <Row>
-    <Col lg={6} style={{paddingRight:"15px"}}>
-                                            <div className="infopopulatebox">
-                                                <p>Full Name</p>
-                                                <h5>{profiletabApi.localguardianinfo.fullname}</h5>
-                                            </div>
-                                        </Col>
-                                        <Col lg={6} style={{paddingLeft:"0"}}>
-                                            <div className="infopopulatebox">
-                                                <p>Email</p>
-                                                <h5>{profiletabApi.localguardianinfo.email}</h5>
-                                            </div>
-
-                                        </Col>                                   
-                                    <Col lg={6} style={{paddingRight:"15px"}}>
-                                            <div className="infopopulatebox">
-                                                <p>National ID</p>
-                                                <h5>{profiletabApi.localguardianinfo.nationalid}</h5>
-                                            </div>
-                                        </Col>
-                                        <Col lg={6} style={{paddingLeft:"0"}}>
-                                            <div className="infopopulatebox">
-                                                <p>Passport</p>
-                                                <h5>{profiletabApi.localguardianinfo.passport}</h5>
-                                            </div>
-
-                                        </Col>
-                                    <Col lg={6} style={{paddingRight:"15px"}}>
-                                            <div className="infopopulatebox">
-                                                <p>Mobile Number</p>
-                                                <h5>{profiletabApi.localguardianinfo.mobilenumber}</h5>
-                                            </div>
-                                        </Col>
-                                        <Col lg={6} style={{paddingLeft:"0"}}>
-                                            <div className="infopopulatebox">
-                                                <p>Telephone</p>
-                                                <h5>{profiletabApi.localguardianinfo.telephonenumber}</h5>
-                                            </div>
-
-                                        </Col>
-    </Row>
+   {
+                                        drpday=="Saturday"?
+                                        periodsubjectdata.saturday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.class}</td>
+                                                    <td>{item.section}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        :
+                                        drpday=="Sunday"?
+                                        periodsubjectdata.sunday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.class}</td>
+                                                    <td>{item.section}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        
+                                        :
+                                        
+                                        drpday=="Monday"?
+                                        periodsubjectdata.monday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.class}</td>
+                                                    <td>{item.section}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        
+                                        :
+                                        drpday=="Tuesday"?
+                                        periodsubjectdata.tuesday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.class}</td>
+                                                    <td>{item.section}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        :
+                                        drpday=="Wednesday"?
+                                        periodsubjectdata.wednesday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.class}</td>
+                                                    <td>{item.section}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        :
+                                        drpday=="Thursday"?
+                                        periodsubjectdata.thursday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.class}</td>
+                                                    <td>{item.section}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        :
+                                        drpday=="Friday"?
+                                        periodsubjectdata.friday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.class}</td>
+                                                    <td>{item.section}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        :
+                                        periodsubjectdata.saturday.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td>{item.periodnumber} Period </td>
+                                                    <td>{item.class}</td>
+                                                    <td>{item.section}</td>
+                                                </tr>
+                                            )
+                                        })
+                                        
+                                    }
+                                
     </>
   )
 }

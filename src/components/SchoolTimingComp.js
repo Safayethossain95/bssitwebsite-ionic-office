@@ -18,7 +18,7 @@ const SchoolTimingComp = () => {
   return (
     <>
         <div className="myContainer">
-            <div className="studentagecompropdown">
+            <div className="studentagecompropdown" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                         <div className="dropdownwrapper">
                             <Dropdown className='filterdropone' options={options} onChange={(e)=>dropdownvalue(e)} value={defaultOption} />
                             <BsChevronDown/>
@@ -27,7 +27,7 @@ const SchoolTimingComp = () => {
 
                 {
             drpsectionselect=='All Sections'?
-            <Table className='juniortable'>
+            <Table className='juniortable' data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                         
             <tbody>
                 <tr>
@@ -140,7 +140,7 @@ const SchoolTimingComp = () => {
             </Table>
             :
             drpsectionselect=='Junior Section'?
-            <Table className='juniortable'>
+            <Table className='juniortable' data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                         
             <tbody>
                 <tr>
@@ -209,7 +209,7 @@ const SchoolTimingComp = () => {
             </Table>
             :
             drpsectionselect=='Middle Section'?
-            <Table className='juniortable'>
+            <Table className='juniortable' data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                         
             <tbody>
                 <tr>
@@ -249,7 +249,7 @@ const SchoolTimingComp = () => {
             </Table>
             :
             drpsectionselect=='Senior Section'?
-            <Table className='juniortable'>
+            <Table className='juniortable' data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                         
             <tbody>
                 <tr>
@@ -281,7 +281,7 @@ const SchoolTimingComp = () => {
             </tbody>
             </Table>
             :
-            <Table className='juniortable'>
+            <Table className='juniortable' data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                         
             <tbody>
                 <tr>
@@ -395,7 +395,7 @@ const SchoolTimingComp = () => {
 
         }
 
-            <div className="studentagesometext">
+            <div className="studentagesometext" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                 <h4>Attendance Information</h4>
                 <ul>
                     <li>

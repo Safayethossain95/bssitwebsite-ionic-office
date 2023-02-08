@@ -61,7 +61,7 @@ const ContactPageComp = () => {
                 contactcardsdata.map((item,key)=>{
                     return (
                         <Col lg={6} data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000" className="columnpadding" key={key} style={{marginBottom:"30px",padding:"0 15px"}}>
-                            <div className="contactdeskbox">
+                            <div className="contactdeskbox hoverscale">
                                 <div className="flexwrapper">
                                     <h4>{item.heading}</h4>
                                     {

@@ -46,15 +46,7 @@ const SearchpartCareer = () => {
         }
       ]
       
-    //   useEffect(()=>{
-    //     $('.careerboxtext p').text(function(_, txt) {
-            
-    //           txt = txt.substr(0, 200) + "...";
-              
-    //           $(this).html(txt)
-    //         //   $(this).parent().append("<span href='#'>Read More</span>");
-    //       });
-    //   },[])
+    
 
      
       
@@ -104,7 +96,7 @@ const SearchpartCareer = () => {
                                         let lowerit = item.heading.toLowerCase()
                                         if(lowerit.includes(searchworddesk)){
                                             return(
-                                                <div className="careerBox" key={key} data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
+                                                <div className="careerBox hoverscale" key={key} data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                                                 <div className="careerBoxInnerWrapper">
                                                 <div className='careerboxtext' >
                                                     <h4>{item.heading}</h4>
@@ -123,7 +115,7 @@ const SearchpartCareer = () => {
                                     if(drplocationdesk==item.location && drpepdesk==item.department){
                                         let trimmedString= item.paragraph.substr(0, 255)
                                         return(
-                                            <div className="careerBox" key={key}  data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
+                                            <div className="careerBox hoverscale" key={key}  data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                                             <div className="careerBoxInnerWrapper">
                                             <div className='careerboxtext' >
                                                 <h4>{item.heading}</h4>
@@ -145,7 +137,7 @@ const SearchpartCareer = () => {
                                 let trimmedString= item.paragraph.substr(0, 255)
                                 if(drplocationdesk==item.location){
                                     return(
-                                        <div className="careerBox" key={key}  data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
+                                        <div className="careerBox hoverscale" key={key}  data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                                         <div className="careerBoxInnerWrapper">
                                         <div className='careerboxtext' >
                                             <h4>{item.heading}</h4>
@@ -163,7 +155,7 @@ const SearchpartCareer = () => {
                                 let trimmedString= item.paragraph.substr(0, 255)
                                 if(drpepdesk==item.department){
                                     return(
-                                        <div className="careerBox" key={key}  data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
+                                        <div className="careerBox hoverscale" key={key}  data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                                         <div className="careerBoxInnerWrapper">
                                         <div className='careerboxtext' >
                                             <h4>{item.heading}</h4>
@@ -182,7 +174,7 @@ const SearchpartCareer = () => {
                                 let lowerit = item.heading.toLowerCase()
                                 if(lowerit.includes(searchworddesk)){
                                     return(
-                                        <div className="careerBox" key={key}  data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
+                                        <div className="careerBox hoverscale" key={key}  data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                                         <div className="careerBoxInnerWrapper">
                                         <div className='careerboxtext' >
                                             <h4>{item.heading}</h4>
@@ -202,7 +194,7 @@ const SearchpartCareer = () => {
                                 if(drplocationdesk=="" && drpepdesk==""){
 
                                     return(
-                                        <div className="careerBox" key={key}  data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
+                                        <div className="careerBox hoverscale" key={key}  data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                                         <div className="careerBoxInnerWrapper">
                                         <div className='careerboxtext' >
                                             <h4>{item.heading}</h4>

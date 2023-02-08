@@ -25,9 +25,15 @@ $noticepartparagraphfontweight:400;
 $noticebarpillFontColor:#7FE4A9;
 $noticebarpillFontColorsecond:#FFD57F;
 $noticebarpillFontColorthird:#B1CEFF;
-$chartabsentcolor:#F939A1;
-$chartpresentcolor:#40DFCD;
-$chartlatecolor:#FBD540;
+$noticebarpillteacherFontColor:#ED1C24;
+$noticebarpillteacherFontColorsecond:#ED1C24;
+$noticebarpillteacherFontColorthird:#ED1C24;
+// $chartabsentcolor:#F939A1;
+// $chartpresentcolor:#40DFCD;
+// $chartlatecolor:#FBD540;
+$chartabsentcolor:rgba(245, 141, 145, 1);
+$chartpresentcolor:rgba(127, 228, 169, 1);
+$chartlatecolor:rgba(177, 206, 255, 1);
 $chartlebeltextsize:14px;
 $headingofduepaymentfontsize:16px;
 $headingduepaymentcolor:#000;
@@ -42,4 +48,5 @@ $totallatepillcolor: rgba(255, 173, 0, 0.05);
 $totallatepilltextcolor: rgba(255, 173, 0, 1);
 $totalearlyleavecolor: rgba(100, 158, 255, 0.05);
 $totalearlyleavetextcolor: rgba(100, 158, 255, 1);
+
 

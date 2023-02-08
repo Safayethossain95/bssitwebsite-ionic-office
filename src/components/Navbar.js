@@ -45,7 +45,7 @@ const Mynavbar = () => {
         <Navbar id="mynavbar" className="mynavbar" expand="lg">
         <div className="myContainer">
             <div className="headerwrapper">
-                
+                <Navbar.Brand href="#" className="smallbrandv"><img src="./assets/images/logo/bsslogostudashboard.png" alt="bsslogostudashboard.png" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
@@ -79,15 +79,15 @@ const Mynavbar = () => {
                     }
                     >Contact</NavLink>
 
-                    <NavLink to="/login" style={({ isActive }) =>
+                    <NavLink to="/studashboard" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
                     >Student Panel</NavLink>
 
-                    <NavLink to="/studashboard" style={({ isActive }) =>
+                    <NavLink to="/teacherdashboard" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
-                    >Student Dashboard</NavLink>
+                    >Teacher Panel</NavLink>
                     
                 </Nav>
                 

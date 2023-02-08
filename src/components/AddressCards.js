@@ -7,7 +7,7 @@ const AddressCards = () => {
             <div className="myContainer">
                 <Row className="addresscardsrow">
                     <Col lg={6}>
-                        <div className="addresscard">
+                        <div className="addresscard hoverscale">
                             <div className="addresscardcontent">
                                 <h3>Corporate Office</h3>
                                 <p>13, Larmini Street Wari, Dhaka
@@ -17,7 +17,7 @@ const AddressCards = () => {
                         </div>
                     </Col>
                     <Col lg={6}>
-                        <div className="addresscard">
+                        <div className="addresscard hoverscale">
                             <div className="addresscardcontent addresscardcontent2">
                                 <h3>Route-1</h3>
                                 <p>BSS WARI : Faridabad - Gandaria - Sutrapur - Narinda</p>
@@ -25,7 +25,7 @@ const AddressCards = () => {
                         </div>
                     </Col>
                     <Col lg={6}>
-                        <div className="addresscard">
+                        <div className="addresscard hoverscale">
                             <div className="addresscardcontent addresscardcontent2 addresscardcontent3">
                                 <h3>Route-2</h3>
                                 <p>BSS WARI : Bagicha - Arambag - Basabo - Manda - Uttor Jatrabari - Gopibag</p>
@@ -33,7 +33,7 @@ const AddressCards = () => {
                         </div>
                     </Col>
                     <Col lg={6}>
-                        <div className="addresscard">
+                        <div className="addresscard hoverscale">
                             <div className="addresscardcontent addresscardcontent4">
                                 <h3>Route-3</h3>
                                 <p>BSS WARI : Rajendropur - Bariabazar - Dholaipar - Dayagonj</p>

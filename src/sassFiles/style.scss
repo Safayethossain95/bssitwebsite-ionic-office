@@ -394,10 +394,24 @@ textarea:focus-visible{
         }
      }
 }
+
 .mynavbar{
+    &.sticky{
+        
+        .smallbrandv{
+            display: block;
+        }
+    }
     // position: relative;
     // top:62;
     // left:0;
+    .smallbrandv{
+        display: none;
+        img{
+            width:40px;
+        }
+    }
+
     z-index: 999;
     .read-more{
         &>button{
@@ -473,6 +487,9 @@ textarea:focus-visible{
                     margin:0 25px;
                     padding:0; 
                     transition:0.4s;
+                    @include media(xlgDevice){
+                        @include myfont(14px,400,$main_font);
+                    }
                     
                     display: inline-block;
                     text-decoration: none;

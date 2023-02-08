@@ -24,7 +24,7 @@ const UpcomingPartNoticePage = () => {
                       return(
                         <div className="myContainermini">
                           <Col lg={12} md={12} key={key}>
-                        <div className="noticebox noticeboxleft upcoming" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000" onClick={()=>handleNoticeSinglePage(item.id)}>
+                        <div className="noticebox noticeboxleft upcoming hoverscale" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000" onClick={()=>handleNoticeSinglePage(item.id)}>
                         <span></span>
                         <div className="flexwrap">
                         <div className="noticeheading">

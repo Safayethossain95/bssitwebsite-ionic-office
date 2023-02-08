@@ -62,13 +62,13 @@ const FeeStructureComp = () => {
   return (
     <>
         <div className="myContainer totalAmountPopulate">
-            <Row className="totalamounttitle">
+            <Row className="totalamounttitle" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                 <Col lg={{ span: 6, offset: 6 }}>
                     <h5>Total Amount</h5>
                 </Col>
             </Row>
             <Row>
-                <Col lg={6}>
+                <Col lg={6} data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                 <div className="dropdownwrapper">
                     <Dropdown className='filterdropone' options={typeoptions} onChange={(e)=>dropdownvalue(e)} value={defaultOptiontype} placeholder="Select an option" />
                     <BsChevronDown/>
@@ -78,7 +78,7 @@ const FeeStructureComp = () => {
                     <BsChevronDown/>
                 </div>
                 </Col>
-                <Col lg={6}>
+                <Col lg={6} data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                     {
                         
                         drptype && classoptions?
@@ -591,7 +591,7 @@ const FeeStructureComp = () => {
         </div>
         <HeadlineOfOtherPage headline="Fee Information"/>
 
-        <div className="feeinfolist">
+        <div className="feeinfolist" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
             <ul>
                 {
                     feeinfodata.map((item,key)=>{
@@ -604,7 +604,7 @@ const FeeStructureComp = () => {
         </div>
         <HeadlineOfOtherPage headline="Note"/>
 
-        <div className="feenote">
+        <div className="feenote" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
             <ul>
                 {
                     feenotedata.map((item,key)=>{
@@ -618,7 +618,7 @@ const FeeStructureComp = () => {
 
         <HeadlineOfOtherPage headline="Online Inquiry"/>
 
-        <div className="myContainer onlineinquiry">
+        <div className="myContainer onlineinquiry" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                
             
            <Form onSubmit={handleSubmit}>

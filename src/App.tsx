@@ -55,6 +55,7 @@ import OlderNoticeSingleDetailPage from './pages/OlderNoticeSingleDetailPage';
 import CareerDetailsPage from './pages/CareerDetailsPage';
 import StudentDashboardPage from './pages/dashboard/StudentDashboardPage';
 import UsernameORPassCouldnotMatch from './components/subComponents/UsernameORPassCouldnotMatch';
+import TeacherDashboardPage from './pages/dashboard/TeacherDashboardPage';
 
 setupIonicReact();
 
@@ -105,6 +106,8 @@ const App: React.FC = () => {
         <Route  path="/billentry" element={<BillEntryPage/>}/>
         
         <Route  path="/studashboard" element={<StudentDashboardPage/>}/>
+        
+        <Route  path="/teacherdashboard" element={<TeacherDashboardPage/>}/>
 
         <Route  path="/studentaddmissionentry" element={<StudentAdmissionEntryBillPage/>}/>
         
