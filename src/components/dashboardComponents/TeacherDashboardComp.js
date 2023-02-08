@@ -24,7 +24,7 @@ import { MdRestaurantMenu } from 'react-icons/md'
 import PillSmall from '../subComponents/CustomSubComponents/PillSmall'
 import '../../sassFiles/sassPages/dashboards/dashvariables.scss'
 import '../../sassFiles/sassPages/dashboards/teacherDashboard.scss'
-import { attendanceApiteacher, periodsubjectdatateacher, salaryInformationteacher,routinetabDatateacher } from '../../utils/DashboardApi/TeacherDashboardApi'
+import { attendanceApiteacher, periodsubjectdatateacher, salaryInformationteacher,routinetabDatateacher, curriculumtabtabledata, resultTabtabledata, attendanceDatateacher, prevSalarytabledata, profiletabApiteacher } from '../../utils/DashboardApi/TeacherDashboardApi'
 
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -66,6 +66,14 @@ const TeacherDashboardComp = () => {
         },
         {
             opt:'Second Semester'
+        }
+    ]
+    const optionselectclass = [
+        {
+            opt:'Class 1'
+        },
+        {
+            opt:'Class 2'
         }
     ]
 
@@ -114,29 +122,29 @@ const TeacherDashboardComp = () => {
     const chart1color1 = "rgba(245, 141, 145, 1)";
     const chart1color2 = "rgba(127, 228, 169, 1)";
     const chart1color3 = "rgba(177, 206, 255, 1)";
-    const chdata = {
-        labels:["absent","present","late"],
-        datasets:[{
-            data:[40,50,10],
-            backgroundColor:[
-                chart1color1,
-                chart1color2,
-                chart1color3
+    // const chdata = {
+    //     labels:["absent","present","late"],
+    //     datasets:[{
+    //         data:[40,50,10],
+    //         backgroundColor:[
+    //             chart1color1,
+    //             chart1color2,
+    //             chart1color3
 
-            ],
-            borderWidth:0,
+    //         ],
+    //         borderWidth:0,
             
             
-        }],
-        options: {
-            plugins: {
-              legend: {
-                display: false
-              }
-            }
-          }
+    //     }],
+    //     options: {
+    //         plugins: {
+    //           legend: {
+    //             display: false
+    //           }
+    //         }
+    //       }
         
-    }
+    // }
     const chdata2 = {
         labels:["absent","present","late"],
         datasets:[{
@@ -212,7 +220,7 @@ const TeacherDashboardComp = () => {
    
       const [variableactivekey,setvariableactivekey] = useState("first")
       
-      const [dashheaderchange,setdashheaderchange] = useState("")
+      const [dashheaderchange,setdashheaderchange] = useState("Good Morning Farhana")
 
       const handleSelecttab = (tabvalue)=>{
         setvariableactivekey(tabvalue)
@@ -225,8 +233,7 @@ const TeacherDashboardComp = () => {
         var sixththing = document.getElementById("sixth");
         var sevenththing = document.getElementById("seventh");
         var eighththing = document.getElementById("eighth");
-        var ninththing = document.getElementById("ninth");
-        var tenththing = document.getElementById("tenth");
+
         firstthing.classList.remove("active");
         secondthing.classList.remove("active");
         thirdthing.classList.remove("active");
@@ -235,8 +242,7 @@ const TeacherDashboardComp = () => {
         sixththing.classList.remove("active");
         sevenththing.classList.remove("active");
         eighththing.classList.remove("active");
-        ninththing.classList.remove("active");
-        tenththing.classList.remove("active");
+      
         element.classList.add("active");
         if(tabvalue=="first"){
             setdashheaderchange(`Good Morning Farhana`)
@@ -323,12 +329,12 @@ const TeacherDashboardComp = () => {
                 </div>
                 <div className="profilesmallinfo">
                     <div className="profilepic">
-                        <img src="./assets/images/dashboards/studentDashboard/profilepic.png" alt="headerprofilepic" />
+                        <img src="./assets/images/dashboards/teacherDashboard/profile_pic.png" alt="profile_pic.png" />
                     </div>
                     <div className="roleandid">
                         <div className="roleidwrapper">
-                            <h5>Md Jisan Khan</h5>
-                            <p>ID 1705032108</p>
+                            <h5>Farhana Ahmed</h5>
+                            <p>ID 1309010495</p>
                         </div>
                     </div>
                 </div>
@@ -338,8 +344,8 @@ const TeacherDashboardComp = () => {
         </div>
         <Tab.Content >
             <Tab.Pane eventKey="first" className="tabPane">
-                <div className="tabpaneheightadjust">
-                    <Row style={{flex:"1 1 50%"}}>
+                <div className="tabpaneheightadjust dashboardTab">
+                    <Row className="firstRow">
                     <Col lg={4} style={{paddingRight:"15px"}}>
                         <div className="samebox sameboxroutine">
                             <div className="headerpart">
@@ -492,15 +498,59 @@ const TeacherDashboardComp = () => {
                                                     
                                                     return(
                                                         <>
-                                                        <p>{item2.data.present}</p>
-                                                        <Doughnut style={{margin:"0 auto",width:"250px",height:"250px"}} data={chdata}/>
+                                                        
+                                                        <Doughnut style={{margin:"0 auto",width:"250px",height:"250px"}} data={
+                                                            {
+                                                            labels:["absent","present","late"],
+                                                            datasets:[{
+                                                                data:[item2.data.absent,item2.data.present,item2.data.late],
+                                                                backgroundColor:[
+                                                                    chart1color1,
+                                                                    chart1color2,
+                                                                    chart1color3
+                                                    
+                                                                ],
+                                                                borderWidth:0,
+                                                                
+                                                                
+                                                            }],
+                                                            options: {
+                                                                plugins: {
+                                                                  legend: {
+                                                                    display: false
+                                                                  }
+                                                                }
+                                                              }}
+                                                        }/>
                                                         
                                                         </>
                                                     )
                                                 }
                                             })
                                             :
-                                            <Doughnut style={{margin:"0 auto",width:"250px",height:"250px"}} data={chdata}/>
+                                            <Doughnut style={{margin:"0 auto",width:"250px",height:"250px"}} data={
+                                                {
+                                                    labels:["absent","present","late"],
+                                                    datasets:[{
+                                                        data:[50,10,40],
+                                                        backgroundColor:[
+                                                            chart1color1,
+                                                            chart1color2,
+                                                            chart1color3
+                                            
+                                                        ],
+                                                        borderWidth:0,
+                                                        
+                                                        
+                                                    }],
+                                                    options: {
+                                                        plugins: {
+                                                          legend: {
+                                                            display: false
+                                                          }
+                                                        }
+                                                      }}
+                                            }/>
 
                                         )
                                         
@@ -550,7 +600,7 @@ const TeacherDashboardComp = () => {
                     </div>
                     </Col>
                     </Row>
-                    <Row className="secondRow" style={{flex:"1 1 50%"}}> 
+                    <Row className="secondRow"> 
                     <Col lg={4} style={{paddingRight:"15px"}}>
                         <div className="samebox prevhistory">
                             <div className="headerpart">
@@ -563,7 +613,7 @@ const TeacherDashboardComp = () => {
                             <div className="smallheading">
                                 <h5><span style={{fontWeight:"500"}}>Current Status:</span> {salaryInformationteacher.currentstatus}</h5>
                             </div>
-                            <div className="cardbarprevphistory">
+                            <div className="cardbarprevphistory cardbarprevphistoryteacher">
                                 <div className="paymenthistoryoverview">
                                     <div className="paymenthistoryovflexwrap">
                                         {
@@ -590,12 +640,11 @@ const TeacherDashboardComp = () => {
                                 </div>
                             </div>
 
-                            <Button className="paymentbutton">Pay Now</Button>
                         </div>
                     </Col>
                     <Col lg={4} style={{paddingLeft:"0",paddingRight:"15px"}}>
                        <div className="samebox">
-                        <div className="headerpart" style={{marginBottom:"-23px"}}>
+                        <div className="headerpart" style={{marginBottom:"0"}}>
                             <div className="flexwrap">
                                 <div className="flexwrap2">
                                 <h4>Notice </h4>
@@ -773,56 +822,134 @@ const TeacherDashboardComp = () => {
                 </div>
             </Tab.Pane>
             <Tab.Pane eventKey="third" className="tabPane">
-                <div className="tabpaneheightadjust">
-            <Row>
-                <Col lg={12}>
-               
-                    <div className="noticetabbox">
-                        <div className="noticetabboxbarbig">
-                            <div className="dateofnoticebox">
-                                <h5>{noticeGreetingsdaydate.day}<br/>{noticeGreetingsdaydate.year}</h5>
-                            </div>
-                            <h3 dangerouslySetInnerHTML={{__html: replaceWithBr()}} ></h3>
-                        </div>
-                    {
-                        noticeData.map((item,key)=>{
-                            return(
-                                    <div className="noticetabboxbar">
-                                        <div className="dateofnoticebox">
-                                            <h5>{item.publishDateDayMonth}<br/>{item.publishDateYear}</h5>
-                                        </div>
-                                        <h3>{item.noticeheading} - <span>Published : {item.publishDate}</span></h3>
-                                    </div>
-
-                            )
-                        })
-                    }
+                <div className="tabpaneheightadjust tabpanerightcurriculumtab">
+                    <div className="dropdownwrappercurriculum">
+                    <Dropdown2 fontsize="12" fontfamily="'Poppins', sans-serif" options={optionme}/>
+                    <Dropdown2 fontsize="12" fontfamily="'Poppins', sans-serif" options={optionme}/>
+                    <Dropdown2 fontsize="12" fontfamily="'Poppins', sans-serif" options={optionme}/>
                     </div>
-                </Col>
-            
-            </Row>
-            </div>
+                    <div className="curriculumtabtable">
+                    <table>
+                        <thead>
+                            <tr>
+                                {
+                                    curriculumtabtabledata.heading.map((item,key)=>{
+                                        return(
+                                            <th key={key}>{item.head}</th>
+                                        )
+                                    })
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                curriculumtabtabledata.tableData.map((item,key)=>{
+                                    return(
+                                        <tr>
+                                            <td key={key}>{item.sl}</td>
+                                        </tr>
+                                    )
+                                })
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+                
             </Tab.Pane>
             <Tab.Pane eventKey="fourth" className="tabPane">
-               
+               <div className="tabpaneheightadjust resultentrytab">
+                    <div className="resultfilterentrybox">
+                        <div className="resultfilterfirstrow">
+                        <div className="drpwithtextwrap">
+                            <p>Select Class</p>
+                            <Dropdown2 fontsize="12" fontfamily="'Poppins', sans-serif" options={optionselectclass}/>
+                        </div>
+                        <div className="drpwithtextwrap">
+                            <p>Exam</p>
+                            <Dropdown2 fontsize="12" fontfamily="'Poppins', sans-serif" options={optionme}/>
+                        </div>
+                        <div className="drpwithtextwrap">
+                            <p>Section</p>
+                            <Dropdown2 fontsize="12" fontfamily="'Poppins', sans-serif" options={optionme}/>
+                        </div>
+                        <div className="drpwithtextwrap">
+                            <p>Shift</p>
+                            <Dropdown2 fontsize="12" fontfamily="'Poppins', sans-serif" options={optionme}/>
+                        </div>
+                      
+                        </div>
+                        <div className="resultfiltersecondrow" style={{marginTop:"16px"}}>
+                        <div className="drpwithtextwrap">
+                            <p>Subject Select</p>
+                            <Dropdown2 fontsize="12" fontfamily="'Poppins', sans-serif" options={optionme}/>
+                        </div>
+                        <div className="drpwithtextwrap">
+                            <p>Sunject Subgroup</p>
+                            <Dropdown2 fontsize="12" fontfamily="'Poppins', sans-serif" options={optionme}/>
+                        </div>
+                        </div>
+                    </div>
+                    <div className="resulttabentrybox">
+                    <div className="resulttabtable">
+                       
+                        <div className="bottombuttondiv">
+                            {/* <Button>Total Amount: {billInfoData.previouspayment.tabledata.map((item,key)=>{
+                                var tempprevsum = tempprevsum + item.receivedamount
+                                setprevsum(tempprevsum)
+                                return(
+                                    <>
+                                    
+                                    </>
+                                )
+                            })} {prevsum} BDT</Button> */}
+                            <Button>Print</Button>
+                            <Button>Save</Button>
+                        </div>
+                        <div className="resulttabtabletable">
+                        <table>
+                                <thead>
+                                    <tr>
+                                        {
+                                            
+                                            resultTabtabledata.header.map((item,key)=>{
+                                                return(
+                                                    <th key={key}>{item.headerline}</th>
+                                                )
+                                            })
+                                        }
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                      {
+                                        resultTabtabledata.tabledata.map((item,key)=>{
+                                            return(
+                                                <tr key={key}>
+                                                    <td>{item.sl}</td>
+                                                    <td>{item.studentid}</td>
+                                                    
+                                                    <td>{item.studentname}</td>
+                                                    <td>{item.exam}</td>
+                                                    
+                                                </tr>
+                                            )
+                                        })
+                                      }
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    </div>
+               </div>
             </Tab.Pane>
             <Tab.Pane eventKey="fifth" className="tabPane">
                 <div className="tabpaneheightadjust tabpanerightattandancetab">
                     <div className="atttabbox">
-                    <Row className='firstrow'>
-                            <Col >
-                            <div className="dropdownwrapper" id="routinedrp">
-                                <Dropdown open={true} className='filterdropone'  options={Optionroutinetype} onChange={(e)=>dropdownvalueroutinetype(e)} value={defaultOptionroutinetype} placeholder="Select an option" />
-                                <BsChevronDown/>
-                            </div>
-                            </Col>
-                            <Col className="d-flex align-items-end">
-                                {/* <div className="dropdownwrapper">
-                                    <Dropdown className='filterdropone' options={optionsemester} onChange={(e)=>dropdownvaluesection(e)} value={defaultOptionsemester} placeholder="Select an option" />
-                                    <BsChevronDown/>
-                                </div>                             */}
-                               <Dropdown2 fontsize="12" fontfamily="'Poppins', sans-serif" options={optionme}/>
-                            </Col>
+                    <Row>
+                        <Col lg={8} className="m-auto">
+                        <Row className='firstrow'>
+                            
                             <Col  className="d-flex align-items-end">
                             
                                 <input type="date" placeholder='start date' onChange={(e)=>handleStartDate(e)} />
@@ -836,6 +963,8 @@ const TeacherDashboardComp = () => {
                                 <Button className='reqcorrectionbutton' onClick={handleReqCorrection}>Request for correction</Button>
                             </Col>
                         </Row>
+                        </Col>
+                    </Row>
                         <Row>
                             <Col lg={12}>
                                 <div className="buttonview">
@@ -863,7 +992,8 @@ const TeacherDashboardComp = () => {
                                     <thead>
                                         <tr>
                                             {
-                                                attendanceData.header.map((item,key)=>{
+                                                
+                                                attendanceDatateacher.header.map((item,key)=>{
                                                     return (
                                                         <th>
                                                             {item.headeritem}
@@ -882,7 +1012,7 @@ const TeacherDashboardComp = () => {
                                     </thead>
                                     <tbody>
                                         {
-                                            attendanceData.innerTableData.map((item,key)=>{
+                                            attendanceDatateacher.innerTableData.map((item,key)=>{
                                                 return (
                                                     <tr>
                                                         <td>
@@ -931,47 +1061,10 @@ const TeacherDashboardComp = () => {
             </Tab.Pane>
             <Tab.Pane eventKey="sixth" className="tabPane">
                 <div className="tabpaneheightadjust tabpanebillinfo">
-                    <div className="duepaymentpart">
-                        <div className="headingofduepayment">
-                            <h3>Due Payment <span>&#40;You have total 5 months tuition fee due&#41;</span></h3>
-                        </div>
-                        <div className="bottombuttondiv">
-                            <Button>Pay Now</Button>
-                        </div>
-                        <div className="duepaymenttable">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        {
-                                            billInfoData.duepayment.header.map((item,key)=>{
-                                                return(
-                                                    <th key={key}>{item.headerline}</th>
-                                                )
-                                            })
-                                        }
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                      {
-                                        billInfoData.duepayment.tabledata.map((item,key)=>{
-                                            return(
-                                                <tr key={key}>
-                                                    <td>{item.sl}</td>
-                                                    <td>{item.month}</td>
-                                                    <td>{item.type}</td>
-                                                    <td>{item.lastdate}</td>
-                                                    <td>{item.dueamount}</td>
-                                                </tr>
-                                            )
-                                        })
-                                      }
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div className="paymenthistory">
+                    
+                    <div className="salaryinfotablaebox">
                         <div className="headingofpaymenthistory">
-                            <h3>Previous Payment History</h3>
+                            <h3>Previous Salary History</h3>
                         </div>
                         <div className="bottombuttondiv">
                             {/* <Button>Total Amount: {billInfoData.previouspayment.tabledata.map((item,key)=>{
@@ -983,14 +1076,15 @@ const TeacherDashboardComp = () => {
                                     </>
                                 )
                             })} {prevsum} BDT</Button> */}
-                            <Button>Total</Button>
+                            <Button>Total Amount: 73604.00 BDT</Button>
                         </div>
                         <div className="paymenthistorytable">
                         <table>
                                 <thead>
                                     <tr>
                                         {
-                                            billInfoData.previouspayment.header.map((item,key)=>{
+                                            
+                                            prevSalarytabledata.header.map((item,key)=>{
                                                 return(
                                                     <th key={key}>{item.headerline}</th>
                                                 )
@@ -1000,14 +1094,14 @@ const TeacherDashboardComp = () => {
                                 </thead>
                                 <tbody>
                                       {
-                                        billInfoData.previouspayment.tabledata.map((item,key)=>{
+                                        prevSalarytabledata.tabledata.map((item,key)=>{
                                             return(
                                                 <tr key={key}>
                                                     <td>{item.sl}</td>
-                                                    <td>{item.billdate}</td>
-                                                    <td>{item.periodname}</td>
+                                                    <td>{item.date}</td>
+                                                    <td>{item.month}</td>
                                                     <td>{item.type}</td>
-                                                    <td>{item.payableamount}</td>
+                                                    <td>{item.salary}</td>
                                                     <td>{item.receivedamount}</td>
                                                 </tr>
                                             )
@@ -1021,211 +1115,7 @@ const TeacherDashboardComp = () => {
                 </div>
             </Tab.Pane>
             <Tab.Pane eventKey="seventh" className="tabPane">
-                <div className="tabpaneheightadjust resulttab">
-                    <div className="resulttabbox">
-                        <Row>
-                            <Col lg={5} style={{margin:"0 auto"}}>
-                                <Row>
-                                <Col lg={6}>
-                                    <div className="basicinfopopulate">
-                                        <p>
-                                            Select Semeseter
-                                        </p>
-                                        <div className="dropdownwrapper" id="routinedrp">
-                                            <Dropdown open={true} className='filterdropone'  options={optionsemsterresulttab} onChange={(e)=>drpdwnsemesterselecthandler(e)} value={defaultOptionsemestertype} placeholder="Select an option" />
-                                            <BsChevronDown/>
-                                        </div>
-                                    </div>
-                                
-                                </Col>
-                                <Col lg={6}>
-                                    <div className="basicinfopopulate">
-                                        <p>
-                                            Select Type
-                                        </p>
-                                        <div className="dropdownwrapper" id="routinedrp">
-                                            <Dropdown open={true} className='filterdropone'  options={optiontyperesulttab} onChange={(e)=>drpdwntyperesulttabhandler(e)} value={defaultOptionstyperesulttab} placeholder="Select an option" />
-                                            <BsChevronDown/>
-                                        </div>
-                                    </div>
-                                
-                                </Col>
-                                </Row>
-                            </Col>
-                            
-                        </Row>
-                        {
-                            typeresulttab=="Assessment"?
-                            <div className="resulttable">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            {
-                                                resulttabdata.firstSemester.dataTable.heading.map((item,key)=>{
-                                                    return(
-                                                        <th key={key}>{item.headline}</th>
-                                                    )
-                                                })
-                                            }
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {
-                                            resulttabdata.firstSemester.dataTable.tableData.map((item,key)=>{
-                                                return(
-                                                    <tr key={key}>
-                                                        <td>{item.subject}</td>
-                                                        <td>{item.subgroup}</td>
-                                                        <td>{item.totaltest}</td>
-                                                        <td>{item.bestcount}</td>
-                                                        <td style={{width:"60%"}}>
-                                                            {/* <table style={{marginTop:"0"}}> */}
-                                                                <tr>
-                                                                {
-                                                                    item.assessment.map((item2,key2)=>{
-                                                                        return(
-                                                                            <td style={{width:"34px"}} key={key2}>{item2.value==0?"-":item2.value}</td>
-                                                                        )
-                                                                    })
-                                                                }
-                                                                </tr>
-                                                            {/* </table> */}
-                                                        </td>
-                                                        <td className='customsumtd'><p>10+20+30</p></td>
-                                                        <td><p>46.00</p></td>
-                                                        
-                                                    </tr>
-                                                )
-                                            })
-                                        }
-                                    </tbody>
-                                </table>
-                            </div>
-                            :
-                            typeresulttab=="Result"?
-                            <div className="resulttable resultresulttable">
-                            <table >
-                                <thead>
-                                    <tr>
-                                        {
-                                            resulttabdata.firstSemester.resultTable.heading.map((item,key)=>{
-                                                return(
-                                                    <th className="text-center" key={key}>{item.head}</th>
-                                                )
-                                            })
-                                        }
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {
-                                         resulttabdata.firstSemester.resultTable.tableData.map((item,key)=>{
-                                            return(
-                                                <tr key={key}>
-                                                    <td>{item.subject}</td>    
-                                                    <td>{item.assessment}</td>    
-                                                    <td>{item.firstsemesterexdam}</td>    
-                                                    <td>{item.totalmarkobtained}</td>    
-                                                    <td>{item.percentage}</td>    
-                                                    <td>{item.grade}</td>    
-                                                </tr>
-                                            )
-                                         })
-                                    }
-                                    <tr style={{borderBottom:"0"}}>
-                                        <td colSpan={2}>Grand Total: 900.00</td>
-                                        <td colSpan={2}>Mark Obtained: 805.50</td>
-                                        <td>89.50%</td>
-                                        <td>A</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <div className="stats">
-                                <Row>
-                                    <Col lg={6} style={{paddingRight:"15px"}}>
-                                        <div className="statsboxresulttab">
-                                            <h5>Rank</h5>
-                                            <div className="centerwrapper">                                          
-                                            <p>Total Percentage Obtained = 89.50</p>
-                                            <p>Position in section = 14</p>
-                                            <p>Position in class = 30</p>                                           
-                                            </div>
-                                        </div>
-                                    </Col>
-                                    <Col lg={6} style={{paddingLeft:"0"}}>
-                                        <div className="statsboxresulttab">
-                                        <h5>Rank</h5>
-                                            <div className="centerwrapper centerwrapperright">                                          
-                                            <p>Highest Total Percentage Obtained in Class= 99.50</p>
-                                            <p>Highest Total Percentage Obtained in Section = 99.53</p>
-                                            <p>2nd Highest Total Percentage Obtained in Class = 98.72</p>                                           
-                                            <p>3rd Highest Total Percentage Obtained in Class= 98.71</p>                                           
-                                            </div>
-                                        </div>
-                                    </Col>
-                                </Row>
-                                <div className="downloadbuttonforresult">
-                                    <Button>
-                                        Download Now
-                                    </Button>
-                                </div>
-                            </div>
-                            </div>
-                            :
-                            <div className="resulttable">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            {
-                                                resulttabdata.firstSemester.dataTable.heading.map((item,key)=>{
-                                                    return(
-                                                        <th key={key}>{item.headline}</th>
-                                                    )
-                                                })
-                                            }
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {
-                                            resulttabdata.firstSemester.dataTable.tableData.map((item,key)=>{
-                                                return(
-                                                    <tr key={key}>
-                                                        <td>{item.subject}</td>
-                                                        <td>{item.subgroup}</td>
-                                                        <td>{item.totaltest}</td>
-                                                        <td>{item.bestcount}</td>
-                                                        <td style={{width:"60%"}}>
-                                                            <table style={{marginTop:"0"}}>
-                                                                <tr>
-                                                                {
-                                                                    item.assessment.map((item2,key2)=>{
-                                                                        return(
-                                                                            <td style={{width:"34px"}} key={key2}>{item2.value==0?"-":item2.value}</td>
-                                                                        )
-                                                                    })
-                                                                }
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                        <td><p>10+20+30</p></td>
-                                                        <td><p>46.00</p></td>
-                                                        
-                                                    </tr>
-                                                )
-                                            })
-                                        }
-                                    </tbody>
-                                </table>
-                            </div>
-                        }
-                        
-                    </div>
-                </div>          
-            </Tab.Pane>
-            <Tab.Pane eventKey="eighth" className="tabPane">
-                <div className="tabpaneheightadjust leaveformtab">
+            <div className="tabpaneheightadjust leaveformtab">
                     <div className="leaveformpart">
                         <div className="bottombuttondiv">
                             <Button>Submit</Button>
@@ -1234,19 +1124,19 @@ const TeacherDashboardComp = () => {
                         <Row>
                             <Col lg={4}>                            
                                 <p>Name</p>
-                                <input type="text" name="name" placeholder='MD Jisan Kahn'/>
+                                <input type="text" name="name" placeholder='-'/>
                             </Col>
                             <Col>
                                 <p>ID</p>
-                                <input type="text" name="name" placeholder='1705032108'/>
+                                <input type="text" name="name" placeholder='-'/>
                             </Col>
                             <Col>
                                 <p>Class</p>
-                                <input type="text" name="name" placeholder='Class 2'/>
+                                <input type="text" name="name" placeholder='-'/>
                             </Col>
                             <Col>
                                 <p>Mobile Number</p>
-                                <input type="text" name="name" placeholder='01922330077'/>
+                                <input type="text" name="name" placeholder='-'/>
                             </Col>
                         </Row>
                         <Row>
@@ -1254,7 +1144,7 @@ const TeacherDashboardComp = () => {
                                 <Row>
                                     <Col lg={12}>
                                         <p>Type of leave request</p>
-                                        <input type="text" name="name" placeholder='01922330077'/>
+                                        <input type="text" name="name" placeholder=''/>
                                     </Col>
                                 </Row>
                                 <Row>
@@ -1339,28 +1229,38 @@ const TeacherDashboardComp = () => {
 
                         </div>
                     </div>
-                </div>
+                </div>        
             </Tab.Pane>
-            <Tab.Pane eventKey="ninth" className="tabPane">
-                <div className="tabpaneheightadjust profiletab">
+            <Tab.Pane eventKey="eighth" className="tabPane">
+            <div className="tabpaneheightadjust profiletab">
                     <div className="flexwrapperprofile">
                         <div className="profileleftcolumn">
                             <div className="proleftcoltop">
                                 <div className="profileimgbig text-center">
-                                <img src="./assets/images/dashboards/studentDashboard/profilePicBig.png" alt="profilePicBig.png" />
+                                <img src="./assets/images/dashboards/teacherDashboard/profile_pic_big.png" alt="profile_pic_big.png" />
 
-                                <h4>Md Jisan Khan</h4>
-                                <p>ID 1705032108</p>
+                                <h4>Farhana Ahmed</h4>
+                                <p>ID 1309010495</p>
                                 </div>
 
                                 <div className="profiledetailpoints">
                                     <div className="minidivswrapper d-flex">
                                         <div className="minidivleft" style={{width:"95px"}}>
-                                            <p> CLASS</p>
+                                            <p> DEPARTMENT</p>
                                         </div>
                                         <span>:</span>
                                         <div className="minidivright">
-                                            <p> Class 2</p>
+                                            <p> ACADEMIC</p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div className="minidivswrapper d-flex">
+                                        <div className="minidivleft" style={{width:"95px"}}>
+                                            <p> DESIGNATION</p>
+                                        </div>
+                                        <span>:</span>
+                                        <div className="minidivright">
+                                            <p> ACADEMIC</p>
                                         </div>
                                         
                                     </div>
@@ -1370,37 +1270,27 @@ const TeacherDashboardComp = () => {
                                         </div>
                                         <span>:</span>
                                         <div className="minidivright">
-                                            <p> Diamond 1</p>
+                                            <p> JUNIOR</p>
                                         </div>
                                         
                                     </div>
                                     <div className="minidivswrapper d-flex">
                                         <div className="minidivleft" style={{width:"95px"}}>
-                                            <p> CAMPUS</p>
+                                            <p> OFFICE IN TIME</p>
                                         </div>
                                         <span>:</span>
                                         <div className="minidivright">
-                                            <p> Campus 4</p>
+                                            <p> 09:10</p>
                                         </div>
                                         
                                     </div>
                                     <div className="minidivswrapper d-flex">
                                         <div className="minidivleft" style={{width:"95px"}}>
-                                            <p> HEIGHT</p>
+                                            <p> OFFICE OUT TIME</p>
                                         </div>
                                         <span>:</span>
                                         <div className="minidivright">
-                                            <p> 4.5"</p>
-                                        </div>
-                                        
-                                    </div>
-                                    <div className="minidivswrapper d-flex">
-                                        <div className="minidivleft" style={{width:"95px"}}>
-                                            <p> WEIGHT</p>
-                                        </div>
-                                        <span>:</span>
-                                        <div className="minidivright">
-                                            <p> 50.4KG</p>
+                                            <p> 14:40</p>
                                         </div>
                                         
                                     </div>
@@ -1413,7 +1303,7 @@ const TeacherDashboardComp = () => {
                                         <div className="leftforicon">
                                             <div className="flexwrap">
                                             <img src="./assets/images/dashboards/studentDashboard/profileTab/lowericon1.png" alt="lowericon1.png" />
-                                            <h5>Class Teacher</h5>
+                                            <h5>Authority</h5>
                                             </div>
                                         </div>
                                         <div className="rightforicon">
@@ -1439,41 +1329,43 @@ const TeacherDashboardComp = () => {
                                         <Col lg={6} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Full Name</p>
-                                                <h5>{profiletabApi.personaldetails.fullname}</h5>
+                                                <h5>{
+                                               
+                                                profiletabApiteacher.personaldetails.fullname}</h5>
                                             </div>
                                         </Col>
                                         <Col lg={6} style={{paddingLeft:"0"}}>
                                             <div className="infopopulatebox">
                                                 <p>Email</p>
-                                                <h5>{profiletabApi.personaldetails.email}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.email}</h5>
                                             </div>
 
                                         </Col>
                                         <Col lg={6} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Date of Birth</p>
-                                                <h5>{profiletabApi.personaldetails.dateofbirth}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.dateofbirth}</h5>
                                             </div>
 
                                         </Col>
                                         <Col lg={6} style={{paddingLeft:"0"}}>
                                             <div className="infopopulatebox">
                                                 <p>Residential Phone</p>
-                                                <h5>{profiletabApi.personaldetails.residentialphone}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.residentialphone}</h5>
                                             </div>
 
                                         </Col>
                                         <Col lg={4} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Place of Birth</p>
-                                                <h5>{profiletabApi.personaldetails.placeofbirth}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.placeofbirth}</h5>
                                             </div>
 
                                         </Col>
                                         <Col lg={4} style={{padding:"0px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Country</p>
-                                                <h5>{profiletabApi.personaldetails.country}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.country}</h5>
                                             </div>
 
                                         </Col>
@@ -1481,21 +1373,21 @@ const TeacherDashboardComp = () => {
                                         <Col lg={4} style={{paddingLeft:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Nationality</p>
-                                                <h5>{profiletabApi.personaldetails.nationality}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.nationality}</h5>
                                             </div>
 
                                         </Col>
                                         <Col lg={4} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Gender</p>
-                                                <h5>{profiletabApi.personaldetails.gender}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.gender}</h5>
                                             </div>
 
                                         </Col>
                                         <Col lg={4} style={{padding:"0px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Religion</p>
-                                                <h5>{profiletabApi.personaldetails.religion}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.religion}</h5>
                                             </div>
 
                                         </Col>
@@ -1503,33 +1395,33 @@ const TeacherDashboardComp = () => {
                                         <Col lg={4} style={{paddingLeft:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Blood Group</p>
-                                                <h5>{profiletabApi.personaldetails.bloodgroup}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.bloodgroup}</h5>
                                             </div>
 
                                         </Col>
                                         <Col lg={6} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Birth Certifiacte</p>
-                                                <h5>{profiletabApi.personaldetails.birthcertificate}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.birthcertificate}</h5>
                                             </div>
                                         </Col>
                                         <Col lg={6} style={{paddingLeft:"0"}}>
                                             <div className="infopopulatebox">
                                                 <p>Passport</p>
-                                                <h5>{profiletabApi.personaldetails.passport}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.passport}</h5>
                                             </div>
 
                                         </Col>
                                         <Col lg={6} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Medeical History</p>
-                                                <h5>{profiletabApi.personaldetails.medicalhistory}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.medicalhistory}</h5>
                                             </div>
                                         </Col>
                                         <Col lg={6} style={{paddingLeft:"0"}}>
                                             <div className="infopopulatebox">
                                                 <p>Emergency Medical Action</p>
-                                                <h5>{profiletabApi.personaldetails.emergencymedicalaction}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.emergencymedicalaction}</h5>
                                             </div>
 
                                         </Col>
@@ -1543,21 +1435,21 @@ const TeacherDashboardComp = () => {
                                     <Col lg={3} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Holding</p>
-                                                <h5>{profiletabApi.personaldetails.holding}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.holding}</h5>
                                             </div>
 
                                         </Col>
                                         <Col lg={3} style={{padding:"0px",paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Street</p>
-                                                <h5>{profiletabApi.personaldetails.street}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.street}</h5>
                                             </div>
 
                                         </Col>
                                         <Col lg={3} style={{padding:"0px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Area</p>
-                                                <h5>{profiletabApi.personaldetails.area}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.area}</h5>
                                             </div>
 
                                         </Col>
@@ -1565,28 +1457,28 @@ const TeacherDashboardComp = () => {
                                         <Col lg={3} style={{paddingLeft:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Post Code</p>
-                                                <h5>{profiletabApi.personaldetails.postcode}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.postcode}</h5>
                                             </div>
 
                                         </Col>
                                     <Col lg={3} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Police Station</p>
-                                                <h5>{profiletabApi.personaldetails.policestation}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.policestation}</h5>
                                             </div>
 
                                         </Col>
                                         <Col lg={3} style={{padding:"0px",paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>City</p>
-                                                <h5>{profiletabApi.personaldetails.city}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.city}</h5>
                                             </div>
 
                                         </Col>
                                         <Col lg={3} style={{padding:"0px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Division</p>
-                                                <h5>{profiletabApi.personaldetails.division}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.division}</h5>
                                             </div>
 
                                         </Col>
@@ -1594,7 +1486,7 @@ const TeacherDashboardComp = () => {
                                         <Col lg={3} style={{paddingLeft:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Country</p>
-                                                <h5>{profiletabApi.personaldetails.country}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.country}</h5>
                                             </div>
 
                                         </Col>
@@ -1608,13 +1500,13 @@ const TeacherDashboardComp = () => {
                                     <Col lg={6} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Name</p>
-                                                <h5>{profiletabApi.personaldetails.siblingname}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.siblingname}</h5>
                                             </div>
                                         </Col>
                                         <Col lg={6} style={{paddingLeft:"0"}}>
                                             <div className="infopopulatebox">
                                                 <p>ID</p>
-                                                <h5>{profiletabApi.personaldetails.siblingID}</h5>
+                                                <h5>{profiletabApiteacher.personaldetails.siblingID}</h5>
                                             </div>
 
                                         </Col>
@@ -1625,59 +1517,59 @@ const TeacherDashboardComp = () => {
                                     <Col lg={6} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Full Name</p>
-                                                <h5>{profiletabApi.fathersinfo.fullname}</h5>
+                                                <h5>{profiletabApiteacher.fathersinfo.fullname}</h5>
                                             </div>
                                         </Col>
                                         <Col lg={6} style={{paddingLeft:"0"}}>
                                             <div className="infopopulatebox">
                                                 <p>Email</p>
-                                                <h5>{profiletabApi.fathersinfo.email}</h5>
+                                                <h5>{profiletabApiteacher.fathersinfo.email}</h5>
                                             </div>
 
                                         </Col>                                   
                                     <Col lg={6} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>National ID</p>
-                                                <h5>{profiletabApi.fathersinfo.nationalid}</h5>
+                                                <h5>{profiletabApiteacher.fathersinfo.nationalid}</h5>
                                             </div>
                                         </Col>
                                         <Col lg={6} style={{paddingLeft:"0"}}>
                                             <div className="infopopulatebox">
                                                 <p>Passport</p>
-                                                <h5>{profiletabApi.fathersinfo.passport}</h5>
+                                                <h5>{profiletabApiteacher.fathersinfo.passport}</h5>
                                             </div>
 
                                         </Col>
                                     <Col lg={6} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Mobile Number</p>
-                                                <h5>{profiletabApi.fathersinfo.mobilenumber}</h5>
+                                                <h5>{profiletabApiteacher.fathersinfo.mobilenumber}</h5>
                                             </div>
                                         </Col>
                                         <Col lg={6} style={{paddingLeft:"0"}}>
                                             <div className="infopopulatebox">
                                                 <p>Telephone</p>
-                                                <h5>{profiletabApi.fathersinfo.telephonenumber}</h5>
+                                                <h5>{profiletabApiteacher.fathersinfo.telephonenumber}</h5>
                                             </div>
 
                                         </Col>
                                     <Col lg={6} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Occupation</p>
-                                                <h5>{profiletabApi.fathersinfo.occupation}</h5>
+                                                <h5>{profiletabApiteacher.fathersinfo.occupation}</h5>
                                             </div>
                                         </Col>
                                         <Col lg={6} style={{paddingLeft:"0"}}>
                                             <div className="infopopulatebox">
                                                 <p>Designation</p>
-                                                <h5>{profiletabApi.fathersinfo.designation}</h5>
+                                                <h5>{profiletabApiteacher.fathersinfo.designation}</h5>
                                             </div>
 
                                         </Col>
                                         <Col lg={12}>
                                         <div className="infopopulatebox">
                                                 <p>Company Address</p>
-                                                <h5>{profiletabApi.fathersinfo.companyaddress}</h5>
+                                                <h5>{profiletabApiteacher.fathersinfo.companyaddress}</h5>
                                             </div>
                                         </Col>
                                     </Row>
@@ -1687,59 +1579,59 @@ const TeacherDashboardComp = () => {
                                     <Col lg={6} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Full Name</p>
-                                                <h5>{profiletabApi.mothersinfo.fullname}</h5>
+                                                <h5>{profiletabApiteacher.mothersinfo.fullname}</h5>
                                             </div>
                                         </Col>
                                         <Col lg={6} style={{paddingLeft:"0"}}>
                                             <div className="infopopulatebox">
                                                 <p>Email</p>
-                                                <h5>{profiletabApi.mothersinfo.email}</h5>
+                                                <h5>{profiletabApiteacher.mothersinfo.email}</h5>
                                             </div>
 
                                         </Col>                                   
                                     <Col lg={6} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>National ID</p>
-                                                <h5>{profiletabApi.mothersinfo.nationalid}</h5>
+                                                <h5>{profiletabApiteacher.mothersinfo.nationalid}</h5>
                                             </div>
                                         </Col>
                                         <Col lg={6} style={{paddingLeft:"0"}}>
                                             <div className="infopopulatebox">
                                                 <p>Passport</p>
-                                                <h5>{profiletabApi.mothersinfo.passport}</h5>
+                                                <h5>{profiletabApiteacher.mothersinfo.passport}</h5>
                                             </div>
 
                                         </Col>
                                     <Col lg={6} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Mobile Number</p>
-                                                <h5>{profiletabApi.mothersinfo.mobilenumber}</h5>
+                                                <h5>{profiletabApiteacher.mothersinfo.mobilenumber}</h5>
                                             </div>
                                         </Col>
                                         <Col lg={6} style={{paddingLeft:"0"}}>
                                             <div className="infopopulatebox">
                                                 <p>Telephone</p>
-                                                <h5>{profiletabApi.mothersinfo.telephonenumber}</h5>
+                                                <h5>{profiletabApiteacher.mothersinfo.telephonenumber}</h5>
                                             </div>
 
                                         </Col>
                                     <Col lg={6} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Occupation</p>
-                                                <h5>{profiletabApi.mothersinfo.occupation}</h5>
+                                                <h5>{profiletabApiteacher.mothersinfo.occupation}</h5>
                                             </div>
                                         </Col>
                                         <Col lg={6} style={{paddingLeft:"0"}}>
                                             <div className="infopopulatebox">
                                                 <p>Designation</p>
-                                                <h5>{profiletabApi.mothersinfo.designation}</h5>
+                                                <h5>{profiletabApiteacher.mothersinfo.designation}</h5>
                                             </div>
 
                                         </Col>
                                         <Col lg={12}>
                                         <div className="infopopulatebox">
                                                 <p>Company Address</p>
-                                                <h5>{profiletabApi.mothersinfo.companyaddress}</h5>
+                                                <h5>{profiletabApiteacher.mothersinfo.companyaddress}</h5>
                                             </div>
                                         </Col>
                                 </Row>
@@ -1749,39 +1641,39 @@ const TeacherDashboardComp = () => {
                                 <Col lg={6} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Full Name</p>
-                                                <h5>{profiletabApi.localguardianinfo.fullname}</h5>
+                                                <h5>{profiletabApiteacher.localguardianinfo.fullname}</h5>
                                             </div>
                                         </Col>
                                         <Col lg={6} style={{paddingLeft:"0"}}>
                                             <div className="infopopulatebox">
                                                 <p>Email</p>
-                                                <h5>{profiletabApi.localguardianinfo.email}</h5>
+                                                <h5>{profiletabApiteacher.localguardianinfo.email}</h5>
                                             </div>
 
                                         </Col>                                   
                                     <Col lg={6} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>National ID</p>
-                                                <h5>{profiletabApi.localguardianinfo.nationalid}</h5>
+                                                <h5>{profiletabApiteacher.localguardianinfo.nationalid}</h5>
                                             </div>
                                         </Col>
                                         <Col lg={6} style={{paddingLeft:"0"}}>
                                             <div className="infopopulatebox">
                                                 <p>Passport</p>
-                                                <h5>{profiletabApi.localguardianinfo.passport}</h5>
+                                                <h5>{profiletabApiteacher.localguardianinfo.passport}</h5>
                                             </div>
 
                                         </Col>
                                     <Col lg={6} style={{paddingRight:"15px"}}>
                                             <div className="infopopulatebox">
                                                 <p>Mobile Number</p>
-                                                <h5>{profiletabApi.localguardianinfo.mobilenumber}</h5>
+                                                <h5>{profiletabApiteacher.localguardianinfo.mobilenumber}</h5>
                                             </div>
                                         </Col>
                                         <Col lg={6} style={{paddingLeft:"0"}}>
                                             <div className="infopopulatebox">
                                                 <p>Relation</p>
-                                                <h5>{profiletabApi.localguardianinfo.relation}</h5>
+                                                <h5>{profiletabApiteacher.localguardianinfo.relation}</h5>
                                             </div>
 
                                         </Col>
@@ -1792,107 +1684,7 @@ const TeacherDashboardComp = () => {
                     </div>
                 </div>
             </Tab.Pane>
-            <Tab.Pane eventKey="tenth" className="tabPane">
-                <div className="tabpaneheightadjust examRoutineTab">
-                    <div className="examroutinetable">
-                        <table>
-                        <thead>
-                                    <tr>
-                                        {
-                                            routinetabData.examRoutine.heading.map((item,key)=>{
-                                                return(
-                                                    <th className='text-center' key={key}>
-                                                        {item.head}
-                                                    </th>
-                                                )
-                                            })
-                                        } 
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                  
-                                    <tr>
-                                    <td>
-                                        <table>
-                                            {
-                                                routinetabData.examRoutine.tableData.map((item,key)=>{
-                                                    return(
-                                                        <tr>
-                                                            <td>{item.date}</td>
-                                                        </tr>
-                                                    )
-                                                })
-                                            }
-                                        </table>
-                                    </td>
-                                    <td>
-                                        <table>
-                                            {
-                                                routinetabData.examRoutine.tableData.map((item,key)=>{
-                                                    return(
-                                                        <tr>
-                                                            <td>{item.day}</td>
-                                                        </tr>
-                                                    )
-                                                })
-                                            }
-                                        </table>
-                                    </td>
-                                    <td>
-                                        <table>
-                                            {
-                                                routinetabData.examRoutine.tableData.map((item,key)=>{
-                                                    return(
-                                                        <tr>
-                                                            <td>{item.starttime}</td>
-                                                        </tr>
-                                                    )
-                                                })
-                                            }
-                                        </table>
-                                    </td>
-                                    <td>
-                                        <table>
-                                            {
-                                                routinetabData.examRoutine.tableData.map((item,key)=>{
-                                                    return(
-                                                        <tr>
-                                                            <td>{item.endtime}</td>
-                                                        </tr>
-                                                    )
-                                                })
-                                            }
-                                        </table>
-                                    </td>
-                                    <td>
-                                        <table>
-                                            {
-                                                routinetabData.examRoutine.tableData.map((item,key)=>{
-                                                    return(
-                                                        <tr>
-                                                            <td>{item.subject}</td>
-                                                        </tr>
-                                                    )
-                                                })
-                                            }
-                                        </table>
-                                    </td>
-
-                                    <td rowSpan={6} className='downbtncell'>
-                                    <Button onClick={()=>handleDocumentDownloadroutine(routinetabData.examRoutine.downloadlink)}>
-                                        <img src="./assets/images/dashboards/studentDashboard/routineTab/download.png" alt="" />
-                                    </Button>
-                                    </td>
-                                    </tr>
-                                
-                                </tbody>
-                        </table>
-                    </div>
-                        <div className="bottombuttondiv">
-                            <Button onClick={handleExamRoutineDownload}><img style={{marginRight:"0px"}} src="./assets/images/dashboards/studentDashboard/routineTab/downloadcoloredbutton.png" alt="" /> Download Routine</Button>
-                        </div>
-                </div>
-            </Tab.Pane>
+            
           </Tab.Content>
         
         </div>

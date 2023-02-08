@@ -335,9 +335,9 @@ const attendanceApiteacher = [
                 data:
                
                     {
-                        present:50,
+                        present:56,
                         absent:40,
-                        late:10
+                        late:4
                     },
                 
             },
@@ -346,9 +346,9 @@ const attendanceApiteacher = [
                 data:
                
                     {
-                        present:35,
-                        absent:50,
-                        late:15
+                        present:36,
+                        absent:49,
+                        late:13
                     },
                 
             },
@@ -1225,6 +1225,458 @@ const routinetabDatateacher = {
     },
     
 }
+
+const curriculumtabtabledata = {
+    heading:[
+        {
+            head:"SL",
+        },
+        {
+            head:"ID",
+        },
+        {
+            head:"Student Name",
+        },
+        {
+            head:"Application",
+        },
+        {
+            head:"Conduct",
+        },
+        {
+            head:"Conversation",
+        },
+        {
+            head:"Cooperation",
+        },
+        {
+            head:"Courtesy",
+        },
+        {
+            head:"Descipline",
+        },
+        {
+            head:"Handwriting",
+        },
+        {
+            head:"Leadership",
+        },
+        {
+            head:"Neatness",
+        },
+        {
+            head:"Participation",
+        },
+        {
+            head:"Presentation",
+        },
+    ],
+    tableData:[
+        {
+            sl:"01",
+        },
+        {
+            sl:"02",
+        },
+        {
+            sl:"03",
+        },
+        {
+            sl:"04",
+        },
+        {
+            sl:"05",
+        },
+        {
+            sl:"06",
+        },
+        {
+            sl:"07",
+        },
+        {
+            sl:"08",
+        },
+        {
+            sl:"09",
+        },
+        {
+            sl:"10",
+        },
+    ]
+}
+
+const resultTabtabledata = {
+   
+   
+        header:[
+            {
+                headerline:"SL"
+            },
+            {
+                headerline:"Student ID"
+            },
+            {
+                headerline:"Student Name"
+            },
+            {
+                headerline:"Exam 1"
+            },
+            
+        ],
+        tabledata:[
+            {
+                sl:"01",
+                studentid:"2003",
+                studentname:"Amera Khan",
+                exam:"AB",
+                
+            },
+            {
+                sl:"02",
+                studentid:"2003",
+                studentname:"Arush Khan",
+                exam:"AB",
+                
+            },
+            {
+                sl:"03",
+                studentid:"2003",
+                studentname:"Lamia Tahsan",
+                exam:"AB",
+                
+            },
+            {
+                sl:"04",
+                studentid:"2003",
+                studentname:"Sarina",
+                exam:"AB",
+                
+            },
+            {
+                sl:"05",
+                studentid:"2003",
+                studentname:"Amera Khan",
+                exam:"AB",
+                
+            },
+            {
+                sl:"06",
+                studentid:"2003",
+                studentname:"Arush Khan",
+                exam:"AB",
+                
+            },
+            {
+                sl:"07",
+                studentid:"2003",
+                studentname:"Lamia Tahsan",
+                exam:"AB",
+                
+            },
+            {
+                sl:"08",
+                studentid:"2003",
+                studentname:"Sarina",
+                exam:"AB",
+                
+            },
+            {
+                sl:"04",
+                studentid:"2003",
+                studentname:"Sarina",
+                exam:"AB",
+                
+            },
+            {
+                sl:"05",
+                studentid:"2003",
+                studentname:"Amera Khan",
+                exam:"AB",
+                
+            },
+            {
+                sl:"06",
+                studentid:"2003",
+                studentname:"Arush Khan",
+                exam:"AB",
+                
+            },
+            {
+                sl:"07",
+                studentid:"2003",
+                studentname:"Lamia Tahsan",
+                exam:"AB",
+                
+            },
+            {
+                sl:"08",
+                studentid:"2003",
+                studentname:"Sarina",
+                exam:"AB",
+                
+            },
+           
+           
+        ],
+
+    
+}
+
+const attendanceDatateacher = {
+    header:[
+        {
+            headeritem:"SL"
+        },
+        {
+            headeritem:"Date"
+        },
+        {
+            headeritem:"Office Time"
+        },
+        {
+            headeritem:"In Time"
+        },
+        {
+            headeritem:"Out Time"
+        },
+        {
+            headeritem:"Type"
+        },
+    ],
+    innerTableData: [
+        
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Early Leave"
+            },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Present"
+            },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Late"
+            },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Early Leave"
+            },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Present"
+            },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Late"
+            },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Early Leave"
+            },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Present"
+            },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Late"
+            },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Early Leave"
+            },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Present"
+            },
+            {
+                SL:"01",
+                date:"01-01-2023",
+                schooltime:"09:10 AM",
+                intime:"09:10 AM",
+                outtime:"04:30 PM",                                
+                type:"Late"
+            },
+            
+           
+        
+    ]
+}
+const prevSalarytabledata = {
+    
+   
+        header:[
+            {
+                headerline:"SL"
+            },
+            {
+                headerline:"Date"
+            },
+            {
+                headerline:"Month"
+            },
+            {
+                headerline:"Type"
+            },
+            {
+                headerline:"Salary"
+            },
+            {
+                headerline:"Received Amount"
+            },
+        ],
+        tabledata:[
+            {
+                sl:"01",
+                date:"Sat, 31 Dec, 2022",
+                month:"Dec-22",
+                type:"Salary",
+                salary:10307.00,
+                receivedamount:10307.00
+            },           
+            {
+                sl:"02",
+                date:"Sat, 31 Dec, 2022",
+                month:"Dec-22",
+                type:"Bonus",
+                salary:10307.00,
+                receivedamount:10307.00
+            },
+            {
+                sl:"03",
+                date:"Sat, 31 Dec, 2022",
+                month:"Dec-22",
+                type:"Salary",
+                salary:10307.00,
+                receivedamount:10307.00
+            },
+            {
+                sl:"04",
+                date:"Sat, 31 Dec, 2022",
+                month:"Dec-22",
+                type:"Salary",
+                salary:10307.00,
+                receivedamount:10307.00
+            },
+            {
+                sl:"05",
+                date:"Sat, 31 Dec, 2022",
+                month:"Dec-22",
+                type:"Salary",
+                salary:10307.00,
+                receivedamount:10307.00
+            },
+            
+        ],
+
+    
+}
+const profiletabApiteacher = {
+    personaldetails:{
+        fullname:"Farhana Ahmed",
+        email:"ms3starenterprise@gmail.com",
+        dateofbirth:"23-06-2013",
+        residentialphone:"01618335505",
+        placeofbirth:"Dhaka",
+        country:"Bangladesh",
+        nationality:"Bangladeshi",
+        gender:"Male",
+        religion:"Islam",
+        bloodgroup:"B+",
+        birthcertificate:"329529342309420",
+        passport:"A2156321",
+        medicalhistory:"-",
+        emergencymedicalaction:"-",
+        holding:"53/4",
+        street:"Jonshon Road",
+        area:"Koltabazar",
+        postcode:"1100",
+        policestation:"Sutrapur",
+        city:"Dhaka",
+        division:"Dhaka",
+        country:"Bangladesh",
+        siblingname:"-",
+        siblingID:"-"
+
+
+    },
+    fathersinfo:{
+            fullname:"Md Jashim Uddin Khan",
+            email:"-",
+            nationalid:"8611477483547",
+            passport:"A214535392",
+            mobilenumber:"01922330077",
+            telephonenumber:"01979477988",
+            occupation:"-",
+            designation:"M/S Three Star Enterprise (Owner)",
+            companyaddress:"53/4, Jonshon Road, Koltabazar, Sutrapur, Dhaka-1100, Bangladesh"
+        },
+    mothersinfo:{
+            fullname:"Bubly Begum",
+            email:"-",
+            nationalid:"8611477483548",
+            passport:"A214535392",
+            mobilenumber:"01922330077",
+            telephonenumber:"-",
+            occupation:"-",
+            designation:"House Wife",
+            companyaddress:"-"
+        },
+    localguardianinfo:{
+            fullname:"Md Saidul Islam",
+            email:"-",
+            nationalid:"0414759565725",
+            passport:"-",
+            mobilenumber:"01725727441",
+            relation:"Uncle",
+        },
+   
+    
+}
     
 
 const TeacherDashboardApi = () => {
@@ -1235,6 +1687,6 @@ const TeacherDashboardApi = () => {
 }
 
 
-export {routinetabDatateacher,periodsubjectdatateacher,salaryInformationteacher,attendanceApiteacher}
+export {profiletabApiteacher,prevSalarytabledata,attendanceDatateacher,resultTabtabledata,curriculumtabtabledata,routinetabDatateacher,periodsubjectdatateacher,salaryInformationteacher,attendanceApiteacher}
 
 export default TeacherDashboardApi

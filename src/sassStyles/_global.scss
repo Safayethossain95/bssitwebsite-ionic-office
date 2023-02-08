@@ -57,46 +57,50 @@ input{
     // /assets/fonts/CloisterBlackLight-axjg.ttf
   }
 
-
-  .Dropdown2{
+.wrapperwrap{
     @include measurement(100%,35px,10px);
-    background-color: #fff;
-    border: 1px solid $border_twenty;
     position:relative;
-    z-index: 999;
-    user-select: none;
-    p{
-        user-select: none;
-    }
-    img{
-        position:absolute;
-        right:10px;
-        top:50%;
-        transform: translateY(-50%);
+    .Dropdown2{
+      @include measurement(100%,35px,10px);
+      background-color: #fff;
+      border: 1px solid $border_twenty;
+     
+      z-index:777;
+      user-select: none;
+      p{
+          user-select: none;
+      }
+      img{
+          position:absolute;
+          right:10px;
+          top:50%;
+          transform: translateY(-50%);
+      }
+      
     }
     .Dropdown2-menu{
-        position:absolute;
-        top:calc(100% + 2px);
-        left:0;
-        @include measurement(100%,auto,10px);
-        background-color: #fff;
-        z-index: 888;
-        @include borderthin();
-        opacity: 0;
-        padding-left: 0;
-        li{
-            user-select: none;
-            padding:0 6px;
-            border-radius: 10px;
-            &:hover{
-                background-color: #ddd;
-            }
-        }
-        &.showme{
-            opacity: 1!important;
-        }
-    }
+      position:absolute;
+      top:calc(100% + 2px);
+      left:0;
+      @include measurement(100%,auto,10px);
+      background-color: #fff;
+      z-index: 999;
+      @include borderthin();
+      opacity: 0;
+      padding-left: 0;
+      li{
+          user-select: none;
+          padding:0 6px;
+          border-radius: 10px;
+          &:hover{
+              background-color: #ddd;
+          }
+      }
+      &.showme{
+          opacity: 1!important;
+      }
   }
+}
 
 
   

@@ -1,6 +1,8 @@
 import React from 'react'
 import StudentDashboardComp from '../../components/dashboardComponents/StudentDashboardComp'
 import '../../sassFiles/sassPages/dashboards/srudentDashboards.scss'
+import NavbarMoblie from '../../components/mobile/NavbarMoblie'
+import FooterMobile from '../../components/mobile/FooterMobile'
 const StudentDashboardPage = () => {
   return (
     <>
@@ -12,7 +14,14 @@ const StudentDashboardPage = () => {
 
                 </div>
             </div>
-        </div>        
+        </div>  
+        <div className="mobile">
+          <div className="studentdashboardmobilewrapper">
+            <NavbarMoblie/>
+            <FooterMobile/>  
+
+          </div>
+        </div>      
     </>
 
   )
