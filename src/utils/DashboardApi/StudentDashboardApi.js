@@ -6,26 +6,31 @@ const documentData = {
     homework:{
         filetype:"Home Work",
         numberOfFiles:8,
+        fileurl:""
        
     },
     classwork:{
         filetype:"Class Work",
         numberOfFiles:8,
+        fileurl:""
         
     },
     assesment:{
         filetype:"Assesment",
         numberOfFiles:0,
+        fileurl:""
         
     },
     exampaper:{
         filetype:"Exam Paper",
         numberOfFiles:8,
+        fileurl:""
         
     },
     syllabus:{
         filetype:"Syllabus",
         numberOfFiles:8,
+        fileurl:""
         
     },
    
@@ -2014,6 +2019,8 @@ const profiletabApi = {
    
     
 }
+
+
 
 const StudentDashboardApi = () => {
   return (

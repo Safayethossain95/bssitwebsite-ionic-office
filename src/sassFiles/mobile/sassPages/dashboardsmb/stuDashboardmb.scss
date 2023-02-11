@@ -1,0 +1,761 @@
+@import '../../../../sassStyles/mixins';
+@import '../../../../sassStyles/variables';
+@import '../../../../sassStyles/typography';
+@import '../../../../sassStyles/global';
+@import '../../../../sassFiles/mobile/sassPages/mobileGlobal.scss';
+
+.mobile{
+    .studentdashboardmobilewrapper{
+       .mynavbarmb{
+        background-color: #fff;
+        &>.studashnav{
+            .togglermenuclass2{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+            }
+           
+        }
+       }
+       .mynavbarnav{
+        &.mynavbarnavdash{
+            
+                .profileimgandid{
+                    display: flex;
+                    justify-content: center;
+                    margin:20px;
+                    .propicidpartright{
+                        margin-left: 5px;
+                        h4{
+                            @include myfont(16px,400,$main_font);
+                            margin-bottom: 0;
+                        }
+                        p{
+                            @include myfont(14px,400,$main_font);
+                            color:$seventyblack;
+                        }
+                    }
+                }
+            
+        }
+        a{
+            width:calc(100% - 5px);
+            display:flex;
+            align-items: center;
+
+            margin:0px 5px!important;
+            height:50px;
+            border-radius: 10px;
+            color:rgba(0,0,0,0.7);
+            margin-left: 35px;
+            img{
+                margin-right: 10px;
+                margin-left: 20px;
+            }
+            &.activei{
+                background-color: #F3F1FF;
+                color:#312783;
+            }
+        }
+       }
+       .footermobile{
+        margin-top: 0;
+       }
+
+        .bodycolorbg{        
+            background-color: #f2f2f2;
+            width:100%;
+            overflow: auto;
+            .heading{
+                text-align: center;
+                overflow: auto;
+                h3{
+                    margin: 80px 0 20px 0 !important;
+                    @include myfont(16px,500,$main_font);
+                }
+                &.headingofdocumenttab{
+                    margin:0 !important;
+                    
+                }
+            }
+
+            .documentsboxindash{
+                height: 230px;
+                width:100%;
+                background-color: #fff;
+                border-radius: 15px;
+                padding:15px;
+                .headerpart{
+                    
+                    .flexwrap{
+                        display: flex;
+                        justify-content: space-between;
+                        h4{
+                            @include myfont(16px,500,$main_font);
+                            color:#000;
+                        }
+                        p{
+                            @include myfont(10px,400,$main_font);
+                            color: #000;
+                        }
+                    }
+                }
+                .docpill{
+                    height:50px;
+                    
+                    background-color: #fff;
+                    @include borderthin();
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 10px;
+                      .iconpart{
+                        img{
+                            width: 42px;
+                            height:42px;
+                        }
+                    }
+                    .textpart{
+                        
+                        h4{
+                            @include myfont(12px,500,$main_font);
+                            margin-bottom: 0;
+                        }
+                        p{
+                            @include myfont(10px,400,$main_font);
+                        }
+                    }
+                }
+            }
+            .noticeboxindash{
+                // height:350px;
+                width:100%;
+                background-color: #fff;
+                border-radius: 15px;
+                padding:15px;
+                margin:10px 0;
+
+                .headerpart{
+                    padding:0 10px;
+                    .flexwrap{
+                        display: flex;
+                        justify-content: space-between;
+                        h4{
+                            @include myfont($sameboxHeadingsizemb,600,$main_font);
+                            color:#000;
+                        }
+                       .flexwrap2{
+                        display: flex;
+                        h4{
+                            @include myfont($sameboxHeadingsizemb,500,$main_font);
+                            color:#000;
+                        }
+                     
+                       }
+                        p{
+                            @include myfont($viewallButtonSize,400,$main_font);
+                            color: #000;
+                        }
+                    }
+                }
+                .contentpart{
+                    .noticebarmini{
+                        background-color: #F9F9F9;
+                        border-radius: 10px;
+                        height: 103px;
+                        padding: 0 20px;
+                        margin-bottom: 10px!important;
+                        display: flex;
+                        align-items: center;
+                        &:last-child{
+                            margin-bottom: 0!important;
+                        }
+                        @include media(xlgDevice){
+                            padding: 15px;
+                        }
+                        margin-bottom: 5px;
+                        display: flex;
+                        h5{
+                            @include myfont($sameboxNoticeboxh5,500,$main_font);  
+                            margin-bottom: 0; 
+                            color:#000;                     
+                            margin-top: 5px;
+                        }
+                        
+                        .publishdatepart{
+                               width:55px;
+                                p{
+                                    @include myfont($noticebarpillFontSizemb,$noticebarpillFontWeight,$main_font);
+                                    color:$noticebarpillFontColormb;
+                                    width:55px;
+                                }
+                               
+                                
+                        }
+                        .noticeboxtextbox{
+                            padding-left: 20px;
+                            h5{
+                                @include myfont($noticepartparagraphfontsize,$noticepartheadingfontweightmb,$main_font);
+                            }
+                            p{
+                                @include myfont($noticepartparagraphfontsize,$noticepartparagraphfontweight,$main_font);
+
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            .attendenceboxindash{
+                background-color: #fff;
+                border-radius: 15px;
+                padding:15px;
+                margin-bottom: 10px;
+                .headerpart{
+                    
+                    .flexwrap{
+                        display: flex;
+                        justify-content: space-between;
+                        h4{
+                            @include myfont($sameboxHeadingsizemb,600,$main_font);
+                            color:#000;
+                        }
+                       .flexwrap2{
+                        display: flex;
+                        h4{
+                            @include myfont($sameboxHeadingsizemb,500,$main_font);
+                            color:#000;
+                        }
+                     
+                       }
+                        p{
+                            @include myfont($viewallButtonSize,400,$main_font);
+                            color: #000;
+                        }
+                    }
+                }
+                .chartidtabd{
+                    
+                    .nav-pills{
+                        width:100%;
+                        .nav-item{
+                            width:50%;
+                            text-align: center;
+                            a{
+                                background:#fff;
+                                color:#000;
+                                border-radius: 0;
+                                @include myfont(10px,400,$main_font);
+                                border-bottom: 2px solid rgba(0,0,0,0.1);
+                                transition:0.4s;
+                                &.active{
+                                    border-bottom: 2px solid #000;
+                                }
+                            }
+                        }
+                    }
+                    .tab-content{
+                        
+                        @include media(xlgDevice)
+                        {
+                            padding-top: 15px;
+                        }
+                        .tab-pane{
+                            position:relative;
+                            .chartwrapperheight{
+                                height:250px;
+                            }
+                            
+                            .presenttext{
+                                position:absolute;
+                                bottom:0px;
+                                left:90px;
+                                @include myfont($chartlebeltextsize,400,$main_font);
+                                text-align: center;
+                                @include media(xlgDevice){
+                                    left:0px;
+                                }
+                                @include media(xlgDevice){
+                                    left:0px;
+                                }
+                                @include media(lgDevice){
+                                    left:0px;
+                                }
+                                p{
+                                    &:last-child{
+                                        position:relative;
+                                        &::after{
+                                            position:absolute;
+                                            top:-1px;
+                                            right:0;
+                                            width:100%;
+                                            height: 3px;
+                                            background-color: $chartpresentcolor;
+                                            content: '';
+                                        }
+                                    }
+                                }
+                            }
+                            .absenttext{
+                                position:absolute;
+                                bottom:0px;
+                                right:90px;
+                                @include media(xlgDevice){
+                                    right:0;
+                                }
+                                @include media(lgDevice){
+                                    right:0;
+                                }
+                                @include myfont($chartlebeltextsize,400,$main_font);
+                                text-align: center;
+                                p{
+                                    &:last-child{
+                                        position:relative;
+                                        &::after{
+                                            position:absolute;
+                                            top:-1px;
+                                            left:0;
+                                            width:100%;
+                                            height: 3px;
+                                            background-color: $chartabsentcolor;
+                                            content: '';
+                                        }
+                                    }
+                                }
+                            }
+                            .latetext{
+                                position:absolute;
+                                bottom:0px;
+                                left:50%;
+                                transform:translateX(-50%);
+                                @include media(xlgDevice){
+                                    left:50%;
+                                }
+                                @include media(lgDevice){
+                                    left:50%;
+                                }
+                                @include myfont($chartlebeltextsize,400,$main_font);
+                                text-align: center;
+                                p{
+                                    &:last-child{
+                                        position:relative;
+                                        &::after{
+                                            position:absolute;
+                                            top:-1px;
+                                            left:0;
+                                            width:100%;
+                                            height: 3px;
+                                            background-color: $chartlatecolor;
+                                            content: '';
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .tab-content>.tab-pane {
+                        display: block;
+                        height: 0;
+                        overflow: hidden;
+                    }
+                    .tab-content>.tab-pane.active {
+                        height: 314px;
+                    }
+
+                
+            }
+            }
+            .paymenthistoryboxindash{
+                background-color: #fff;
+                border-radius: 15px;
+                padding:15px;
+                margin-bottom: 10px;
+                height:384px;
+                padding-bottom: 0;
+                .headerpart{
+                    
+                    .flexwrap{
+                        display: flex;
+                        justify-content: space-between;
+                        h4{
+                            @include myfont($sameboxHeadingsizemb,600,$main_font);
+                            color:#000;
+                        }
+                       .flexwrap2{
+                        display: flex;
+                        h4{
+                            @include myfont($sameboxHeadingsizemb,500,$main_font);
+                            color:#000;
+                        }
+                     
+                       }
+                        p{
+                            @include myfont($viewallButtonSize,400,$main_font);
+                            color: #000;
+                        }
+                    }
+                }
+                .prevhistory{
+                    position:relative;
+                    .paymentbutton{
+                        position: absolute;
+                        bottom: 15px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 171px;
+                        height: 50px;
+                        background-color: #F3F1FF;
+                        border-radius: 10px;
+                        color: #312783;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;                            
+                        border: 0;
+                    }
+                    .smallheading{
+                        h5{
+                            @include myfont(12px,400,$main_font);
+                            padding-left: 5px;
+                            margin:14px 0;
+                        }
+                    }
+                    .cardbarprevphistory{
+                        overflow-y: scroll;
+                        height: 215px;
+                        .duepartcardbar{
+                            width:100%;
+                            height:50px;
+                            background-color: #f9f9f9;
+                            border-radius: 10px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding:0 15px;
+                            margin-bottom: 5px;
+                            h3{
+                                @include myfont(16px,400,$main_font);
+                                margin-bottom: 0;
+                            }
+                            .rightsidflexpart{
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                .amount{
+                                    p{
+                                        @include myfont(12px,400,$main_font);
+                                    }
+                                }
+                                .pillright{
+                                    display: flex;
+                                    align-items: center;
+                                    height:25px;
+                                    background-color: rgba(237, 28, 36,0.05);
+                                    padding:0 12px;
+                                    padding-right: 26px;
+                                    border-radius: 38px;
+                                    margin-right: 12px;
+                                    h6{
+                                        margin-bottom: 0;
+                                        @include myfont(12px,400,$main_font);
+                                        color: rgba(237, 28, 36,0.5);
+                                        position:relative;
+                                        &::after{
+                                            position:absolute;
+                                            width:6px;
+                                            height:6px;
+                                            border-radius: 50%;
+                                            background:rgba(237, 28, 36,0.5);
+                                            content:'';
+                                            top:50%;
+                                            transform:translateY(-50%);
+                                            right:-14px;
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                        .paymenthistoryoverview{
+                            
+                           
+                            .paymenthistoryovflexwrap{
+                                .payhpartcardbar{
+                                    width:100%;
+                                    height:50px;
+                                    background-color: #f9f9f9;
+                                    border-radius: 10px;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    padding:0 15px;
+                                    margin-bottom: 5px;
+
+                                    .monthdatewrapper{
+                                        h3{
+                                            @include myfont(16px,400,$main_font);
+                                            margin-bottom: 0;
+                                            color:$seventyblack;
+                                        }
+                                        p{
+                                            @include myfont(12px,400,$main_font);
+                                            color: $seventyblack;
+                                        }
+
+                                    }
+                                    .rightsidflexpart{
+                                        display: flex;
+                                        justify-content: space-between;
+                                align-items: center;
+                                        .amount{
+                                            p{
+                                                @include myfont(12px,400,$main_font);
+                                                color: $seventyblack;
+                                            }
+                                        }
+                                        .pillright{
+                                            display: flex;
+                                            align-items: center;
+                                            height:25px;
+                                            background-color: rgba(0, 202, 85,0.05);
+                                            padding:0 12px;
+                                            padding-right: 26px;
+                                            border-radius: 38px;
+                                            margin-right: 12px;
+                                            h6{
+                                                margin-bottom: 0;
+                                                @include myfont(12px,400,$main_font);
+                                                color: rgba(0, 202, 85,0.5);
+                                                position:relative;
+                                                &::after{
+                                                    position:absolute;
+                                                    width:6px;
+                                                    height:6px;
+                                                    border-radius: 50%;
+                                                    background:rgba(0, 202, 85,0.5);
+                                                    content:'';
+                                                    top:50%;
+                                                    transform:translateY(-50%);
+                                                    right:-14px;
+                                                }
+                                            }
+    
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .classroutineboxindash{
+                background-color: #fff;
+                border-radius: 15px;
+                padding:15px;
+                margin-bottom: 10px;
+                height:370px;
+                padding-bottom: 0;
+                .headerpart{
+                    margin-bottom: 10px;
+                    .flexwrap{
+                        display: flex;
+                        justify-content: space-between;
+                        h4{
+                            @include myfont($sameboxHeadingsizemb,600,$main_font);
+                            color:#000;
+                        }
+                       .flexwrap2{
+                        display: flex;
+                        h4{
+                            @include myfont($sameboxHeadingsizemb,500,$main_font);
+                            color:#000;
+                        }
+                     
+                       }
+                        p{
+                            @include myfont($viewallButtonSize,400,$main_font);
+                            color: #000;
+                        }
+                    }
+                    .dropdownwrapper{
+                        svg{
+                            position: absolute;
+                            right: 7px;
+                            top: 41%;
+                            transform: translateY(-65%);
+                            font-size: 12px;
+                            z-index: 1;
+                        }
+                        .Dropdown-menu{
+                            .Dropdown-option{
+                                font-size: 12px!important;
+                            }
+                        }
+                    }
+                    .Dropdown-control{
+                        height: 20px;
+                        width: 96px;
+                        .Dropdown-placeholder{
+                            top: 2px;
+                            font-size: 10px;
+                            font-weight: 400;
+                            font-family: "Poppins", sans-serif;
+                        }
+                    }
+                }
+                .sameboxroutine{
+                    position:relative;
+                    .routinetable{
+                   
+                    
+                        table{
+                                width: 100%;
+                                margin-top: 25px;
+                                tr{
+                                    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+                                    height:35px;
+                                    td{
+                                        &:first-child{
+                                            text-align: center;                                        
+                                        }
+                                        @include myfont(12px,400,$main_font);
+                                        color:$seventyblack;
+                                    }
+                                }
+                            }
+                        
+                    }
+                    .extraclassbox{
+                        height:52px;
+                        border-radius: 15px;
+                        background: #f9f9f9;
+                        width:calc(100% - 30px);
+                        position:absolute;
+                        bottom:15px;
+                        left:50%;
+                        transform: translateX(-50%);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        p{
+                            @include myfont(12px,400,$main_font);
+                            color:$border_twenty;
+                        }
+                    }
+                }
+            }
+            .calendarboxdash{
+                background-color: #fff;
+                border-radius: 15px;
+                padding:15px;
+                margin-bottom: 10px;
+                height:370px;
+                padding-bottom: 0;
+                .sameboxcalender{
+                    padding:0 0 15px 0;
+                    display: flex;
+                    justify-content: center;
+                    position:relative;
+                    .eventbox{
+                        height:74px;
+                        width:calc(100% - 30px);
+                        position:absolute;
+                        bottom:15px;
+                        left:50%;
+                        transform:translateX(-50%);
+                        border-radius: 15px;
+                        background-color: #f9f9f9;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .rdp{
+                        --rdp-cell-size: 41px;
+                        --rdp-accent-color:#F3F1FF;
+                        @include media(xlgDevice){
+                            
+                            --rdp-cell-size: 33px;
+                        }
+                        .rdp-table{
+                            width:280px;
+                            @include media(xlgDevice){
+                                width:274px;
+                            }
+                            @include media(xxlgDevice){
+                                width:319px;
+                            }
+                            max-width: unset;
+                        }
+                        .rdp-day{
+                            @include myfont(14px,400,$main_font);
+                        }
+                        .rdp-day_today{
+                            background-color: #F3F1FF;
+                            color:#312783;
+                            @include myfont(14px,400,$main_font);
+                        }
+                        .rdp-day_selected{
+                            color:#312783;
+                        }
+                        .rdp-weeknumber, .rdp-day{
+                            border-radius: 14px!important;
+                        }
+                    }
+                    text-align: center;
+                    
+                }
+            }
+            .todaydocuments{
+                
+                background-color: #fff;
+                border-radius: 15px;
+                padding:15px;
+                margin-bottom: 10px;
+                h4{
+                    @include myfont(16px,4500,$main_font);
+                }
+            }
+           .documenttabsignlebar{
+            margin-bottom: 10px;
+                            width:100%;
+                            
+                            @include borderthin();
+                            border-radius: 15px;
+                            height: 50px;
+                            display: flex;
+                            align-items: center;
+                            position:relative;
+                            .downloadbuttondoctab{
+                                button{
+                                    position:absolute;
+                                    right:10px;
+                                    top:50%;
+                                    transform: translateY(-50%);
+                                    width:40px;
+                                    height:40px;
+                                    border-radius: 50%;
+                                    background:#F3F1FF;                                    
+                                    border:0;                                                                    
+                                    color:#312783;
+                                    @include myfont(16px,400,$main_font);
+                                   
+                                }
+                            }
+                            .documenttabtexts{
+                                text-align: left;
+                                margin-left: 6px;
+                                h6{
+                                    margin-bottom: 0;
+                                    @include myfont(16px,500,$main_font);
+                                    color:$seventyblack;
+                                }
+                                p{
+                                    @include myfont(10px,400,$main_font);
+                                    color:$seventyblack;
+                                }
+                            }
+                        }
+        }
+    }
+}

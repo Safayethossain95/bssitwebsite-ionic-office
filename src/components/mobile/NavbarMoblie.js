@@ -9,26 +9,6 @@ const NavbarMoblie = () => {
     let activeStyle = {
         color:"#ED1C24"
       };
-    //   useEffect(()=>{
-    //     $(".navbar-toggler").click(function(){
-         
-    //       $(".mynavbarnav").toggleClass("show");
-    //       $(".mynavbarmb").toggleClass("navbar-white");
-    //     })
-    // },[])
-
-    // $(".navbar-toggler").click(function(){
-    //   $(".mynavbarmb").toggleClass("navbar-white");
-    //   $(".mynavbarnav").toggleClass("show");
-    // })
-    
-    // $(document).ready(function(){
-    //   $('#nav-icon4').click(function(){
-    //     $(this).toggleClass('open');
-    //   });
-  
-      
-    // });
 
     const handleonclick=()=>{
       
@@ -104,12 +84,12 @@ const NavbarMoblie = () => {
                     }
                     >Contact</NavLink>
 
-                    <NavLink to="/login" style={({ isActive }) =>
+                    <NavLink to="/studashboard" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
                     >Student Panel</NavLink>
 
-                    <NavLink to="/teacgerpanel" style={({ isActive }) =>
+                    <NavLink to="/teacherdashboard" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
                     >Teacher Panel</NavLink>

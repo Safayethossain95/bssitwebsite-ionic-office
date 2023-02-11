@@ -22,7 +22,7 @@ import '../../sassFiles/sassPages/dashboards/dashvariables.scss'
 ChartJS.register(ArcElement, Tooltip, Legend);
 const StudentDashboardComp = () => {
 
-    const [selected, setSelected] = React.useState(Date);;
+    const [selected, setSelected] = React.useState(Date);
     
     const optionme = [
         {
@@ -649,6 +649,7 @@ const StudentDashboardComp = () => {
                     <Col lg={4} style={{paddingLeft:"0",paddingRight:"15px"}}>
                         <div className="samebox sameboxcalender">
                         <DayPicker
+                            captionLayout="dropdown"
                             mode="single"
                             selected={selected}
                             onSelect={setSelected}

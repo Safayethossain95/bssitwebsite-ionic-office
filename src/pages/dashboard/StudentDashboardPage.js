@@ -1,9 +1,22 @@
-import React from 'react'
+import React,{useState} from 'react'
 import StudentDashboardComp from '../../components/dashboardComponents/StudentDashboardComp'
 import '../../sassFiles/sassPages/dashboards/srudentDashboards.scss'
 import NavbarMoblie from '../../components/mobile/NavbarMoblie'
 import FooterMobile from '../../components/mobile/FooterMobile'
+import StuDashboardmb from '../../components/mobile/dashbordMobile/StuDashboardmb'
+import '../../sassFiles/mobile/sassPages/dashboardsmb/stuDashboardmb.scss'
+import StuDashNavbarSidebarmb from '../../components/mobile/StuDashNavbarSidebarmb'
+import StuDashboardDocumenttab from '../../components/mobile/dashbordMobile/StuDashboardDocumenttab'
+
 const StudentDashboardPage = () => {
+
+  const [tbvaluevar,settbvaluevar]=useState("dashboardTab")
+
+  const tabchanger = (tabvalue)=>{
+    settbvaluevar(tabvalue)
+    
+  }
+
   return (
     <>
         <div className="desktop">
@@ -17,7 +30,19 @@ const StudentDashboardPage = () => {
         </div>  
         <div className="mobile">
           <div className="studentdashboardmobilewrapper">
-            <NavbarMoblie/>
+            <StuDashNavbarSidebarmb func={tabchanger}/>
+            {
+              tbvaluevar=="dashboardTab"?
+              
+              <StuDashboardmb/>
+              :
+              tbvaluevar=="documentTab"?
+              <StuDashboardDocumenttab/>
+              
+              :
+              ""
+            }
+            
             <FooterMobile/>  
 
           </div>
