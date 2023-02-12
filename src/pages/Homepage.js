@@ -26,7 +26,11 @@ import '../sassFiles/mobile/sassPages/homepage.scss'
 
 const Homepage = () => {
 
-  
+  function setBodyColor({color}) {
+    document.documentElement.style.setProperty('--bodyColor', color)
+}
+
+  setBodyColor({color: "#fff"})
 
 useEffect(()=>{
   // $(".navbar-toggler").click(function(){

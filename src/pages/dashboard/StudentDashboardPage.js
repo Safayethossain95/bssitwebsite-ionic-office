@@ -7,8 +7,17 @@ import StuDashboardmb from '../../components/mobile/dashbordMobile/StuDashboardm
 import '../../sassFiles/mobile/sassPages/dashboardsmb/stuDashboardmb.scss'
 import StuDashNavbarSidebarmb from '../../components/mobile/StuDashNavbarSidebarmb'
 import StuDashboardDocumenttab from '../../components/mobile/dashbordMobile/StuDashboardDocumenttab'
+import StuDashboardNoticemb from '../../components/mobile/dashbordMobile/StuDashboardNoticemb'
+import StuDashboardClassroutinemb from '../../components/mobile/dashbordMobile/StuDashboardClassroutinemb'
+import StuDashboardAttmb from '../../components/mobile/dashbordMobile/StuDashboardAttmb'
 
 const StudentDashboardPage = () => {
+
+  function setBodyColor({color}) {
+    document.documentElement.style.setProperty('--bodyColor', color)
+}
+
+  setBodyColor({color: "#f2f2f2"})
 
   const [tbvaluevar,settbvaluevar]=useState("dashboardTab")
 
@@ -38,6 +47,18 @@ const StudentDashboardPage = () => {
               :
               tbvaluevar=="documentTab"?
               <StuDashboardDocumenttab/>
+              
+              :
+              tbvaluevar=="noticeTab"?
+              <StuDashboardNoticemb/>
+              
+              :
+              tbvaluevar=="classRoutineTab"?
+              <StuDashboardClassroutinemb/>
+              
+              :
+              tbvaluevar=="attendanceTab"?
+              <StuDashboardAttmb/>
               
               :
               ""

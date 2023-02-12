@@ -4,6 +4,12 @@
 @import '../../../sassStyles/global';
 
 
+:root {
+    --bodyColor: "#000000";
+}
+body {
+    background-color: var(--bodyColor);
+}
 .studentdashboardwrapper{
     position:relative;
     .overlayfordrpdwn{
@@ -114,9 +120,10 @@
                     justify-content: space-between;
                     background-color: #F2F2F2;
                     margin-right: 6px;
-                    
+                    overflow-x: hidden;
                     @include media(xlgDevice){
-                        height: 100vh;
+                        height: calc(100vh - 90px);
+                        overflow-y: scroll;
                     }
                     &.profiletab{
                         @include media(xlgDevice){
@@ -239,12 +246,14 @@
                             margin-bottom: 15px;
                             border-radius: 20px;
                             padding:20px;
+                            min-height: 373px;
                         }
                         .preveousdocumnets{
                             height: 55%;
                             background-color: #fff;
                             border-radius: 20px;
                             padding:20px;
+                            overflow-y: scroll;
                             .docselects{
                                 width:615px;
                                 height: 120px;                                
@@ -417,10 +426,11 @@
                             margin-bottom: 15px;
                             padding:20px;
                             position: relative;
-                            height: 60%;
-                            @include media(xlgDevice) {
-                                height:480px;
-                            }
+                            
+                            height: 608px;
+                            // @include media(xlgDevice) {
+                            //     height:480px;
+                            // }
                             .bottombuttondiv{
                                 position: absolute;
                                 bottom:0;
@@ -495,16 +505,17 @@
                             border-radius: 20px;                            
                             padding:20px;
                             position: relative;
-                            height: 40%;
+                            height: calc(100% - 500px);
+                            min-height: 300px;
                             .headingofleaverea{
                                 text-align: center;
                                 h4{
                                     margin-bottom: 42px;
                                 }
                             }
-                            @include media(xlgDevice){
-                                height: 300px;
-                            }
+                            // @include media(xlgDevice){
+                            //     height: 300px;
+                            // }
                             @include commontablecss(); 
                         }
                     }
@@ -515,6 +526,7 @@
                             border-radius: 20px;                            
                             padding:20px;
                             height: 100%;
+                            overflow-y: scroll;
                             .basicinfopopulate{
                                 padding: 20px 0;
                                 p{
@@ -704,6 +716,7 @@
                                     border-radius: 20px;                            
                                     padding:20px;
                                     margin-bottom: 15px;
+                                    overflow-y: scroll;
                                     .profileimgbig{
                                         h4{
                                             margin-bottom: 0;
@@ -783,6 +796,7 @@
                                     background-color: #fff;
                                     border-radius: 20px;
                                     padding:20px;
+                                    overflow-y: scroll;
                                     h3{
                                         @include myfont(25px,500,$main_font);
 
@@ -1148,6 +1162,8 @@
                         background:#fff;
                         border-radius: 20px;
                         padding:12px;
+                        overflow-y: scroll;
+                        
                         .noticetabboxbar{
                             padding-left: 40px;
                             width:100%;

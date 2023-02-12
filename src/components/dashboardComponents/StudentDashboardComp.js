@@ -517,7 +517,7 @@ const StudentDashboardComp = () => {
                                         {
                                         prevPaymentHistory.map((item,key)=>{
                                             return(
-                                                <div className="payhpartcardbar">
+                                                <div key={key} className="payhpartcardbar">
                                                     <div className="monthdatewrapper">
                                                     <h3>{item.month}</h3>
                                                     <p>Date: {item.date}</p>
@@ -558,7 +558,7 @@ const StudentDashboardComp = () => {
                                         drpday=="Saturday"?
                                         periodsubjectdata.saturday.map((item,key)=>{
                                             return(
-                                                <tr>
+                                                <tr key={key}>
                                                     <td>{item.periodnumber} Period </td>
                                                     <td>{item.subject}</td>
                                                 </tr>
@@ -568,7 +568,7 @@ const StudentDashboardComp = () => {
                                         drpday=="Sunday"?
                                         periodsubjectdata.sunday.map((item,key)=>{
                                             return(
-                                                <tr>
+                                                <tr key={key}>
                                                     <td>{item.periodnumber} Period </td>
                                                     <td>{item.subject}</td>
                                                 </tr>
@@ -601,7 +601,7 @@ const StudentDashboardComp = () => {
                                         drpday=="Wednesday"?
                                         periodsubjectdata.wednesday.map((item,key)=>{
                                             return(
-                                                <tr>
+                                                <tr key={key}>
                                                     <td>{item.periodnumber} Period </td>
                                                     <td>{item.subject}</td>
                                                 </tr>
@@ -630,7 +630,7 @@ const StudentDashboardComp = () => {
                                         :
                                         periodsubjectdata.saturday.map((item,key)=>{
                                             return(
-                                                <tr>
+                                                <tr key={key}>
                                                     <td>{item.periodnumber} Period </td>
                                                     <td>{item.subject}</td>
                                                 </tr>
@@ -831,7 +831,7 @@ const StudentDashboardComp = () => {
                     {
                         noticeData.map((item,key)=>{
                             return(
-                                    <div className="noticetabboxbar">
+                                    <div key={key} className="noticetabboxbar">
                                         <div className="dateofnoticebox">
                                             <h5>{item.publishDateDayMonth}<br/>{item.publishDateYear}</h5>
                                         </div>
@@ -883,7 +883,7 @@ const StudentDashboardComp = () => {
                                             {
                                                 routinetabData.classRoutine.tableData.map((item,key)=>{
                                                     return(
-                                                        <tr>
+                                                        <tr key={key}>
                                                             <td>
                                                                 {item.day}
                                                             </td>
@@ -949,8 +949,8 @@ const StudentDashboardComp = () => {
                 <div className="tabpaneheightadjust tabpanerightattandancetab">
                     <div className="atttabbox">
                     <Row className='firstrow'>
-                            <Col >
-                            <div className="dropdownwrapper" id="routinedrp">
+                            <Col className="d-flex align-items-end">
+                            <div className="dropdownwrapper w-100" id="routinedrp">
                                 <Dropdown open={true} className='filterdropone'  options={Optionroutinetype} onChange={(e)=>dropdownvalueroutinetype(e)} value={defaultOptionroutinetype} placeholder="Select an option" />
                                 <BsChevronDown/>
                             </div>
@@ -1004,7 +1004,7 @@ const StudentDashboardComp = () => {
                                             {
                                                 attendanceData.header.map((item,key)=>{
                                                     return (
-                                                        <th>
+                                                        <th key={key}>
                                                             {item.headeritem}
                                                             {
                                                                 item.img?
@@ -1023,7 +1023,7 @@ const StudentDashboardComp = () => {
                                         {
                                             attendanceData.innerTableData.map((item,key)=>{
                                                 return (
-                                                    <tr>
+                                                    <tr key={key}>
                                                         <td>
                                                             {item.SL}
                                                         </td>
@@ -1458,7 +1458,7 @@ const StudentDashboardComp = () => {
                                     {
                                         leavereqstatusData.innnerData.map((item,key)=>{
                                             return(
-                                                <tr>
+                                                <tr key={key}>
                                                     <td>{item.type}</td>
                                                     <td>{item.reason}</td>
                                                     <td>{item.from}</td>
@@ -1956,7 +1956,7 @@ const StudentDashboardComp = () => {
                                             {
                                                 routinetabData.examRoutine.tableData.map((item,key)=>{
                                                     return(
-                                                        <tr>
+                                                        <tr key={key}>
                                                             <td>{item.date}</td>
                                                         </tr>
                                                     )
@@ -1969,7 +1969,7 @@ const StudentDashboardComp = () => {
                                             {
                                                 routinetabData.examRoutine.tableData.map((item,key)=>{
                                                     return(
-                                                        <tr>
+                                                        <tr key={key}>
                                                             <td>{item.day}</td>
                                                         </tr>
                                                     )
@@ -1982,7 +1982,7 @@ const StudentDashboardComp = () => {
                                             {
                                                 routinetabData.examRoutine.tableData.map((item,key)=>{
                                                     return(
-                                                        <tr>
+                                                        <tr key={key}>
                                                             <td>{item.starttime}</td>
                                                         </tr>
                                                     )
@@ -1995,7 +1995,7 @@ const StudentDashboardComp = () => {
                                             {
                                                 routinetabData.examRoutine.tableData.map((item,key)=>{
                                                     return(
-                                                        <tr>
+                                                        <tr key={key}>
                                                             <td>{item.endtime}</td>
                                                         </tr>
                                                     )
@@ -2008,7 +2008,7 @@ const StudentDashboardComp = () => {
                                             {
                                                 routinetabData.examRoutine.tableData.map((item,key)=>{
                                                     return(
-                                                        <tr>
+                                                        <tr key={key}>
                                                             <td>{item.subject}</td>
                                                         </tr>
                                                     )

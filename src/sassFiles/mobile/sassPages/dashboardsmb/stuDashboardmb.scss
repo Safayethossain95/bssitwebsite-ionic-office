@@ -63,6 +63,81 @@
         margin-top: 0;
        }
 
+       .noticetabbox{
+        width:100%;
+        height:unset;
+        background:#fff;
+        border-radius: 20px;
+        padding:12px;
+        
+        margin-bottom: 10px;
+        .noticetabboxbar{
+            // padding-left: 40px;
+            padding-left: 20px;
+            width:100%;
+            height: 50px;
+            border-radius: 10px;
+            border: 1px solid $border_twenty;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            .dateofnoticebox{
+                align-self: flex-start;
+                h5{
+                    margin-top: 22px;
+                    margin-right: 22px;
+                    @include myfont(16px,600,$main_font);
+                    color:#ED1C24;
+                }
+            }
+            h3{
+                @include myfont(16px,400,$main_font);
+                margin-bottom: 0;
+                color:$seventyblack;
+                @include media(xsmDevice){
+                    @include myfont(12px,400,$main_font);
+                }
+                span{
+                    @include myfont(12px,300,$main_font);
+                    display: block;
+                }
+            }
+        }
+        .noticetabboxbarbig{
+            height: 380px;
+            width: 100%;
+            // padding-left: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 10px;
+            border: 1px solid $seventyblack;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            .dateofnoticebox{
+                align-self: flex-start;
+                h5{
+                    margin-top: 22px;
+                    margin-right: 22px;
+                    @include myfont(16px,600,$main_font);
+                    color:#ED1C24;
+                }
+            }
+            h3{
+                @include myfont(16px,400,$main_font);
+                color:$seventyblack;
+                
+                line-height: 23px;
+                @include media(xsmDevice){
+                    @include myfont(12px,400,$main_font);
+                }
+            }
+        }
+        }
+
         .bodycolorbg{        
             background-color: #f2f2f2;
             width:100%;
@@ -716,6 +791,50 @@
                     @include myfont(16px,4500,$main_font);
                 }
             }
+            .preveousdocumnets{
+                height: 55%;
+                background-color: #fff;
+                border-radius: 20px;
+                padding:20px;
+                .docselects{
+                    width:auto;
+                    height: 120px;                                
+                    margin:0 auto;
+                    .docseletssingle{
+                        margin-bottom: 10px;
+                        .filterdropone{
+
+                            width:auto;
+                            height: 35px;
+                           .Dropdown-menu{
+                            text-align: left;
+                           }
+                            .Dropdown-control{
+                                height:35px;
+                                .Dropdown-placeholder{
+                                    top:6px;
+                                    @include myfont(12px,400,$main_font);
+                                }
+                            }
+                        }
+                    
+                    }
+                    input{
+                        width:100%;
+                        height: 35px;
+                        @include borderthin();
+                        border-radius: 10px;
+                        padding:0 10px;
+                        @include myfont(12px,400,$main_font);
+                        &::placeholder{
+                            @include myfont(12px,400,$main_font);
+                        }
+                    }
+                }
+                h4{
+                    margin-bottom: 0;
+                }
+            }
            .documenttabsignlebar{
             margin-bottom: 10px;
                             width:100%;
@@ -755,7 +874,106 @@
                                     color:$seventyblack;
                                 }
                             }
+            }
+            .rotuinetabbox{
+                @include commontablecss();
+                background-color: #fff;
+                border-radius: 20px;
+                padding:10px;
+                .routineclassTable{
+                    .dropdownwrapper{
+                        margin-top: 15px;
+                        .Dropdown-menu{
+                            .Dropdown-option{
+                                @include myfont(12px,400,$main_font);
+                            }
                         }
+                        .Dropdown-control{
+                            height: 35px;
+                            .Dropdown-placeholder{
+                                top:8px;
+                                @include myfont(12px,400,$main_font);
+                            }
+                        }
+                    }
+                }
+                thead{
+                    tr{
+                        position: sticky;
+                        top: 00px;
+                        background-color: #fff;
+                        th{
+                            font-size: 12px!important;
+                            font-weight: 500;
+                            &:nth-child(4){
+                                width:50px!important;
+                            }
+                        }
+                    }
+                }
+                tbody{
+                    tr{
+                        
+                        td{
+                           
+                            font-size: 12px!important;
+                            border:1px dashed rgba(0,0,0,0.1);
+                            
+                            &:nth-child(4){
+                                table{
+                                    width:60px;
+                                    tr{
+                                        td{
+                                            border:0 !important;
+                                            
+                                
+                                                width:50px!important;
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                            table{
+                                tr{
+                                    td{
+                                        border:0 !important;
+                                        
+                            
+                                            width:50px!important;
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+            .firstboxofattTabmb{
+                .dropdownwrapper{
+                    margin-top: 15px;
+                    margin-bottom: 10px;
+                    .Dropdown-menu{
+                        .Dropdown-option{
+                            @include myfont(12px,400,$main_font);
+                        }
+                    }
+                    .Dropdown-control{
+                        height: 35px;
+                        .Dropdown-placeholder{
+                            top:8px;
+                            @include myfont(12px,400,$main_font);
+                        }
+                    }
+                }
+                input{
+                    height: 35px;
+                    border-radius: 10px;
+                    border:0;
+                    width:100%;
+                    @include borderthin();
+                }
+            }
         }
     }
 }

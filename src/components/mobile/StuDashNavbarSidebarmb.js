@@ -30,9 +30,13 @@ const handleTabvalue=(mytabval)=>{
     var getiddashboardtab = document.getElementById("dashboardTab")
     var getiddocumenttab = document.getElementById("documentTab")
     var getinoticetab = document.getElementById("noticeTab")
+    var getclassroutinetab = document.getElementById("classRoutineTab")
+    var getatttab = document.getElementById("attendanceTab")
     getiddashboardtab.classList.remove("activei")
     getiddocumenttab.classList.remove("activei")
     getinoticetab.classList.remove("activei")
+    getatttab.classList.remove("activei")
+    getclassroutinetab.classList.remove("activei")
     var getidtab = document.getElementById(mytabval)
     setvarforiconchange(mytabval)
     getidtab.classList.add('activei')
@@ -110,6 +114,26 @@ const handleTabvalue=(mytabval)=>{
                             <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticonblack.png" alt="" />
                         }
                         Notice
+                    </NavLink>
+                    <NavLink id="classRoutineTab" onClick={()=>handleTabvalue("classRoutineTab")}                    
+                    >
+                        {
+                            varforiconchange=="classRoutineTab"?
+                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticon.png" alt="" />
+                            :
+                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticonblack.png" alt="" />
+                        }
+                        Class Routine
+                    </NavLink>
+                    <NavLink id="attendanceTab" onClick={()=>handleTabvalue("attendanceTab")}                    
+                    >
+                        {
+                            varforiconchange=="attendanceTab"?
+                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticon.png" alt="" />
+                            :
+                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticonblack.png" alt="" />
+                        }
+                        Attendance
                     </NavLink>
 
                 </Nav>
