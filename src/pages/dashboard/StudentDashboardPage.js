@@ -10,6 +10,9 @@ import StuDashboardDocumenttab from '../../components/mobile/dashbordMobile/StuD
 import StuDashboardNoticemb from '../../components/mobile/dashbordMobile/StuDashboardNoticemb'
 import StuDashboardClassroutinemb from '../../components/mobile/dashbordMobile/StuDashboardClassroutinemb'
 import StuDashboardAttmb from '../../components/mobile/dashbordMobile/StuDashboardAttmb'
+import StuDashboardBillInfomb from '../../components/mobile/dashbordMobile/StuDashboardBillInfomb'
+import StuDashboardResultmb from '../../components/mobile/dashbordMobile/StuDashboardResultmb'
+import StuDashboardProfilemb from '../../components/mobile/dashbordMobile/StuDashboardProfilemb'
 
 const StudentDashboardPage = () => {
 
@@ -59,6 +62,18 @@ const StudentDashboardPage = () => {
               :
               tbvaluevar=="attendanceTab"?
               <StuDashboardAttmb/>
+              
+              :
+              tbvaluevar=="billInfoTab"?
+              <StuDashboardBillInfomb/>
+              
+              :
+              tbvaluevar=="resultTab"?
+              <StuDashboardResultmb/>
+              
+              :
+              tbvaluevar=="profileTab"?
+              <StuDashboardProfilemb/>
               
               :
               ""

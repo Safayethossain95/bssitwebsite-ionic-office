@@ -950,8 +950,14 @@
                 }
             }
             .firstboxofattTabmb{
+                background-color: #fff;
+                border-radius: 20px;
+                padding:10px;
+                p{
+                    @include myfont(12px,400,$main_font);
+                }
                 .dropdownwrapper{
-                    margin-top: 15px;
+                    
                     margin-bottom: 10px;
                     .Dropdown-menu{
                         .Dropdown-option{
@@ -966,14 +972,462 @@
                         }
                     }
                 }
+                .buttonview{
+                    
+                    margin:0 auto;
+                    height: 80px;                            
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .flexwrap{
+                        display: flex;
+                        justify-content: space-between;
+                        width:690px;
+                    }
+                    .totalpresentpill{
+                        padding:10px 17px;
+                        border-radius: 58px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: $totalpresentpillcolor;
+                        p{
+                            color: $totalpresentpilltextcolor;
+                            @include myfont($alltotalparafontsizemb,400,$main_font);
+                        }
+                        &.totalabsentpill{
+                        
+                            background-color: $totalabsentpillcolor;
+                            p{
+                                color: $totalabsentpilltextcolor;
+                            }
+                        }
+                        &.totallatepill{
+                            background-color: $totallatepillcolor;
+                            p{
+                                color:$totallatepilltextcolor;
+                            }
+                        }
+                        &.totalearlyleave{
+                            background-color: $totalearlyleavecolor;
+                            p{
+                                color:$totalearlyleavetextcolor;
+                            }
+                        }
+                    }
+                    
+                    
+                }
                 input{
                     height: 35px;
                     border-radius: 10px;
                     border:0;
                     width:100%;
                     @include borderthin();
+                    @include myfont(12px,400,$main_font);
                 }
             }
+            .roundwhitewrapper{
+                background-color: #fff;
+                border-radius: 20px;
+                padding:0 0 5px 0;
+                margin-bottom: 10px;
+            }
+            .secondboxofAttmb{
+                background-color: #fff;
+                border-radius: 20px;
+                padding:0 10px;
+                overflow-x: scroll;
+                margin:10px 0;
+                table{
+                    width:500px;
+                    
+                    overflow-x: scroll;
+                    th{
+                        @include myfont(12px,600,$main_font);
+                        &:first-child{
+                            text-align: center;
+                        }
+                       
+                        position:relative;
+                        img{
+                            position:absolute;
+                            top:50%;
+                            transform:translateY(-50%);
+                            right:10px;
+                        }
+                        width:14;
+                        &:nth-child(2){
+                            width:30%;
+                        }
+                    }
+                    tr{
+
+                        height:40px;
+                        border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+                        td{
+                                width:14%;
+                                &:nth-child(2){
+                                    width:30%;
+                                }
+                            @include myfont(12px,400,$main_font);
+                            &:first-child{
+                                text-align: center;
+                            }
+                            
+                            &>button{
+                                background-color: transparent;
+                                border:0;
+                            }
+                        }
+                    }
+                }
+            }
+            
+                .duepaymentpart,.paymenthistory,.resulttblemb{
+                            
+                    width:100%;
+                    background-color: #fff;
+                    border-radius: 20px;
+                    margin-bottom: 15px;
+                    padding:20px;
+                    position: relative;
+                    height: 403px;
+                    
+                    .wrapperresulttableextra{
+                        
+                        height: unset!important;
+                    }
+                    .stats{
+                        
+                        width:100%;
+                        background-color: #fff;
+                        border-radius: 20px;
+                        padding:10px;
+                        
+                        .downloadbuttonforresult{
+                            text-align: center;
+                            button{
+                                background-color: #F3F1FF;
+                                width: 194px;
+                                height: 50px;
+                                color: #312783;
+                                font-size: 16px;
+                                font-weight: 400;
+                                font-family: "Poppins", sans-serif;
+                                border: 0;
+                                border-radius: 10px;
+                                
+                                margin-top: 20px;
+                            }
+                        }
+
+
+                        .statsboxresulttab{
+                            height:120px;
+                            width:100%;
+                            @include borderthin();
+                            border-radius: 20px;
+                            &.statsboxresulttab2{
+                                height: auto;
+                                margin-top: 10px;
+                            }
+                            h5{
+                                @include myfont(12px,500,$main_font);
+                                color:#000;
+                                text-align: center;
+                                margin-top: 15px;
+                                
+                            }
+                            
+                            .centerwrapper{
+                                width:227px;
+                                
+                                margin: 20px auto;
+                                p{
+                                    
+                                    @include myfont(12px,400,$main_font);
+                                    color:$seventyblack;
+                                    text-align: left;
+                                   
+                                }
+                                &.centerwrapperright{
+                                    width:275px;
+                                    margin:20px auto;
+                                    
+                                }
+                            }
+                        }
+                    }
+                    &.resulttabmbextra{
+                        margin:20px 0;
+                        height: unset!important;
+                        background-color: #fff;
+                        padding:10px!important;
+                    }
+                    .bottombuttondiv{
+                        position: absolute;
+                        bottom:0;
+                        left:0;
+                        width:100%;
+                        
+                        height: 87px;
+                        border-radius: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        button{
+                            background-color: #F3F1FF;
+                            width:194px;
+                            height:50px;
+                            color: #312783;
+                            font-size: 16px;
+                            font-weight: 400;
+                            font-family: "Poppins", sans-serif;
+                            border: 0;
+                            border-radius: 10px;
+                            
+                        }
+                    }
+                    .duepaymenttable,.paymenthistorytable,.resulttable{
+                        position: relative;
+                        bottom:65px;
+                        top:0px;
+                        left: 0;
+                        width:100%;
+                        
+                        overflow-x: scroll;
+                        height:calc(100% - 107px);
+                        background-color: #fff;
+                        overflow-y: scroll;
+                        &.resulttableextra{
+                            height: 371px!important;
+                            background-color: #fff;
+                            padding:10px;
+                            border-radius: 20px;
+                            width:100%;
+                        }
+                       @include commontablecss();
+                       table{
+                        width:500px;
+                        tr{
+                            th{
+                                @include myfont(12px,400,$main_font);
+                                color:#000;
+                            }
+                        }
+                        tr{
+                            td{
+                                @include myfont(12px,400,$main_font);
+                                color:rgba(0,0,0,0.7);
+                            }
+                        }
+                       }
+                        
+                    }
+                    .headingofduepayment{
+                        h3{
+                            @include myfont($headingofduepaymentfontsize,500,$main_font);
+                            color:$headingduepaymentcolor;
+                        }
+                        p{
+                            text-align: center;
+                            @include myfont($headingofduepaymentsubheadingfontsizemb,400,$main_font);
+                            color:$headingofduepaymentsubheadingfontcolor;
+                        }
+                    }
+                    
+                }
+            
+            .resulttabbox{
+                .tpwhite{
+                    background-color: #fff;
+                border-radius: 20px;
+                margin: 0px auto 20px auto;
+                width:100%;
+                padding:10px 5px;
+                }
+                .basicinfopopulate{
+                    padding: 0;
+                }
+                p{
+                    @include myfont(12px,400,$main_font);
+                }
+                .dropdownwrapper{
+                    
+                    margin-bottom: 10px;
+                    .Dropdown-menu{
+                        .Dropdown-option{
+                            @include myfont(12px,400,$main_font);
+                        }
+                    }
+                    .Dropdown-control{
+                        height: 35px;
+                        .Dropdown-placeholder{
+                            top:8px;
+                            @include myfont(12px,400,$main_font);
+                        }
+                    }
+                }
+            }
+
+            .flexwrapperprofilemb{
+                
+                height: 100%;
+                width: 100%;
+                .profileleftcolumn{
+                    width:100%;
+                    margin-right: 15px;
+                    display: flex;
+                    flex-direction: column;
+                    .proleftcoltop{
+                        height: 67%;
+                        width: 100%;
+                        background-color: #fff;
+                        border-radius: 20px;                            
+                        padding:20px;
+                        margin-bottom: 15px;
+                        
+                        .profileimgbig{
+                            h4{
+                                margin-bottom: 0;
+                                @include myfont(20px,500,$main_font);
+                                margin-top: 20px;
+                            }
+                            p{
+                                @include myfont(11px,400,$main_font);
+                                color:$seventyblack;
+                            }
+                            img{
+                                width:100px;
+                                height:100px;
+                            }
+                        }
+                        .profiledetailpoints{
+                            margin:0 auto;
+                            width:215px;
+                            margin-top: 25px;
+                            @include media(xlgDevice){
+                                margin-top: 20px;
+                            }
+                            .minidivswrapper{
+                                margin-bottom: 5px;
+                                @include media(xlgDevice){
+                                    margin-bottom: 0px;
+                                }
+                                .minidivleft{
+                                    p{
+                                        @include myfont(16px,400,$main_font);
+                                    color:$seventyblack;
+                                    }
+                                }
+                                .minidivright{
+                                    margin-left: 25px;
+                                    p{
+                                        @include myfont(16px,400,$main_font);
+                                    color:$seventyblack;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .proleftcolbottom{
+                    height: 33%;
+                    width: 100%;
+                    background-color: #fff;
+                    border-radius: 20px;                            
+                    padding:20px;
+                    margin-top: 10px;
+                    margin-bottom: 69px;
+                    
+                    h3{
+                        @include myfont(16px,500,$main_font);
+                    }
+                    .proleftcolbottomflexwrapforbuttonw{
+                        display: flex;
+                        height:calc(100% - 60px);
+                        .leftforicon,.rightforicon{
+                            width:50%;                                            
+                            height:100%;                                             
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            .flexwrap{
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                img{
+                                    width:30px;
+                                    height: 30px;
+                                    margin:0 auto;
+                                }
+                                h5{
+                                    @include myfont(12px,400,$main_font);
+                                    margin-top: 15px;
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+                .profilerightcolumn{
+                    height: 100%;
+                        width: 100%;
+                        background-color: #fff;
+                        border-radius: 20px;
+                        padding:20px;
+                        overflow-y: scroll;
+                        h3{
+                            @include myfont(16px,500,$main_font);
+
+                        } 
+                        .subheading{
+                            @include myfont(16px,500,$main_font);
+                        }
+                            .infopopulatebox{
+                                height:auto;
+                                width:100%;
+                                @include borderthin();
+                                border-radius:10px;
+                                padding:7px 10px;
+                                margin-bottom: 15px;
+                                h5{
+                                    margin-bottom: 0;
+                                    @include myfont(16px,400,$main_font);
+                                }
+                                p{
+                                    @include myfont(12px,400,$main_font);
+                                    color:$seventyblack;
+                                }
+                            }
+                        
+                        .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+                            color:#000;
+                            border-color: transparent;
+                            border-bottom:2px solid #000;
+                        
+                        &:hover{
+                            border-bottom:2px solid #000;
+                        }
+                        
+                        
+                        }
+                        .nav-tabs{
+                            
+                                .nav-link{
+                                    @include myfont(14px,400,$main_font);
+                                    color:rgba(0, 0, 0, 0.5);
+                                    &:hover{
+                                        border-color:transparent;
+                                    }
+                                }
+                            
+                        }
+                        
+                }
+            }
+
         }
     }
 }

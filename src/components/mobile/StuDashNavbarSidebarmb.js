@@ -32,11 +32,19 @@ const handleTabvalue=(mytabval)=>{
     var getinoticetab = document.getElementById("noticeTab")
     var getclassroutinetab = document.getElementById("classRoutineTab")
     var getatttab = document.getElementById("attendanceTab")
+    var getbillinfotab = document.getElementById("billInfoTab")
+    var getresulttab = document.getElementById("resultTab")
+    var getprofiletab = document.getElementById("profileTab")
+
     getiddashboardtab.classList.remove("activei")
     getiddocumenttab.classList.remove("activei")
     getinoticetab.classList.remove("activei")
     getatttab.classList.remove("activei")
     getclassroutinetab.classList.remove("activei")
+    getbillinfotab.classList.remove("activei")
+    getresulttab.classList.remove("activei")
+    getprofiletab.classList.remove("activei")
+
     var getidtab = document.getElementById(mytabval)
     setvarforiconchange(mytabval)
     getidtab.classList.add('activei')
@@ -134,6 +142,36 @@ const handleTabvalue=(mytabval)=>{
                             <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticonblack.png" alt="" />
                         }
                         Attendance
+                    </NavLink>
+                    <NavLink id="billInfoTab" onClick={()=>handleTabvalue("billInfoTab")}                    
+                    >
+                        {
+                            varforiconchange=="billInfoTab"?
+                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticon.png" alt="" />
+                            :
+                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticonblack.png" alt="" />
+                        }
+                        Bill Info
+                    </NavLink>
+                    <NavLink id="resultTab" onClick={()=>handleTabvalue("resultTab")}                    
+                    >
+                        {
+                            varforiconchange=="resultTab"?
+                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticon.png" alt="" />
+                            :
+                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticonblack.png" alt="" />
+                        }
+                        Result
+                    </NavLink>
+                    <NavLink id="profileTab" onClick={()=>handleTabvalue("profileTab")}                    
+                    >
+                        {
+                            varforiconchange=="profileTab"?
+                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticon.png" alt="" />
+                            :
+                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticonblack.png" alt="" />
+                        }
+                        Profile
                     </NavLink>
 
                 </Nav>
