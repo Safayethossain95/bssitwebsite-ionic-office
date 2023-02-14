@@ -4,55 +4,52 @@ import CommonButton from '../subComponents/CommonButton'
 import {NavLink,Link} from 'react-router-dom';
 import '../../sassFiles/mobile/sassPages/homepage.scss'
 import {Row,Col} from 'react-bootstrap'
-const StuDashNavbarSidebarmb = (props) => {
-  let activeStyle = {
-    color:"#ED1C24"
-  };
-const [varforiconchange,setvarforiconchange ]=useState("")
-const handleonclick=()=>{
-  
-  
-  var mynavbarnav = document.getElementById("mynavbarnav");
-  mynavbarnav.classList.toggle('show');
-  mynavbarnav.classList.toggle('navbar-white');
-}
-
-const handletoggler=()=>{
-  var navtoggler = document.getElementById("nav-icon4");
-  navtoggler.classList.toggle('open');
-}
-const handleTabvalue=(mytabval)=>{
-    var mynavbarnav = document.getElementById("mynavbarnav");
-    mynavbarnav.classList.remove('show');
-    var navtoggler = document.getElementById("nav-icon4");
-    navtoggler.classList.toggle('open');
-    props.func(mytabval)
-    var getiddashboardtab = document.getElementById("dashboardTab")
-    var getiddocumenttab = document.getElementById("documentTab")
-    var getinoticetab = document.getElementById("noticeTab")
-    var getclassroutinetab = document.getElementById("classRoutineTab")
-    var getatttab = document.getElementById("attendanceTab")
-    var getbillinfotab = document.getElementById("billInfoTab")
-    var getresulttab = document.getElementById("resultTab")
-    var getprofiletab = document.getElementById("profileTab")
-    var getexamroutinetab = document.getElementById("examRoutineTab")
-
-    getiddashboardtab.classList.remove("activei")
-    getiddocumenttab.classList.remove("activei")
-    getinoticetab.classList.remove("activei")
-    getatttab.classList.remove("activei")
-    getclassroutinetab.classList.remove("activei")
-    getbillinfotab.classList.remove("activei")
-    getresulttab.classList.remove("activei")
-    getprofiletab.classList.remove("activei")
-    getexamroutinetab.classList.remove("activei")
-
-    var getidtab = document.getElementById(mytabval)
-    setvarforiconchange(mytabval)
-    getidtab.classList.add('activei')
-
-}
-
+const TeacherDashSidebarmb = (props) => {
+    let activeStyle = {
+        color:"#ED1C24"
+      };
+    const [varforiconchange,setvarforiconchange ]=useState("")
+    const handleonclick=()=>{
+      
+      
+      var mynavbarnav = document.getElementById("mynavbarnav");
+      mynavbarnav.classList.toggle('show');
+      mynavbarnav.classList.toggle('navbar-white');
+    }
+    
+    const handletoggler=()=>{
+      var navtoggler = document.getElementById("nav-icon4");
+      navtoggler.classList.toggle('open');
+    }
+    const handleTabvalue=(mytabval)=>{
+        var mynavbarnav = document.getElementById("mynavbarnav");
+        mynavbarnav.classList.remove('show');
+        var navtoggler = document.getElementById("nav-icon4");
+        navtoggler.classList.toggle('open');
+        props.func(mytabval)
+        var getiddashboardtab = document.getElementById("dashboardTab")
+        var getclassroutinetab = document.getElementById("classRoutineTab")
+        var getcurriculumtab = document.getElementById("curriculumTab")
+        var getreslultentrytab = document.getElementById("resultentryTab")
+        var getattendancetab = document.getElementById("attendanceTab")
+        var getsalaryinfotab = document.getElementById("salaryinfoTab")
+        var getleaveformtab = document.getElementById("leaveformTab")
+        var getprofiletab = document.getElementById("profileTab")
+    
+        getiddashboardtab.classList.remove("activei")
+        getclassroutinetab.classList.remove("activei")
+        getcurriculumtab.classList.remove("activei")
+        getreslultentrytab.classList.remove("activei")
+        getattendancetab.classList.remove("activei")
+        getsalaryinfotab.classList.remove("activei")
+        getleaveformtab.classList.remove("activei")
+        getprofiletab.classList.remove("activei")
+    
+        var getidtab = document.getElementById(mytabval)
+        setvarforiconchange(mytabval)
+        getidtab.classList.add('activei')
+    
+    }
   return (
     <>
           <Navbar id="navbarmini" className="mynavbarmb studashnav" expand="lg">
@@ -83,10 +80,10 @@ const handleTabvalue=(mytabval)=>{
              
                 
                 <Nav className="mynavbarnav mynavbarnavdash" id="mynavbarnav">
-                        <div className="profileimgandid">
-                        <img src="./assets/images/dashboards/studentDashboard/mobile/dashboardsidebar/smallpropic.png" alt="smallpropic.png" />
+                        <div className="profileimgandid d-flex align-items-center">
+                        <img style={{borderRadius:"50%",width:"50px",height:"50px"}} src="./assets/images/dashboards/teacherDashboard/profile_pic.png" alt="smallpropic.png" />
                         <div className="propicidpartright">
-                            <h4>MD. Jisan Khan</h4>
+                            <h4>Farhana Akhtar</h4>
                             <p>ID 1705032108</p>
                         </div>
                     </div>
@@ -105,26 +102,8 @@ const handleTabvalue=(mytabval)=>{
                         Dashboard
                         </NavLink>
 
-                    <NavLink id="documentTab" onClick={()=>handleTabvalue("documentTab")}                    
-                    >
-                        {
-                            varforiconchange=="documentTab"?
-                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticon.png" alt="" />
-                            :
-                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticonblack.png" alt="" />
-                        }
-                        Document
-                    </NavLink>
-                    <NavLink id="noticeTab" onClick={()=>handleTabvalue("noticeTab")}                    
-                    >
-                        {
-                            varforiconchange=="noticeTab"?
-                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticon.png" alt="" />
-                            :
-                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticonblack.png" alt="" />
-                        }
-                        Notice
-                    </NavLink>
+                   
+                   
                     <NavLink id="classRoutineTab" onClick={()=>handleTabvalue("classRoutineTab")}                    
                     >
                         {
@@ -135,15 +114,25 @@ const handleTabvalue=(mytabval)=>{
                         }
                         Class Routine
                     </NavLink>
-                    <NavLink id="examRoutineTab" onClick={()=>handleTabvalue("examRoutineTab")}                    
+                    <NavLink id="curriculumTab" onClick={()=>handleTabvalue("curriculumTab")}                    
                     >
                         {
-                            varforiconchange=="examRoutineTab"?
+                            varforiconchange=="curriculumTab"?
                             <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticon.png" alt="" />
                             :
                             <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticonblack.png" alt="" />
                         }
-                        Exam Routine
+                        Curriculum Entry
+                    </NavLink>
+                    <NavLink id="resultentryTab" onClick={()=>handleTabvalue("resultentryTab")}                    
+                    >
+                        {
+                            varforiconchange=="resultentryTab"?
+                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticon.png" alt="" />
+                            :
+                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticonblack.png" alt="" />
+                        }
+                        Result Entry
                     </NavLink>
                     <NavLink id="attendanceTab" onClick={()=>handleTabvalue("attendanceTab")}                    
                     >
@@ -155,25 +144,25 @@ const handleTabvalue=(mytabval)=>{
                         }
                         Attendance
                     </NavLink>
-                    <NavLink id="billInfoTab" onClick={()=>handleTabvalue("billInfoTab")}                    
+                    <NavLink id="salaryinfoTab" onClick={()=>handleTabvalue("salaryinfoTab")}                    
                     >
                         {
-                            varforiconchange=="billInfoTab"?
+                            varforiconchange=="salaryinfoTab"?
                             <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticon.png" alt="" />
                             :
                             <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticonblack.png" alt="" />
                         }
-                        Bill Info
+                        Salary Info
                     </NavLink>
-                    <NavLink id="resultTab" onClick={()=>handleTabvalue("resultTab")}                    
+                    <NavLink id="leaveformTab" onClick={()=>handleTabvalue("leaveformTab")}                    
                     >
                         {
-                            varforiconchange=="resultTab"?
+                            varforiconchange=="leaveformTab"?
                             <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticon.png" alt="" />
                             :
                             <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticonblack.png" alt="" />
                         }
-                        Result
+                        Leave Form
                     </NavLink>
                     <NavLink id="profileTab" onClick={()=>handleTabvalue("profileTab")}                    
                     >
@@ -196,4 +185,4 @@ const handleTabvalue=(mytabval)=>{
   )
 }
 
-export default StuDashNavbarSidebarmb
+export default TeacherDashSidebarmb

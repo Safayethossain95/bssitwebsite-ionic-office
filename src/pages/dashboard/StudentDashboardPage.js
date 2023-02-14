@@ -13,6 +13,7 @@ import StuDashboardAttmb from '../../components/mobile/dashbordMobile/StuDashboa
 import StuDashboardBillInfomb from '../../components/mobile/dashbordMobile/StuDashboardBillInfomb'
 import StuDashboardResultmb from '../../components/mobile/dashbordMobile/StuDashboardResultmb'
 import StuDashboardProfilemb from '../../components/mobile/dashbordMobile/StuDashboardProfilemb'
+import StuDashboardExamRoutinemb from '../../components/mobile/dashbordMobile/StuDashboardExamRoutinemb'
 
 const StudentDashboardPage = () => {
 
@@ -74,6 +75,10 @@ const StudentDashboardPage = () => {
               :
               tbvaluevar=="profileTab"?
               <StuDashboardProfilemb/>
+              
+              :
+              tbvaluevar=="examRoutineTab"?
+              <StuDashboardExamRoutinemb/>
               
               :
               ""

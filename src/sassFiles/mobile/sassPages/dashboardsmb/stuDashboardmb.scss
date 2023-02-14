@@ -1041,7 +1041,7 @@
                 margin:10px 0;
                 table{
                     width:500px;
-                    
+                   
                     overflow-x: scroll;
                     th{
                         @include myfont(12px,600,$main_font);
@@ -1056,7 +1056,7 @@
                             transform:translateY(-50%);
                             right:10px;
                         }
-                        width:14;
+                        width:14%;
                         &:nth-child(2){
                             width:30%;
                         }
@@ -1425,6 +1425,90 @@
                             
                         }
                         
+                }
+            }
+            .bgwhiteborder{
+                background-color: #fff;
+                border-radius: 20px;
+                padding: 5px;
+                .examroutinetable{
+                    background-color: #fff;
+                    border-radius: 20px;
+                    padding: 10px;
+                    overflow-x: scroll;
+                    padding-bottom: 4px;
+                    table{
+                        width:100px;
+                        thead{
+                            tr{
+                                height:40px;
+                                position: sticky;
+                                top: 0px;
+                                background-color: #fff;
+                                th{
+                                    font-size: 12px!important;
+                                    font-weight: 500;
+                                    &:nth-child(4){
+                                        width:50px!important;
+                                    }
+                                }
+                            }
+                        }
+                        tbody{
+                            tr{
+                                height:40px;
+                                
+                                td{
+                                   text-align: center;
+                                    font-size: 12px!important;
+                                    // border:1px dashed rgba(0,0,0,0.1);
+                                    &.downbtncell{
+                                        border:1px dashed rgba(0, 0, 0, 0.1);
+                                        button{
+                                            margin:0 auto;
+                                            width:40px;
+                                            height:40px;
+                                            @include borderthin();
+                                            border-radius: 20px;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            background-color: #fff;
+                                        }
+                                    }
+                                    &:nth-child(6){
+                                        border: 1px dashed rgba(0,0,0,0.1);
+                                    }
+                                    &:nth-child(4){
+                                        table{
+                                            width:60px;
+                                            tr{
+                                                td{
+                                                    
+                                                    
+                                        
+                                                        width:50px!important;
+                                                    
+                                                }
+                                            }
+                                        }
+                                    }
+                                    table{
+                                        tr{
+                                            td{
+                                                // border:0 !important;
+                                                border:1px dashed rgba(0,0,0,0.1);
+                                                border-right: none;
+                                                    width:50px!important;
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+        
+                        }
+                    }
                 }
             }
 

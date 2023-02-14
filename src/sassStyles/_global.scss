@@ -14,6 +14,17 @@ ul,ol{
 a{
     text-decoration: none;
 }
+table{
+    tr{
+        th{
+
+            font-family: $main_font!important;
+        }
+        td{
+            font-family: $main_font!important;
+        }
+    }
+}
 
 input{
     background-color: #fff;;
@@ -82,7 +93,7 @@ input{
       left:0;
       @include measurement(100%,auto,10px);
       background-color: #fff;
-      z-index: 999;
+      z-index: 998;
       @include borderthin();
       opacity: 0;
       padding-left: 0;

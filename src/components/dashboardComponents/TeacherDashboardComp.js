@@ -853,7 +853,7 @@ const TeacherDashboardComp = () => {
                             }
                         </tbody>
                     </table>
-                </div>
+                    </div>
                 </div>
                 
             </Tab.Pane>
