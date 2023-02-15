@@ -1484,6 +1484,8 @@ const StudentDashboardComp = () => {
                 <div className="tabpaneheightadjust profiletab">
                     <div className="flexwrapperprofile">
                         <div className="profileleftcolumn">
+                            <div className="scrollwrapper">
+
                             <div className="proleftcoltop">
                                 <div className="profileimgbig text-center">
                                 <img src="./assets/images/dashboards/studentDashboard/profilePicBig.png" alt="profilePicBig.png" />
@@ -1544,6 +1546,7 @@ const StudentDashboardComp = () => {
                                         
                                     </div>
                                 </div>
+                            </div>
                             </div>
                             <div className="proleftcolbottom">
                                     <h3>Support</h3>

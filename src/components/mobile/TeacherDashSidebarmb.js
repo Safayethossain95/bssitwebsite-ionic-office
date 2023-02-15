@@ -83,7 +83,7 @@ const TeacherDashSidebarmb = (props) => {
                         <div className="profileimgandid d-flex align-items-center">
                         <img style={{borderRadius:"50%",width:"50px",height:"50px"}} src="./assets/images/dashboards/teacherDashboard/profile_pic.png" alt="smallpropic.png" />
                         <div className="propicidpartright">
-                            <h4>Farhana Akhtar</h4>
+                            <h4>Farhana Ahmed</h4>
                             <p>ID 1705032108</p>
                         </div>
                     </div>

@@ -3,7 +3,8 @@ import $ from 'jquery'
 
 const Dropdown2 = (props) => {
     const [show,setShow] = useState(false)
-    const [myvariable,setmyvariable] = useState("Select")
+    const [myvariable,setmyvariable] = useState(props.myplaceholder?props.myplaceholder:"Select")
+    
     const handleDrp2=()=>{
         console.log("click hoise")
         setShow(!show)

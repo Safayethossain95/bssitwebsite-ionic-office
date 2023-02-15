@@ -1677,7 +1677,46 @@ const profiletabApiteacher = {
    
     
 }
-    
+const leavereqstatusData = {
+    heading:[
+        {
+            headline:"Type"
+        },
+        {
+            headline:"reason"
+        },
+        {
+            headline:"From"
+        },
+        {
+            headline:"To"
+        },
+        {
+            headline:"Duration"
+        },
+        {
+            headline:"Status"
+        },
+    ],
+    innnerData: [
+        {
+            type:"Early",
+            reason:"Fever and Flu",
+            from:"01-01-2023 (07:00 PM)",
+            to:"01-01-2023 (07:00 PM)",
+            duration:"7 Days 12 Hours",
+            status:"Accepted"
+        },
+        {
+            type:"Early",
+            reason:"Fever and Flu",
+            from:"01-01-2023 (07:00 PM)",
+            to:"01-01-2023 (07:00 PM)",
+            duration:"7 Days 12 Hours",
+            status:"Pending"
+        },
+    ]
+} 
 
 const TeacherDashboardApi = () => {
   return (
@@ -1687,6 +1726,6 @@ const TeacherDashboardApi = () => {
 }
 
 
-export {profiletabApiteacher,prevSalarytabledata,attendanceDatateacher,resultTabtabledata,curriculumtabtabledata,routinetabDatateacher,periodsubjectdatateacher,salaryInformationteacher,attendanceApiteacher}
+export {leavereqstatusData,profiletabApiteacher,prevSalarytabledata,attendanceDatateacher,resultTabtabledata,curriculumtabtabledata,routinetabDatateacher,periodsubjectdatateacher,salaryInformationteacher,attendanceApiteacher}
 
 export default TeacherDashboardApi

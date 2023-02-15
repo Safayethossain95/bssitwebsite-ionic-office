@@ -65,7 +65,7 @@ input{
     src: url(../../public/fonts/OLDENGL.TTF);
     // /assets/fonts/CloisterBlackLight-axjg.ttf
   }
-
+  
 .wrapperwrap{
     @include measurement(100%,35px,10px);
     position:relative;
@@ -85,6 +85,7 @@ input{
           top:50%;
           transform: translateY(-50%);
       }
+     
       
     }
     .Dropdown2-menu{
@@ -96,6 +97,7 @@ input{
       z-index: 998;
       @include borderthin();
       opacity: 0;
+      visibility: hidden;
       padding-left: 0;
       li{
           user-select: none;
@@ -107,6 +109,7 @@ input{
       }
       &.showme{
           opacity: 1!important;
+          visibility: visible;
       }
   }
 }

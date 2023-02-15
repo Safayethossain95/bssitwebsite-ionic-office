@@ -1235,6 +1235,8 @@ const TeacherDashboardComp = () => {
             <div className="tabpaneheightadjust profiletab">
                     <div className="flexwrapperprofile">
                         <div className="profileleftcolumn">
+                            <div className="scrollwrapper">
+
                             <div className="proleftcoltop">
                                 <div className="profileimgbig text-center">
                                 <img src="./assets/images/dashboards/teacherDashboard/profile_pic_big.png" alt="profile_pic_big.png" />
@@ -1296,6 +1298,7 @@ const TeacherDashboardComp = () => {
                                     </div>
                                 </div>
                             </div>
+                            </div>
                             <div className="proleftcolbottom">
                                     <h3>Support</h3>
 
@@ -1315,6 +1318,7 @@ const TeacherDashboardComp = () => {
                                     </div>
                             </div>
                         </div>
+                        
                         <div className="profilerightcolumn">
                             <h3>Profile Settings</h3>
                             <Tabs
@@ -1681,6 +1685,8 @@ const TeacherDashboardComp = () => {
                                 </Tab>
                                 </Tabs>
                         </div>
+
+                        
                     </div>
                 </div>
             </Tab.Pane>

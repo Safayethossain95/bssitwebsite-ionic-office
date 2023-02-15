@@ -8,6 +8,11 @@ import TeacherDashSidebarmb from '../../components/mobile/TeacherDashSidebarmb'
 import TeaDashmb from '../../components/mobile/dashbordMobile/TeacherDashboard/TeaDashmb'
 import TeaClassDashTab from '../../components/mobile/dashbordMobile/TeacherDashboard/TeaClassDashTab'
 import TeaCurriculumTab from '../../components/mobile/dashbordMobile/TeaCurriculumTab'
+import TeaResultEntryTab from '../../components/mobile/dashbordMobile/TeacherDashboard/TeaResultEntryTab'
+import TeaAttdDashTab from '../../components/mobile/dashbordMobile/TeacherDashboard/TeaAttdDashTab'
+import TeaSalaryDashTab from '../../components/mobile/dashbordMobile/TeacherDashboard/TeaSalaryDashTab'
+import TeaLeaveFormTab from '../../components/mobile/dashbordMobile/TeacherDashboard/TeaLeaveFormTab'
+import TeaProfileDashTab from '../../components/mobile/dashbordMobile/TeacherDashboard/TeaProfileDashTab'
 const TeacherDashboardPage = () => {
   function setBodyColor({color}) {
     document.documentElement.style.setProperty('--bodyColor', color)
@@ -35,6 +40,7 @@ const TeacherDashboardPage = () => {
     </div>  
     <div className="mobile">
           <div className="teacherdashboardmobilewrapper">
+            <div className="overlayfordrpdwn"></div>
             <TeacherDashSidebarmb func={tabchanger}/>
             {
               tbvaluevar=="dashboardTab"?
@@ -47,6 +53,26 @@ const TeacherDashboardPage = () => {
               :
               tbvaluevar=="curriculumTab"?
               <TeaCurriculumTab/>
+              
+              :
+              tbvaluevar=="resultentryTab"?
+              <TeaResultEntryTab/>
+              
+              :
+              tbvaluevar=="attendanceTab"?
+              <TeaAttdDashTab/>
+              
+              :
+              tbvaluevar=="salaryinfoTab"?
+              <TeaSalaryDashTab/>
+              
+              :
+              tbvaluevar=="leaveformTab"?
+              <TeaLeaveFormTab/>
+              
+              :
+              tbvaluevar=="profileTab"?
+              <TeaProfileDashTab/>
               
               :
               

@@ -953,6 +953,7 @@
                 background-color: #fff;
                 border-radius: 20px;
                 padding:10px;
+                padding-bottom: 0;
                 p{
                     @include myfont(12px,400,$main_font);
                 }
@@ -975,7 +976,7 @@
                 .buttonview{
                     
                     margin:0 auto;
-                    height: 80px;                            
+                    height: 56px;                            
                     display: flex;
                     align-items: center;
                     justify-content: center;

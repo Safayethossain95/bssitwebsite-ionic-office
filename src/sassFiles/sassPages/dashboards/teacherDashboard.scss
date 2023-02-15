@@ -139,9 +139,16 @@
                     width:145px!important;
                 }
             }
+            
+            .scrollwrapper{
+                padding-right: 8px;
+                border-radius: 20px;
+                background-color: #fff;
+                margin-bottom: 15px;
+            }
             .proleftcoltop{
                 @include media(xlgDevice){
-                    height:53%!important;
+                    height:465!important;
                 }
             }
             .proleftcolbottom{
