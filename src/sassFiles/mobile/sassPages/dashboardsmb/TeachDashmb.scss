@@ -33,6 +33,15 @@
            }
            .mynavbarnav{
             &.mynavbarnavdash{
+                .logoutbuttondiv{
+                    text-align: center;
+                    button{
+                        margin-top: 15px;
+                        @include myfont(16px,400,$main_font);
+                        background-color: transparent;
+                        color:#000;
+                    }
+                }
                 .sidebarscrolldiv{
                     height: 405px;
                     overflow-y: scroll;
@@ -659,7 +668,7 @@
                         margin-bottom: 15px;
                         padding:20px;
                         position: relative;
-                        height: 25%;
+                        height: 185px;
                         @include media(xlgDevice){
                             height:30%;
                         }

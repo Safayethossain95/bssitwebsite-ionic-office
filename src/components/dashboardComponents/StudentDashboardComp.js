@@ -22,6 +22,24 @@ import '../../sassFiles/sassPages/dashboards/dashvariables.scss'
 ChartJS.register(ArcElement, Tooltip, Legend);
 const StudentDashboardComp = () => {
 
+  
+
+    const [leaveformdata,setLeaveformdata] = useState({
+        leavedatefrom:"",
+        leavedateto:"",
+        leavetimefrom:"",
+        leavetimeto:"",
+        reqsubmissiondate:"",
+        validreasontext:"",
+
+
+    })
+
+
+       const handleInput=(e)=>{    
+        setLeaveformdata({...leaveformdata,[e.target.name]: e.target.value} )
+      }
+
     const [selected, setSelected] = React.useState(Date);
     
     const optionme = [
@@ -185,7 +203,7 @@ const StudentDashboardComp = () => {
    
       const [variableactivekey,setvariableactivekey] = useState("first")
       
-      const [dashheaderchange,setdashheaderchange] = useState("")
+      const [dashheaderchange,setdashheaderchange] = useState("Good Morning Jisan")
 
       const handleSelecttab = (tabvalue)=>{
         setvariableactivekey(tabvalue)
@@ -240,8 +258,11 @@ const StudentDashboardComp = () => {
             setdashheaderchange("Profile")            
             
         }
-        else{
+        else if(tabvalue=="tenth"){
             setdashheaderchange("Exam Routine")
+        }
+        else{
+            setdashheaderchange("Good Morning Jisan")
         }
       }
   return (
@@ -1407,7 +1428,7 @@ const StudentDashboardComp = () => {
                                 <Row>
                                     <Col lg={6}>
                                         <p>Leave Date From</p>
-                                        <input type="text" name="name" placeholder=''/>
+                                        <input type="time" name="name" placeholder=''/>
                                     </Col>
                                     <Col lg={6}>
                                         <p>Leave Time From</p>
@@ -1417,7 +1438,7 @@ const StudentDashboardComp = () => {
                                 <Row>
                                     <Col lg={6}>
                                         <p>Leave Date To</p>
-                                        <input type="text" name="name" placeholder=''/>
+                                        <input type="date" name="name" placeholder=''/>
                                     </Col>
                                     <Col lg={6}>
                                         <p>Leave Time To</p>

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import TeacherDashboardComp from '../../components/dashboardComponents/TeacherDashboardComp'
 
 import '../../sassFiles/mobile/sassPages/dashboardsmb/TeachDashmb.scss'
@@ -26,6 +26,45 @@ const TeacherDashboardPage = () => {
     settbvaluevar(tabvalue)
     
   }
+  useEffect(()=>{
+  
+    var navbar2 = document.getElementById("navbarmini");
+    var navbar = document.getElementById("mynavbar");
+    
+    
+    
+    var sticky = navbar2.offsetTop;
+  
+    
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar2.classList.add("sticky2");
+      
+        
+        
+        
+      } else {
+        navbar2.classList.remove("sticky2");
+        
+        
+      }
+     
+      if (window.pageYOffset >= 100) {
+        navbar2.classList.add("sticky2shadow");
+       
+        
+      } else {
+        navbar2.classList.remove("sticky2shadow");
+       
+        
+      }
+    }
+    window.onscroll = function() {myFunction()};
+    
+   
+  },[])
+
   return (
     <>
 

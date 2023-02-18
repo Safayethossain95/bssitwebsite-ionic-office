@@ -3,9 +3,23 @@
 @import '../../../sassStyles/typography';
 @import '../../../sassStyles/global';
 @import '../../../sassFiles/mobile/sassPages/mobileGlobal.scss';
-
+.sticky2{
+    position: fixed!important;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+    
+}
+.sticky2shadow{
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
+    background:#fff;
+}
 .aboutusbreadcrumb{
-   
+    .react-parallax{
+        padding-top: 0;
+    }
     .aboutparalaxrel{
         margin-top: 60px;
         img{

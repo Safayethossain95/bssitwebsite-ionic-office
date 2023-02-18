@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useEffect} from 'react'
+import $ from 'jquery';
 import AddressCards from '../components/AddressCards'
 import GalleryAboutPage from '../components/GalleryAboutPage'
 import Header from '../components/Header'
@@ -20,54 +21,80 @@ import TransportServicePartMb from '../components/mobile/TransportServicePartMb'
 import AddresspartSliderMb from '../components/mobile/AddresspartSliderMb'
 import GalleryPartAboutPageMb from '../components/mobile/GalleryPartAboutPageMb'
 import FooterMobile from '../components/mobile/FooterMobile'
+import '../sassFiles/style.scss'
 const AboutUsPage = () => {
-  // useEffect(()=>{
-    
-    
-  //   var navbar = document.getElementById("navbar");
-  //   var headline = document.getElementById("myheadline");
-  //   var sticky = navbar.offsetTop;
-    
-  //   function myFunction() {
-  //     if (window.pageYOffset >= sticky) {
-  //       navbar.classList.add("sticky")
-  //       headline.classList.add("headlinemargin")
-  //     } else {
-  //       navbar.classList.remove("sticky");
-  //       headline.classList.remove("headlinemargin")
-  //     }
+ 
+  // function myFunction() {
+  //   var navbar = document.getElementById("mynavbar");
+  //   var navbar2 = document.getElementById("navbarmini");
+  //   if(myheadlineother == !null){
+  //     var myheadlineother = document.getElementById("noticepagegapbalance")
+
+  //   }else{
+  //     myheadlineother=document.getElementById("noticepagegapbalance")
   //   }
-  //   window.onscroll = function() {myFunction()};
+  //   var sticky = navbar.offsetTop;
+  //   if (window.pageYOffset >= sticky) {
+      
+  //     navbar.classList.add("sticky");
+  //     myheadlineother.classList.add("margintop62");
+      
+      
+      
+  //   }
     
+  //   if(window.pageYOffset==0){
+  //     navbar2.classList.add("sticky2");
+  //     navbar.classList.remove("sticky");
+  //     myheadlineother.classList.remove("margintop62");
+      
+  //   }
+    
+      
+  // }
+  // window.onscroll = function() {myFunction()};
 
-  // })
-  function myFunction() {
+  useEffect(()=>{
+  
+    var navbar2 = document.getElementById("navbarmini");
     var navbar = document.getElementById("mynavbar");
-    if(myheadlineother == !null){
-      var myheadlineother = document.getElementById("noticepagegapbalance")
-
-    }else{
-      myheadlineother=document.getElementById("noticepagegapbalance")
-    }
-    var sticky = navbar.offsetTop;
-    if (window.pageYOffset >= sticky) {
-      
-      navbar.classList.add("sticky");
-      myheadlineother.classList.add("margintop62");
-      
-      
-      
-    }
     
-    if(window.pageYOffset==0){
-      navbar.classList.remove("sticky");
-      myheadlineother.classList.remove("margintop62");
-      
-    }
     
-      
-  }
-  window.onscroll = function() {myFunction()};
+    
+    var sticky = navbar2.offsetTop;
+  
+    
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar2.classList.add("sticky2");
+        navbar.classList.add("sticky");
+        
+        
+        
+      } else {
+        navbar2.classList.remove("sticky2");
+        
+        
+      }
+      if(window.pageYOffset===0){
+        navbar.classList.remove("sticky");
+        
+      }
+      if (window.pageYOffset >= 100) {
+        navbar2.classList.add("sticky2shadow");
+       
+        
+      } else {
+        navbar2.classList.remove("sticky2shadow");
+       
+        
+      }
+    }
+    window.onscroll = function() {myFunction()};
+    
+   
+  },[])
   return (
     <>
         <div className="mobile">

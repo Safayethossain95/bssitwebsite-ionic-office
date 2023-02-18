@@ -63,8 +63,9 @@ const AdmissionCompMb = () => {
       }
   return (
     <>
-        <div className="admissioncompmb">
-            <div className="mobilecontainer">
+    
+        <div className="admissioncompmb mobilecontainer">
+      <div className="mobilecontainer">
                 <div className="heading">
                     <h4>
                         Admission
@@ -163,7 +164,7 @@ const AdmissionCompMb = () => {
             </Row>
 
             </div>
-        </div>
+      </div>
     </>
   )
 }

@@ -1,10 +1,13 @@
 import React,{useEffect,useState} from 'react'
-import {Navbar,Nav } from 'react-bootstrap'
+import {Navbar,Nav,Button } from 'react-bootstrap'
 import CommonButton from '../subComponents/CommonButton'
-import {NavLink,Link} from 'react-router-dom';
+import {NavLink,Link, useNavigate} from 'react-router-dom';
 import '../../sassFiles/mobile/sassPages/homepage.scss'
+
 import {Row,Col} from 'react-bootstrap'
 const StuDashNavbarSidebarmb = (props) => {
+    let navigate = useNavigate()
+   
   let activeStyle = {
     color:"#ED1C24"
   };
@@ -51,6 +54,9 @@ const handleTabvalue=(mytabval)=>{
     setvarforiconchange(mytabval)
     getidtab.classList.add('activei')
 
+}
+const handlelogout=()=>{
+    navigate("/")
 }
 
   return (
@@ -199,6 +205,9 @@ const handleTabvalue=(mytabval)=>{
                     </NavLink>
                     </div>
 
+            <div className="logoutbuttondiv">
+                <Button onClick={handlelogout}>Log Out</Button>
+            </div>
                 </Nav>
                 
                 

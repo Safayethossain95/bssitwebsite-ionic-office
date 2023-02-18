@@ -36,45 +36,53 @@ const TeaCurriculumTab = () => {
                     </Row>
                     
                     </div>
-                    <div className="curriculumtabtable">
-                    <table>
-                        <thead>
-                            <tr>
-                                {
-                                    curriculumtabtabledata.heading.map((item,key)=>{
-                                        return(
-                                            <th key={key}>{item.head}</th>
-                                        )
-                                    })
-                                }
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                curriculumtabtabledata.tableData.map((item,key)=>{
-                                    return(
-                                        <tr>
-                                            <td key={key}>{item.sl}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                    )
-                                })
-                            }
-                        </tbody>
-                    </table>
+                    <div className="curriculumtablediv">
+
+                    <Row>
+                        <Col lg={12}>
+                        <div className="curriculumtabtable">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        {
+                                            curriculumtabtabledata.heading.map((item,key)=>{
+                                                return(
+                                                    <th key={key}>{item.head}</th>
+                                                )
+                                            })
+                                        }
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        curriculumtabtabledata.tableData.map((item,key)=>{
+                                            return(
+                                                <tr>
+                                                    <td key={key}>{item.sl}</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            )
+                                        })
+                                    }
+                                </tbody>
+                            </table>
+                            </div>
+                        </Col>
+                    </Row>
                     </div>
+                    
                 </div>
             </div>
         </div>
