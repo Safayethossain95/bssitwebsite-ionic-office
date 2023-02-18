@@ -87,6 +87,7 @@ const TeacherDashSidebarmb = (props) => {
                             <p>ID 1705032108</p>
                         </div>
                     </div>
+                    <div className="sidebarscrolldiv">
                     <NavLink  
                     className="activei" id="dashboardTab"
                     onClick={()=>handleTabvalue("dashboardTab")}
@@ -174,6 +175,8 @@ const TeacherDashSidebarmb = (props) => {
                         }
                         Profile
                     </NavLink>
+                    </div>
+                    
 
                 </Nav>
                 

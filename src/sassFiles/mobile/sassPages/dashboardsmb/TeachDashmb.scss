@@ -33,7 +33,11 @@
            }
            .mynavbarnav{
             &.mynavbarnavdash{
-                
+                .sidebarscrolldiv{
+                    height: 405px;
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+                }
                     .profileimgandid{
                         display: flex;
                         justify-content: center;

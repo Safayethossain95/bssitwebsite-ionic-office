@@ -32,6 +32,14 @@ const StudentDashboardComp = () => {
             opt:'First Semester'
         }
     ]
+    const optionmeleavetype = [
+        {
+            opt:'Personal'
+        },
+        {
+            opt:'Casual'
+        }
+    ]
 
     const handleDocumentDownloadroutine = (file)=>{
 
@@ -1393,7 +1401,7 @@ const StudentDashboardComp = () => {
                                 <Row>
                                     <Col lg={12}>
                                         <p>Type of leave request</p>
-                                        <input type="text" name="name" placeholder='01922330077'/>
+                                        <Dropdown2 myplaceholder="Select Leave Type" fontsize="12" fontfamily="'Poppins', sans-serif" options={optionmeleavetype}/>
                                     </Col>
                                 </Row>
                                 <Row>

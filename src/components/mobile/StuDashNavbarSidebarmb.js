@@ -90,6 +90,8 @@ const handleTabvalue=(mytabval)=>{
                             <p>ID 1705032108</p>
                         </div>
                     </div>
+                    <div className="sidebarscrolldiv">
+                        
                     <NavLink  
                     className="activei" id="dashboardTab"
                     onClick={()=>handleTabvalue("dashboardTab")}
@@ -175,6 +177,16 @@ const handleTabvalue=(mytabval)=>{
                         }
                         Result
                     </NavLink>
+                    <NavLink id="leaveFormTab" onClick={()=>handleTabvalue("leaveFormTab")}                    
+                    >
+                        {
+                            varforiconchange=="leaveFormTab"?
+                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticon.png" alt="" />
+                            :
+                            <img src="./assets/images/dashboards/studentDashboard/mobile/icons/bulleticonblack.png" alt="" />
+                        }
+                        Leave Form
+                    </NavLink>
                     <NavLink id="profileTab" onClick={()=>handleTabvalue("profileTab")}                    
                     >
                         {
@@ -185,6 +197,7 @@ const handleTabvalue=(mytabval)=>{
                         }
                         Profile
                     </NavLink>
+                    </div>
 
                 </Nav>
                 

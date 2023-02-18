@@ -20,7 +20,11 @@
        }
        .mynavbarnav{
         &.mynavbarnavdash{
-            
+                .sidebarscrolldiv{
+                    height: 510px;
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+                }
                 .profileimgandid{
                     display: flex;
                     justify-content: center;
@@ -154,7 +158,13 @@
                     
                 }
             }
-
+            .samebox{
+                padding-bottom:60px;
+                background-color: #fff;
+               border-radius: 20px;
+               padding:15px;
+               margin-bottom: 10px;
+            }
             .documentsboxindash{
                 height: 230px;
                 width:100%;
@@ -1511,6 +1521,91 @@
                         }
                     }
                 }
+            }
+            .leaveformpartteachermb{
+                .bottombuttondiv{
+                    height: 60px;
+                    border-radius: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    button{
+                        background-color: #F3F1FF;
+                        width:auto;
+                        height:50px;
+                        padding:0 40px;
+                        color: #312783;
+                        font-size: 16px;
+                        font-weight: 400;
+                        font-family: "Poppins", sans-serif;
+                        border: 0;
+                        border-radius: 10px;
+                        
+                    }
+                }
+                .basicinfopopulate{
+                    textarea{
+                        width:100%;
+                        @include borderthin();
+                        border-radius: 10px;
+                        height:100px;
+                    }
+                }
+            }
+            .leaverequeststatustmb{
+                
+                
+               .headingofleaverea{
+                h4{
+                    @include myfont(16px,500,$main_font);
+                }
+               } 
+               .levereqstatustablt{
+                overflow-x: scroll;
+                table{
+                    width:500px;
+                   
+                    overflow-x: scroll;
+                    th{
+                        @include myfont(12px,600,$main_font);
+                        &:first-child{
+                            text-align: center;
+                        }
+                       
+                        position:relative;
+                        img{
+                            position:absolute;
+                            top:50%;
+                            transform:translateY(-50%);
+                            right:10px;
+                        }
+                        width:14%;
+                        &:nth-child(2){
+                            width:30%;
+                        }
+                    }
+                    tr{
+
+                        height:40px;
+                        border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+                        td{
+                                width:14%;
+                                &:nth-child(2){
+                                    width:30%;
+                                }
+                            @include myfont(12px,400,$main_font);
+                            &:first-child{
+                                text-align: center;
+                            }
+                            
+                            &>button{
+                                background-color: transparent;
+                                border:0;
+                            }
+                        }
+                    }
+                }
+               }
             }
 
         }

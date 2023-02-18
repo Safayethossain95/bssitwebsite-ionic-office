@@ -113,6 +113,9 @@ body {
                     height: auto;
                     margin-bottom: 0;
                 }
+                .tabpaneheightadjust::-webkit-scrollbar {
+                    display: none;
+                }
                 .tabpaneheightadjust{
                     height: calc(100vh - 90px);
                     display: flex;
@@ -194,6 +197,9 @@ body {
                         }
                         
                     }
+                    &.tabpanedocument::-webkit-scrollbar {
+                        display: none;
+                    }
                     &.tabpanedocument{
                         text-align: center;
                         .documenttabsignlebar{
@@ -250,10 +256,11 @@ body {
                         }
                         .preveousdocumnets{
                             height: 55%;
+                            min-height: 453px;
                             background-color: #fff;
                             border-radius: 20px;
                             padding:20px;
-                            overflow-y: scroll;
+                            
                             .docselects{
                                 width:615px;
                                 height: 120px;                                
@@ -303,6 +310,7 @@ body {
                             padding:20px;
                             position: relative;
                             height: 45%;
+                            min-height: 365px;
                             .bottombuttondiv{
                                 position: absolute;
                                 bottom:0;
@@ -365,6 +373,7 @@ body {
                             border-radius: 20px;
                             padding:20px;
                             height:55%;
+                            min-height: 462px;
                             position:relative;
                             
                             .bottombuttondiv{
@@ -421,6 +430,7 @@ body {
                         }
                         .leaveformpart{
                             width:100%;
+                            min-height: 510px;
                             background-color: #fff;
                             border-radius: 20px;
                             margin-bottom: 15px;
@@ -870,6 +880,8 @@ body {
                         padding:20px;
                         border-radius: 20px;
                         position:relative;
+                        height: 100%;
+                        min-height: 840px;
                         .bottombuttondiv{
                             position: absolute;
                             bottom:0;
@@ -1246,7 +1258,7 @@ body {
                 width:100%;
                 display: flex;
                 position:sticky;
-                background: linear-gradient(180deg, #F2F2F2 0%, rgba(242, 242, 242, 0.52) 100%);
+                background: #f2f2f2;
                 backdrop-filter: blur(5px);
                 top:0;
                 z-index: 666;
@@ -1336,7 +1348,7 @@ body {
                 }
                 .samebox{
                     height: 100%;
-                    
+                    min-height: 405px;
                     &.sameboxroutine{
                         position:relative;
                         .extraclassbox{

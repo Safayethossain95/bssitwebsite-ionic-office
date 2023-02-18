@@ -6,6 +6,7 @@
 .samebox{
     position:relative;
     height: 100%;
+    min-height: 405px;
     .extraclassbox{
         height:34px;
         border-radius: 15px;
@@ -111,6 +112,9 @@
         @include media(xlgDevice){
             margin-bottom: 15px;
         }
+        &.tabpaneroutinetab{
+            min-height: 840px!important;
+        }
         &.dashboardTab{
             @include media(xlgDevice){
                 height:840px!important;
@@ -118,6 +122,8 @@
             flex-direction: column;
             .firstRow{
                 height: 50%;
+                min-height: 405px;
+                margin-bottom: 15px;
             }
             .secondRow{
                 height:50%;
@@ -251,6 +257,7 @@
                 padding:20px;
                 position: relative;
                 height: 25%;
+                min-height: 195px;
                 @include media(xlgDevice){
                     height:30%;
                 }
@@ -399,6 +406,7 @@
                 display: block!important;
             }
             .leaveformpart{
+                min-height: 510px;
                 @include media(xlgDevice){
 
                     height:65%!important;
