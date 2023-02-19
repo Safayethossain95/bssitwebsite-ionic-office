@@ -18,10 +18,10 @@ const Header = () => {
             <Col lg={4} >
               <div className="headerinforight">
               <div className="hinfo">
-                  <img src="./assets/images/icons/location.png" alt="" /> <span>13, Larmini Street Wari, Dhaka</span>                        
+                  <img src="./assets/images/icons/location.png" alt="" /> <a target='_blank' href="https://goo.gl/maps/ouSN4YZCfokuMzAC7">13, Larmini Street Wari, Dhaka</a>                       
                 </div> 
                 <div className="hinfo">
-                  <img src="./assets/images/icons/phone.png" alt="" /> <span>880247115628</span>                   
+                  <img src="./assets/images/icons/phone.png" alt="" /> <a href="tel:880247115628">880247115628</a>                   
                 </div>                 
               </div>
             </Col>

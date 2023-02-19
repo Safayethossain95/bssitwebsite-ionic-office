@@ -123,30 +123,18 @@ useEffect(()=>{
           <LearnFromAnywhereMobile/>
           <FooterMobile/>
         </div>
-        <div className="desktop">
-          <section>
+        <div className="desktop">          
 
           <Header/>
-          <Mynavbar/>
-          </section>
-          <section>
-            <Banner/>
-          </section>
-          <section>
-            <AboutUs/>
-          </section>
-          
-          <section>
-          <WhyChooseUs/>
-          </section>
-          <section>
+          <Mynavbar/>                    
+            <Banner/>                    
+            <AboutUs/>          
+                    
+          <WhyChooseUs/>                    
           <EventAndNews/>
+                    
 
-          </section>
-          <section>
-
-          <LearnFromAnywhere/>
-          </section>
+          <LearnFromAnywhere/>          
           <ScrollTop/>
           <Footer/>
 

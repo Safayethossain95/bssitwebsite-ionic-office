@@ -14,31 +14,6 @@ const Mynavbar = () => {
     color:"#ED1C24"
   };
   
-  // useEffect(()=>{
-    
-    
-  //   var navbar = document.getElementById("mynavbar");
-  //   var homepagemargin = document.getElementById("bntxinner");
-    
-  //   var sticky2 = navbar.offsetTop;
-    
-  //   function myFunction2() {
-  //     if (window.pageYOffset >= 62) {
-  //       $(".mynavbar").addClass("sticky")
-  //       // navbar.classList.add("sticky")
-  //       // navbar.className += " sticky"
-  //       homepagemargin.classList.add("headlinemargin")
-        
-  //     } else {
-  //       navbar.classList.remove("sticky");
-  //       homepagemargin.classList.remove("headlinemargin")
-        
-  //     }
-  //   }
-  //   window.onscroll = function() {myFunction2()};
-    
-
-  // },[])
   return (
     <>
         
@@ -56,10 +31,43 @@ const Mynavbar = () => {
                     >About Us
                     </NavLink>
 
-                    <NavLink to="/admission" style={({ isActive }) =>
+                    <NavLink className="admissionclass" to="/admission" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
                     >Admission
+
+                    <div className="admissionmenu">
+                      <ul>
+                        <li>
+                          <NavLink to="/studentagecheck" style={({ isActive }) =>
+                      isActive ? activeStyle : undefined}>Candidate Age</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to="/feestructure" style={({ isActive }) =>
+                      isActive ? activeStyle : undefined}>Fee Structure</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to="/" style={({ isActive }) =>
+                      isActive ? activeStyle : undefined}>Document Requirements</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to="/schooltiming" style={({ isActive }) =>
+                      isActive ? activeStyle : undefined}>School Timing</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to="/trackadmission" style={({ isActive }) =>
+                      isActive ? activeStyle : undefined}>Track Admission</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to="/karatecourse" style={({ isActive }) =>
+                      isActive ? activeStyle : undefined}>Karate Course</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to="/" style={({ isActive }) =>
+                      isActive ? activeStyle : undefined}>Transport Service</NavLink>
+                        </li>
+                      </ul>
+                    </div>
                     </NavLink>
 
                     <NavLink to="/notice" style={({ isActive }) =>

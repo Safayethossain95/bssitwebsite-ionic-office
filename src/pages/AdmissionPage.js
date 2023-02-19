@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import AdmissionPageComp from '../components/AdmissionPageComp'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
@@ -10,6 +10,52 @@ import '../sassFiles/sassPages/admissionPage.scss'
 import AdmissionCompMb from '../components/mobile/admissionPage/AdmissionCompMb'
 import '../sassFiles/mobile/sassPages/admissionPagemb.scss'
 const AdmissionPage = () => {
+  function setBodyColor({color}) {
+    document.documentElement.style.setProperty('--bodyColor', color)
+}
+
+  setBodyColor({color: "#fff"})
+  useEffect(()=>{
+  
+    var navbar2 = document.getElementById("navbarmini");
+    var navbar = document.getElementById("mynavbar");
+    
+    
+    
+    var sticky = navbar2.offsetTop;
+  
+    
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar2.classList.add("sticky2");
+        navbar.classList.add("sticky");
+        
+        
+        
+      } else {
+        navbar2.classList.remove("sticky2");
+        
+        
+      }
+      if(window.pageYOffset===0){
+        navbar.classList.remove("sticky");
+        
+      }
+      if (window.pageYOffset >= 100) {
+        navbar2.classList.add("sticky2shadow");
+       
+        
+      } else {
+        navbar2.classList.remove("sticky2shadow");
+       
+        
+      }
+    }
+    window.onscroll = function() {myFunction()};
+    
+   
+  },[])
   return (
     <>
         <div className="admissionpagemain">

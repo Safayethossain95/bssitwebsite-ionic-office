@@ -2,7 +2,8 @@ import React from 'react'
 import {BsFacebook,BsTwitter,BsYoutube} from 'react-icons/bs'
 import {MdEmail} from 'react-icons/md'
 import {Row,Col} from 'react-bootstrap'
-import {usefullinkslist,inportantlinks,officeaddressesdata} from '../utils/Homepage'
+import {usefullinkslist,inportantlinks} from '../utils/Homepage'
+import { officeaddressesdata } from '../utils/ComponentApi/FooterApi'
 import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
@@ -101,8 +102,8 @@ const Footer = () => {
                                     return(
                                         <Col lg={4} key={key}>
                                             <h5>{item.officename}</h5>
-                                            <p>{item.address}</p>
-                                            <p>TEL: {item.phone}</p>
+                                            <p><a target='_blank' href={`${item.maplink}`}>{item.address}</a></p>
+                                            <p><a href={`tel:${item.tel}`}>TEL: {item.phone}</a> </p>
                                             <p>{item.email}</p>
                                         </Col>
                                     )

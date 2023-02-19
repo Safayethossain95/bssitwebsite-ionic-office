@@ -1,13 +1,17 @@
-import React from 'react'
+
+import React,{useEffect,useState} from 'react'
 import {Row,Col} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+
 const AboutUs = () => {
+    // data-aos-delay="400" data-aos="fade-up" data-aos-duration="2000"
+
   return (
     <>
         <div className="myContainer">
-        <div className="aboutus"  data-aos-delay="400" data-aos="fade-up" data-aos-duration="2000">
+        <div className="aboutus" data-aos-delay="400" data-aos="fade-up" data-aos-duration="2000">
             <div className="headingdiv">
-                <h3 className="appplybuttonother">About Us</h3>
+                <h3 className="appplybuttonother ">About Us</h3>
 
             </div>
 

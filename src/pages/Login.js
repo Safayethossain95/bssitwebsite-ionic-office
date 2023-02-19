@@ -5,7 +5,11 @@ import LoginPagemb from '../components/mobile/LoginPagemb';
 import NavbarMoblie from '../components/mobile/NavbarMoblie';
 import FooterMobile from '../components/mobile/FooterMobile';
 const Login = () => {
-  
+  function setBodyColor({color}) {
+    document.documentElement.style.setProperty('--bodyColor', color)
+}
+
+  setBodyColor({color: "#fff"})
   
   return (
     <>

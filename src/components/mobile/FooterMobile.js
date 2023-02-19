@@ -77,8 +77,8 @@ const FooterMobile = () => {
                                     return(
                                         <Col lg={4} key={key}>
                                             <h5>{item.officename}</h5>
-                                            <p>{item.address}</p>
-                                            <p>TEL: {item.phone}</p>
+                                            <p><a target='_blank' href={`${item.maplink}`}>{item.address}</a></p>
+                                            <p><a href={`tel:${item.tel}`}>TEL: {item.phone}</a> </p>
                                             <p>{item.email}</p>
                                         </Col>
                                     )

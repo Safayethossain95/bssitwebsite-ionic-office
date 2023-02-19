@@ -9,7 +9,11 @@ import Footer from '../components/Footer'
 import '../sassFiles/mobile/sassPages/noticepagesingled.scss'
 const UpcomingPageSingledetail = () => {
 
+  function setBodyColor({color}) {
+    document.documentElement.style.setProperty('--bodyColor', color)
+}
 
+  setBodyColor({color: "#fff"})
     let {id} = useParams()
     console.log(id)
     

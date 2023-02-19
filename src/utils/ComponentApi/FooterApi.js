@@ -59,19 +59,25 @@ const usefullinkslist = [
         officename:"Corporate Office",
         address:"13, Larmini Street Wari, Dhaka",
         phone:"88027115628",
-        email:"info@britishstandardschool.com"
+        email:"info@britishstandardschool.com",
+        maplink:"https://goo.gl/maps/ouSN4YZCfokuMzAC7",
+        tel:"88027115628"
       },
       {
         officename:"Campus 1",
         address:"13, Larmini Street Wari, Dhaka",
         phone:"88027115628",
-        email:"info@britishstandardschool.com"
+        email:"info@britishstandardschool.com",
+        maplink:"https://goo.gl/maps/ouSN4YZCfokuMzAC7",
+        tel:"88027115628"
       },
       {
         officename:"Campus2",
         address:"13, Larmini Street Wari, Dhaka",
         phone:"88027115628",
-        email:"info@britishstandardschool.com"
+        email:"info@britishstandardschool.com",
+        maplink:"https://goo.gl/maps/ouSN4YZCfokuMzAC7",
+        tel:"88027115628"
       },
   ]
 

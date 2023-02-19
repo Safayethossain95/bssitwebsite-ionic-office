@@ -481,6 +481,34 @@ body {
                             }  
                             .basicinfopopulate{
                                 padding: 0;
+                                .MuiFormControl-root{
+                                    display: block;
+                                    .MuiInputBase-root{
+                                        height:40px;
+                                        display: block;
+                                        border-radius: 10px;
+                                        button{
+                                            position: absolute;
+                                            top: 0;
+                                            right: 15px;
+                                        }
+                                        input{
+                                            margin-bottom: 0;
+                                            border:0;
+                                            padding:0;
+                                            padding-left: 15px;
+                                            @include myfont(16px,400,$main_font);
+                                        }
+                                        input:focus, textarea {
+                                            outline: none !important;
+                                        }
+                                        input:focus-visible {
+                                            outline: none!important;
+                                            box-shadow: none!important;
+                                            border:none!important;
+                                        }
+                                    }
+                                }
                                 .row{
                                     .col{
                                         padding-right: 15px;

@@ -8,7 +8,11 @@ import Mynavbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import '../sassFiles/mobile/sassPages/noticepagesingled.scss'
 const NoticePageSingleDetail = () => {
+  function setBodyColor({color}) {
+    document.documentElement.style.setProperty('--bodyColor', color)
+}
 
+  setBodyColor({color: "#fff"})
 
     useEffect(()=>{
       var navbar = document.getElementById("mynavbar");

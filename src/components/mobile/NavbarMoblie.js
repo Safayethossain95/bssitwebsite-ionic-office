@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react'
-import {Navbar,Nav } from 'react-bootstrap'
+import {Navbar,Nav,Accordion } from 'react-bootstrap'
 import CommonButton from '../subComponents/CommonButton'
 import {NavLink,Link} from 'react-router-dom';
 import '../../sassFiles/mobile/sassPages/homepage.scss'
@@ -22,6 +22,8 @@ const NavbarMoblie = () => {
       var navtoggler = document.getElementById("nav-icon4");
       navtoggler.classList.toggle('open');
     }
+
+   
 
   return (
     <>
@@ -64,10 +66,43 @@ const NavbarMoblie = () => {
                     }
                     >About Us</NavLink>
 
-                    <NavLink to="/admission" style={({ isActive }) =>
-                      isActive ? activeStyle : undefined
-                    }
-                    >Admission</NavLink>
+                      <Accordion>
+                            <Accordion.Item eventKey="0">
+                              <Accordion.Header>Admission</Accordion.Header>
+                              <Accordion.Body>
+                                <ul>
+                                  <li>
+                                    <NavLink to="/studentagecheck" style={({ isActive }) =>
+                                      isActive ? activeStyle : undefined
+                                    }>Candidate Age</NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/feestructure" style={({ isActive }) =>
+                                      isActive ? activeStyle : undefined
+                                    }>Fee Structure</NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/schooltiming" style={({ isActive }) =>
+                                      isActive ? activeStyle : undefined
+                                    }>School Timing</NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/trackadmission" style={({ isActive }) =>
+                                      isActive ? activeStyle : undefined
+                                    }>Track Admission</NavLink>
+                                  </li>
+                                  <li>
+                                    <NavLink to="/karatecourse" style={({ isActive }) =>
+                                      isActive ? activeStyle : undefined
+                                    }>Karate Course</NavLink>
+                                  </li>
+                                 
+                                 
+                                </ul>
+                              </Accordion.Body>
+                            </Accordion.Item>
+                          </Accordion>
+                    
 
                     <NavLink to="/notice" style={({ isActive }) =>
                       isActive ? activeStyle : undefined

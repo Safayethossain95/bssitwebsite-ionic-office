@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import SmallHeadingMsg from '../components/subComponents/SmallHeadingMsg';
 import NavbarMoblie from '../components/mobile/NavbarMoblie'
 import FooterMobile from '../components/mobile/FooterMobile'
@@ -11,33 +11,52 @@ import '../sassFiles/sassPages/schoolTiming.scss'
 import SchoolTimingComponentmb from '../components/SchoolTimingComponentmb';
 import '../sassFiles/mobile/sassPages/schoolTimingPagemb.scss'
 const SchoolTimingPage = () => {
-  function myFunction() {
-    var navbar = document.getElementById("mynavbar");
-    if(myheadlineother == !null){
-      var myheadlineother = document.getElementById("noticepagegapbalance")
+  function setBodyColor({color}) {
+    document.documentElement.style.setProperty('--bodyColor', color)
+}
 
-    }else{
-      myheadlineother=document.getElementById("noticepagegapbalance")
-    }
-    var sticky = navbar.offsetTop;
-    if (window.pageYOffset >= sticky) {
-      
-      navbar.classList.add("sticky");
-      myheadlineother.classList.add("margintop62");
-      
-      
-      
-    }
+  setBodyColor({color: "#fff"})
+  useEffect(()=>{
+  
+    var navbar2 = document.getElementById("navbarmini");
+    var navbar = document.getElementById("mynavbar");
     
-    if(window.pageYOffset==0){
-      navbar.classList.remove("sticky");
-      myheadlineother.classList.remove("margintop62");
-      
-    }
     
-      
-  }
-  window.onscroll = function() {myFunction()};
+    
+    var sticky = navbar2.offsetTop;
+  
+    
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar2.classList.add("sticky2");
+        navbar.classList.add("sticky");
+        
+        
+        
+      } else {
+        navbar2.classList.remove("sticky2");
+        
+        
+      }
+      if(window.pageYOffset===0){
+        navbar.classList.remove("sticky");
+        
+      }
+      if (window.pageYOffset >= 100) {
+        navbar2.classList.add("sticky2shadow");
+       
+        
+      } else {
+        navbar2.classList.remove("sticky2shadow");
+       
+        
+      }
+    }
+    window.onscroll = function() {myFunction()};
+    
+   
+  },[])
   return (
     <>
         <div className="studenttimingpagemain">

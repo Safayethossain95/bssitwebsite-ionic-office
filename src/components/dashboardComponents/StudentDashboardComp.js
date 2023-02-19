@@ -17,12 +17,14 @@ import Dropdown2 from '../subComponents/CustomSubComponents/Dropdown2'
 import { MdRestaurantMenu } from 'react-icons/md'
 import PillSmall from '../subComponents/CustomSubComponents/PillSmall'
 import '../../sassFiles/sassPages/dashboards/dashvariables.scss'
-
-
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import TextField from '@mui/material/TextField';
 ChartJS.register(ArcElement, Tooltip, Legend);
 const StudentDashboardComp = () => {
 
-  
+    const [value, setValue] = React.useState(null);
 
     const [leaveformdata,setLeaveformdata] = useState({
         leavedatefrom:"",
@@ -34,10 +36,16 @@ const StudentDashboardComp = () => {
 
 
     })
+    
 
 
        const handleInput=(e)=>{    
         setLeaveformdata({...leaveformdata,[e.target.name]: e.target.value} )
+      }
+
+      const handleSubmit=()=>{
+        console.log(JSON.stringify(value))
+        console.log("hello")
       }
 
     const [selected, setSelected] = React.useState(Date);
@@ -1396,7 +1404,7 @@ const StudentDashboardComp = () => {
                 <div className="tabpaneheightadjust leaveformtab">
                     <div className="leaveformpart">
                         <div className="bottombuttondiv">
-                            <Button>Submit</Button>
+                            <Button onClick={handleSubmit}>Submit</Button>
                         </div>
                         <div className="basicinfopopulate">
                         <Row>
@@ -1428,7 +1436,17 @@ const StudentDashboardComp = () => {
                                 <Row>
                                     <Col lg={6}>
                                         <p>Leave Date From</p>
-                                        <input type="time" name="name" placeholder=''/>
+                                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                                <DatePicker
+                                                     disableMaskedInput
+                                                     inputFormat='dd MMM yy'
+                                                    value={value}
+                                                    onChange={(newValue) => {
+                                                    setValue(newValue);
+                                                    }}
+                                                    renderInput={(params) => <TextField {...params} />}
+                                                />
+                                                </LocalizationProvider>
                                     </Col>
                                     <Col lg={6}>
                                         <p>Leave Time From</p>

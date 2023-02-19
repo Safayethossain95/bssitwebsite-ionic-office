@@ -139,7 +139,9 @@
          }
 
     }
-   
+    .showme{
+        display: block;
+    }
     
     .mynavbarnav{ 
                        
@@ -157,13 +159,32 @@
         z-index: 1;
         padding-top: 15px;
         padding-bottom: 30px;
-        
-        // .navbar-toggler{
-        //     position:absolute;
-        //     right:0;
-        //     top:50%;
-        //     transform:translateY(-50%);
-        // }
+        .accordion{
+            --bs-accordion-active-bg:#fff!important;
+            --bs-accordion-border-color:#fff!important;
+            --bs-accordion-border-width:0!important;
+            --bs-accordion-btn-active-icon:url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%23212529%27%3e%3cpath fill-rule=%27evenodd%27 d=%27M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z%27/%3e%3c/svg%3e")!important;
+            --bs-accordion-btn-focus-box-shadow:none!important;
+            .accordion-body{
+                padding:0;
+            }
+        }
+        .accordion-button:not(.collapsed) {
+            color: #000;
+            
+        }
+        .accordion-button{
+            padding-left: 50px;
+            @include myfont(16px,400,$main_font);
+        }
+        .accordion-item{
+            border:none;
+        }
+        .accordion-body{
+            ul{
+                padding-left: 10px;
+            }
+        }
         
                 a{
                     @include myfont(16px,400,$main_font);
@@ -294,6 +315,11 @@
             }
             p{
                 @include myfont(12px,400,$main_font);
+                &>a{
+                    @include myfont(12px,400,$main_font);
+                    color:#fff;
+
+                }
             }
         }
         .brandicons{

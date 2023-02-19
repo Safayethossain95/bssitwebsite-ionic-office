@@ -23,6 +23,11 @@ import GalleryPartAboutPageMb from '../components/mobile/GalleryPartAboutPageMb'
 import FooterMobile from '../components/mobile/FooterMobile'
 import '../sassFiles/style.scss'
 const AboutUsPage = () => {
+  function setBodyColor({color}) {
+    document.documentElement.style.setProperty('--bodyColor', color)
+}
+
+  setBodyColor({color: "#fff"})
  
   // function myFunction() {
   //   var navbar = document.getElementById("mynavbar");
