@@ -30,7 +30,7 @@ const FeeStructurePage = () => {
     function myFunction() {
       if (window.pageYOffset >= sticky) {
         navbar2.classList.add("sticky2");
-        navbar.classList.add("sticky");
+        
         
         
         
@@ -39,11 +39,13 @@ const FeeStructurePage = () => {
         
         
       }
-      if(window.pageYOffset===0){
+      if(window.pageYOffset > 99){
+        navbar.classList.add("sticky");
+      }else{
         navbar.classList.remove("sticky");
-        
       }
-      if (window.pageYOffset >= 100) {
+    
+      if (window.pageYOffset >= 30) {
         navbar2.classList.add("sticky2shadow");
        
         

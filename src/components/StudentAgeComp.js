@@ -3,11 +3,16 @@ import { Nav,Tab,Row,Col,Table } from 'react-bootstrap'
 import moment from 'moment';
 import Dropdown from 'react-dropdown';
 import {BsChevronDown} from 'react-icons/bs'
-
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import TextField from '@mui/material/TextField';
 
 
     
 const StudentAgeComp = () => {
+    const [dateofadmissionnew,setdateofadmissionnew] = useState("")
+    const [dateofbirthnew,setdateofbirthnew] = useState("")
     moment().format();
     const [presentAge,setPresentAge] = useState(0.0)
     const [dobyear,setdobyear] = useState(0)
@@ -34,17 +39,34 @@ const StudentAgeComp = () => {
         }
     })
 
-    const handleDateofbirth = (e)=>{
+    const handleDateofbirth = (newvaldob)=>{
 
+        if(newvaldob != null){
+
+            var dtofbrth = newvaldob.$M + 1;
+            var dtdobfinalc = newvaldob.$y + '-'+ dtofbrth +'-'+ newvaldob.$D;
+            setdateofbirthnew(dtdobfinalc)
+        }
         
-        setfulldatedobd(e.target.value)
+        
     }
-    const handleDateofadmission=(e)=>{
-        setfulldatedoad(e.target.value)
-        var admissiondate = e.target.value
+    const handleDateofadmission=(newval)=>{
+        // setfulldatedoad(e.target.value)
+        setdateofadmissionnew(newval)
+        if(newval != null){
+
+            var dtofad = newval.$M + 1;
+            var dtadmifinalc = newval.$y + '-'+ dtofad +'-'+ newval.$D;
+             console.log(dtadmifinalc)
+
+             
+        }
+        var admissiondate = dtadmifinalc
         
-        var durationinmonths = moment(admissiondate).diff(moment(fulldatedobd), 'months')
-        console.log(durationinmonths/12)
+        console.log('finaldateof birth'+dateofbirthnew)
+        console.log("admission date"+ admissiondate)
+        var durationinmonths = moment(admissiondate).diff(moment(dateofbirthnew), 'months')
+        // console.log(durationinmonths/12)
         var final_val = durationinmonths/12
         setPresentAge((durationinmonths/12).toFixed(2))
         if(final_val>=2 && final_val<3){
@@ -99,7 +121,7 @@ const StudentAgeComp = () => {
         else{
             setEqclass("-")
         }
-        console.log(final_val)
+        // console.log(final_val)
         
     }
     const handlepresentage=()=>{
@@ -127,13 +149,27 @@ const StudentAgeComp = () => {
             <Col lg={3}>
                 <div className="basicinfopopulate">
                     <p>Date of Birth</p>
-                    <input type="date" onChange={handleDateofbirth} />
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DatePicker
+                        
+                        value={dateofbirthnew}
+                        onChange={(newvaldob)=>handleDateofbirth(newvaldob)}
+                        renderInput={(params) => <TextField {...params} error={false} />}
+                    />
+                    </LocalizationProvider>
                 </div>
             </Col>
             <Col lg={3}>
                 <div className="basicinfopopulate">
                     <p>Date of Admission</p>
-                    <input type="date" onChange={handleDateofadmission} />
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DatePicker
+                        
+                        value={dateofadmissionnew}
+                        onChange={(newval)=>handleDateofadmission(newval)}
+                        renderInput={(params) => <TextField {...params} error={false}/>}
+                    />
+                    </LocalizationProvider>
                 </div>
             </Col>
             <Col lg={3}>

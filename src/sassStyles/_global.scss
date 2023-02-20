@@ -184,9 +184,11 @@ p{
 
 .sticky {
     position: fixed!important;
-    top: 0;
+    top: -20px;
     width: 100%;
     z-index: 1030;
+    transition: 0.4s;
+    transform: translateY(20px);
     background:#fff;
     -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
     -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);

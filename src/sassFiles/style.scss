@@ -399,6 +399,9 @@ textarea:focus-visible{
 
 .mynavbar{
     a{
+        &>svg{
+            font-size: 9px;
+        }
         &.admissionclass{
             position:relative;
             .admissionmenu{

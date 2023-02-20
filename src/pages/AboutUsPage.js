@@ -28,36 +28,7 @@ const AboutUsPage = () => {
 }
 
   setBodyColor({color: "#fff"})
- 
-  // function myFunction() {
-  //   var navbar = document.getElementById("mynavbar");
-  //   var navbar2 = document.getElementById("navbarmini");
-  //   if(myheadlineother == !null){
-  //     var myheadlineother = document.getElementById("noticepagegapbalance")
 
-  //   }else{
-  //     myheadlineother=document.getElementById("noticepagegapbalance")
-  //   }
-  //   var sticky = navbar.offsetTop;
-  //   if (window.pageYOffset >= sticky) {
-      
-  //     navbar.classList.add("sticky");
-  //     myheadlineother.classList.add("margintop62");
-      
-      
-      
-  //   }
-    
-  //   if(window.pageYOffset==0){
-  //     navbar2.classList.add("sticky2");
-  //     navbar.classList.remove("sticky");
-  //     myheadlineother.classList.remove("margintop62");
-      
-  //   }
-    
-      
-  // }
-  // window.onscroll = function() {myFunction()};
 
   useEffect(()=>{
   
@@ -73,7 +44,7 @@ const AboutUsPage = () => {
     function myFunction() {
       if (window.pageYOffset >= sticky) {
         navbar2.classList.add("sticky2");
-        navbar.classList.add("sticky");
+        
         
         
         
@@ -82,10 +53,12 @@ const AboutUsPage = () => {
         
         
       }
-      if(window.pageYOffset===0){
+      if(window.pageYOffset > 99){
+        navbar.classList.add("sticky");
+      }else{
         navbar.classList.remove("sticky");
-        
       }
+     
       if (window.pageYOffset >= 100) {
         navbar2.classList.add("sticky2shadow");
        

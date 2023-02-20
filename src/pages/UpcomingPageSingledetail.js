@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { upcomingnoticedata } from '../utils/NoticePageApi'
 import NavbarMoblie from '../components/mobile/NavbarMoblie'
@@ -17,34 +17,49 @@ const UpcomingPageSingledetail = () => {
     let {id} = useParams()
     console.log(id)
     
-  function myFunction() {
-    var navbar = document.getElementById("mynavbar");
-    navbar.classList.remove("sticky");
-    if(myheadlineother == !null){
-      var myheadlineother = document.getElementById("noticepagegapbalance")
-
-    }else{
-      myheadlineother=document.getElementById("noticepagegapbalance")
-    }
-    var sticky = navbar.offsetTop;
-    if (window.pageYOffset >= sticky) {
-      
-      navbar.classList.add("sticky");
-      myheadlineother.classList.add("margintop62");
+    useEffect(()=>{
+  
+      var navbar2 = document.getElementById("navbarmini");
+      var navbar = document.getElementById("mynavbar");
       
       
       
-    }
-    
-    if(window.pageYOffset==50){
-      navbar.classList.remove("sticky");
-      myheadlineother.classList.remove("margintop62");
-      
-    }
+      var sticky = navbar2.offsetTop;
     
       
-  }
-  window.onscroll = function() {myFunction()};
+      
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar2.classList.add("sticky2");
+          
+          
+          
+          
+        } else {
+          navbar2.classList.remove("sticky2");
+          
+          
+        }
+        if(window.pageYOffset > 99){
+          navbar.classList.add("sticky");
+        }else{
+          navbar.classList.remove("sticky");
+        }
+      
+        if (window.pageYOffset >= 30) {
+          navbar2.classList.add("sticky2shadow");
+         
+          
+        } else {
+          navbar2.classList.remove("sticky2shadow");
+         
+          
+        }
+      }
+      window.onscroll = function() {myFunction()};
+      
+     
+    },[])
   return (
     <>
         <div className="mobile">

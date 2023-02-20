@@ -33,43 +33,7 @@ const Homepage = () => {
   setBodyColor({color: "#fff"})
 
 useEffect(()=>{
-  // $(".navbar-toggler").click(function(){
-         
-  //   $(".mynavbarnav").toggleClass("show");
-  //   $(".mynavbarmb").toggleClass("navbar-white");
-  // })
-  
-  // $(document).ready(function(){
-  //   $('#nav-icon4').click(function(){
-  //     $(this).toggleClass('open');
-  //   });
-
-    
-  // });
  
-  
-  
-
-  $(function noticehover() {
-      
-    let x,y;
-    $(".noticebox").on('mouseenter', function(e) {
-      x = e.pageX - $(this).offset().left;
-      y = e.pageY - $(this).offset().top;
-      $(this).find("span").css({
-        top: y,
-        left: x
-      });
-    });
-    $(".noticebox").on('mouseout', function(e) {
-      x = e.pageX - $(this).offset().left;
-      y = e.pageY - $(this).offset().top;
-      $(this).find("span").css({
-        top: y,
-        left: x
-      });
-    });
-  });
   var navbar2 = document.getElementById("navbarmini");
   var navbar = document.getElementById("mynavbar");
   var bnx = document.getElementById("bntxinner");
@@ -82,7 +46,7 @@ useEffect(()=>{
   function myFunction() {
     if (window.pageYOffset >= sticky) {
       navbar2.classList.add("sticky2");
-      navbar.classList.add("sticky");
+      
       bnx.classList.add("headlinemargin");
       
       
@@ -91,8 +55,13 @@ useEffect(()=>{
       
       
     }
-    if(window.pageYOffset===0){
+    if(window.pageYOffset > 99){
+      navbar.classList.add("sticky");
+    }else{
       navbar.classList.remove("sticky");
+    }
+    if(window.pageYOffset===0){
+      
       bnx.classList.remove("headlinemargin");
     }
     if (window.pageYOffset >= 100) {

@@ -50,7 +50,7 @@ const TeacherDashboardPage = () => {
         
       }
      
-      if (window.pageYOffset >= 100) {
+      if (window.pageYOffset >= 30) {
         navbar2.classList.add("sticky2shadow");
        
         

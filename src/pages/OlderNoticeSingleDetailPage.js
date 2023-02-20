@@ -18,38 +18,48 @@ const OlderNoticeSingleDetailPage = () => {
     console.log(id)
 
     useEffect(()=>{
+  
+      var navbar2 = document.getElementById("navbarmini");
       var navbar = document.getElementById("mynavbar");
-      navbar.classList.remove("sticky");
+      
+      
+      
+      var sticky = navbar2.offsetTop;
+    
+      
+      
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar2.classList.add("sticky2");
+          
+          
+          
+          
+        } else {
+          navbar2.classList.remove("sticky2");
+          
+          
+        }
+        if(window.pageYOffset > 99){
+          navbar.classList.add("sticky");
+        }else{
+          navbar.classList.remove("sticky");
+        }
+      
+        if (window.pageYOffset >= 30) {
+          navbar2.classList.add("sticky2shadow");
+         
+          
+        } else {
+          navbar2.classList.remove("sticky2shadow");
+         
+          
+        }
+      }
+      window.onscroll = function() {myFunction()};
+      
+     
     },[])
-    
-  function myFunction() {
-    var navbar = document.getElementById("mynavbar");
-    navbar.classList.remove("sticky");
-    if(myheadlineother == !null){
-      var myheadlineother = document.getElementById("noticepagegapbalance")
-
-    }else{
-      myheadlineother=document.getElementById("noticepagegapbalance")
-    }
-    var sticky = navbar.offsetTop;
-    if (window.pageYOffset >= sticky) {
-      
-      navbar.classList.add("sticky");
-      myheadlineother.classList.add("margintop62");
-      
-      
-      
-    }
-    
-    if(window.pageYOffset==50){
-      navbar.classList.remove("sticky");
-      myheadlineother.classList.remove("margintop62");
-      
-    }
-    
-      
-  }
-  window.onscroll = function() {myFunction()};
   return (
     <>
         <div className="mobile">

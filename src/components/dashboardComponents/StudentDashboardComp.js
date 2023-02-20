@@ -9,32 +9,36 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import Dropdown from 'react-dropdown';
 import {BsChevronDown} from 'react-icons/bs'
-import { format } from 'date-fns';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import $ from 'jquery';
 import Dropdown2 from '../subComponents/CustomSubComponents/Dropdown2'
-import { MdRestaurantMenu } from 'react-icons/md'
 import PillSmall from '../subComponents/CustomSubComponents/PillSmall'
 import '../../sassFiles/sassPages/dashboards/dashvariables.scss'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import TextField from '@mui/material/TextField';
 ChartJS.register(ArcElement, Tooltip, Legend);
 const StudentDashboardComp = () => {
 
-    const [value, setValue] = React.useState(null);
+    const [leavedatefrom, setleavedatefrom] = useState(null);
+    // const [value, setValue] = Datetime.now();
+
+    const [leavedateto,setleavedateto] = useState(null)
+    
+    const [leavetimefrom,setleavetimefrom] = useState(null)
+    
+    const [leavetimeto,setleavetimeto] = useState(null)
+    
 
     const [leaveformdata,setLeaveformdata] = useState({
-        leavedatefrom:"",
-        leavedateto:"",
         leavetimefrom:"",
         leavetimeto:"",
         reqsubmissiondate:"",
         validreasontext:"",
-
-
     })
     
 
@@ -44,8 +48,36 @@ const StudentDashboardComp = () => {
       }
 
       const handleSubmit=()=>{
-        console.log(JSON.stringify(value))
-        console.log("hello")
+        // console.log(typeof(value))
+        if(leavedateto != null){
+
+            var lvdtmonth = leavedateto.$M + 1;
+            var leavedatetost = leavedateto.$y + '-'+ lvdtmonth +'-'+ leavedateto.$D;
+             console.log(leavedatetost)
+        }
+       
+        if(leavedatefrom != null){
+            var lvdfrmonth = leavedatefrom.$M + 1;
+            var leavedatefrst = leavedatefrom.$y + '-'+ lvdfrmonth +'-'+leavedatefrom.$D ;
+            
+            console.log(leavedatefrst)
+            
+
+        }
+        if(leavetimefrom != null){
+            var leavetimefromtmp = leavetimefrom.$H + ':' + leavetimefrom.$m
+            console.log('leave time from ' +leavetimefromtmp)
+
+        }
+        if(leavetimeto != null){
+            var leavetimetotmp = leavetimeto.$H + ':' + leavetimeto.$m
+            console.log('leave time to ' +leavetimetotmp)
+
+        }
+           
+        
+        // console.log("hello")
+        
       }
 
     const [selected, setSelected] = React.useState(Date);
@@ -1438,11 +1470,9 @@ const StudentDashboardComp = () => {
                                         <p>Leave Date From</p>
                                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                                                 <DatePicker
-                                                     disableMaskedInput
-                                                     inputFormat='dd MMM yy'
-                                                    value={value}
+                                                    value={leavedatefrom}
                                                     onChange={(newValue) => {
-                                                    setValue(newValue);
+                                                        setleavedatefrom(newValue);
                                                     }}
                                                     renderInput={(params) => <TextField {...params} />}
                                                 />
@@ -1450,17 +1480,43 @@ const StudentDashboardComp = () => {
                                     </Col>
                                     <Col lg={6}>
                                         <p>Leave Time From</p>
-                                        <input type="text" name="name" placeholder=''/>
+                                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                        <TimePicker
+                                            
+                                            value={leavetimefrom}
+                                            onChange={(newValue) => {
+                                                setleavetimefrom(newValue);
+                                            }}
+                                            renderInput={(params) => <TextField {...params} />}
+                                        />
+                                        </LocalizationProvider>
                                     </Col>
                                 </Row>
                                 <Row>
                                     <Col lg={6}>
                                         <p>Leave Date To</p>
-                                        <input type="date" name="name" placeholder=''/>
+                                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                                <DatePicker
+                                                    value={leavedateto}
+                                                    onChange={(newValue) => {
+                                                        setleavedateto(newValue);
+                                                    }}
+                                                    renderInput={(params) => <TextField {...params} />}
+                                                />
+                                                </LocalizationProvider>
                                     </Col>
                                     <Col lg={6}>
-                                        <p>Leave Time To</p>
-                                        <input type="text" name="name" placeholder=''/>
+                                        <p>Leave Time To </p>
+                                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                        <TimePicker
+                                            
+                                            value={leavetimeto}
+                                            onChange={(newValue) => {
+                                                setleavetimeto(newValue);
+                                            }}
+                                            renderInput={(params) => <TextField {...params} />}
+                                        />
+                                        </LocalizationProvider>
                                     </Col>
                                 </Row>
                                 <Row>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navbar,Nav } from 'react-bootstrap'
-
+import {BsChevronDown} from 'react-icons/bs'
 import {NavLink,Link,useNavigate} from 'react-router-dom';
 
 const Mynavbar = () => {
@@ -34,7 +34,7 @@ const Mynavbar = () => {
                     <NavLink className="admissionclass" to="/admission" style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
-                    >Admission
+                    >Admission <BsChevronDown/>
 
                     <div className="admissionmenu">
                       <ul>
@@ -47,7 +47,7 @@ const Mynavbar = () => {
                       isActive ? activeStyle : undefined}>Fee Structure</NavLink>
                         </li>
                         <li>
-                          <NavLink to="/" style={({ isActive }) =>
+                          <NavLink to="/abc" style={({ isActive }) =>
                       isActive ? activeStyle : undefined}>Document Requirements</NavLink>
                         </li>
                         <li>
@@ -63,7 +63,7 @@ const Mynavbar = () => {
                       isActive ? activeStyle : undefined}>Karate Course</NavLink>
                         </li>
                         <li>
-                          <NavLink to="/" style={({ isActive }) =>
+                          <NavLink to="/abc" style={({ isActive }) =>
                       isActive ? activeStyle : undefined}>Transport Service</NavLink>
                         </li>
                       </ul>
