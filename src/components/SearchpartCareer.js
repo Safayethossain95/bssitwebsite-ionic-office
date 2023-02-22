@@ -56,14 +56,14 @@ const SearchpartCareer = () => {
             <div className="myContainer">
                 <Row>
                     <Col lg={6}>
-                        <div className="searchbar" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
+                        <div className="searchbar" data-aos-delay="300" data-aos="fade-in" data-aos-duration="1000">
                             <input type="text" placeholder='Search...' name="search" onChange={handleSearch} value={searchworddesk}/>
                             <FiSearch/>
                         </div>
                         
                     </Col>
                     <Col lg={6}>
-                        <Row data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
+                        <Row data-aos-delay="300" data-aos="fade-in" data-aos-duration="1000">
                             <Col lg={6}>
                                 <div className="dropdownwrapper">
                                     <Dropdown className='filterdropone' options={options} onChange={(e)=>dropdownvalue(e)} value={defaultOption} placeholder="Select an option" />

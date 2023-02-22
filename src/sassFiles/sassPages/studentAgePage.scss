@@ -13,7 +13,27 @@
                     
                         width:470px;
                         margin:35px auto;
-                    
+                       .wrapperwrap{
+                        height:50px;
+                           .Dropdown2{
+                            height:50px;
+                            border-radius: 15px;
+                            p{
+                                line-height: 50px!important;
+                                @include myfont(16px,400,$main_font);
+                                color: $seventyblack;
+                                padding-left: 20px!important;
+                            }
+                        }
+                        .Dropdown2-menu{
+                            li{
+                                line-height: 50px!important;
+                                font-size: 16px!important;
+                                color: $seventyblack;
+                                padding-left: 20px!important;
+                            }
+                        }
+                       }
                 
             }
         }

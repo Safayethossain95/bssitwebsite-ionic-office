@@ -2,26 +2,36 @@ import React,{useState} from 'react'
 import Dropdown from 'react-dropdown';
 import {BsChevronDown} from 'react-icons/bs'
 import { Table } from 'react-bootstrap';
-
+import Dropdown2 from './subComponents/CustomSubComponents/Dropdown2';
 const SchoolTimingComp = () => {
 
     const [drpsectionselect,setdrpsection] = useState("")
-    const options = [
-        'All Sections','Junior Section', 'Middle Section', 'Senior Section'
-      ];
-    const defaultOption = "All Sections";
+   
       
-      const dropdownvalue=(e)=>{
-        console.log(e.value)
-        setdrpsection(e.value)
-      }
+    
+    const optionssection = [
+        {
+            opt:'All Sections'
+        },
+        {
+            opt:'Junior Section'
+        },
+        {
+            opt:'Middle Section'
+        },
+        {
+            opt:'Senior Section'
+        },
+      ];
+      const drpfunctionsection=(mysectionval)=>{
+        setdrpsection(mysectionval)
+    }
   return (
     <>
         <div className="myContainer">
             <div className="studentagecompropdown" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                         <div className="dropdownwrapper">
-                            <Dropdown className='filterdropone' options={options} onChange={(e)=>dropdownvalue(e)} value={defaultOption} />
-                            <BsChevronDown/>
+                        <Dropdown2 func={drpfunctionsection} myplaceholder="Select Section" fontsize="12" fontfamily="'Poppins', sans-serif"  options={optionssection}/>
                         </div>
                 </div>
 

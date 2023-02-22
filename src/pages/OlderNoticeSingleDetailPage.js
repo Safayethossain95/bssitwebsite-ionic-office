@@ -64,7 +64,7 @@ const OlderNoticeSingleDetailPage = () => {
     <>
         <div className="mobile">
         <NavbarMoblie/>        
-        <div className="mobilecontainer">
+        <div className="mobilecontainer minimumheightntpg">
         {
            oldernoticedata.map((item,key)=>{
             if(id==item.id){

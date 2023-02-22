@@ -8,6 +8,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import TextField from '@mui/material/TextField';
+import Dropdown2 from '../../subComponents/CustomSubComponents/Dropdown2';
 const StudentAgePagemb = () => {
     const [dateofadmissionnew,setdateofadmissionnew] = useState("")
     const [dateofbirthnew,setdateofbirthnew] = useState("")
@@ -20,6 +21,21 @@ const StudentAgePagemb = () => {
     const [fulldatedoad,setfulldatedoad] = useState("")
     const [fulldatedobd,setfulldatedobd] = useState("")
     const [drpsection,setdrpsection] = useState("")
+
+    const optionssection = [
+        {
+            opt:'All Sections'
+        },
+        {
+            opt:'Junior Section'
+        },
+        {
+            opt:'Middle Section'
+        },
+        {
+            opt:'Senior Section'
+        },
+      ];
     const handleDateofbirth = (newvaldob)=>{
 
         if(newvaldob != null){
@@ -106,15 +122,9 @@ const StudentAgePagemb = () => {
         
     }
 
-    const options = [
-        'All Sections','Junior Section', 'Middle Section', 'Senior Section'
-      ];
-      const defaultOption = "All Sections";
-
-      const dropdownvalue=(e)=>{
-        console.log(e.value)
-        setdrpsection(e.value)
-      }
+    const drpfunctionsection=(mysectionval)=>{
+        setdrpsection(mysectionval)
+    }
     const handlepresentage=()=>{
 
     }
@@ -183,8 +193,7 @@ const StudentAgePagemb = () => {
             <h6>Age limit for the following class</h6>
 
             <div className="dropdownwrapper">
-                <Dropdown className='filterdropone' options={options} onChange={(e)=>dropdownvalue(e)} value={defaultOption} placeholder="Select an option" />
-                <BsChevronDown/>
+            <Dropdown2 func={drpfunctionsection} myplaceholder="Select Section" fontsize="12" fontfamily="'Poppins', sans-serif"  options={optionssection}/>
             </div>
             {
                 drpsection?

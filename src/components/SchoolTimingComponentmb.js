@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import Dropdown from 'react-dropdown';
 import {BsChevronDown} from 'react-icons/bs'
 import { Table } from 'react-bootstrap';
+import Dropdown2 from './subComponents/CustomSubComponents/Dropdown2';
 const SchoolTimingComponentmb = () => {
     const [drpsectionselect,setdrpsection] = useState("")
     const options = [
@@ -13,6 +14,24 @@ const SchoolTimingComponentmb = () => {
         console.log(e.value)
         setdrpsection(e.value)
       }
+      const optionssection = [
+        {
+            opt:'All Sections'
+        },
+        {
+            opt:'Junior Section'
+        },
+        {
+            opt:'Middle Section'
+        },
+        {
+            opt:'Senior Section'
+        },
+      ];
+
+      const drpfunctionsection=(mysectionval)=>{
+        setdrpsection(mysectionval)
+    }
   return (
     <>
         <div className="mobilecontainer">
@@ -26,8 +45,7 @@ const SchoolTimingComponentmb = () => {
             </div>
             <div className="schooltimingdropdown">
                         <div className="dropdownwrapper">
-                            <Dropdown className='filterdropone' options={options} onChange={(e)=>dropdownvalue(e)} value={defaultOption} />
-                            <BsChevronDown/>
+                        <Dropdown2 func={drpfunctionsection} myplaceholder="Select Section" fontsize="12" fontfamily="'Poppins', sans-serif"  options={optionssection}/>
                         </div>
                 </div>
 

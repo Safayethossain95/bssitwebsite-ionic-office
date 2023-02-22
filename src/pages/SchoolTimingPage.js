@@ -63,6 +63,7 @@ const SchoolTimingPage = () => {
     <>
         <div className="studenttimingpagemain">
           <div className="mobile">
+          <div className="overlayfordrpdwn"></div>
               <NavbarMoblie/>
               <div className="schooltimingcompdiv">
                 <SchoolTimingComponentmb/>
@@ -70,6 +71,7 @@ const SchoolTimingPage = () => {
               <FooterMobile/>
             </div>
             <div className="desktop">
+            <div className="overlayfordrpdwn"></div>
                 <Header/>                
                 <Mynavbar/>
                 <HeadlineOfOtherPage noticepagegapbalance="noticepagegapbalance" headline="School Timing"/>                

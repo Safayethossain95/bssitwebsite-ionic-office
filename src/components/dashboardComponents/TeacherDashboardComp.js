@@ -25,15 +25,104 @@ import PillSmall from '../subComponents/CustomSubComponents/PillSmall'
 import '../../sassFiles/sassPages/dashboards/dashvariables.scss'
 import '../../sassFiles/sassPages/dashboards/teacherDashboard.scss'
 import { attendanceApiteacher, periodsubjectdatateacher, salaryInformationteacher,routinetabDatateacher, curriculumtabtabledata, resultTabtabledata, attendanceDatateacher, prevSalarytabledata, profiletabApiteacher } from '../../utils/DashboardApi/TeacherDashboardApi'
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import TextField from '@mui/material/TextField';
 
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 const TeacherDashboardComp = () => {
 
+  
+
+    const [leavedatefrom, setleavedatefrom] = useState(null);    
+
+    const [leavedateto,setleavedateto] = useState(null)
+    
+    const [leavetimefrom,setleavetimefrom] = useState(null)
+    
+    const [leavetimeto,setleavetimeto] = useState(null)
+    
+    const [reqsubmissiondate,setreqsubmissiondate] = useState(null)
+
+    const [validreason,setvalidreason]= useState(null)
+
     const [selected, setSelected] = React.useState(Date);
 
     const [monthdrpdwnval,setmonthdrpdwnval]=useState("")
+
     const [yeardrpdwnval,setyeardrpdwnval]=useState("")
+
+    const [clsroutineselectvalue,setclsroutineselectvalue]=useState("")
+
+    const clsroutineselectfunc=(myvalue)=>{
+        setclsroutineselectvalue(myvalue)
+    }
+    
+    const optionmeleavetype = [
+        {
+            opt:'Personal'
+        },
+        {
+            opt:'Casual'
+        }
+    ]
+
+    const handleSubmit=()=>{
+        // console.log(typeof(value))
+       
+        if(leavedateto != null){
+
+            var lvdtmonth = leavedateto.$M + 1;
+            var leavedatetost = leavedateto.$y + '-'+ lvdtmonth +'-'+ leavedateto.$D;
+             console.log(leavedatetost)
+        }
+       
+        if(leavedatefrom != null){
+            var lvdfrmonth = leavedatefrom.$M + 1;
+            var leavedatefrst = leavedatefrom.$y + '-'+ lvdfrmonth +'-'+leavedatefrom.$D ;
+            
+            console.log(leavedatefrst)
+            
+
+        }
+        if(reqsubmissiondate != null){
+            var reqsubmonth = reqsubmissiondate.$M + 1;
+            var reqsubdaatefinal = reqsubmissiondate.$y + '-'+ reqsubmonth +'-'+reqsubmissiondate.$D ;
+            
+            console.log(reqsubdaatefinal)
+            
+
+        }
+        if(leavetimefrom != null){
+            var leavetimefromtmp = leavetimefrom.$H + ':' + leavetimefrom.$m
+            console.log('leave time from ' +leavetimefromtmp)
+
+        }
+        if(leavetimeto != null){
+            var leavetimetotmp = leavetimeto.$H + ':' + leavetimeto.$m
+            console.log('leave time to ' +leavetimetotmp)
+
+        }
+           
+        
+        const leaveformdataall={
+            typeofleavereq:typeofleaverequest,
+            leavedateto:leavedatetost,
+            leavedatefrom:leavedatefrst,
+            leavetimefrom:leavetimefromtmp,
+            leavetimeto:leavetimetotmp,
+            reqsubmissiondate:reqsubdaatefinal,
+            validreason:validreason,
+            documentfile:docfile,
+            
+        }
+
+        console.dir(leaveformdataall)
+        
+      }
 
     function drpfunctionmonth(data){
         setmonthdrpdwnval(data)
@@ -68,6 +157,17 @@ const TeacherDashboardComp = () => {
             opt:'Second Semester'
         }
     ]
+    const optionclassroutineselector = [
+        {
+            opt:'Week'
+        },
+        {
+            opt:'Month'
+        },
+        {
+            opt:'Year'
+        },
+    ]
     const optionselectclass = [
         {
             opt:'Class 1'
@@ -76,6 +176,10 @@ const TeacherDashboardComp = () => {
             opt:'Class 2'
         }
     ]
+    const [typeofleaverequest,settypeofleaverequest]=useState("")
+    const typeleavereq=(myval)=>{
+        settypeofleaverequest(myval)
+    }
 
     const handleDocumentDownloadroutine = (file)=>{
 
@@ -91,14 +195,25 @@ const TeacherDashboardComp = () => {
 
       
     const [startDate,setStartDate] = useState("")
-      const handleStartDate=(e)=>{
-        setStartDate(e.target.value)
-        console.log(startDate)
+
+      const handleStartDate=(myvalofstartdate)=>{
+        
+        
+        if(myvalofstartdate != null){
+
+            var stdtmonth = myvalofstartdate.$M + 1;
+            var stdtfinal = myvalofstartdate.$y + '-'+ stdtmonth +'-'+ myvalofstartdate.$D;
+            setStartDate(stdtfinal)
+        }
       }
     const [endDate,setEndtDate] = useState("")
-      const handleEndDate=(e)=>{
-        setEndtDate(e.target.value)
-        console.log(endDate)
+      const handleEndDate=(myvalenddate)=>{
+        if(myvalenddate != null){
+
+            var stdtmonth = myvalenddate.$M + 1;
+            var edtfinal = myvalenddate.$y + '-'+ stdtmonth +'-'+ myvalenddate.$D;
+            setEndtDate(edtfinal)
+        }
       }
    
     function replaceWithBr() {
@@ -273,6 +388,11 @@ const TeacherDashboardComp = () => {
             setdashheaderchange(`Good Morning Farhana`)
         }
       }
+      const [docfile,setdocfile]=useState()
+      const docfileuploadhandler = (e)=>{
+        
+        setdocfile(e.target.files[0]);
+    }
   return (
     <>
         <Tab.Container id="left-tabs-example" activeKey={variableactivekey}>
@@ -702,8 +822,8 @@ const TeacherDashboardComp = () => {
                         <Row className='mb-4'>
                             <Col lg={{span: 2 ,offset: 2}} style={{margin:"0 auto"}}>
                             <div className="dropdownwrapper" id="routinedrp">
-                                <Dropdown open={true} className='filterdropone'  options={Optionroutinetype} onChange={(e)=>dropdownvalueroutinetype(e)} value={defaultOptionroutinetype} placeholder="Select an option" />
-                                <BsChevronDown/>
+                            <Dropdown2 func={clsroutineselectfunc} fontsize="12" fontfamily="'Poppins', sans-serif" options={optionclassroutineselector}/>
+                                
                             </div>
                             </Col>
                             
@@ -952,12 +1072,30 @@ const TeacherDashboardComp = () => {
                             
                             <Col  className="d-flex align-items-end">
                             
-                                <input type="date" placeholder='start date' onChange={(e)=>handleStartDate(e)} />
+                            <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                <DatePicker
+                                    value={startDate}
+                                    
+                                    onChange={(newValue) => {
+                                        handleStartDate(newValue);
+                                    }}
+                                    renderInput={(params) => <TextField {...params} error={false} />}
+                                />
+                                </LocalizationProvider>
                            
                             </Col>
                             <Col className="d-flex align-items-end">
                             
-                                <input type="date" placeholder='end date' onChange={(e)=>handleEndDate(e)} />
+                            <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                <DatePicker
+                                    value={endDate}
+                                    
+                                    onChange={(newValue) => {
+                                        handleEndDate(newValue);
+                                    }}
+                                    renderInput={(params) => <TextField {...params} error={false} />}
+                                />
+                                </LocalizationProvider>
                             </Col>
                             <Col className="d-flex align-items-end">
                                 <Button className='reqcorrectionbutton' onClick={handleReqCorrection}>Request for correction</Button>
@@ -1118,7 +1256,7 @@ const TeacherDashboardComp = () => {
             <div className="tabpaneheightadjust leaveformtab">
                     <div className="leaveformpart">
                         <div className="bottombuttondiv">
-                            <Button>Submit</Button>
+                            <Button onClick={handleSubmit}>Submit</Button>
                         </div>
                         <div className="basicinfopopulate">
                         <Row>
@@ -1144,43 +1282,85 @@ const TeacherDashboardComp = () => {
                                 <Row>
                                     <Col lg={12}>
                                         <p>Type of leave request</p>
-                                        <input type="text" name="name" placeholder=''/>
+                                        <Dropdown2 func={typeleavereq} myplaceholder="Select Leave Type" fontsize="12" fontfamily="'Poppins', sans-serif" options={optionmeleavetype}/>
                                     </Col>
                                 </Row>
                                 <Row>
                                     <Col lg={6}>
                                         <p>Leave Date From</p>
-                                        <input type="text" name="name" placeholder=''/>
+                                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                                <DatePicker
+                                                    value={leavedatefrom}
+                                                    onChange={(newValue) => {
+                                                        setleavedatefrom(newValue);
+                                                    }}
+                                                    renderInput={(params) => <TextField {...params} />}
+                                                />
+                                                </LocalizationProvider>
                                     </Col>
                                     <Col lg={6}>
                                         <p>Leave Time From</p>
-                                        <input type="text" name="name" placeholder=''/>
+                                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                        <TimePicker
+                                            
+                                            value={leavetimefrom}
+                                            onChange={(newValue) => {
+                                                setleavetimefrom(newValue);
+                                            }}
+                                            renderInput={(params) => <TextField {...params} />}
+                                        />
+                                        </LocalizationProvider>
                                     </Col>
                                 </Row>
                                 <Row>
                                     <Col lg={6}>
                                         <p>Leave Date To</p>
-                                        <input type="text" name="name" placeholder=''/>
+                                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                                <DatePicker
+                                                    value={leavedateto}
+                                                    onChange={(newValue) => {
+                                                        setleavedateto(newValue);
+                                                    }}
+                                                    renderInput={(params) => <TextField {...params} />}
+                                                />
+                                                </LocalizationProvider>
                                     </Col>
                                     <Col lg={6}>
                                         <p>Leave Time To</p>
-                                        <input type="text" name="name" placeholder=''/>
+                                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                        <TimePicker
+                                            
+                                            value={leavetimeto}
+                                            onChange={(newValue) => {
+                                                setleavetimeto(newValue);
+                                            }}
+                                            renderInput={(params) => <TextField {...params} />}
+                                        />
+                                        </LocalizationProvider>
                                     </Col>
                                 </Row>
                                 <Row>
                                     <Col lg={6}>
                                         <p>Request Submission date</p>
-                                        <input type="text" name="name" placeholder=''/>
+                                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                                <DatePicker
+                                                    value={reqsubmissiondate}
+                                                    onChange={(newValue) => {
+                                                        setreqsubmissiondate(newValue);
+                                                    }}
+                                                    renderInput={(params) => <TextField {...params} />}
+                                                />
+                                                </LocalizationProvider>
                                     </Col>
                                     <Col lg={6}>
                                         <p>Documents &#40;if any&#41;</p>
-                                        <input type="text" name="name" placeholder=''/>
+                                        <input style={{paddingTop:"4px"}} type="file" onChange={docfileuploadhandler} placeholder=''/>
                                     </Col>
                                 </Row>
                             </Col>
                             <Col lg={6}>
                                         <p>Valid Reason</p>
-                                        <textarea className="textbox" type="text" name="name" placeholder=''/>
+                                        <textarea className="textbox" type="text" name="validreason" value={validreason} onChange={(e)=>setvalidreason(e.target.value)} placeholder=''/>
                             </Col>
                         </Row>
                             

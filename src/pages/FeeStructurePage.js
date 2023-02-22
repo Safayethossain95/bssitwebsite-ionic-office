@@ -63,6 +63,7 @@ const FeeStructurePage = () => {
     <>
            <div className="feestructurepagemain">
             <div className="mobile">
+              <div className="overlayfordrpdwn"></div>
                 <NavbarMoblie/>
                 <div className="feestructurecompdiv">
                   <FeeStructureCompmb/>
@@ -70,6 +71,7 @@ const FeeStructurePage = () => {
                 <FooterMobile/>
                 </div>
                 <div className="desktop">
+                  <div className="overlayfordrpdwn"></div>
                     <Header/>                
                     <Mynavbar/>
                     <HeadlineOfOtherPage noticepagegapbalance="noticepagegapbalance" headline="Fee Stucture"/>

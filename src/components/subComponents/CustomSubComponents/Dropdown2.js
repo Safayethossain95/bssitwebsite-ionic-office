@@ -16,7 +16,10 @@ const Dropdown2 = (props) => {
     }
     const handlevariable=(e)=>{
         setmyvariable(e.target.innerHTML)
-        props.func(e.target.innerHTML)
+        if(props.func){
+
+            props.func(e.target.innerHTML)
+        }
         
         setShow(false)
         $('.overlayfordrpdwn').css('display','none');

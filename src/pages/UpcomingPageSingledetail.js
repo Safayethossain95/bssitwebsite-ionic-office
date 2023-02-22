@@ -64,7 +64,7 @@ const UpcomingPageSingledetail = () => {
     <>
         <div className="mobile">
         <NavbarMoblie/>        
-        <div className="mobilecontainer">
+        <div className="mobilecontainer minimumheightntpg">
         {
            upcomingnoticedata.map((item,key)=>{
             if(id==item.id){

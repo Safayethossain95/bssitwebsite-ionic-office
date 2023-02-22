@@ -7,6 +7,7 @@
 
 .studenttimingpagemain{
     .mobile{
+        position: relative;
         .schooltimingcompdiv{
             .heading{
                 h4{
@@ -36,6 +37,19 @@
                     border-radius: 15px;
                     width:90%;
                     margin:0 auto;
+                    .wrapperwrap{
+                  
+                        .Dropdown2{
+                        
+                         p{
+                            
+                             @include myfont(12px,400,$main_font);
+                             color: $seventyblack;
+                             padding-left: 20px!important;
+                         }
+                     }
+                   
+                    }
                 }
             }
             .schooltiminglowerparttext{

@@ -37,7 +37,7 @@ const LatestNoticeNoticePage = () => {
     <>
         <div className="latestNoticepart" id="latestNoticepart">
             <div className="myContainerMini">
-            <div className="subheadingandparagraph" data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
+            <div className="subheadingandparagraph" data-aos-delay="600" data-aos="fade-in" data-aos-duration="1000">
                     <h3>Latest</h3>
                     
                 </div>

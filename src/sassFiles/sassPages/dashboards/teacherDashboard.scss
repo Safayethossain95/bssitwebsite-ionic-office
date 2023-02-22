@@ -233,6 +233,37 @@
                 width:100%;
             }
             .atttabbox{
+                .MuiFormControl-root{
+                    display: block;
+                    width: 100%;
+                    .MuiInputBase-root{
+                        height:35px;
+                        display: block;
+                        border-radius: 10px;
+                        button{
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            right: 15px;
+                        }
+                        input{
+                            margin-bottom: 0;
+                            border:0;
+                            padding:0;
+                            padding-left: 15px;
+                            @include myfont(12px,400,$main_font);
+                            font-size: 12px!important;
+                        }
+                        input:focus, textarea {
+                            outline: none !important;
+                        }
+                        input:focus-visible {
+                            outline: none!important;
+                            box-shadow: none!important;
+                            border:none!important;
+                        }
+                    }
+                }
                 table{
                     tr{
                         th,td{
@@ -412,6 +443,36 @@
                 @include media(xlgDevice){
 
                     height:65%!important;
+                }
+                .basicinfopopulate{
+                    .MuiFormControl-root{
+                        display: block;
+                        .MuiInputBase-root{
+                            height:40px;
+                            display: block;
+                            border-radius: 10px;
+                            button{
+                                position: absolute;
+                                top: 0;
+                                right: 15px;
+                            }
+                            input{
+                                margin-bottom: 0;
+                                border:0;
+                                padding:0;
+                                padding-left: 15px;
+                                @include myfont(16px,400,$main_font);
+                            }
+                            input:focus, textarea {
+                                outline: none !important;
+                            }
+                            input:focus-visible {
+                                outline: none!important;
+                                box-shadow: none!important;
+                                border:none!important;
+                            }
+                        }
+                    }
                 }
             }
             .leaverequeststatus{

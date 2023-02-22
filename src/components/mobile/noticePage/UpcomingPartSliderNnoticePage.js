@@ -46,7 +46,7 @@ const UpcomingPartSliderNnoticePage = (props) => {
             <div className={props.title?"heading":"d-none"}>
                         <h4>{props.title?props.title:"Notice"}</h4>
                     </div>
-                    <div className="mobilecontainer">
+                    <div className="mobilecontainer minimumheightntpg">
                   <h5>{props.subtitle}</h5>
                 </div>
                 <Slider {...settings}>

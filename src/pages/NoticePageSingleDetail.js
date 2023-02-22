@@ -95,7 +95,7 @@ const NoticePageSingleDetail = () => {
     <>
         <div className="mobile">
         <NavbarMoblie/>        
-        <div className="mobilecontainer">
+        <div className="mobilecontainer minimumheightntpg">
         {
            noticedata.map((item,key)=>{
             if(id==item.id){

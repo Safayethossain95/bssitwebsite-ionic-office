@@ -63,6 +63,7 @@ const StudentAgeCheckPage = () => {
     <>
         <div className="studentagepagemain">
           <div className="mobile">
+          <div className="overlayfordrpdwn"></div>
               <NavbarMoblie/>
               <div className="studentagecompdiv">
               <StudentAgePagemb/>
@@ -70,6 +71,7 @@ const StudentAgeCheckPage = () => {
               <FooterMobile/>
             </div>
             <div className="desktop">
+            <div className="overlayfordrpdwn"></div>
                 <Header/>                
                 <Mynavbar/>
                 <HeadlineOfOtherPage noticepagegapbalance="noticepagegapbalance" headline="STUDENT'S AGE"/>

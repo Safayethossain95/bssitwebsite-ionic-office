@@ -7,7 +7,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import TextField from '@mui/material/TextField';
-
+import Dropdown2 from './subComponents/CustomSubComponents/Dropdown2';
 
     
 const StudentAgeComp = () => {
@@ -22,6 +22,10 @@ const StudentAgeComp = () => {
     const [fulldatedoad,setfulldatedoad] = useState("")
     const [fulldatedobd,setfulldatedobd] = useState("")
     let menuRef = useRef()
+
+    const drpfunctionsection=(mysectionval)=>{
+        setdrpsection(mysectionval)
+    }
     useEffect(()=>{
         
         let handler = (event) => {
@@ -132,15 +136,23 @@ const StudentAgeComp = () => {
     }
 
     const [drpsectionselect,setdrpsection] = useState("")
-    const options = [
-        'All Sections','Junior Section', 'Middle Section', 'Senior Section'
+    const optionssection = [
+        {
+            opt:'All Sections'
+        },
+        {
+            opt:'Junior Section'
+        },
+        {
+            opt:'Middle Section'
+        },
+        {
+            opt:'Senior Section'
+        },
       ];
     const defaultOption = "All Sections";
       
-      const dropdownvalue=(e)=>{
-        console.log(e.value)
-        setdrpsection(e.value)
-      }
+     
   return (
     <>
      <div className="myContainer">
@@ -188,8 +200,7 @@ const StudentAgeComp = () => {
         </Row>
         <div className="stuentagecompropdown">
                 <div className="dropdownwrapper">
-                    <Dropdown ref={menuRef} className='filterdropone' options={options} onChange={(e)=>dropdownvalue(e)} value={defaultOption} />
-                    <BsChevronDown/>
+                <Dropdown2 func={drpfunctionsection} myplaceholder="Select Section" fontsize="12" fontfamily="'Poppins', sans-serif"  options={optionssection}/>
                 </div>
         </div>
         {

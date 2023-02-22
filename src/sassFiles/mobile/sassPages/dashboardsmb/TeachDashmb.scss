@@ -1096,6 +1096,42 @@
                         @include borderthin();
                         border-radius: 10px;
                         height:100px;
+                        padding:10px!important;
+                        @include myfont(12px,400,$main_font);
+                    }
+                    input{
+                        padding-left: 10px!important;
+                        @include myfont(12px,400,$main_font);
+                    }
+                    .MuiFormControl-root{
+                        display: block;
+                        
+                        .MuiInputBase-root{
+                            height:40px;
+                            display: block;
+                            border-radius: 10px;
+                            button{
+                                position: absolute;
+                                top: 50%;
+                                right: 15px;
+                                transform: translateY(-50%);
+                            }
+                            input{
+                                margin-bottom: 0;
+                                border:0;
+                                padding:0;
+                                padding-left: 0px;
+                                @include myfont(16px,400,$main_font);
+                            }
+                            input:focus, textarea {
+                                outline: none !important;
+                            }
+                            input:focus-visible {
+                                outline: none!important;
+                                box-shadow: none!important;
+                                border:none!important;
+                            }
+                        }
                     }
                 }
             }

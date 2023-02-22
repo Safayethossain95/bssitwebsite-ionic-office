@@ -17,15 +17,24 @@ import PillSmall from '../subComponents/CustomSubComponents/PillSmall'
 import '../../sassFiles/sassPages/dashboards/dashvariables.scss'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
-
+import { useNavigate } from 'react-router-dom'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import TextField from '@mui/material/TextField';
 ChartJS.register(ArcElement, Tooltip, Legend);
 const StudentDashboardComp = () => {
 
-    const [leavedatefrom, setleavedatefrom] = useState(null);
-    // const [value, setValue] = Datetime.now();
+    let navigate = useNavigate()
+    const handlelogout=()=>{
+        navigate('/')
+    }
+
+    const [typeofleaverequest,settypeofleaverequest]=useState("")
+
+    const typeleavereq=(myval)=>{
+        settypeofleaverequest(myval)
+    }
+    const [leavedatefrom, setleavedatefrom] = useState(null);    
 
     const [leavedateto,setleavedateto] = useState(null)
     
@@ -33,22 +42,27 @@ const StudentDashboardComp = () => {
     
     const [leavetimeto,setleavetimeto] = useState(null)
     
+    const [reqsubmissiondate,setreqsubmissiondate] = useState(null)
 
-    const [leaveformdata,setLeaveformdata] = useState({
-        leavetimefrom:"",
-        leavetimeto:"",
-        reqsubmissiondate:"",
-        validreasontext:"",
-    })
+    const [validreason,setvalidreason]= useState(null)
+
+    const [docfile,setdocfile]=useState()
+
+    const docfileuploadhandler = (e)=>{
+        
+        setdocfile(e.target.files[0]);
+    }
+
+    
+    
+    
     
 
-
-       const handleInput=(e)=>{    
-        setLeaveformdata({...leaveformdata,[e.target.name]: e.target.value} )
-      }
-
       const handleSubmit=()=>{
-        // console.log(typeof(value))
+       
+        console.log(docfile)
+        console.log(typeofleaverequest)
+        console.log(validreason)
         if(leavedateto != null){
 
             var lvdtmonth = leavedateto.$M + 1;
@@ -64,6 +78,14 @@ const StudentDashboardComp = () => {
             
 
         }
+        if(reqsubmissiondate != null){
+            var reqsubmonth = reqsubmissiondate.$M + 1;
+            var reqsubdaatefinal = reqsubmissiondate.$y + '-'+ reqsubmonth +'-'+reqsubmissiondate.$D ;
+            
+            console.log(reqsubdaatefinal)
+            
+
+        }
         if(leavetimefrom != null){
             var leavetimefromtmp = leavetimefrom.$H + ':' + leavetimefrom.$m
             console.log('leave time from ' +leavetimefromtmp)
@@ -76,7 +98,19 @@ const StudentDashboardComp = () => {
         }
            
         
-        // console.log("hello")
+        const leaveformdataall={
+            typeofleavereq:typeofleaverequest,
+            leavedateto:leavedatetost,
+            leavedatefrom:leavedatefrst,
+            leavetimefrom:leavetimefromtmp,
+            leavetimeto:leavetimetotmp,
+            reqsubmissiondate:reqsubdaatefinal,
+            validreason:validreason,
+            documentfile:docfile,
+            
+        }
+
+        console.dir(leaveformdataall)
         
       }
 
@@ -349,7 +383,7 @@ const StudentDashboardComp = () => {
                   
                 </div>
                 <div className="logout">
-                  <Button>Logout</Button>
+                  <Button onClick={handlelogout}>Logout</Button>
                 </div>
             </div>
         </div>
@@ -1462,7 +1496,7 @@ const StudentDashboardComp = () => {
                                 <Row>
                                     <Col lg={12}>
                                         <p>Type of leave request</p>
-                                        <Dropdown2 myplaceholder="Select Leave Type" fontsize="12" fontfamily="'Poppins', sans-serif" options={optionmeleavetype}/>
+                                        <Dropdown2 func={typeleavereq} myplaceholder="Select Leave Type" fontsize="12" fontfamily="'Poppins', sans-serif" options={optionmeleavetype}/>
                                     </Col>
                                 </Row>
                                 <Row>
@@ -1522,17 +1556,26 @@ const StudentDashboardComp = () => {
                                 <Row>
                                     <Col lg={6}>
                                         <p>Request Submission date</p>
-                                        <input type="text" name="name" placeholder=''/>
+                                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                                <DatePicker
+                                                    value={reqsubmissiondate}
+                                                    onChange={(newValue) => {
+                                                        setreqsubmissiondate(newValue);
+                                                    }}
+                                                    renderInput={(params) => <TextField {...params} />}
+                                                />
+                                                </LocalizationProvider>
+                                       
                                     </Col>
                                     <Col lg={6}>
                                         <p>Documents &#40;if any&#41;</p>
-                                        <input type="text" name="name" placeholder=''/>
+                                        <input style={{paddingTop:"4px"}} type="file" onChange={docfileuploadhandler} placeholder=''/>
                                     </Col>
                                 </Row>
                             </Col>
                             <Col lg={6}>
                                         <p>Valid Reason</p>
-                                        <textarea className="textbox" type="text" name="name" placeholder=''/>
+                                        <textarea className="textbox" type="text" name="validreason" value={validreason} onChange={(e)=>setvalidreason(e.target.value)} placeholder=''/>
                             </Col>
                         </Row>
                             
