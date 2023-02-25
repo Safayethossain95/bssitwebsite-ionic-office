@@ -73,6 +73,14 @@
     right:0;
     width:100%;
 
+    .accordion-header{
+        button{
+            a{
+                margin:0;
+            }
+        }
+    }
+
     .navbar-collapse{
         position: relative;
         background: rgb(255, 255, 255);

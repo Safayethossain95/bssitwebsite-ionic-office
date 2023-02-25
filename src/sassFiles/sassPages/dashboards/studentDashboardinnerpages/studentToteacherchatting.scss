@@ -1,0 +1,220 @@
+@import '../../../../sassStyles/mixins';
+@import '../../../../sassStyles/variables';
+@import '../../../../sassStyles/typography';
+@import '../../../../sassStyles/global';
+
+.stuteachattingdesktop{
+    
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+
+        .topbar{
+            height: 78px;
+            width:100%;
+            background-color: #fff;
+            border-bottom: 1px solid $border_twenty;
+            display: flex;
+            .arrowdiv{
+                height: 100%;
+                display: flex;
+                align-items: center;
+                svg{
+                    font-size: 25px;
+                    margin-left: 10px;
+                    cursor:pointer;
+                }
+            }
+            .propicandname{
+                height: 100%;
+                display: flex;
+                align-items: center;
+                margin-left: 33px;
+                position:relative;
+                &::after{
+                    position: absolute;
+                    width: 13px;
+                    height: 13px;
+                    background: green;
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                    top: 16px;
+                    right: -1px;
+                    content: "";
+                }
+            }
+            .proname{
+                height: 100%;
+                display: flex;
+                align-items: center;
+                margin-left: 12px;
+            }
+        }
+        .chatmessagebox{
+            height: calc(100vh - 258px);
+            width:100%;
+            background-color: #fff;
+            overflow-y: scroll;
+            .datepframe{
+                .onlydate{
+                    h6{
+                        margin-top: 30px;
+                    }
+                }
+                .singlemessagebox{
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 15px;
+                    .img{
+                        align-self: flex-end;
+                    }
+                    .textbox{
+                        padding:20px;
+                        width:482px;
+                        height:auto;
+                        border-radius: 15px;
+                        margin-left: 15px;
+                        background-color: #f4f4f4;
+                        
+                        p{
+                            @include myfont(18px,400,$main_font);
+                        }
+                    }
+                }
+            }
+        }
+        .textinputbox{
+            height:87px;
+            width:100%;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+           .leftonlytext{
+            height:50px;
+            border:1px solid $border_twenty;
+            border-radius: 10px;
+            width:80%;
+            margin-right: 16px;
+            display: flex;
+            input{
+                
+                width:90%;
+                height: 100%;
+                border: none;
+                border-radius: 10px;
+                padding-left: 20px;
+                &:focus-visible{
+                    outline: 0px!important;
+                }
+                
+                }
+                .twoicons{
+                    width:10%;
+                    position:relative;
+                    img{
+                        position:absolute;
+                        &:first-child{
+                            top:50%!important;
+                            transform: translateY(-50%);
+                            right:60px;
+
+                        }
+                        &:last-child{
+                            top:50%!important;
+                            transform: translateY(-50%);
+                            right:10px;
+
+                        }
+                    }
+                }
+            }
+           .buttonbox{
+            width:20%;
+            height: 50px;
+
+            button{
+                width:100%;
+                height: 50px;
+                border-radius: 10px;
+                background-color: #ED1C24;
+                border:none;
+                @include myfont(18px,500,$main_font);
+                &:focus-visible{
+                    box-shadow: none;
+                }
+                svg{
+                    margin-top: -3px;
+                    margin-left: 7px;
+                }
+            }
+           }
+        }
+    
+}
+
+.studenthelpsupport{
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+    .topbar{
+        height:78px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .arrowdiv{
+            height: 100%;
+            width:30%;
+            display: flex;
+            align-items: center;
+            svg{
+                font-size: 25px;
+                margin-left: 10px;
+                cursor:pointer;
+            }
+        }
+        .searchbox{
+            position:relative;
+            input{
+
+                width:272px;
+                height: 50px;
+                border-radius: 10px;
+                border: 1px solid $seventyblack;
+                padding-left: 30px;
+                @include myfont(18px,400,#000);
+                &::placeholder{
+                    @include myfont(18px,400,#000);
+                }
+
+            }
+            img{
+                position:absolute;
+                right:25px;
+                top:50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    .bottompartbox{
+        .tabpaneboxopenticket{
+            width:100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 226px);
+            background:beige;
+            p{
+                @include myfont(20px,500,$main_font);
+            }
+            button{
+                width:220px;
+                height:50px;
+                @include myfont(18px,500,$main_font);
+                background-color: #ED1C24;
+                border-radius: 10px;
+                border:none;
+                margin-top: 30px;
+            }
+        }
+    }
+}

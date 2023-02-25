@@ -56,6 +56,9 @@ const FeeStructureComp = () => {
     ]
     const optionsselecttype = [
         {
+            opt:'Select Type'
+        },
+        {
             opt:'New Admission'
         },
         {
@@ -133,7 +136,7 @@ const FeeStructureComp = () => {
             <Row>
                 <Col lg={6} data-aos-delay="300" data-aos="fade-up" data-aos-duration="1000">
                 <div className="dropdownwrapper">
-                    <Dropdown2 func={drpfunctype} myplaceholder="Select Section" fontsize="12" fontfamily="'Poppins', sans-serif"  options={optionsselecttype}/>
+                    <Dropdown2 func={drpfunctype} myplaceholder="Select Type" fontsize="12" fontfamily="'Poppins', sans-serif"  options={optionsselecttype}/>
                 </div>
                 <div className="dropdownwrapper">
                     <Dropdown2 func={drpfuncClass} myplaceholder="Select Class" fontsize="12" fontfamily="'Poppins', sans-serif"  options={optionsClass}/>

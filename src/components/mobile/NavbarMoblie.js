@@ -68,7 +68,9 @@ const NavbarMoblie = () => {
 
                       <Accordion>
                             <Accordion.Item eventKey="0">
-                              <Accordion.Header>Admission</Accordion.Header>
+                              <Accordion.Header><NavLink to='/admission' style={({ isActive }) =>
+                                      isActive ? activeStyle : undefined
+                                    }>Admission</NavLink></Accordion.Header>
                               <Accordion.Body>
                                 <ul>
                                   <li>

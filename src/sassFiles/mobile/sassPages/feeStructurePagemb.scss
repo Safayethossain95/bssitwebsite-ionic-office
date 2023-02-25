@@ -61,21 +61,34 @@
 
                 .mytwodropdowns{
                     .dropdownwrapper{
-                        .Dropdown-control{
-                            height: 40px;
-                            .Dropdown-placeholder{
-                                @include myfont(12px,400,$main_font);
-                                color:$seventyblack;
-                                top:10px;
+                        &.scrollabledrp{
+                            .Dropdown2-menu{
+                                height: 200px;
+                                overflow-y: scroll;
                             }
-                            
                         }
-                        .Dropdown-menu{
-                                .Dropdown-option{
-                                    @include myfont(12px,400,$main_font);
-                                }
-
+                        .wrapperwrap{
+                            height: 40px;
+                            .Dropdown2{
+                                height: 40px;
+                                border-radius: 10px;
+                             p{
+                                line-height: 40px!important;
+                                 @include myfont(12px,400,$main_font);
+                                 color: $seventyblack;
+                                 padding-left: 20px!important;
+                             }
                             }
+                            .Dropdown2-menu{
+                               li{
+                                   line-height: 50px!important;
+                                   font-size: 12px!important;
+                                   color:$seventyblack;
+                                   padding-left: 20px;
+                               }
+                           }
+                       
+                        }
                     }
                 }
 

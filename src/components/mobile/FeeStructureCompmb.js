@@ -5,8 +5,84 @@ import {Row,Col,Form} from 'react-bootstrap'
 import {allfeedata,feeinfodata,feenotedata} from '../../utils/FeeStructureApi'
 import FeeStructureDynamiccomp from '../subComponents/FeeStructureDynamiccomp';
 import CommonButton from '../subComponents/CommonButton';
-
+import Dropdown2 from '../subComponents/CustomSubComponents/Dropdown2';
 const FeeStructureCompmb = () => {
+
+    const [admissionfee,setadmissionfee]=useState(0)
+    const [billingcharge,setbillingcharge]=useState(0)
+    const [sessionfee,setsessionfee]=useState(0)
+    const [tuitionfee,settuitionfee]=useState(0)
+    const drpfunctype=(mysectionval)=>{
+        setdrptype(mysectionval)
+    }
+      const drpfuncClass=(myclassval)=>{
+        setclassoptions(myclassval)
+    }
+    const optionsselecttype = [
+        {
+            opt:'Select Type'
+        },
+        {
+            opt:'New Admission'
+        },
+        {
+            opt:'Enrollment'
+        },
+      
+      ];
+    
+    const optionsClass = [
+        {
+            opt:'Select Class'
+        },
+        {
+            opt:'Starter'
+        },
+        {
+            opt:'Playgroup'
+        },
+        {
+            opt:'Nursery'
+        },
+        {
+            opt:'Junior KG'
+        },
+        {
+            opt:'Senior KG'
+        },
+        {
+            opt:'Class 1'
+        },
+        {
+            opt:'Class 2'
+        },
+        {
+            opt:'Class 3'
+        },
+        {
+            opt:'Class 4'
+        },
+        {
+            opt:'Class 5'
+        },
+        {
+            opt:'Class 6'
+        },
+        {
+            opt:'Class 7'
+        },
+        {
+            opt:'O Level'
+        },
+        {
+            opt:'A Level'
+        },
+        {
+            opt:'Pre- O level'
+        },
+      
+      ];
+
     const [contactformdata,setcontactformdata] = useState({
         name:"",
         email:"",
@@ -24,21 +100,9 @@ const FeeStructureCompmb = () => {
         console.log(contactformdata)
       }
     
-    const typeoptions = [
-        'Select Type','New Admission','Enrollment'
-      ];
-    const classoptionsopt = [
-        'Select Class','Starter','Playgroup','Nursery','Junior KG','Senior KG','Class 1','Class 2', 'Class 3','Class 4','Class 5','Class 6','Class 7','O Level',
-        'A Level','Pre- O level'
-      ];
-    const defaultOptiontype = typeoptions[0];
-      const defaultOptionclass = classoptionsopt[0];
       const [drptype,setdrptype] = useState("")
       const [classoptions,setclassoptions]=useState("")
-      const [admissionfee,setadmissionfee]=useState(0)
-      const [billingcharge,setbillingcharge]=useState(0)
-      const [sessionfee,setsessionfee]=useState(0)
-      const [tuitionfee,settuitionfee]=useState(0)
+    
       const dropdownvalue=(e)=>{
         console.log(e.value)
         setdrptype(e.value)
@@ -63,17 +127,15 @@ const FeeStructureCompmb = () => {
                 </div>
 
                 <Row className="mytwodropdowns">
-                    <Col xs={6}>
+                    <Col xs={6} style={{paddingRight:"15px"}}>
                         <div className="dropdownwrapper">
-                            <Dropdown className='filterdropone' options={typeoptions} onChange={(e)=>dropdownvalue(e)} value={defaultOptiontype} placeholder="Select an option" />
-                            <BsChevronDown/>
+                        <Dropdown2 func={drpfunctype} myplaceholder="Select Type" fontsize="12" fontfamily="'Poppins', sans-serif"  options={optionsselecttype}/>
                         </div>
                         
                     </Col>
-                    <Col xs={6}>
-                        <div className="dropdownwrapper">
-                            <Dropdown className='filterdropone' options={classoptionsopt} onChange={(e)=>dropdownvalueclass(e)} value={defaultOptionclass} placeholder="Select an option" />
-                            <BsChevronDown/>
+                    <Col xs={6} style={{paddingLeft:"0"}}>
+                        <div className="dropdownwrapper scrollabledrp">
+                        <Dropdown2 func={drpfuncClass} myplaceholder="Select Class" fontsize="12" fontfamily="'Poppins', sans-serif"  options={optionsClass}/>
                         </div>
                     </Col>
                 </Row>

@@ -21,20 +21,23 @@ import { useNavigate } from 'react-router-dom'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import TextField from '@mui/material/TextField';
+import {AiOutlineArrowLeft} from 'react-icons/ai'
+import {MdSend} from 'react-icons/md'
 ChartJS.register(ArcElement, Tooltip, Legend);
-const StudentDashboardComp = () => {
+const StudentDashHelpSupportComp = () => {
     let navigate = useNavigate()
-    const [togglescreeninsideatab,settogglescreeninsideatab] = useState("profiletab")
-
-    const handleHelpSupport=()=>{
-        navigate('/studashboard/helpandsupport')
-    }
-    const handleclassteacherchatting=()=>{
-        navigate('/studashboard/classteacher')
+    
+    const handlegoBack=()=>{
+      navigate('/studashboard')
     }
     
     const handlelogout=()=>{
         navigate('/')
+    }
+    const [dependentdatashow,setdependentdatashow] = useState("")
+    const handleOpenNewTicket=()=>{
+        setdependentdatashow("OpenForm")
+        console.log("yes man")
     }
 
     const [typeofleaverequest,settypeofleaverequest]=useState("")
@@ -283,9 +286,9 @@ const StudentDashboardComp = () => {
 
       const [drpsection,setdrpsection] = useState("")
    
-      const [variableactivekey,setvariableactivekey] = useState("first")
+      const [variableactivekey,setvariableactivekey] = useState("ninth")
       
-      const [dashheaderchange,setdashheaderchange] = useState("Good Morning Jisan")
+      const [dashheaderchange,setdashheaderchange] = useState("Help & Support")
 
       const handleSelecttab = (tabvalue)=>{
         setvariableactivekey(tabvalue)
@@ -337,14 +340,14 @@ const StudentDashboardComp = () => {
             setdashheaderchange("Leave Form")            
         }
         else if(tabvalue=="ninth"){
-            setdashheaderchange("Profile")            
+            setdashheaderchange("Help & Support")            
             
         }
         else if(tabvalue=="tenth"){
             setdashheaderchange("Exam Routine")
         }
         else{
-            setdashheaderchange("Good Morning Jisan")
+            setdashheaderchange("Help & Support")
         }
       }
   return (
@@ -358,7 +361,7 @@ const StudentDashboardComp = () => {
                 <div className="menupart">
                 <Nav variant="pills" className="flex-column">
                     <Nav.Item>
-                    <a id="first" className='active' onClick={()=>handleSelecttab("first")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Dashboard</a>
+                    <a id="first" onClick={()=>handleSelecttab("first")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Dashboard</a>
                     </Nav.Item>
                     <Nav.Item>
                     <a id="second" onClick={()=>handleSelecttab("second")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Document</a>
@@ -382,7 +385,7 @@ const StudentDashboardComp = () => {
                     <a id="eighth" onClick={()=>handleSelecttab("eighth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Leave Form</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="ninth" onClick={()=>handleSelecttab("ninth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Profile</a>
+                    <a id="ninth"  className='active' onClick={()=>handleSelecttab("ninth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Profile</a>
                     </Nav.Item>
                     <Nav.Item>
                     <a id="tenth" onClick={()=>handleSelecttab("tenth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Exam Routine</a>
@@ -1637,459 +1640,65 @@ const StudentDashboardComp = () => {
             <Tab.Pane eventKey="ninth" className="tabPane">
                 
                    
-                         <div className="tabpaneheightadjust profiletab">
-                         <div className="flexwrapperprofile">
-                             <div className="profileleftcolumn">
-                                 <div className="scrollwrapper">
+                <div className="tabpaneheightadjust tabpanerightattandancetab studenthelpsupport">
+                    <div className="topbar">
+                        <div className="arrowdiv">
+                            <AiOutlineArrowLeft onClick={handlegoBack}/>
+                        </div>
+                        <div className="searchbox">
+                            <input type="text" placeholder="Search Ticket"/>
+                            <img src="./assets/images/dashboards/studentDashboard/profileTab/helpSupport/searchicon.png" alt="searchicon.png" />
+                        </div>
+                    </div>
 
-                                 <div className="proleftcoltop">
-                                     <div className="profileimgbig text-center">
-                                     <img src="./assets/images/dashboards/studentDashboard/profilePicBig.png" alt="profilePicBig.png" />
+                    <div className="bottompartbox">
+                    <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+                        <Row>
+                            <Col sm={12}>
+                            <Nav variant="pills" className="flex-row">
+                                <Nav.Item>
+                                <Nav.Link eventKey="first">Open Tickets</Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
+                                <Nav.Link eventKey="second">resolved</Nav.Link>
+                                </Nav.Item>
+                            </Nav>
+                            </Col>
+                            <Col sm={12}>
+                            <Tab.Content>
+                                <Tab.Pane eventKey="first">
+                                    
+                                    {
+                                      
+                                        dependentdatashow==""?
 
-                                     <h4>Md Jisan Khan</h4>
-                                     <p>ID 1705032108</p>
-                                     </div>
+                                                <div className="tabpaneboxopenticket">
 
-                                     <div className="profiledetailpoints">
-                                         <div className="minidivswrapper d-flex">
-                                             <div className="minidivleft" style={{width:"95px"}}>
-                                                 <p> CLASS</p>
-                                             </div>
-                                             <span>:</span>
-                                             <div className="minidivright">
-                                                 <p> Class 2</p>
-                                             </div>
-                                             
-                                         </div>
-                                         <div className="minidivswrapper d-flex">
-                                             <div className="minidivleft" style={{width:"95px"}}>
-                                                 <p> SECTION</p>
-                                             </div>
-                                             <span>:</span>
-                                             <div className="minidivright">
-                                                 <p> Diamond 1</p>
-                                             </div>
-                                             
-                                         </div>
-                                         <div className="minidivswrapper d-flex">
-                                             <div className="minidivleft" style={{width:"95px"}}>
-                                                 <p> CAMPUS</p>
-                                             </div>
-                                             <span>:</span>
-                                             <div className="minidivright">
-                                                 <p> Campus 4</p>
-                                             </div>
-                                             
-                                         </div>
-                                         <div className="minidivswrapper d-flex">
-                                             <div className="minidivleft" style={{width:"95px"}}>
-                                                 <p> HEIGHT</p>
-                                             </div>
-                                             <span>:</span>
-                                             <div className="minidivright">
-                                                 <p> 4.5"</p>
-                                             </div>
-                                             
-                                         </div>
-                                         <div className="minidivswrapper d-flex">
-                                             <div className="minidivleft" style={{width:"95px"}}>
-                                                 <p> WEIGHT</p>
-                                             </div>
-                                             <span>:</span>
-                                             <div className="minidivright">
-                                                 <p> 50.4KG</p>
-                                             </div>
-                                             
-                                         </div>
-                                     </div>
-                                 </div>
-                                 </div>
-                                 <div className="proleftcolbottom">
-                                         <h3>Support</h3>
-
-                                         <div className="proleftcolbottomflexwrapforbuttonw">
-                                             <div className="leftforicon" style={{cursor:"pointer"}} onClick={handleclassteacherchatting}>
-                                                 <div className="flexwrap" >
-                                                 <img src="./assets/images/dashboards/studentDashboard/profileTab/lowericon1.png" alt="lowericon1.png" />
-                                                 <h5>Class Teacher</h5>
-                                                 </div>
-                                             </div>
-                                             <div className="rightforicon" style={{cursor:"pointer"}} onClick={handleHelpSupport}>
-                                                 <div className="flexwrap">
-                                                 <img src="./assets/images/dashboards/studentDashboard/profileTab/lowericon2.png" alt="lowericon2.png" />
-                                                 <h5>Help & Support</h5>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                 </div>
-                             </div>
-                             <div className="profilerightcolumn">
-                                 <h3>Profile Settings</h3>
-                                 <Tabs
-                                     defaultActiveKey="personaldetails"
-                                     transition={false}
-                                     id="noanim-tab-example"
-                                     className="mb-3"
-                                 
-                                     >
-                                     <Tab eventKey="personaldetails" title="Personal Details">
-                                         <Row>
-                                             <Col lg={6} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Full Name</p>
-                                                     <h5>{profiletabApi.personaldetails.fullname}</h5>
-                                                 </div>
-                                             </Col>
-                                             <Col lg={6} style={{paddingLeft:"0"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Email</p>
-                                                     <h5>{profiletabApi.personaldetails.email}</h5>
-                                                 </div>
-
-                                             </Col>
-                                             <Col lg={6} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Date of Birth</p>
-                                                     <h5>{profiletabApi.personaldetails.dateofbirth}</h5>
-                                                 </div>
-
-                                             </Col>
-                                             <Col lg={6} style={{paddingLeft:"0"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Residential Phone</p>
-                                                     <h5>{profiletabApi.personaldetails.residentialphone}</h5>
-                                                 </div>
-
-                                             </Col>
-                                             <Col lg={4} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Place of Birth</p>
-                                                     <h5>{profiletabApi.personaldetails.placeofbirth}</h5>
-                                                 </div>
-
-                                             </Col>
-                                             <Col lg={4} style={{padding:"0px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Country</p>
-                                                     <h5>{profiletabApi.personaldetails.country}</h5>
-                                                 </div>
-
-                                             </Col>
-
-                                             <Col lg={4} style={{paddingLeft:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Nationality</p>
-                                                     <h5>{profiletabApi.personaldetails.nationality}</h5>
-                                                 </div>
-
-                                             </Col>
-                                             <Col lg={4} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Gender</p>
-                                                     <h5>{profiletabApi.personaldetails.gender}</h5>
-                                                 </div>
-
-                                             </Col>
-                                             <Col lg={4} style={{padding:"0px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Religion</p>
-                                                     <h5>{profiletabApi.personaldetails.religion}</h5>
-                                                 </div>
-
-                                             </Col>
-
-                                             <Col lg={4} style={{paddingLeft:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Blood Group</p>
-                                                     <h5>{profiletabApi.personaldetails.bloodgroup}</h5>
-                                                 </div>
-
-                                             </Col>
-                                             <Col lg={6} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Birth Certifiacte</p>
-                                                     <h5>{profiletabApi.personaldetails.birthcertificate}</h5>
-                                                 </div>
-                                             </Col>
-                                             <Col lg={6} style={{paddingLeft:"0"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Passport</p>
-                                                     <h5>{profiletabApi.personaldetails.passport}</h5>
-                                                 </div>
-
-                                             </Col>
-                                             <Col lg={6} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Medeical History</p>
-                                                     <h5>{profiletabApi.personaldetails.medicalhistory}</h5>
-                                                 </div>
-                                             </Col>
-                                             <Col lg={6} style={{paddingLeft:"0"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Emergency Medical Action</p>
-                                                     <h5>{profiletabApi.personaldetails.emergencymedicalaction}</h5>
-                                                 </div>
-
-                                             </Col>
-                                         </Row>
-                                         <Row>
-                                             <Col lg={12}>
-                                                 <h5>Address</h5>
-                                             </Col>
-                                         </Row>
-                                         <Row>
-                                         <Col lg={3} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Holding</p>
-                                                     <h5>{profiletabApi.personaldetails.holding}</h5>
-                                                 </div>
-
-                                             </Col>
-                                             <Col lg={3} style={{padding:"0px",paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Street</p>
-                                                     <h5>{profiletabApi.personaldetails.street}</h5>
-                                                 </div>
-
-                                             </Col>
-                                             <Col lg={3} style={{padding:"0px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Area</p>
-                                                     <h5>{profiletabApi.personaldetails.area}</h5>
-                                                 </div>
-
-                                             </Col>
-
-                                             <Col lg={3} style={{paddingLeft:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Post Code</p>
-                                                     <h5>{profiletabApi.personaldetails.postcode}</h5>
-                                                 </div>
-
-                                             </Col>
-                                         <Col lg={3} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Police Station</p>
-                                                     <h5>{profiletabApi.personaldetails.policestation}</h5>
-                                                 </div>
-
-                                             </Col>
-                                             <Col lg={3} style={{padding:"0px",paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>City</p>
-                                                     <h5>{profiletabApi.personaldetails.city}</h5>
-                                                 </div>
-
-                                             </Col>
-                                             <Col lg={3} style={{padding:"0px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Division</p>
-                                                     <h5>{profiletabApi.personaldetails.division}</h5>
-                                                 </div>
-
-                                             </Col>
-
-                                             <Col lg={3} style={{paddingLeft:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Country</p>
-                                                     <h5>{profiletabApi.personaldetails.country}</h5>
-                                                 </div>
-
-                                             </Col>
-                                         </Row>
-                                         <Row>
-                                             <Col lg={12}>
-                                                 <h5>Siblings</h5>
-                                             </Col>
-                                         </Row>
-                                         <Row>
-                                         <Col lg={6} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Name</p>
-                                                     <h5>{profiletabApi.personaldetails.siblingname}</h5>
-                                                 </div>
-                                             </Col>
-                                             <Col lg={6} style={{paddingLeft:"0"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>ID</p>
-                                                     <h5>{profiletabApi.personaldetails.siblingID}</h5>
-                                                 </div>
-
-                                             </Col>
-                                         </Row>
-                                     </Tab>
-                                     <Tab eventKey="fatherdetails" title="Father Details">
-                                         <Row>
-                                         <Col lg={6} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Full Name</p>
-                                                     <h5>{profiletabApi.fathersinfo.fullname}</h5>
-                                                 </div>
-                                             </Col>
-                                             <Col lg={6} style={{paddingLeft:"0"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Email</p>
-                                                     <h5>{profiletabApi.fathersinfo.email}</h5>
-                                                 </div>
-
-                                             </Col>                                   
-                                         <Col lg={6} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>National ID</p>
-                                                     <h5>{profiletabApi.fathersinfo.nationalid}</h5>
-                                                 </div>
-                                             </Col>
-                                             <Col lg={6} style={{paddingLeft:"0"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Passport</p>
-                                                     <h5>{profiletabApi.fathersinfo.passport}</h5>
-                                                 </div>
-
-                                             </Col>
-                                         <Col lg={6} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Mobile Number</p>
-                                                     <h5>{profiletabApi.fathersinfo.mobilenumber}</h5>
-                                                 </div>
-                                             </Col>
-                                             <Col lg={6} style={{paddingLeft:"0"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Telephone</p>
-                                                     <h5>{profiletabApi.fathersinfo.telephonenumber}</h5>
-                                                 </div>
-
-                                             </Col>
-                                         <Col lg={6} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Occupation</p>
-                                                     <h5>{profiletabApi.fathersinfo.occupation}</h5>
-                                                 </div>
-                                             </Col>
-                                             <Col lg={6} style={{paddingLeft:"0"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Designation</p>
-                                                     <h5>{profiletabApi.fathersinfo.designation}</h5>
-                                                 </div>
-
-                                             </Col>
-                                             <Col lg={12}>
-                                             <div className="infopopulatebox">
-                                                     <p>Company Address</p>
-                                                     <h5>{profiletabApi.fathersinfo.companyaddress}</h5>
-                                                 </div>
-                                             </Col>
-                                         </Row>
-                                     </Tab>
-                                     <Tab eventKey="motherdetails" title="Mother Details">
-                                     <Row>
-                                         <Col lg={6} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Full Name</p>
-                                                     <h5>{profiletabApi.mothersinfo.fullname}</h5>
-                                                 </div>
-                                             </Col>
-                                             <Col lg={6} style={{paddingLeft:"0"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Email</p>
-                                                     <h5>{profiletabApi.mothersinfo.email}</h5>
-                                                 </div>
-
-                                             </Col>                                   
-                                         <Col lg={6} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>National ID</p>
-                                                     <h5>{profiletabApi.mothersinfo.nationalid}</h5>
-                                                 </div>
-                                             </Col>
-                                             <Col lg={6} style={{paddingLeft:"0"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Passport</p>
-                                                     <h5>{profiletabApi.mothersinfo.passport}</h5>
-                                                 </div>
-
-                                             </Col>
-                                         <Col lg={6} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Mobile Number</p>
-                                                     <h5>{profiletabApi.mothersinfo.mobilenumber}</h5>
-                                                 </div>
-                                             </Col>
-                                             <Col lg={6} style={{paddingLeft:"0"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Telephone</p>
-                                                     <h5>{profiletabApi.mothersinfo.telephonenumber}</h5>
-                                                 </div>
-
-                                             </Col>
-                                         <Col lg={6} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Occupation</p>
-                                                     <h5>{profiletabApi.mothersinfo.occupation}</h5>
-                                                 </div>
-                                             </Col>
-                                             <Col lg={6} style={{paddingLeft:"0"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Designation</p>
-                                                     <h5>{profiletabApi.mothersinfo.designation}</h5>
-                                                 </div>
-
-                                             </Col>
-                                             <Col lg={12}>
-                                             <div className="infopopulatebox">
-                                                     <p>Company Address</p>
-                                                     <h5>{profiletabApi.mothersinfo.companyaddress}</h5>
-                                                 </div>
-                                             </Col>
-                                     </Row>
-                                     </Tab>
-                                     <Tab eventKey="localguardian" title="Local Guardian">
-                                     <Row>
-                                     <Col lg={6} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Full Name</p>
-                                                     <h5>{profiletabApi.localguardianinfo.fullname}</h5>
-                                                 </div>
-                                             </Col>
-                                             <Col lg={6} style={{paddingLeft:"0"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Email</p>
-                                                     <h5>{profiletabApi.localguardianinfo.email}</h5>
-                                                 </div>
-
-                                             </Col>                                   
-                                         <Col lg={6} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>National ID</p>
-                                                     <h5>{profiletabApi.localguardianinfo.nationalid}</h5>
-                                                 </div>
-                                             </Col>
-                                             <Col lg={6} style={{paddingLeft:"0"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Passport</p>
-                                                     <h5>{profiletabApi.localguardianinfo.passport}</h5>
-                                                 </div>
-
-                                             </Col>
-                                         <Col lg={6} style={{paddingRight:"15px"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Mobile Number</p>
-                                                     <h5>{profiletabApi.localguardianinfo.mobilenumber}</h5>
-                                                 </div>
-                                             </Col>
-                                             <Col lg={6} style={{paddingLeft:"0"}}>
-                                                 <div className="infopopulatebox">
-                                                     <p>Relation</p>
-                                                     <h5>{profiletabApi.localguardianinfo.relation}</h5>
-                                                 </div>
-
-                                             </Col>
-                                     </Row>
-                                     </Tab>
-                                     </Tabs>
-                             </div>
-                         </div>
+                                                    <img src="./assets/images/dashboards/studentDashboard/profileTab/helpSupport/heroticket.png" alt="heroticket.png" />
+                                                    <p style={{marginTop:"-15px"}}>There are no tickets to</p>
+                                                    <p>display in this tab</p>
+                                                    <Button onClick={handleOpenNewTicket}>Open a new Ticket</Button>
+                                                </div>
+                                            
+                                       :
+                                       <h1>Ami asi man!</h1>
+                                    }
+                                    
+                                  
+                                </Tab.Pane>
+                                <Tab.Pane eventKey="second">
+                                abcdef
+                                </Tab.Pane>
+                            </Tab.Content>
+                            </Col>
+                        </Row>
+                        </Tab.Container>  
                         
-                     </div>
+                    
+                    
+                
+                </div>
+                </div>
                 
             </Tab.Pane>
             <Tab.Pane eventKey="tenth" className="tabPane">
@@ -2201,4 +1810,4 @@ const StudentDashboardComp = () => {
   )
 }
 
-export default StudentDashboardComp
+export default StudentDashHelpSupportComp

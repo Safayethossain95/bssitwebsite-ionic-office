@@ -834,6 +834,9 @@ body {
                                     background-color: #fff;
                                     border-radius: 20px;                            
                                     padding:20px;
+                                    h3{
+                                        @include myfont(20px,500,$main_font);
+                                    }
                                     .proleftcolbottomflexwrapforbuttonw{
                                         display: flex;
                                         height:calc(100% - 60px);
@@ -855,6 +858,10 @@ body {
                                                 h5{
                                                     @include myfont(16px,400,$main_font);
                                                     margin-top: 15px;
+                                                    color:#000;
+                                                    a{
+                                                        color:#000;
+                                                    }
                                                 }
                                             }
                                         }

@@ -56,6 +56,9 @@ import CareerDetailsPage from './pages/CareerDetailsPage';
 import StudentDashboardPage from './pages/dashboard/StudentDashboardPage';
 import UsernameORPassCouldnotMatch from './components/subComponents/UsernameORPassCouldnotMatch';
 import TeacherDashboardPage from './pages/dashboard/TeacherDashboardPage';
+import StudentTeacherChattingPage from './pages/dashboard/StudentTeacherChattingPage';
+import StudentDashHelpSupportPage from './pages/dashboard/StudentDashHelpSupportPage';
+
 
 setupIonicReact();
 
@@ -106,6 +109,10 @@ const App: React.FC = () => {
         <Route  path="/billentry" element={<BillEntryPage/>}/>
         
         <Route  path="/studashboard" element={<StudentDashboardPage/>}/>            
+        
+        <Route  path="/studashboard/classteacher" element={<StudentTeacherChattingPage/>}/>            
+                  
+        <Route  path="/studashboard/helpandsupport" element={<StudentDashHelpSupportPage/>}/>            
 
         <Route  path="/teacherdashboard" element={<TeacherDashboardPage/>}/>
 
