@@ -153,6 +153,7 @@ body {
                         padding:20px;
                         background-color: #fff;
                         border-radius: 20px;
+                       
                     }
                     &.tabpaneroutinetab{
                         padding:21px 2px;
@@ -834,6 +835,9 @@ body {
                                     background-color: #fff;
                                     border-radius: 20px;                            
                                     padding:20px;
+                                    .personalgallery{
+                                        @include myfont(16px,400,$main_font);
+                                    }
                                     h3{
                                         @include myfont(20px,500,$main_font);
                                     }

@@ -151,9 +151,14 @@
     
 }
 
-.studenthelpsupport{
+.tabpanerightattandancetab.tabpaneheightadjust.studenthelpsupport{
     padding-top: 0!important;
     padding-bottom: 0!important;
+    position:relative;
+    @include media(xlgDevice){
+        height:calc(100vh - 90px)!important;
+
+    }
     .topbar{
         height:78px;
         display: flex;
@@ -173,7 +178,7 @@
         .searchbox{
             position:relative;
             input{
-
+                padding-right: 60px;
                 width:272px;
                 height: 50px;
                 border-radius: 10px;
@@ -194,15 +199,87 @@
         }
     }
 
-    .bottompartbox{
+    .bottompartbox{                   
+            .floatingtabs{
+                position: absolute;
+                top: 19px;
+                left: 77px;
+                .nav-item{
+                    a{
+                        background-color: transparent;
+                        color:#000;
+                        @include myfont(16px,400,$main_font);
+                        border-radius: 0px;
+                        border-bottom:2px solid rgba(0,0,0,0.1);
+                        &.active{
+                            border-bottom:2px solid #000!important;
+                        }
+                    }
+                }
+            }
+        
+        
         .tabpaneboxopenticket{
             width:100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: calc(100vh - 226px);
-            background:beige;
+            height: calc(100vh - 185px);
+            background:#fff;
+            .formbox{
+                width:735px;
+                
+                .basicinputfield{
+                    p{
+                        @include myfont(16px,400,$main_font);
+                    }
+                    button{
+                        width:142px;
+                        margin:40px 10px 0 10px;
+                        background-color: #F3F1FF;
+                        color:#312783; 
+                        border-radius: 10px;
+                        &:nth-child(2){
+                            background-color: #E3E3E3;
+                            color:#000000
+                        }
+                        &:focus{
+                            outline: none;
+                            box-shadow: none!important;
+                        }
+                       
+                    }
+                    input{
+                        background-color: #fff;
+                        height:50px;
+                        width:100%;
+                        border:1px solid rgba(0,0,0,0.2);
+                        @include myfont(18px,400,$main_font);
+                        border-radius: 10px;
+                        padding-left: 20px;
+                        margin-bottom: 10px;
+                        &::placeholder{
+                            @include myfont(18px,400,$main_font);
+                            color:rgba(0,0,0,0.7);
+                        }
+                    }
+                    textarea{
+                        height:150px;
+                        padding-top: 16px;
+                        padding-left: 20px;
+                        @include myfont(18px,400,$main_font);
+                        width:100%;
+                        background:#fff;
+                        border: 1px solid rgba(0,0,0,0.2);
+                        border-radius: 10px;
+                        &::placeholder{
+                            @include myfont(18px,400,$main_font);
+                            color:rgba(0,0,0,0.7);
+                        }
+                    }
+                }
+            }
             p{
                 @include myfont(20px,500,$main_font);
             }
@@ -214,6 +291,52 @@
                 border-radius: 10px;
                 border:none;
                 margin-top: 30px;
+            }
+        }
+
+        .resolvedtablediv{
+            @include commontablecss();
+            margin-top: 105px;
+            
+            button{
+                position: absolute;
+                bottom:40px;
+                left:50%;
+                transform:translateX(-50%);
+                width:220px;
+                height: 50px;
+                background-color: #ED1C24;
+                color:#fff;
+                @include myfont(18px,500,$main_font);
+                border: 0;
+                &:focus{
+                    outline: 0!important;
+                    box-shadow: none!important;
+                }
+            }
+            thead{
+                tr{                
+                    th{
+                        @include myfont(16px,600,$main_font);
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    &:last-child{
+                        border-bottom: 0!important;
+                    }
+                }
+            }
+            thead,tbody{
+                tr{
+                    th,td{
+                        width:22.5%!important;
+                        &:nth-child(1){
+                            width:10%!important;
+                        }
+                    }
+                }
             }
         }
     }

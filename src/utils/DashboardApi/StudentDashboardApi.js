@@ -2020,6 +2020,50 @@ const profiletabApi = {
     
 }
 
+const helpandsupporttabs = {
+    header:[
+        {
+            head:"Reference"
+        },
+        {
+            head:"Subject"
+        },
+        {
+            head:"Date Created"
+        },
+        {
+            head:"Last Action"
+        },
+        {
+            head:"Resolved by"
+        },
+    ],
+    tableData:[
+        {
+            reference:"1127077",
+            subject:"Id Card Issue",
+            datecreated:"Fri, 10th Dec 23",
+            lastaction:"Fri, 10th Dec 23",
+            resolvedby:"Akash Khan"
+        },
+        {
+            reference:"586625",
+            subject:"About Result Correction",
+            datecreated:"Fri, 10th Dec 23",
+            lastaction:"Fri, 10th Dec 23",
+            resolvedby:"Farhana Akhter"
+        },
+        {
+            reference:"287792",
+            subject:"Attendance Correction",
+            datecreated:"Fri, 10th Dec 23",
+            lastaction:"Fri, 10th Dec 23",
+            resolvedby:"Mr. Mojammel"
+        },
+    ]
+
+}
+
 
 
 const StudentDashboardApi = () => {
@@ -2029,6 +2073,6 @@ const StudentDashboardApi = () => {
     </>
   )
 }
-export {prevPaymentHistory,profiletabApi,resulttabdata,leavereqstatusData,billInfoData,paymentHistoryDue,noticeData,documentData,attendenceApi,periodsubjectdata,noticeGreetingsdaydate,noticeDataGreetings,routinetabData,attendanceData}
+export {helpandsupporttabs,prevPaymentHistory,profiletabApi,resulttabdata,leavereqstatusData,billInfoData,paymentHistoryDue,noticeData,documentData,attendenceApi,periodsubjectdata,noticeGreetingsdaydate,noticeDataGreetings,routinetabData,attendanceData}
 
 export default StudentDashboardApi

@@ -99,7 +99,7 @@ const handlelogout=()=>{
                     <div className="sidebarscrolldiv">
                         
                     <NavLink  
-                    className="activei" id="dashboardTab"
+                     id="dashboardTab"
                     onClick={()=>handleTabvalue("dashboardTab")}
                     >
 
@@ -193,7 +193,7 @@ const handlelogout=()=>{
                         }
                         Leave Form
                     </NavLink>
-                    <NavLink id="profileTab" onClick={()=>handleTabvalue("profileTab")}                    
+                    <NavLink className="activei" id="profileTab" onClick={()=>handleTabvalue("profileTab")}                    
                     >
                         {
                             varforiconchange=="profileTab"?

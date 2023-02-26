@@ -5,6 +5,7 @@ import NavbarMoblie from '../../components/mobile/NavbarMoblie'
 import FooterMobile from '../../components/mobile/FooterMobile'
 import StuDashboardmb from '../../components/mobile/dashbordMobile/StuDashboardmb'
 import '../../sassFiles/mobile/sassPages/dashboardsmb/stuDashboardmb.scss'
+import '../../sassFiles/mobile/sassPages/dashboardsmb/stuDashClassTeachermb.scss'
 import StuDashNavbarSidebarmb from '../../components/mobile/StuDashNavbarSidebarmb'
 import StuDashboardDocumenttab from '../../components/mobile/dashbordMobile/StuDashboardDocumenttab'
 import StuDashboardNoticemb from '../../components/mobile/dashbordMobile/StuDashboardNoticemb'
@@ -15,8 +16,11 @@ import StuDashboardResultmb from '../../components/mobile/dashbordMobile/StuDash
 import StuDashboardProfilemb from '../../components/mobile/dashbordMobile/StuDashboardProfilemb'
 import StuDashboardExamRoutinemb from '../../components/mobile/dashbordMobile/StuDashboardExamRoutinemb'
 import StuDashboardLeaveFormmb from '../../components/mobile/dashbordMobile/StuDashboardLeaveFormmb'
-import { useLocation } from 'react-router-dom'
-const StudentDashboardPage = () => {
+import '../../sassFiles/sassPages/dashboards/studentDashboardinnerpages/studentToteacherchatting.scss'
+import StudentDashHelpSupportComp from '../../components/dashboardComponents/StudentDashHelpSupportComp'
+import StuDashboardHelpSupportmb from '../../components/mobile/dashbordMobile/StuDashboardHelpSupportmb'
+
+const StudentDashboardClassTeacher = () => {
 
   function setBodyColor({color}) {
     document.documentElement.style.setProperty('--bodyColor', color)
@@ -24,7 +28,7 @@ const StudentDashboardPage = () => {
 
   setBodyColor({color: "#f2f2f2"})
 
-  const [tbvaluevar,settbvaluevar]=useState("dashboardTab")
+  const [tbvaluevar,settbvaluevar]=useState("profileTab")
 
   const tabchanger = (tabvalue)=>{
     settbvaluevar(tabvalue)
@@ -69,21 +73,14 @@ const StudentDashboardPage = () => {
     
    
   },[])
-  
-  const location = useLocation();
-      useEffect(()=>{
-        if(location.state){
-          console.log("ami asi retain",location.state)
-        }
-      },[])
-      
+
   return (
     <>
         <div className="desktop">
             <div className="studentdashboardwrapper">
                 <div className="overlayfordrpdwn"></div>
                 <div className="stu_sidebar">
-                    <StudentDashboardComp />
+                    <StudentDashHelpSupportComp/>
 
                 </div>
             </div>
@@ -121,7 +118,7 @@ const StudentDashboardPage = () => {
               
               :
               tbvaluevar=="profileTab"?
-              <StuDashboardProfilemb/>
+              <StudentDashboardClassTeacher/>
               
               :
               tbvaluevar=="leaveFormTab"?
@@ -144,4 +141,4 @@ const StudentDashboardPage = () => {
   )
 }
 
-export default StudentDashboardPage
+export default StudentDashboardClassTeacher

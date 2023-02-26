@@ -1,7 +1,20 @@
 import React from 'react'
 import {Row,Col,Nav,Tab,Tabs} from 'react-bootstrap'
 import {profiletabApi } from '../../../utils/DashboardApi/StudentDashboardApi'
+import { useNavigate } from 'react-router-dom'
 const StuDashboardProfilemb = () => {
+
+    const navigate = useNavigate()
+
+    const handlehelpSupport=()=>{
+        navigate('/studashboard/helpandsupport')
+    }
+
+    const handleClassTeacher = ()=>{
+        navigate('/studashboard/classteacher')
+
+    }
+
   return (
     <>
         <div className="bodycolorbg">
@@ -442,13 +455,13 @@ const StuDashboardProfilemb = () => {
                                     <h3>Support</h3>
 
                                     <div className="proleftcolbottomflexwrapforbuttonw">
-                                        <div className="leftforicon">
+                                        <div className="leftforicon" onClick={handleClassTeacher}>
                                             <div className="flexwrap">
                                             <img src="./assets/images/dashboards/studentDashboard/profileTab/lowericon1.png" alt="lowericon1.png" />
                                             <h5>Class Teacher</h5>
                                             </div>
                                         </div>
-                                        <div className="rightforicon">
+                                        <div className="rightforicon" onClick={handlehelpSupport}>
                                              <div className="flexwrap">
                                             <img src="./assets/images/dashboards/studentDashboard/profileTab/lowericon2.png" alt="lowericon2.png" />
                                             <h5>Help & Support</h5>

@@ -58,6 +58,7 @@ import UsernameORPassCouldnotMatch from './components/subComponents/UsernameORPa
 import TeacherDashboardPage from './pages/dashboard/TeacherDashboardPage';
 import StudentTeacherChattingPage from './pages/dashboard/StudentTeacherChattingPage';
 import StudentDashHelpSupportPage from './pages/dashboard/StudentDashHelpSupportPage';
+import StudentPhotoGallaryPage from './pages/dashboard/StudentPhotoGallaryPage';
 
 
 setupIonicReact();
@@ -115,6 +116,8 @@ const App: React.FC = () => {
         <Route  path="/studashboard/helpandsupport" element={<StudentDashHelpSupportPage/>}/>            
 
         <Route  path="/teacherdashboard" element={<TeacherDashboardPage/>}/>
+        
+        <Route  path="/studentphotogallery" element={<StudentPhotoGallaryPage/>}/>
 
         <Route  path="/studentaddmissionentry" element={<StudentAdmissionEntryBillPage/>}/>
         

@@ -5,6 +5,7 @@ import NavbarMoblie from '../../components/mobile/NavbarMoblie'
 import FooterMobile from '../../components/mobile/FooterMobile'
 import StuDashboardmb from '../../components/mobile/dashbordMobile/StuDashboardmb'
 import '../../sassFiles/mobile/sassPages/dashboardsmb/stuDashboardmb.scss'
+import '../../sassFiles/mobile/sassPages/dashboardsmb/stuDashHelpandSupportmb.scss'
 import StuDashNavbarSidebarmb from '../../components/mobile/StuDashNavbarSidebarmb'
 import StuDashboardDocumenttab from '../../components/mobile/dashbordMobile/StuDashboardDocumenttab'
 import StuDashboardNoticemb from '../../components/mobile/dashbordMobile/StuDashboardNoticemb'
@@ -17,6 +18,7 @@ import StuDashboardExamRoutinemb from '../../components/mobile/dashbordMobile/St
 import StuDashboardLeaveFormmb from '../../components/mobile/dashbordMobile/StuDashboardLeaveFormmb'
 import '../../sassFiles/sassPages/dashboards/studentDashboardinnerpages/studentToteacherchatting.scss'
 import StudentDashHelpSupportComp from '../../components/dashboardComponents/StudentDashHelpSupportComp'
+import StuDashboardHelpSupportmb from '../../components/mobile/dashbordMobile/StuDashboardHelpSupportmb'
 
 const StudentDashHelpSupportPage = () => {
 
@@ -26,7 +28,7 @@ const StudentDashHelpSupportPage = () => {
 
   setBodyColor({color: "#f2f2f2"})
 
-  const [tbvaluevar,settbvaluevar]=useState("dashboardTab")
+  const [tbvaluevar,settbvaluevar]=useState("profileTab")
 
   const tabchanger = (tabvalue)=>{
     settbvaluevar(tabvalue)
@@ -116,7 +118,7 @@ const StudentDashHelpSupportPage = () => {
               
               :
               tbvaluevar=="profileTab"?
-              <StuDashboardProfilemb/>
+              <StuDashboardHelpSupportmb/>
               
               :
               tbvaluevar=="leaveFormTab"?

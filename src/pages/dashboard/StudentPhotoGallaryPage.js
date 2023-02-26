@@ -15,8 +15,11 @@ import StuDashboardResultmb from '../../components/mobile/dashbordMobile/StuDash
 import StuDashboardProfilemb from '../../components/mobile/dashbordMobile/StuDashboardProfilemb'
 import StuDashboardExamRoutinemb from '../../components/mobile/dashbordMobile/StuDashboardExamRoutinemb'
 import StuDashboardLeaveFormmb from '../../components/mobile/dashbordMobile/StuDashboardLeaveFormmb'
-import { useLocation } from 'react-router-dom'
-const StudentDashboardPage = () => {
+import '../../sassFiles/sassPages/dashboards/studentDashboardinnerpages/studentDashPhotoGallery.scss'
+import StudentDashHelpSupportComp from '../../components/dashboardComponents/StudentDashHelpSupportComp'
+import StudentPhotoGalleryComp from '../../components/dashboardComponents/StudentPhotoGalleryComp'
+
+const StudentPhotoGallaryPage = () => {
 
   function setBodyColor({color}) {
     document.documentElement.style.setProperty('--bodyColor', color)
@@ -69,21 +72,14 @@ const StudentDashboardPage = () => {
     
    
   },[])
-  
-  const location = useLocation();
-      useEffect(()=>{
-        if(location.state){
-          console.log("ami asi retain",location.state)
-        }
-      },[])
-      
+
   return (
     <>
         <div className="desktop">
             <div className="studentdashboardwrapper">
                 <div className="overlayfordrpdwn"></div>
                 <div className="stu_sidebar">
-                    <StudentDashboardComp />
+                    <StudentPhotoGalleryComp/>
 
                 </div>
             </div>
@@ -144,4 +140,4 @@ const StudentDashboardPage = () => {
   )
 }
 
-export default StudentDashboardPage
+export default StudentPhotoGallaryPage
