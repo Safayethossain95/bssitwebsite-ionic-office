@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 import '../../sassFiles/style.scss'
 import { Button } from 'react-bootstrap'
+import {AiOutlineArrowLeft} from 'react-icons/ai'
 import {HiOutlineBell} from 'react-icons/hi'
 import {Row,Col,Nav,Tab,Tabs} from 'react-bootstrap'
 import { prevPaymentHistory,attendanceData,paymentHistoryDue,resulttabdata,noticeData,noticeDataGreetings,documentData,attendenceApi,periodsubjectdata,billInfoData,noticeGreetingsdaydate,leavereqstatusData,routinetabData,profiletabApi } from '../../utils/DashboardApi/StudentDashboardApi'
@@ -21,10 +22,9 @@ import { useNavigate } from 'react-router-dom'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import TextField from '@mui/material/TextField';
-import { useLocation } from 'react-router-dom'
+
 ChartJS.register(ArcElement, Tooltip, Legend);
-const StudentDashboardComp = (props) => {
-    console.log(props.redirectkey)
+const StuDashPayNowComp = () => {
     let navigate = useNavigate()
     const [togglescreeninsideatab,settogglescreeninsideatab] = useState("profiletab")
 
@@ -38,16 +38,45 @@ const StudentDashboardComp = (props) => {
     const handlelogout=()=>{
         navigate('/')
     }
-
-    const handlePayNow=()=>{
-        navigate('/studashboard/payment')
+    const handlegoBack = ()=>{
+        navigate(`/studashboard/sixth`)
     }
+    const [count, setCount] = useState(0);
+    const incrementCount = () => {        
+        setCount(count + 1);
+      };
+      const decrementCount = () => {  
+        if(count==0){
+            setCount(0)
+        } 
+        else{
+
+            setCount(count - 1);
+        }     
+      };
 
     const [typeofleaverequest,settypeofleaverequest]=useState("")
 
     const typeleavereq=(myval)=>{
         settypeofleaverequest(myval)
     }
+    const [isCheckedterms,setisCheckedterms]=useState(false)
+    const [termschecked,settermschecked]=useState("")
+    const handleChangeterms = event => {
+        if (event.target.checked) {
+          console.log('✅ Checkbox is checked');
+          settermschecked("termsagree")
+          
+        } else {
+            console.log('⛔️ Checkbox is NOT checked');
+            settermschecked("")
+        }
+        setisCheckedterms(current => !current);
+      };
+      const handerfau =()=>{
+        
+      }
+
     const [leavedatefrom, setleavedatefrom] = useState(null);    
 
     const [leavedateto,setleavedateto] = useState(null)
@@ -289,14 +318,10 @@ const StudentDashboardComp = (props) => {
       const defaultOptiondoctypeprevdoc = Optiondoctypeprevdoc[0];
 
       const [drpsection,setdrpsection] = useState("")
-     
-          const [variableactivekey,setvariableactivekey] = useState(props.redirectkey?props.redirectkey:"first")
-          
-        
-
+   
+      const [variableactivekey,setvariableactivekey] = useState("sixth")
       
-      
-      const [dashheaderchange,setdashheaderchange] = useState("Good Morning Jisan")
+      const [dashheaderchange,setdashheaderchange] = useState("Payment")
 
       const handleSelecttab = (tabvalue)=>{
         setvariableactivekey(tabvalue)
@@ -338,7 +363,7 @@ const StudentDashboardComp = (props) => {
             setdashheaderchange("Attendance")
         }
         else if(tabvalue=="sixth"){
-            setdashheaderchange("Bill Informatioin")
+            setdashheaderchange("Payment")
 
         }
         else if(tabvalue=="seventh"){
@@ -370,34 +395,34 @@ const StudentDashboardComp = (props) => {
                 <div className="menupart">
                 <Nav variant="pills" className="flex-column">
                     <Nav.Item>
-                    <a id="first" className={props.redirectkey=='first'?'active':''} onClick={()=>handleSelecttab("first")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Dashboard</a>
+                    <a id="first"  onClick={()=>handleSelecttab("first")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Dashboard</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="second" className={props.redirectkey=='second'?'active':''} onClick={()=>handleSelecttab("second")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Document</a>
+                    <a id="second" onClick={()=>handleSelecttab("second")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Document</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="third" className={props.redirectkey=='third'?'active':''} onClick={()=>handleSelecttab("third")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Notice</a>
+                    <a id="third" onClick={()=>handleSelecttab("third")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Notice</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="fourth" className={props.redirectkey=='fourth'?'active':''} onClick={()=>handleSelecttab("fourth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Class Routine</a>
+                    <a id="fourth" onClick={()=>handleSelecttab("fourth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Class Routine</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="fifth" className={props.redirectkey=='fifth'?'active':''} onClick={()=>handleSelecttab("fifth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Attendence</a>
+                    <a id="fifth" onClick={()=>handleSelecttab("fifth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Attendence</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="sixth" className={props.redirectkey=='sixth'?'active':''} onClick={()=>handleSelecttab("sixth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Bill Info</a>
+                    <a id="sixth" className='active' onClick={()=>handleSelecttab("sixth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Bill Info</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="seventh" className={props.redirectkey=='seventh'?'active':''} onClick={()=>handleSelecttab("seventh")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Result</a>
+                    <a id="seventh" onClick={()=>handleSelecttab("seventh")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Result</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="eighth" className={props.redirectkey=='eighth'?'active':''} onClick={()=>handleSelecttab("eighth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Leave Form</a>
+                    <a id="eighth" onClick={()=>handleSelecttab("eighth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Leave Form</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="ninth" className={props.redirectkey=='ninth'?'active':''}  onClick={()=>handleSelecttab("ninth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Profile</a>
+                    <a id="ninth"  onClick={()=>handleSelecttab("ninth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Profile</a>
                     </Nav.Item>
                     <Nav.Item>
-                    <a id="tenth" className={props.redirectkey=='tenth'?'active':''} onClick={()=>handleSelecttab("tenth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Exam Routine</a>
+                    <a id="tenth" onClick={()=>handleSelecttab("tenth")}><img src="./assets/images/icons/tinysquaresicon.png" alt="" /> Exam Routine</a>
                     </Nav.Item>
                 </Nav>
                   
@@ -1192,14 +1217,15 @@ const StudentDashboardComp = (props) => {
                 </div>
             </Tab.Pane>
             <Tab.Pane eventKey="sixth" className="tabPane">
-                <div className="tabpaneheightadjust tabpanebillinfo">
-                    <div className="duepaymentpart">
+                <div className="tabpaneheightadjust tabpanerightattandancetab">
+                <div className="duepaymentpart">
                         <div className="headingofduepayment">
                             <h3>Due Payment <span>&#40;You have total 5 months tuition fee due&#41;</span></h3>
                         </div>
-                        <div className="bottombuttondiv">
-                            <Button onClick={handlePayNow}>Pay Now</Button>
+                        <div className="arrowdiv">
+                            <AiOutlineArrowLeft onClick={handlegoBack}/>
                         </div>
+                        
                         <div className="duepaymenttable">
                             <table>
                                 <thead>
@@ -1230,55 +1256,30 @@ const StudentDashboardComp = (props) => {
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-                    <div className="paymenthistory">
-                        <div className="headingofpaymenthistory">
-                            <h3>Previous Payment History</h3>
-                        </div>
-                        <div className="bottombuttondiv">
-                            {/* <Button>Total Amount: {billInfoData.previouspayment.tabledata.map((item,key)=>{
-                                var tempprevsum = tempprevsum + item.receivedamount
-                                setprevsum(tempprevsum)
-                                return(
-                                    <>
-                                    
-                                    </>
-                                )
-                            })} {prevsum} BDT</Button> */}
-                            <Button>Total 73604.00 BDT</Button>
-                        </div>
-                        <div className="paymenthistorytable">
-                        <table>
-                                <thead>
-                                    <tr>
-                                        {
-                                            billInfoData.previouspayment.header.map((item,key)=>{
-                                                return(
-                                                    <th key={key}>{item.headerline}</th>
-                                                )
-                                            })
-                                        }
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                      {
-                                        billInfoData.previouspayment.tabledata.map((item,key)=>{
-                                            return(
-                                                <tr key={key}>
-                                                    <td>{item.sl}</td>
-                                                    <td>{item.billdate}</td>
-                                                    <td>{item.periodname}</td>
-                                                    <td>{item.type}</td>
-                                                    <td>{item.payableamount}</td>
-                                                    <td>{item.receivedamount}</td>
-                                                </tr>
-                                            )
-                                        })
-                                      }
-                                </tbody>
-                            </table>
-                        </div>
 
+                        <div className="basicinfopopulatebillentry basicinfopopulatebillentryincdec">
+                        <p>Add or Remove Months</p>
+                        <input type="text"  name="countnumber" placeholder={count} value={count} onChange={handerfau}/>
+                        <div className="plus" onClick={incrementCount}>+</div>
+                        <div className="minus" onClick={decrementCount}>-</div>
+                    </div>
+                    <div className="checkboxfull">                      
+                                <label className='checkcontainer'>
+                                I Agree to the<span>Terms and Conditions Agreement</span>
+                                <input
+                                    type="checkbox"
+                                    value={isCheckedterms}
+                                    onChange={handleChangeterms}
+                                    id="remember"
+                                    name="subscribe"                        
+                                />
+                                <span className="checkmark"></span>
+                                </label>
+                                
+                                </div>
+                                <div className="bottombuttondiv">
+                            <Button onClick={handleSubmit}>Pay Now</Button>
+                        </div>
                     </div>
                 </div>
             </Tab.Pane>
@@ -2220,4 +2221,4 @@ const StudentDashboardComp = (props) => {
   )
 }
 
-export default StudentDashboardComp
+export default StuDashPayNowComp

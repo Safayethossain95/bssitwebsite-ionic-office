@@ -1,7 +1,14 @@
 import React from 'react'
 import { billInfoData } from '../../../utils/DashboardApi/StudentDashboardApi'
 import { Button } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 const StuDashboardBillInfomb = () => {
+
+    const navigate = useNavigate()
+
+    const handlePaynow=()=>{
+        navigate('/studashboard/payment')
+    }
   return (
     <>
         <div className="bodycolorbg">
@@ -16,7 +23,7 @@ const StuDashboardBillInfomb = () => {
                             <p>&#40;You have total 5 months tuition fee due&#41;</p>
                         </div>
                         <div className="bottombuttondiv">
-                            <Button>Pay Now</Button>
+                            <Button onClick={handlePaynow}>Pay Now</Button>
                         </div>
                         <div className="duepaymenttable">
                             <table>

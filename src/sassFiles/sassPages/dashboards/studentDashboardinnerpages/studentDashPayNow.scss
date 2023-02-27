@@ -1,0 +1,244 @@
+@import '../../../../sassStyles/mixins';
+@import '../../../../sassStyles/variables';
+@import '../../../../sassStyles/typography';
+@import '../../../../sassStyles/global';
+
+
+.tabpanerightattandancetab{
+    position: relative;
+}
+.bottombuttondiv{
+   
+    width:100%;
+    
+    height: 109px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button{
+        background-color: #F3F1FF;
+        width:228px;
+        height:50px;
+        color: #312783;
+        font-size: 16px;
+        font-weight: 400;
+        font-family: "Poppins", sans-serif;
+        border: 0;
+        border-radius: 10px;
+        &:first-child:active{
+            background-color: #F3F1FF!important;
+            color: #312783;
+        }
+        &.btn-primary:focus{
+            box-shadow: none!important;
+        }
+        
+    }
+}
+.duepaymentpart{
+                            
+    width:100%;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    padding:20px;
+    
+    height: 45%;
+    min-height: 365px;
+    .arrowdiv{
+        position: absolute;
+        top: 30px;
+        svg{
+            font-size: 30px;
+            cursor: pointer;
+        }
+    }
+    .bottombuttondiv{
+    width: 100%;
+    height: 78px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        button{
+            background-color: #F3F1FF;
+            width:194px;
+            height:50px;
+            color: #312783;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: "Poppins", sans-serif;
+            border: 0;
+            border-radius: 10px;
+            
+        }
+    }
+    .duepaymenttable{
+      
+        width:100%;
+        height: 361px;
+        
+        background-color: #fff;
+        overflow-y: scroll;
+       @include commontablecss();
+       table{
+        tr{
+            th{
+                font-weight: 600!important;
+            }
+        }
+       }
+        
+    }
+    .headingofduepayment{
+        text-align: center;
+        h3{
+            @include myfont($headingofduepaymentfontsize,500,$main_font);
+            color:$headingduepaymentcolor;
+            span{
+                @include myfont($headingofduepaymentsubheadingfontsize,400,$main_font);
+                color:$headingofduepaymentsubheadingfontcolor;
+            }
+        }
+    }
+    .basicinfopopulatebillentryincdec{
+        position: relative;
+        width: 175px;
+        height: auto;
+        margin: 0 auto;        
+        margin-top: 168px;    
+        p{
+            @include myfont(12px,400,$main_font);
+        }
+        input{
+            width:100%;
+            height: 40px;
+            border-radius: 10px;
+            border:1px solid rgba(0,0,0,0.2);
+            // padding-left: 20px;
+            text-align: center;
+            &:focus-visible{
+                // border: 1px solid #000;
+                outline:1px solid #000;
+            }
+            &::placeholder{
+                text-align: center;
+                @include myfont(16px,400,$main_font);
+                color:rgba(0,0,0,0.7);
+                
+            }
+        }
+        .plus{
+            position: absolute;
+            cursor: pointer;
+            background: transparent;
+            right: 0;
+            top: 17px;
+            width: 50px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            &::after{
+                position: absolute;
+                content: "";
+                width: 1px;
+                top: 2px;
+                height: 38px;
+                background-color: rgba(0, 0, 0, 0.2);
+                right: 50px;
+            }
+            
+        }
+        .minus{
+            position: absolute;
+            cursor: pointer;
+            background: transparent;
+            left: 0;
+            top: 17px;
+            width: 50px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            &::after{
+                position: absolute;
+                content: "";
+                width: 1px;
+                top: 2px;
+                height: 38px;
+                background-color: rgba(0, 0, 0, 0.2);
+                left: 50px;
+            }
+        }
+    }
+    .checkboxfull{
+        margin-top: 35px;        
+        bottom: 160px;
+        left: 50%;                
+        text-align: center;
+        label{
+            @include myfont(16px,400,$main_font);
+            span{
+                color:#ED1C24;
+            }
+        }
+        .checkcontainer{
+            position:relative;
+            padding-left: 43px;
+            input{
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+            .checkmark{
+                position: absolute;
+                top: 4px;
+                left: 6px;
+                height: 18px;
+                width: 18px;
+                border-radius: 5px;
+                border: 1px solid rgba(0,0,0,0.2);
+                &:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                  }
+                  &:after {
+                    left: 7px;
+                    top: 3px;
+                    width: 5px;
+                    height: 10px;
+                    border: solid white;
+                    border-width: 0 3px 3px 0;
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                  }
+            }
+            &:hover inpustudent basit ~ .checkmark {
+                background-color: #ccc;
+              }
+              input:checked ~ .checkmark {
+                background-color: #2196F3;
+                border:none;
+              }
+              input:checked ~ .checkmark:after {
+                display: block;
+              }
+              
+        }
+        span{
+            @include myfont(16px,400,$main_font);
+            margin-left: 10px;
+           
+        }
+        
+    }
+    
+}

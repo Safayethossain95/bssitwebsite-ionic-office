@@ -7,7 +7,7 @@ import {MdSend} from 'react-icons/md'
 const StuDashboardClassTeachermb = () => {
     const navigate=useNavigate()
     const handlegoBack=()=>{
-        navigate('/studashboard')
+        navigate('/studashboard/tenth')
       }
       const [dependentdatashow,setdependentdatashow] = useState("")
     const handleOpenNewTicket=()=>{

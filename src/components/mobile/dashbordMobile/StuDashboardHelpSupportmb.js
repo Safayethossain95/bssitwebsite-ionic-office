@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 const StuDashboardHelpSupportmb = () => {
     const navigate=useNavigate()
     const handlegoBack=()=>{
-        navigate('/studashboard')
+        navigate('/studashboard/tenth')
       }
       const [dependentdatashow,setdependentdatashow] = useState("")
     const handleOpenNewTicket=()=>{

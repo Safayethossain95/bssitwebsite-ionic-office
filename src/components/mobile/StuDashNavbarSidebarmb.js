@@ -24,6 +24,7 @@ const handletoggler=()=>{
   var navtoggler = document.getElementById("nav-icon4");
   navtoggler.classList.toggle('open');
 }
+
 const handleTabvalue=(mytabval)=>{
     var mynavbarnav = document.getElementById("mynavbarnav");
     mynavbarnav.classList.remove('show');
@@ -98,7 +99,8 @@ const handlelogout=()=>{
                     </div>
                     <div className="sidebarscrolldiv">
                         
-                    <NavLink  
+                    <NavLink 
+                    className={props.redirectkey=='first'?'activei':''}
                      id="dashboardTab"
                     onClick={()=>handleTabvalue("dashboardTab")}
                     >
@@ -113,7 +115,7 @@ const handlelogout=()=>{
                         Dashboard
                         </NavLink>
 
-                    <NavLink id="documentTab" onClick={()=>handleTabvalue("documentTab")}                    
+                    <NavLink className={props.redirectkey=='second'?'activei':''} id="documentTab" onClick={()=>handleTabvalue("documentTab")}                    
                     >
                         {
                             varforiconchange=="documentTab"?
@@ -123,7 +125,7 @@ const handlelogout=()=>{
                         }
                         Document
                     </NavLink>
-                    <NavLink id="noticeTab" onClick={()=>handleTabvalue("noticeTab")}                    
+                    <NavLink className={props.redirectkey=='third'?'activei':''} id="noticeTab" onClick={()=>handleTabvalue("noticeTab")}                    
                     >
                         {
                             varforiconchange=="noticeTab"?
@@ -133,7 +135,7 @@ const handlelogout=()=>{
                         }
                         Notice
                     </NavLink>
-                    <NavLink id="classRoutineTab" onClick={()=>handleTabvalue("classRoutineTab")}                    
+                    <NavLink className={props.redirectkey=='fourth'?'activei':''} id="classRoutineTab" onClick={()=>handleTabvalue("classRoutineTab")}                    
                     >
                         {
                             varforiconchange=="classRoutineTab"?
@@ -143,7 +145,7 @@ const handlelogout=()=>{
                         }
                         Class Routine
                     </NavLink>
-                    <NavLink id="examRoutineTab" onClick={()=>handleTabvalue("examRoutineTab")}                    
+                    <NavLink className={props.redirectkey=='fifth'?'activei':''}  id="examRoutineTab" onClick={()=>handleTabvalue("examRoutineTab")}                    
                     >
                         {
                             varforiconchange=="examRoutineTab"?
@@ -153,7 +155,7 @@ const handlelogout=()=>{
                         }
                         Exam Routine
                     </NavLink>
-                    <NavLink id="attendanceTab" onClick={()=>handleTabvalue("attendanceTab")}                    
+                    <NavLink className={props.redirectkey=='sixth'?'activei':''} id="attendanceTab" onClick={()=>handleTabvalue("attendanceTab")}                    
                     >
                         {
                             varforiconchange=="attendanceTab"?
@@ -163,7 +165,7 @@ const handlelogout=()=>{
                         }
                         Attendance
                     </NavLink>
-                    <NavLink id="billInfoTab" onClick={()=>handleTabvalue("billInfoTab")}                    
+                    <NavLink className={props.redirectkey=='seventh'?'activei':''} id="billInfoTab" onClick={()=>handleTabvalue("billInfoTab")}                    
                     >
                         {
                             varforiconchange=="billInfoTab"?
@@ -173,7 +175,7 @@ const handlelogout=()=>{
                         }
                         Bill Info
                     </NavLink>
-                    <NavLink id="resultTab" onClick={()=>handleTabvalue("resultTab")}                    
+                    <NavLink className={props.redirectkey=='eighth'?'activei':''} id="resultTab" onClick={()=>handleTabvalue("resultTab")}                    
                     >
                         {
                             varforiconchange=="resultTab"?
@@ -183,7 +185,7 @@ const handlelogout=()=>{
                         }
                         Result
                     </NavLink>
-                    <NavLink id="leaveFormTab" onClick={()=>handleTabvalue("leaveFormTab")}                    
+                    <NavLink className={props.redirectkey=='ninth'?'activei':''} id="leaveFormTab" onClick={()=>handleTabvalue("leaveFormTab")}                    
                     >
                         {
                             varforiconchange=="leaveFormTab"?
@@ -193,7 +195,7 @@ const handlelogout=()=>{
                         }
                         Leave Form
                     </NavLink>
-                    <NavLink className="activei" id="profileTab" onClick={()=>handleTabvalue("profileTab")}                    
+                    <NavLink className={props.redirectkey=='tenth'?'activei':''} id="profileTab" onClick={()=>handleTabvalue("profileTab")}                    
                     >
                         {
                             varforiconchange=="profileTab"?

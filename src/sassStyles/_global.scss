@@ -2,6 +2,15 @@
     padding:0;
     margin:0;
 }
+
+.btn:focus-visible {
+    outline: 0;
+    box-shadow: none!important;
+}
+.btn-check:focus+.btn, .btn:focus {
+    outline: 0;
+    box-shadow: 0!important;
+}
 html {
     scroll-behavior: smooth;
   }

@@ -15,16 +15,19 @@ import StuDashboardResultmb from '../../components/mobile/dashbordMobile/StuDash
 import StuDashboardProfilemb from '../../components/mobile/dashbordMobile/StuDashboardProfilemb'
 import StuDashboardExamRoutinemb from '../../components/mobile/dashbordMobile/StuDashboardExamRoutinemb'
 import StuDashboardLeaveFormmb from '../../components/mobile/dashbordMobile/StuDashboardLeaveFormmb'
+import { useParams } from 'react-router-dom'
+const StudentDashbordRedirect = () => {
 
-const StudentDashboardPage = () => {
 
+    let { slug } = useParams();
+    console.log(slug)
   function setBodyColor({color}) {
     document.documentElement.style.setProperty('--bodyColor', color)
 }
 
   setBodyColor({color: "#f2f2f2"})
 
-  const [tbvaluevar,settbvaluevar]=useState("dashboardTab")
+  const [tbvaluevar,settbvaluevar]=useState(slug=="tenth"?"profileTab":slug=="seventh"?"billInfoTab":"dashboardTab")
 
   const tabchanger = (tabvalue)=>{
     settbvaluevar(tabvalue)
@@ -70,7 +73,10 @@ const StudentDashboardPage = () => {
    
   },[])
   
- 
+  if(slug=="ninth")
+  {
+    var slugname="profileTab"
+  }
       
   return (
     <>
@@ -78,14 +84,14 @@ const StudentDashboardPage = () => {
             <div className="studentdashboardwrapper">
                 <div className="overlayfordrpdwn"></div>
                 <div className="stu_sidebar">
-                    <StudentDashboardComp redirectkey="first" />
+                    <StudentDashboardComp redirectkey={slug}/>
 
                 </div>
             </div>
         </div>  
         <div className="mobile">
           <div className="studentdashboardmobilewrapper">
-            <StuDashNavbarSidebarmb redirectkey="first" func={tabchanger}/>
+            <StuDashNavbarSidebarmb redirectkey={slug} func={tabchanger}/>
             {
               tbvaluevar=="dashboardTab"?
               
@@ -139,4 +145,4 @@ const StudentDashboardPage = () => {
   )
 }
 
-export default StudentDashboardPage
+export default StudentDashbordRedirect

@@ -28,7 +28,7 @@ const StudentDashHelpSupportComp = () => {
     let navigate = useNavigate()
     
     const handlegoBack=()=>{
-      navigate('/studashboard')
+      navigate('/studashboard/ninth')
     }
     
     const handlelogout=()=>{

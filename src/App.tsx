@@ -59,6 +59,8 @@ import TeacherDashboardPage from './pages/dashboard/TeacherDashboardPage';
 import StudentTeacherChattingPage from './pages/dashboard/StudentTeacherChattingPage';
 import StudentDashHelpSupportPage from './pages/dashboard/StudentDashHelpSupportPage';
 import StudentPhotoGallaryPage from './pages/dashboard/StudentPhotoGallaryPage';
+import StudentPayNowPage from './pages/dashboard/StudentPayNowPage';
+import StudentDashbordRedirect from './pages/dashboard/StudentDashbordRedirect';
 
 
 setupIonicReact();
@@ -111,9 +113,13 @@ const App: React.FC = () => {
         
         <Route  path="/studashboard" element={<StudentDashboardPage/>}/>            
         
+        <Route  path="/studashboard/:slug" element={<StudentDashbordRedirect/>}/>            
+        
         <Route  path="/studashboard/classteacher" element={<StudentTeacherChattingPage/>}/>            
                   
         <Route  path="/studashboard/helpandsupport" element={<StudentDashHelpSupportPage/>}/>            
+        
+        <Route  path="/studashboard/payment" element={<StudentPayNowPage/>}/>            
 
         <Route  path="/teacherdashboard" element={<TeacherDashboardPage/>}/>
         

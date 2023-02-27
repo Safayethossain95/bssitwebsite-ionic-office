@@ -4,7 +4,8 @@ import '../../sassFiles/sassPages/dashboards/srudentDashboards.scss'
 import NavbarMoblie from '../../components/mobile/NavbarMoblie'
 import FooterMobile from '../../components/mobile/FooterMobile'
 import StuDashboardmb from '../../components/mobile/dashbordMobile/StuDashboardmb'
-import '../../sassFiles/mobile/sassPages/dashboardsmb/stuDashboardmb.scss'
+import '../../sassFiles/mobile/sassPages/dashboardsmb/stuDashPayNowmb.scss'
+import '../../sassFiles/sassPages/dashboards/studentDashboardinnerpages/studentDashPayNow.scss'
 import StuDashNavbarSidebarmb from '../../components/mobile/StuDashNavbarSidebarmb'
 import StuDashboardDocumenttab from '../../components/mobile/dashbordMobile/StuDashboardDocumenttab'
 import StuDashboardNoticemb from '../../components/mobile/dashbordMobile/StuDashboardNoticemb'
@@ -15,8 +16,12 @@ import StuDashboardResultmb from '../../components/mobile/dashbordMobile/StuDash
 import StuDashboardProfilemb from '../../components/mobile/dashbordMobile/StuDashboardProfilemb'
 import StuDashboardExamRoutinemb from '../../components/mobile/dashbordMobile/StuDashboardExamRoutinemb'
 import StuDashboardLeaveFormmb from '../../components/mobile/dashbordMobile/StuDashboardLeaveFormmb'
+import StudentDashHelpSupportComp from '../../components/dashboardComponents/StudentDashHelpSupportComp'
+import StuDashboardHelpSupportmb from '../../components/mobile/dashbordMobile/StuDashboardHelpSupportmb'
+import StuDashPayNowComp from '../../components/dashboardComponents/StuDashPayNowComp'
+import StuDashPayNowMb from '../../components/mobile/dashbordMobile/StuDashPayNowMb'
 
-const StudentDashboardPage = () => {
+const StudentPayNowPage = () => {
 
   function setBodyColor({color}) {
     document.documentElement.style.setProperty('--bodyColor', color)
@@ -24,7 +29,7 @@ const StudentDashboardPage = () => {
 
   setBodyColor({color: "#f2f2f2"})
 
-  const [tbvaluevar,settbvaluevar]=useState("dashboardTab")
+  const [tbvaluevar,settbvaluevar]=useState("billInfoTab")
 
   const tabchanger = (tabvalue)=>{
     settbvaluevar(tabvalue)
@@ -69,23 +74,21 @@ const StudentDashboardPage = () => {
     
    
   },[])
-  
- 
-      
+
   return (
     <>
         <div className="desktop">
             <div className="studentdashboardwrapper">
                 <div className="overlayfordrpdwn"></div>
                 <div className="stu_sidebar">
-                    <StudentDashboardComp redirectkey="first" />
+                    <StuDashPayNowComp/>
 
                 </div>
             </div>
         </div>  
         <div className="mobile">
           <div className="studentdashboardmobilewrapper">
-            <StuDashNavbarSidebarmb redirectkey="first" func={tabchanger}/>
+            <StuDashNavbarSidebarmb func={tabchanger}/>
             {
               tbvaluevar=="dashboardTab"?
               
@@ -108,7 +111,7 @@ const StudentDashboardPage = () => {
               
               :
               tbvaluevar=="billInfoTab"?
-              <StuDashboardBillInfomb/>
+              <StuDashPayNowMb/>
               
               :
               tbvaluevar=="resultTab"?
@@ -116,7 +119,7 @@ const StudentDashboardPage = () => {
               
               :
               tbvaluevar=="profileTab"?
-              <StuDashboardProfilemb/>
+              <StuDashboardHelpSupportmb/>
               
               :
               tbvaluevar=="leaveFormTab"?
@@ -139,4 +142,4 @@ const StudentDashboardPage = () => {
   )
 }
 
-export default StudentDashboardPage
+export default StudentPayNowPage
